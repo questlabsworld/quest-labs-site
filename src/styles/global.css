@@ -1119,8 +1119,16 @@ body {
     #hero, #futures-portal, #lore, #fllip, #ecosystem { padding: 80px 24px; }
     .lore-grid { grid-template-columns: 1fr; gap: 48px; }
     .lore-visual { height: 320px; }
+    .lore-text .section-eyebrow,
+    .lore-text .section-title { text-align: center; }
     .cohort-details { gap: 24px; padding: 24px 32px; flex-wrap: wrap; justify-content: center; }
     .triangle-cards { grid-template-columns: 1fr; }
+    .futures-prompt-area { padding: 24px 16px; }
+    .wordcloud-section { padding: 24px 16px; }
+    .wordcloud-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .prompt-input-row { flex-direction: column; }
+    .prompt-submit { width: 100%; }
+    #wordcloud-canvas { height: 360px; }
     .ecosystem-cards { grid-template-columns: 1fr; max-width: 100%; }
     .eco-card--fllip { flex-direction: column; text-align: center; padding: 36px 24px; }
     .eco-fllip-left { align-items: center; }

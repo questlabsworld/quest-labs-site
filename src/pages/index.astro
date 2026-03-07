@@ -276,7 +276,7 @@ function renderWordCloud() {
   const container = document.getElementById('wordcloud-canvas');
   container.innerHTML = '';
   const w = container.offsetWidth || 880;
-  const h = 240;
+  const h = container.offsetHeight || 240;
   const placed = [];
 
   cloudWords.slice().sort((a, b) => b.size - a.size).forEach(word => {
