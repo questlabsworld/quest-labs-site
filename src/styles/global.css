@@ -103,13 +103,17 @@ body {
     .site-nav {
       flex-wrap: wrap;
       gap: 0.5rem;
-      padding: 0.5rem 1rem;
+      padding: 0.75rem 1.25rem;
+      align-items: center;
     }
     .site-nav__logo {
-      width: 100%;
+      height: 72px;
+      width: auto;
+      margin-right: auto;
     }
     .site-nav__links {
-      gap: 1rem;
+      gap: 0.85rem;
+      flex-wrap: wrap;
     }
   }
 
@@ -192,6 +196,20 @@ body {
   }
 
   .btn-secondary:hover { color: var(--text); border-color: rgba(139, 116, 171, 0.5); }
+
+  @media (max-width: 500px) {
+    .btn-primary, .btn-secondary {
+      padding: 14px 20px;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .hero-actions {
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
 
   /* ========================
      HERO
@@ -1041,11 +1059,16 @@ body {
 
   /* RESPONSIVE (index) */
   @media (max-width: 900px) {
-    #hero, #futures-portal, #lore, #fllip { padding: 80px 24px; }
+    #hero, #futures-portal, #lore, #fllip, #ecosystem { padding: 80px 24px; }
     .lore-grid { grid-template-columns: 1fr; gap: 48px; }
     .lore-visual { height: 320px; }
     .cohort-details { gap: 24px; padding: 24px 32px; flex-wrap: wrap; justify-content: center; }
     .triangle-cards { grid-template-columns: 1fr; }
+    .ecosystem-cards { grid-template-columns: 1fr; max-width: 100%; }
+    .eco-card--fllip { flex-direction: column; text-align: center; padding: 36px 24px; }
+    .eco-fllip-left { align-items: center; }
+    .eco-fllip-right { align-items: center; }
+    .eco-fllip-right .eco-desc { text-align: center; }
   }
 
   /* ========================
@@ -1857,6 +1880,17 @@ body {
     border: 1px solid rgba(139, 116, 171, 0.4);
   }
   .prog-btn-ghost:hover { border-color: var(--prog-lavender); background: rgba(69, 49, 96, 0.15); }
+
+  @media (max-width: 500px) {
+    .prog-hero { padding: 120px 24px 80px; }
+    .prog-hero-cta {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      max-width: 320px;
+    }
+    .prog-btn { text-align: center; padding: 0.85rem 1.25rem; }
+  }
 
   /* ── SECTIONS ── */
   .prog-page section {
