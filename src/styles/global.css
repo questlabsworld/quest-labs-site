@@ -75,7 +75,7 @@ body {
   }
 
   .site-nav__logo {
-    height: 80px;
+    height: 96px;
     width: auto;
     flex-shrink: 0;
   }
@@ -1134,6 +1134,99 @@ body {
     .eco-fllip-left { align-items: center; }
     .eco-fllip-right { align-items: center; }
     .eco-fllip-right .eco-desc { text-align: center; }
+  }
+
+  /* ========================
+     ABOUT PAGE
+     ======================== */
+  .about-hero {
+    padding: 160px 48px 64px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 20px;
+  }
+
+  .about-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5em, 6vw, 5em);
+    font-weight: 900;
+    color: var(--text);
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .about-sub {
+    font-style: italic;
+    color: var(--text-dim);
+    font-size: 1.1em;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 64px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px 120px;
+    position: relative;
+    z-index: 1;
+    align-items: start;
+  }
+
+  .about-image-placeholder {
+    border: 1px solid rgba(139,116,171,0.15);
+    background: rgba(139,116,171,0.04);
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-image-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .about-section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .about-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 24px;
+    line-height: 1.3;
+  }
+
+  .about-text-block p {
+    color: var(--text-dim);
+    font-size: 1em;
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .about-hero { padding: 120px 24px 48px; }
+    .about-grid { grid-template-columns: 1fr; padding: 0 24px 80px; gap: 40px; }
   }
 
   /* ========================
