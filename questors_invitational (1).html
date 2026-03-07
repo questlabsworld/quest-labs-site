@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Questor's Invitational — Experience Map</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Mulish:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0D0B1E;
+    --deep: #1E1B4B;
+    --mid: #4C1D95;
+    --violet: #7C3AED;
+    --lavender: #A78BFA;
+    --pale: #EDE9FE;
+    --gold: #D97706;
+    --amber: #FEF3C7;
+    --teal: #0D9488;
+    --teal-light: #CCFBF1;
+    --rose: #BE123C;
+    --rose-light: #FFF1F2;
+    --green: #065F46;
+    --green-light: #D1FAE5;
+    --white: #FDFCFF;
+    --gray: #6B7280;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--white);
+    font-family: 'Mulish', sans-serif;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2.5rem;
+    background: rgba(13, 11, 30, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(167, 139, 250, 0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--lavender);
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--lavender); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 20%, rgba(124, 58, 237, 0.25) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 80%, rgba(13, 148, 136, 0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 30% 30% at 10% 70%, rgba(217, 119, 6, 0.08) 0%, transparent 60%);
+  }
+
+  .hero-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: var(--lavender);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 0.95;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title .accent {
+    font-style: italic;
+    color: var(--lavender);
+  }
+
+  .hero-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    color: rgba(255,255,255,0.6);
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
+  .btn {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.9rem 2rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: var(--violet);
+    color: white;
+    border: none;
+  }
+  .btn-primary:hover { background: var(--mid); transform: translateY(-2px); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--lavender);
+    border: 1px solid rgba(167, 139, 250, 0.4);
+  }
+  .btn-ghost:hover { border-color: var(--lavender); background: rgba(124, 58, 237, 0.1); }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.2s forwards;
+  }
+
+  .scroll-hint span {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, rgba(167,139,250,0.6), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: var(--lavender);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--lavender);
+    opacity: 0.4;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--lavender); }
+
+  .section-body {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.7);
+    max-width: 680px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(167,139,250,0.3), transparent);
+    margin: 0 auto;
+  }
+
+  /* ── TIERS ── */
+  .tiers-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(to bottom, transparent, rgba(76, 29, 149, 0.08), transparent);
+  }
+
+  .tiers-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5px;
+    margin-top: 3rem;
+    background: rgba(167, 139, 250, 0.15);
+  }
+
+  .tier-card {
+    background: var(--ink);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .tier-card:hover { transform: translateY(-4px); }
+
+  .tier-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .tier-witness::before { background: var(--green); }
+  .tier-traveler::before { background: var(--gold); }
+  .tier-questor::before { background: var(--violet); }
+
+  .tier-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .tier-witness::after { background: radial-gradient(ellipse at top left, rgba(6,95,70,0.08), transparent); }
+  .tier-traveler::after { background: radial-gradient(ellipse at top left, rgba(217,119,6,0.08), transparent); }
+  .tier-questor::after { background: radial-gradient(ellipse at top left, rgba(124,58,237,0.12), transparent); }
+  .tier-card:hover::after { opacity: 1; }
+
+  .tier-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+
+  .tier-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .tier-tagline {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .tier-witness .tier-tagline { color: var(--teal); }
+  .tier-traveler .tier-tagline { color: var(--gold); }
+  .tier-questor .tier-tagline { color: var(--lavender); }
+
+  .tier-sessions {
+    font-family: 'Space Mono', monospace;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .tier-witness .tier-sessions { color: var(--teal); }
+  .tier-traveler .tier-sessions { color: var(--gold); }
+  .tier-questor .tier-sessions { color: var(--lavender); }
+
+  .tier-session-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.5rem;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .tier-time {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 2rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+  }
+
+  .tier-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin-bottom: 1.5rem;
+  }
+
+  .tier-gets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .tier-gets li {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    line-height: 1.5;
+  }
+
+  .tier-gets li::before {
+    content: '→';
+    flex-shrink: 0;
+    opacity: 0.5;
+    margin-top: 0.1rem;
+  }
+
+  .tier-cta {
+    margin-top: 2rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ── 12 WEEK ARC ── */
+  .arc-section {
+    padding: 6rem 2rem;
+  }
+
+  .arc-inner { max-width: 1200px; margin: 0 auto; }
+
+  .arc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    margin-top: 3rem;
+    background: rgba(167, 139, 250, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .arc-grid { grid-template-columns: 1fr; }
+    nav { padding: 1rem; }
+    .nav-links { display: none; }
+  }
+
+  .arc-week {
+    background: var(--ink);
+    padding: 1.8rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    overflow: hidden;
+  }
+
+  .arc-week:hover {
+    background: rgba(76, 29, 149, 0.15);
+    transform: scale(1.01);
+    z-index: 2;
+  }
+
+  .arc-week.milestone {
+    background: rgba(217, 119, 6, 0.05);
+  }
+
+  .arc-week.milestone:hover {
+    background: rgba(217, 119, 6, 0.12);
+  }
+
+  .arc-week-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.25);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .arc-week.milestone .arc-week-num { color: var(--gold); opacity: 0.8; }
+
+  .arc-stage {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+  }
+
+  .arc-theme {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--lavender);
+    margin-bottom: 0.8rem;
+    opacity: 0.7;
+  }
+
+  .arc-world {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+  }
+
+  .arc-blank {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+    font-style: italic;
+    line-height: 1.4;
+    border-left: 2px solid rgba(167,139,250,0.2);
+    padding-left: 0.7rem;
+  }
+
+  .arc-week.milestone .arc-blank {
+    border-left-color: rgba(217, 119, 6, 0.4);
+    color: rgba(255,255,255,0.35);
+  }
+
+  .milestone-badge {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(217, 119, 6, 0.15);
+    padding: 0.2rem 0.5rem;
+    border: 1px solid rgba(217, 119, 6, 0.25);
+  }
+
+  /* ── ARCHETYPES ── */
+  .archetypes-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(to bottom, transparent, rgba(13,148,136,0.04), transparent);
+  }
+
+  .archetypes-inner { max-width: 1200px; margin: 0 auto; }
+
+  .archetypes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .archetype-card {
+    padding: 2rem;
+    border: 1px solid rgba(167, 139, 250, 0.12);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .archetype-card:hover {
+    border-color: rgba(167, 139, 250, 0.35);
+    background: rgba(124, 58, 237, 0.06);
+    transform: translateY(-3px);
+  }
+
+  .archetype-emoji { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
+
+  .archetype-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .archetype-role {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--lavender);
+    margin-bottom: 1rem;
+    opacity: 0.7;
+  }
+
+  .archetype-desc {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .archetype-quest {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.3);
+    font-style: italic;
+    line-height: 1.5;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 0.8rem;
+  }
+
+  /* ── HERO'S JOURNEY ── */
+  .journey-section {
+    padding: 6rem 2rem;
+  }
+
+  .journey-inner { max-width: 1200px; margin: 0 auto; }
+
+  .journey-flow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 3rem;
+    position: relative;
+  }
+
+  @media (max-width: 768px) { .journey-flow { grid-template-columns: 1fr; } }
+
+  .journey-phase {
+    padding: 0;
+  }
+
+  .journey-phase-header {
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .phase-descent .journey-phase-header { background: rgba(76, 29, 149, 0.25); border-bottom: 2px solid var(--violet); }
+  .phase-crossing .journey-phase-header { background: rgba(13, 148, 136, 0.15); border-bottom: 2px solid var(--teal); }
+  .phase-emergence .journey-phase-header { background: rgba(217, 119, 6, 0.15); border-bottom: 2px solid var(--gold); }
+
+  .phase-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .phase-weeks {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    margin-left: auto;
+  }
+
+  .journey-stages {
+    list-style: none;
+    border: 1px solid rgba(167,139,250,0.08);
+    border-top: none;
+  }
+
+  .journey-stage {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid rgba(167,139,250,0.06);
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .journey-stage:hover { background: rgba(124, 58, 237, 0.07); }
+
+  .stage-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--lavender);
+    opacity: 0.5;
+    width: 24px;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  .stage-content { flex: 1; }
+
+  .stage-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+
+  .stage-prompt {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* ── PRACTICAL ── */
+  .practical-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(to bottom, transparent, rgba(76,29,149,0.06), transparent);
+  }
+
+  .practical-inner { max-width: 1200px; margin: 0 auto; }
+
+  .practical-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5px;
+    margin-top: 3rem;
+    background: rgba(167, 139, 250, 0.1);
+  }
+
+  .practical-card {
+    background: var(--ink);
+    padding: 2rem;
+  }
+
+  .practical-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .practical-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+
+  .practical-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .practical-list li {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    line-height: 1.5;
+  }
+
+  .practical-list li span { color: var(--lavender); flex-shrink: 0; }
+
+  /* ── CLOSING ── */
+  .closing-section {
+    padding: 8rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .closing-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+  }
+
+  .closing-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .closing-attr {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--lavender);
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+
+  .closing-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(167,139,250,0.1);
+  }
+
+  footer p {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.2);
+    text-transform: uppercase;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.1); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(13, 11, 30, 0.92);
+    z-index: 500;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .modal-overlay.active { display: flex; }
+
+  .modal {
+    background: #12102a;
+    border: 1px solid rgba(167,139,250,0.2);
+    max-width: 560px;
+    width: 100%;
+    padding: 2.5rem;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.4);
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  .modal-close:hover { color: white; }
+
+  .modal-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--lavender);
+    margin-bottom: 0.8rem;
+  }
+
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--lavender);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.07);
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-body p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 1rem;
+  }
+
+  .modal-body strong { color: rgba(255,255,255,0.85); }
+
+  .modal-prompt-box {
+    background: rgba(124, 58, 237, 0.08);
+    border-left: 3px solid var(--violet);
+    padding: 1rem 1.2rem;
+    margin-top: 1.2rem;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Quest Labs ✦ The Questor's Invitational</div>
+  <ul class="nav-links">
+    <li><a href="#tiers">Join</a></li>
+    <li><a href="#arc">The Arc</a></li>
+    <li><a href="#archetypes">Archetypes</a></li>
+    <li><a href="#journey">Hero's Journey</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <p class="hero-eyebrow">Quest Labs ✦ Founding Cohort 2026</p>
+  <h1 class="hero-title">
+    The<br><span class="accent">Questor's</span><br>Invitational
+  </h1>
+  <p class="hero-sub">A 12-week creative & futures journey.<br>Come as far as you can.</p>
+  <div class="hero-cta">
+    <a href="#tiers" class="btn btn-primary">Choose Your Path</a>
+    <a href="#arc" class="btn btn-ghost">Explore the Arc</a>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHAT IS THIS -->
+<section id="what" style="max-width:1200px;margin:0 auto;padding:6rem 2rem;">
+  <div class="reveal">
+    <p class="section-label">The Premise</p>
+    <h2 class="section-title">Somewhere between 2026 and 2032,<br>there is a <em>threshold</em>.</h2>
+    <p class="section-body">
+      You don't cross it. You build it — from both sides, simultaneously.<br><br>
+      Over 12 weeks, a founding cohort of 8 travelers move through 12 worlds. Each week the world changes: same crew, different physics. You keep what is portable about yourself. You discover what you're building toward. And by the final session, you hold a <strong style="color:rgba(255,255,255,0.9)">2032 Job Description</strong> — assembled piece by piece from 12 weeks of morning pages, creative practice, and sandbox sessions.<br><br>
+      Not a resume. A living document. Equal parts manifesto, methodology, and spell.
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TIERS -->
+<div class="tiers-section" id="tiers">
+  <div class="tiers-inner">
+    <div class="reveal">
+      <p class="section-label">How Far Do You Want to Travel?</p>
+      <h2 class="section-title">The journey happens<br><em>regardless</em>.</h2>
+      <p class="section-body">Choose your level of participation. All three tiers get the real thing.</p>
+    </div>
+    <div class="tiers-grid reveal" style="transition-delay:0.2s">
+
+      <div class="tier-card tier-witness">
+        <span class="tier-icon">🌱</span>
+        <div class="tier-name">Witness</div>
+        <div class="tier-tagline">Good — I'm interested</div>
+        <div class="tier-sessions">4</div>
+        <div class="tier-session-label">milestone sessions</div>
+        <div class="tier-time">Weeks 1 · 4 · 8 · 12 &nbsp;·&nbsp; ~3 hrs/week</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-gets">
+          <li>Milestone moments of the journey</li>
+          <li>Final ceremony & Job Description reveal</li>
+          <li>Founding cohort credit</li>
+          <li>Access to session recordings</li>
+        </ul>
+        <div class="tier-cta">Perfect if your time is limited →</div>
+      </div>
+
+      <div class="tier-card tier-traveler">
+        <span class="tier-icon">🔥</span>
+        <div class="tier-name">Traveler</div>
+        <div class="tier-tagline">Better — I want the arc</div>
+        <div class="tier-sessions">8</div>
+        <div class="tier-session-label">sessions, every other week</div>
+        <div class="tier-time">Alternating weeks &nbsp;·&nbsp; ~5–6 hrs/week</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-gets">
+          <li>Full arc in compressed form</li>
+          <li>Partial 2032 Job Description</li>
+          <li>Beta feedback role</li>
+          <li>Dyad partnerships</li>
+          <li>Black Menagerie archetype practice</li>
+        </ul>
+        <div class="tier-cta">The full story, every other chapter →</div>
+      </div>
+
+      <div class="tier-card tier-questor">
+        <span class="tier-icon">🌟</span>
+        <div class="tier-name">Questor</div>
+        <div class="tier-tagline">Best — I'm all in</div>
+        <div class="tier-sessions">12</div>
+        <div class="tier-session-label">sessions, full arc</div>
+        <div class="tier-time">Every week &nbsp;·&nbsp; ~7–8 hrs/week</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-gets">
+          <li>Complete 2032 Job Description</li>
+          <li>Co-creator of the methodology</li>
+          <li>Quest Labs founding cohort status</li>
+          <li>Testimonial & credit in future launches</li>
+          <li>Morning pages + Artist Dates practice</li>
+          <li>Full Black Menagerie archetype rotation</li>
+        </ul>
+        <div class="tier-cta">Build the world from inside it →</div>
+      </div>
+
+    </div>
+
+    <div class="reveal" style="margin-top:2rem;transition-delay:0.3s">
+      <div style="background:rgba(124,58,237,0.06);border:1px solid rgba(167,139,250,0.15);padding:1.5rem 2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--lavender);margin-bottom:0.3rem;">When & Where</div>
+          <div style="font-size:0.95rem;color:rgba(255,255,255,0.75);">7:30pm Berlin &nbsp;·&nbsp; 8:30pm Johannesburg &nbsp;·&nbsp; 1:30pm New York</div>
+          <div style="font-size:0.8rem;color:rgba(255,255,255,0.35);margin-top:0.2rem;font-family:'Space Mono',monospace;">90 min · Zoom · Recorded to Skool within 24hrs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 12-WEEK ARC -->
+<div class="arc-section" id="arc">
+  <div class="arc-inner">
+    <div class="reveal">
+      <p class="section-label">The Full Map</p>
+      <h2 class="section-title">12 weeks.<br><em>12 worlds.</em></h2>
+      <p class="section-body" style="margin-bottom:1rem;">Each week the genre changes. You keep everything that is portable about yourself.
+      <br><span style="font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;color:var(--gold);display:inline-block;margin-top:0.5rem;">★ = Milestone session — available to all tiers</span></p>
+    </div>
+
+    <div class="arc-grid reveal" style="transition-delay:0.15s">
+
+      <!-- Week 1 -->
+      <div class="arc-week" onclick="openModal('w1')">
+        <div class="arc-week-num">Week 01 · Witness ★</div>
+        <div class="arc-stage">Status Quo</div>
+        <div class="arc-theme">Safety · Black Elephant</div>
+        <div class="arc-world">🌿 Ancestral Village at the edge of a great forest</div>
+        <div class="arc-blank">"My character's name in 2032 is ___"</div>
+      </div>
+
+      <!-- Week 2 -->
+      <div class="arc-week" onclick="openModal('w2')">
+        <div class="arc-week-num">Week 02</div>
+        <div class="arc-stage">Call to Adventure</div>
+        <div class="arc-theme">Identity · Black Jellyfish</div>
+        <div class="arc-world">🗺️ Edge of the Known Map</div>
+        <div class="arc-blank">"I am a ___ who ___ [verb of transformation]"</div>
+      </div>
+
+      <!-- Week 3 -->
+      <div class="arc-week" onclick="openModal('w3')">
+        <div class="arc-week-num">Week 03</div>
+        <div class="arc-stage">Assistance</div>
+        <div class="arc-theme">Power · Black Swan</div>
+        <div class="arc-world">🍄 Underground Mycelial Network</div>
+        <div class="arc-blank">"I work with/for ___ [community]"</div>
+      </div>
+
+      <!-- Week 4 milestone -->
+      <div class="arc-week milestone" onclick="openModal('w4')">
+        <div class="milestone-badge">★ Milestone</div>
+        <div class="arc-week-num">Week 04 · Witness ★</div>
+        <div class="arc-stage">Departure</div>
+        <div class="arc-theme">Integrity · Black Sheep</div>
+        <div class="arc-world">🌊 Ocean Floor Civilization</div>
+        <div class="arc-blank">"The world I inhabit has learned to ___ [paradigm shift]"</div>
+      </div>
+
+      <!-- Week 5 -->
+      <div class="arc-week" onclick="openModal('w5')">
+        <div class="arc-week-num">Week 05</div>
+        <div class="arc-stage">Trials</div>
+        <div class="arc-theme">Possibility · Black Marsh Turtle</div>
+        <div class="arc-world">⚡ Solarpunk City mid-transition</div>
+        <div class="arc-blank">"I am known for my ___ [signature gift]"</div>
+      </div>
+
+      <!-- Week 6 -->
+      <div class="arc-week" onclick="openModal('w6')">
+        <div class="arc-week-num">Week 06</div>
+        <div class="arc-stage">Approach</div>
+        <div class="arc-theme">Abundance · Black Elephant</div>
+        <div class="arc-world">🛸 Space Station where time runs sideways</div>
+        <div class="arc-blank">"I work at the intersection of ___ and ___"</div>
+      </div>
+
+      <!-- Week 7 -->
+      <div class="arc-week" onclick="openModal('w7')">
+        <div class="arc-week-num">Week 07</div>
+        <div class="arc-stage">Crisis</div>
+        <div class="arc-theme">Connection · Black Jellyfish</div>
+        <div class="arc-world">💾 The Glitch — simulation showing its seams</div>
+        <div class="arc-blank">"The problem I exist to dissolve is ___"</div>
+      </div>
+
+      <!-- Week 8 milestone -->
+      <div class="arc-week milestone" onclick="openModal('w8')">
+        <div class="milestone-badge">★ Milestone</div>
+        <div class="arc-week-num">Week 08 · Witness ★</div>
+        <div class="arc-stage">Treasure</div>
+        <div class="arc-theme">Strength · Black Swan</div>
+        <div class="arc-world">🌍 Afrofuturist market between dimensions</div>
+        <div class="arc-blank">"My collaborators are ___ because ___ [values]"</div>
+      </div>
+
+      <!-- Week 9 -->
+      <div class="arc-week" onclick="openModal('w9')">
+        <div class="arc-week-num">Week 09</div>
+        <div class="arc-stage">Result</div>
+        <div class="arc-theme">Compassion · Black Sheep</div>
+        <div class="arc-world">🏙️ Near-future Berlin / everywhere at once</div>
+        <div class="arc-blank">"I measure my work by ___ [non-extractive metric]"</div>
+      </div>
+
+      <!-- Week 10 -->
+      <div class="arc-week" onclick="openModal('w10')">
+        <div class="arc-week-num">Week 10</div>
+        <div class="arc-stage">Return</div>
+        <div class="arc-theme">Self-Protection · Black Marsh Turtle</div>
+        <div class="arc-world">✨ The Becoming — pure possibility space</div>
+        <div class="arc-blank">"The world I'm building makes ___ obsolete"</div>
+      </div>
+
+      <!-- Week 11 -->
+      <div class="arc-week" onclick="openModal('w11')">
+        <div class="arc-week-num">Week 11</div>
+        <div class="arc-stage">New Life</div>
+        <div class="arc-theme">Autonomy · All Five</div>
+        <div class="arc-world">🏛️ The Guild Hall — where practitioners gather</div>
+        <div class="arc-blank">"I became this by ___ [origin story in one line]"</div>
+      </div>
+
+      <!-- Week 12 milestone -->
+      <div class="arc-week milestone" onclick="openModal('w12')">
+        <div class="milestone-badge">★ Milestone</div>
+        <div class="arc-week-num">Week 12 · Witness ★</div>
+        <div class="arc-stage">Resolution</div>
+        <div class="arc-theme">Faith · Emergent Self</div>
+        <div class="arc-world">🌅 2032 — Your world. Built.</div>
+        <div class="arc-blank">"What I couldn't have known in 2025 was ___. The door is always ___."</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ARCHETYPES -->
+<div class="archetypes-section" id="archetypes">
+  <div class="archetypes-inner">
+    <div class="reveal">
+      <p class="section-label">The Black Menagerie</p>
+      <h2 class="section-title">Five archetypes.<br><em>All of them, yours.</em></h2>
+      <p class="section-body">You don't get assigned one. You rotate through all five — so by Week 12 you know viscerally which one is home and which ones stretch you. Click each to learn more.</p>
+    </div>
+
+    <div class="archetypes-grid reveal" style="transition-delay:0.15s">
+
+      <div class="archetype-card" onclick="openModal('arch-groundbreaker')">
+        <span class="archetype-emoji">🐘</span>
+        <div class="archetype-name">Black Elephant</div>
+        <div class="archetype-role">Black Menagerie · Quest Labs</div>
+        <div class="archetype-desc">Builds new infrastructure. Comfortable with no map. Grows things in unexpected conditions.</div>
+        <div class="archetype-quest">What do we all know but haven't spoken aloud?</div>
+      </div>
+
+      <div class="archetype-card" onclick="openModal('arch-host')">
+        <span class="archetype-emoji">🦢</span>
+        <div class="archetype-name">Black Swan</div>
+        <div class="archetype-role">Black Menagerie · Quest Labs</div>
+        <div class="archetype-desc">Holds the emotional climate. Creates belonging. Makes safe spaces to think.</div>
+        <div class="archetype-quest">What change is coming that we haven't named yet?</div>
+      </div>
+
+      <div class="archetype-card" onclick="openModal('arch-sapien')">
+        <span class="archetype-emoji">🪼</span>
+        <div class="archetype-name">Black Jellyfish</div>
+        <div class="archetype-role">Black Menagerie · Quest Labs</div>
+        <div class="archetype-desc">Holds the long view. Names signals everyone else calls noise. Comfortable in uncertainty.</div>
+        <div class="archetype-quest">What are we feeling in our bodies about what's next?</div>
+      </div>
+
+      <div class="archetype-card" onclick="openModal('arch-curator')">
+        <span class="archetype-emoji">🐑</span>
+        <div class="archetype-name">Black Sheep</div>
+        <div class="archetype-role">Black Menagerie · Quest Labs</div>
+        <div class="archetype-desc">Synthesizes and makes meaning. Keeper of the story. Collects what matters.</div>
+        <div class="archetype-quest">What playful disruption wants to emerge?</div>
+      </div>
+
+      <div class="archetype-card" onclick="openModal('arch-creator')">
+        <span class="archetype-emoji">🐢</span>
+        <div class="archetype-name">Black Marsh Turtle</div>
+        <div class="archetype-role">Black Menagerie · Quest Labs</div>
+        <div class="archetype-desc">Transforms raw material — experience, conflict, data — into something usable and beautiful.</div>
+        <div class="archetype-quest">What do we need to slow down with? Where is rest calling?</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- HERO'S JOURNEY -->
+<div class="journey-section" id="journey">
+  <div class="journey-inner">
+    <div class="reveal">
+      <p class="section-label">The GQ Scholar Guide</p>
+      <h2 class="section-title">Every stage.<br><em>A question waiting.</em></h2>
+      <p class="section-body">The 12-week arc follows the Hero's Journey — but this version was lived first. The GQ Scholar Guide is the proof of concept. Click any stage to see the prompt.</p>
+    </div>
+
+    <div class="journey-flow reveal" style="transition-delay:0.15s;margin-top:3rem;">
+
+      <div class="journey-phase phase-descent">
+        <div class="journey-phase-header">
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--lavender);opacity:0.6;">Phase I</div>
+            <div class="phase-name">Descent</div>
+          </div>
+          <div class="phase-weeks">Weeks 1–4</div>
+        </div>
+        <ul class="journey-stages">
+          <li class="journey-stage" onclick="openModal('stage-status-quo')">
+            <div class="stage-num">01</div>
+            <div class="stage-content">
+              <div class="stage-name">Status Quo</div>
+              <div class="stage-prompt">We meet our S/Hero in their ordinary world</div>
+            </div>
+          </li>
+          <li class="journey-stage" onclick="openModal('stage-call')">
+            <div class="stage-num">02</div>
+            <div class="stage-content">
+              <div class="stage-name">Call to Adventure</div>
+              <div class="stage-prompt">An adventure begins</div>
+            </div>
+          </li>
+          <li class="journey-stage" onclick="openModal('stage-assistance')">
+            <div class="stage-num">03</div>
+            <div class="stage-content">
+              <div class="stage-name">Assistance</div>
+              <div class="stage-prompt">Our S/Hero seeks support</div>
+            </div>
+          </li>
+          <li class="journey-stage" onclick="openModal('stage-departure')">
+            <div class="stage-num">04</div>
+            <div class="stage-content">
+              <div class="stage-name">Departure</div>
+              <div class="stage-prompt">Our S/Hero begins their adventure</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="journey-phase phase-crossing">
+        <div class="journey-phase-header">
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal);opacity:0.7;">Phase II</div>
+            <div class="phase-name">Crossing</div>
+          </div>
+          <div class="phase-weeks">Weeks 5–8</div>
+        </div>
+        <ul class="journey-stages">
+          <li class="journey-stage" onclick="openModal('stage-trials')">
+            <div class="stage-num">05</div>
+            <div class="stage-content">
+              <div class="stage-name">Trials</div>
+              <div class="stage-prompt">New challenges appear</div>
+            </div>
+          </li>
+          <li class="journey-stage" onclick="openModal('stage-approach')">
+            <div class="stage-num">06</div>
+            <div class="stage-content">
+              <div class="stage-name">Approach</div>
+              <div class="stage-prompt">Our S/Hero activates inner courage</div>
+            </div>
+          </li>
+          <li class="journey-stage" onclick="openModal('stage-crisis')">
+            <div class="stage-num">07</div>
+            <div class="stage-content">
+              <div class="stage-name">Crisis</div>
+              <div class="stage-prompt">The biggest trials are faced</div>
+            </div>
+          </li>
+          <li class="journey-stage" onclick="openModal('stage-treasure')">
+            <div class="stage-num">08</div>
+            <div class="stage-content">
+              <div class="stage-name">Treasure</div>
+              <div class="stage-prompt">Rewards are collected</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="journey-phase phase-emergence">
+        <div class="journey-phase-header">
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);opacity:0.7;">Phase III</div>
+            <div class="phase-name">Emergence</div>
+          </div>
+          <div class="phase-weeks">Weeks 9–12</div>
+        </div>
+        <ul class="journey-stages">
+          <li class="journey-stage" onclick="openModal('stage-result')">
+            <div class="stage-num">09</div>
+            <div class="stage-content">
+              <div class="stage-name">Result</div>
+              <div class="stage-prompt">Our S/Hero reflects on the journey</div>
+            </div>
+          </li>
+          <li class="journey-stage" onclick="openModal('stage-return')">
+            <div class="stage-num">10</div>
+            <div class="stage-content">
+              <div class="stage-name">Return</div>
+              <div class="stage-prompt">Our S/Hero returns to their ordinary world</div>
+            </div>
+          </li>
+          <li class="journey-stage" onclick="openModal('stage-new-life')">
+            <div class="stage-num">11</div>
+            <div class="stage-content">
+              <div class="stage-name">New Life</div>
+              <div class="stage-prompt">A new chapter begins</div>
+            </div>
+          </li>
+          <li class="journey-stage" onclick="openModal('stage-resolution')">
+            <div class="stage-num">12</div>
+            <div class="stage-content">
+              <div class="stage-name">Resolution</div>
+              <div class="stage-prompt">A triumphant homecoming</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PRACTICAL -->
+<div class="practical-section" id="practical">
+  <div class="practical-inner">
+    <div class="reveal">
+      <p class="section-label">What You Actually Do</p>
+      <h2 class="section-title">The weekly<br><em>practice.</em></h2>
+    </div>
+    <div class="practical-grid reveal" style="transition-delay:0.15s">
+
+      <div class="practical-card">
+        <span class="practical-icon">📓</span>
+        <div class="practical-title">Daily</div>
+        <ul class="practical-list">
+          <li><span>→</span> Morning pages — 3 handwritten pages, first thing</li>
+          <li><span>→</span> Non-negotiable. No rereading. Just write.</li>
+          <li><span>→</span> ~45 minutes</li>
+        </ul>
+      </div>
+
+      <div class="practical-card">
+        <span class="practical-icon">🎨</span>
+        <div class="practical-title">Weekly</div>
+        <ul class="practical-list">
+          <li><span>→</span> 90-min live session (recorded to Skool)</li>
+          <li><span>→</span> One Artist Date — solo creative outing, your choice</li>
+          <li><span>→</span> One Skool community post</li>
+          <li><span>→</span> ~5–8 hrs total depending on tier</li>
+        </ul>
+      </div>
+
+      <div class="practical-card">
+        <span class="practical-icon">⚡</span>
+        <div class="practical-title">Each Session</div>
+        <ul class="practical-list">
+          <li><span>→</span> Arrival ritual: 1-word check-in</li>
+          <li><span>→</span> World Skin activation: enter the week's world</li>
+          <li><span>→</span> Main Quest: sandbox, creative work, futures tool</li>
+          <li><span>→</span> Solo → Dyad → Share (me-we-re-search)</li>
+          <li><span>→</span> Mad Libs reveal: one new blank unlocked</li>
+          <li><span>→</span> Closing ritual: name your artifact of the week</li>
+        </ul>
+      </div>
+
+      <div class="practical-card">
+        <span class="practical-icon">🗝️</span>
+        <div class="practical-title">Artifacts You Collect</div>
+        <ul class="practical-list">
+          <li><span>🗝️</span> Keys — beliefs or blocks unlocked</li>
+          <li><span>🧭</span> Maps — frameworks developed or remixed</li>
+          <li><span>💌</span> Dispatches — writing, voice memos, creative objects</li>
+          <li><span>🪞</span> Mirrors — what a dyad partner reflected back</li>
+          <li><span>🌱</span> Seeds — ideas not ready yet, held for growing</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CLOSING -->
+<div class="closing-section">
+  <p class="closing-quote reveal">"No one should be kept from dreaming a future because of capitalism."</p>
+  <p class="closing-attr reveal" style="transition-delay:0.15s">— Quest Labs</p>
+  <div class="closing-cta reveal" style="transition-delay:0.3s">
+    <a href="#tiers" class="btn btn-primary">Choose Your Path</a>
+    <a href="#journey" class="btn btn-ghost">Read the Full Guide</a>
+  </div>
+</div>
+
+<footer>
+  <p>Quest Labs ✦ The Questor's Invitational ✦ Founding Cohort 2026 ✦ questlabs.com</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal" id="modal-content">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-inner"></div>
+  </div>
+</div>
+
+<script>
+// ── SCROLL REVEAL ──
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(r => observer.observe(r));
+
+// ── MODAL DATA ──
+const modalData = {
+  'w1': {
+    tag: 'Week 01 · Safety · Black Elephant',
+    title: 'Status Quo',
+    sub: 'Ancestral Village · Witness Session ★',
+    body: `<p>We meet our S/Hero in their normal, mundane world. Before the adventure begins, we need to understand who they are right now — and who they've always been.</p>
+    <p>This session opens the Questor's Codex. You name your character, write your Ordinary World story, and present your Artifact Zero — the founding object you carry into the journey.</p>
+    <p><strong>Artist's Way theme: Safety.</strong> What makes it safe enough to begin?</p>`,
+    prompt: 'Before your adventure begins, you must give your character a name. In a typical day, I do these three things: ___, ___, ___. Describe your character\'s Ordinary World in at least 5 sentences.'
+  },
+  'w2': {
+    tag: 'Week 02 · Identity · Black Jellyfish',
+    title: 'Call to Adventure',
+    sub: 'Edge of the Known Map',
+    body: `<p>The call has arrived. Something is pulling your character forward — a dream, a restlessness, a question that won't quiet down.</p>
+    <p>This session works with your North Star: what does your character most desire? What are they afraid of? What is the adventure they're secretly already on?</p>
+    <p><strong>Artist's Way theme: Identity.</strong> Who are you, really?</p>`,
+    prompt: 'What is most important to your character right now? Three things I wish people would ask me: ___. Three things I daydream about: ___. Describe the adventure you wish to begin.'
+  },
+  'w3': {
+    tag: 'Week 03 · Power · Black Swan',
+    title: 'Assistance',
+    sub: 'Underground Mycelial Network',
+    body: `<p>No hero travels alone. This week we surface the support that already exists — often underground, invisible, working without recognition.</p>
+    <p>The dyad work this week is a mirror exercise: what gift does your partner bring that they can't see in themselves?</p>
+    <p><strong>Artist's Way theme: Power.</strong> Where does your power actually come from?</p>`,
+    prompt: 'What is your character\'s biggest challenge right now? Three things I struggle with: ___. Three things I learned about myself last year: ___. Three desired superpowers: ___. Describe what assistance you might need.'
+  },
+  'w4': {
+    tag: 'Week 04 · Integrity · Black Sheep · ★ MILESTONE',
+    title: 'Departure',
+    sub: 'Ocean Floor Civilization · All tiers welcome',
+    body: `<p>You cross the threshold. The ordinary world is behind you. This milestone session is open to all tiers — Witnesses join for the first time here.</p>
+    <p>Values clarification: what do you carry? What do you leave behind? What three things will you absolutely not compromise?</p>
+    <p><strong>Artist's Way theme: Integrity.</strong> What are you actually committed to?</p>`,
+    prompt: 'What would be different in a new world you could create? Three things I\'m ready to try: ___. Three things I feel nervous to try: ___. Three things I wish I could master: ___. Describe what you might find in a new world.'
+  },
+  'w5': {
+    tag: 'Week 05 · Possibility · Black Marsh Turtle',
+    title: 'Trials',
+    sub: 'Solarpunk City mid-transition',
+    body: `<p>The trials begin. The dragons appear. This is the first Black Menagerie sandbox session — you meet your animal archetype and discover what you make when the pressure is on.</p>
+    <p><strong>Artist's Way theme: Possibility.</strong> What becomes possible when you stop protecting yourself from the trial?</p>`,
+    prompt: 'What challenges does your character meet along their path? Three things that frustrate me: ___. Three things that help me during tough times: ___. Three things I do that aren\'t helpful: ___. Describe the trials your character faces.'
+  },
+  'w6': {
+    tag: 'Week 06 · Abundance · Black Elephant',
+    title: 'Approach',
+    sub: 'Space Station where time runs sideways',
+    body: `<p>You approach with new tools. The mid-point pulse check. What is already abundant in your world that you keep forgetting to count?</p>
+    <p>The dyad this week: what has changed in your partner since Week 1? What do you notice that they can't see yet?</p>
+    <p><strong>Artist's Way theme: Abundance.</strong> What if you already have enough?</p>`,
+    prompt: 'What\'s most important to your character right now? Three things I\'ve learned are important to me: ___. Three things I\'m fearful of: ___. Three things that give me hope: ___. Describe how your character approaches trials with new wisdom.'
+  },
+  'w7': {
+    tag: 'Week 07 · Connection · Black Jellyfish',
+    title: 'Crisis',
+    sub: 'The Glitch — where the simulation shows its seams',
+    body: `<p>The biggest trial. The darkest hour. The Glitch is the week where everything breaks open — and what you know when that happens becomes the most important data of the whole journey.</p>
+    <p>Community care protocol activates this week. The dyad is a sanctuary.</p>
+    <p><strong>Artist's Way theme: Connection.</strong> Who are you when you can't perform?</p>`,
+    prompt: 'Three things I didn\'t know about myself: ___. Three of my most courageous moments: ___. Three things that make me feel strong/calm/powerful: ___. Describe some of the biggest trials your character faces and how they navigate them.'
+  },
+  'w8': {
+    tag: 'Week 08 · Strength · Black Swan · ★ MILESTONE',
+    title: 'Treasure',
+    sub: 'Afrofuturist market between dimensions · All tiers welcome',
+    body: `<p>Rewards are collected. This milestone session is open to all tiers. Each Questor reads their Mad Libs document so far — 8 blanks assembled over 8 weeks.</p>
+    <p>The dyad this week: name 3 wins your partner has had that they haven't celebrated yet. Be specific.</p>
+    <p><strong>Artist's Way theme: Strength.</strong> What have you built that you keep forgetting to count?</p>`,
+    prompt: 'What does your character most desire? Three ways I like to be celebrated: ___. Three things that bring me joy: ___. Three things I treasure: ___. Describe your character\'s greatest rewards and celebrations.'
+  },
+  'w9': {
+    tag: 'Week 09 · Compassion · Black Sheep',
+    title: 'Result',
+    sub: 'Near-future Berlin / everywhere at once',
+    body: `<p>The result of your courage. You reflect on the journey so far. The origin story rewrite: who were you in Week 1, and how do you tell the story now?</p>
+    <p><strong>Artist's Way theme: Compassion.</strong> What would you say to the you who started this in Week 1?</p>`,
+    prompt: 'What is important for your character to remember on their path? Three worries I had about my adventure: ___. Three new perspectives I have: ___. Three unexpected surprises: ___. Describe your character\'s experience on the adventure so far.'
+  },
+  'w10': {
+    tag: 'Week 10 · Self-Protection · Black Marsh Turtle',
+    title: 'Return',
+    sub: 'The Becoming — pure possibility space',
+    body: `<p>You return changed. Boundaries as design: what safeguards protect your new self? The second Black Menagerie sandbox session — which archetype has become home?</p>
+    <p>Write a letter from your 2032 self to your 2026 self. What do they need to know?</p>
+    <p><strong>Artist's Way theme: Self-Protection.</strong> What are you protecting now that you've built it?</p>`,
+    prompt: 'What gems of new knowledge does your character now have? Three WINS this journey: ___. Three new memories I\'ve collected: ___. Three ideas/beliefs that no longer work for me: ___. Describe what your character has learned.'
+  },
+  'w11': {
+    tag: 'Week 11 · Autonomy · All Five Archetypes',
+    title: 'New Life',
+    sub: 'The Guild Hall — where practitioners gather',
+    body: `<p>New life begins. All five archetypes activate simultaneously. Who are you in community? This week you draft your complete 2032 Job Description from all 10 Mad Libs blanks assembled so far.</p>
+    <p>The dyad reads each other's drafts and asks: what is the most alive sentence?</p>
+    <p><strong>Artist's Way theme: Autonomy.</strong> What does it mean to be the author of your own life?</p>`,
+    prompt: 'From this moment forward, what does your character wish for themselves? Three ways I\'m the same: ___. Three things I hope for: ___. Three emotions I want to feel: ___. Describe a future your character is excited about.'
+  },
+  'w12': {
+    tag: 'Week 12 · Faith · Emergent Self · ★ MILESTONE',
+    title: 'Resolution',
+    sub: '2032 — Your world. Built. · All tiers welcome',
+    body: `<p>The triumphant homecoming. This final milestone session is open to all tiers. Each Questor reads their complete 2032 Job Description aloud. The community witnesses.</p>
+    <p>The door is always ___. You fill in the last blank. You've built something.</p>
+    <p><strong>Artist's Way theme: Faith.</strong> What do you know now that you couldn't have known at the start?</p>`,
+    prompt: 'What has your character navigated or overcome? Three things you\'re glad you tried: ___. Three times you showed up at your best: ___. Three skills you have now that you didn\'t before: ___. Celebrate your character\'s effort and growth.'
+  },
+  'arch-groundbreaker': {
+    tag: 'Black Menagerie · Quest Labs',
+    title: '🐘 Black Elephant',
+    sub: 'Weeks 1 & 6',
+    body: `<p>The Black Elephant carries what others pretend not to see. They are massive, grounded, and capable of memory that spans decades — they hold the long story of the room, the institution, the movement. They are not subtle. That is their gift.</p>
+    <p><strong>Energy:</strong> Groundbreaking. Building new infrastructure in unexpected soil. Not retrofitting — starting from scratch when the map doesn't exist yet.</p>
+    <p><strong>In the Invitational:</strong> Active in Weeks 1 and 6. Week 1 is the original groundbreaking — the ordinary world examined. Week 6 is the return with new capacity, the second clearing.</p>`,
+    prompt: 'Side quest this week: What is the thing in the room everyone sees but no one names? What needs to be built that has never been built before?'
+  },
+  'arch-host': {
+    tag: 'Black Menagerie · Quest Labs',
+    title: '🦢 Black Swan',
+    sub: 'Weeks 3 & 8',
+    body: `<p>The Black Swan is the rare, beautiful, unexpected arrival. They hold the emotional climate of any room — they make it safe enough for the real conversation to happen. They notice who is on the edges and bring them in. Their presence changes the weather.</p>
+    <p><strong>Energy:</strong> Hosting. Holding space. Reading what's in the air before anyone says it aloud.</p>
+    <p><strong>In the Invitational:</strong> Active in Weeks 3 and 8. Week 3 is the assistance session — who supports you? Week 8 is the treasure celebration — the Black Swan makes it safe to be proud.</p>`,
+    prompt: 'Side quest this week: Who needs to feel seen in this group right now? What would make this space safer for the most vulnerable person in it?'
+  },
+  'arch-sapien': {
+    tag: 'Black Menagerie · Quest Labs',
+    title: '🪼 Black Jellyfish',
+    sub: 'Weeks 2 & 7',
+    body: `<p>The Black Jellyfish moves through invisible currents. They sense what others cannot — the signal beneath the noise, the pattern no one else has named yet. Brainless by design, they are pure nervous system: responsive, adaptive, ancient.</p>
+    <p><strong>Energy:</strong> Pattern-sensing. Holding questions longer than is comfortable. Sitting with uncertainty until it speaks.</p>
+    <p><strong>In the Invitational:</strong> Active in Weeks 2 and 7. Week 2 is the Call — the Jellyfish senses the shape of the journey before it begins. Week 7 is the Crisis — the Jellyfish knows what is real when everything looks broken.</p>`,
+    prompt: 'Side quest this week: What signal is everyone else calling noise? What is the current beneath the surface of what\'s happening right now?'
+  },
+  'arch-curator': {
+    tag: 'Black Menagerie · Quest Labs',
+    title: '🐑 Black Sheep',
+    sub: 'Weeks 4 & 9',
+    body: `<p>The Black Sheep is the one who was told they didn't belong — and kept showing up anyway. They carry the alternative story, the divergent path, the version of events that gets edited out of the official record. They are the keeper of what doesn't fit.</p>
+    <p><strong>Energy:</strong> Curating. Naming what accumulates. Holding the story no one else would tell.</p>
+    <p><strong>In the Invitational:</strong> Active in Weeks 4 and 9. Week 4 is Departure — what do you carry? The Black Sheep knows exactly. Week 9 is Result — they tell the story of the journey so far, including the parts that surprised everyone.</p>`,
+    prompt: 'Side quest this week: What has been created by this group that hasn\'t been acknowledged yet? What story is getting left out of the official version?'
+  },
+  'arch-creator': {
+    tag: 'Black Menagerie · Quest Labs',
+    title: '🐢 Black Marsh Turtle',
+    sub: 'Weeks 5 & 10',
+    body: `<p>The Black Marsh Turtle carries their home on their back and moves at exactly the right pace. Slow is not passive — slow is intentional. They transform raw material — experience, conflict, pressure — into something enduring. They make things that last.</p>
+    <p><strong>Energy:</strong> Creating under pressure. Transforming difficulty into form. Building something where there was nothing, without rushing the shell.</p>
+    <p><strong>In the Invitational:</strong> Active in Weeks 5 and 10. Week 5 is the Trial — what do you make under pressure? Week 10 is Return — you come back and build something durable from what you survived.</p>`,
+    prompt: 'Side quest this week: What are you making slowly that needs to be made slowly? What would you build if you trusted the pace you\'re actually moving at?'
+  },
+  'stage-status-quo': {
+    tag: 'GQ Scholar Guide · Week 1',
+    title: 'Status Quo',
+    sub: '"In a gentle way, you can shake the world." — Mahatma Gandhi',
+    body: `<p>We meet our S/Hero in their normal, mundane world. Before your adventure begins, you must give your character a name.</p>`,
+    prompt: 'In a typical day, I do these three things: ___. I spend a lot of time with these three people: ___. The three adjectives that best describe my typical mood are: ___.\n\nNow describe your character\'s Ordinary World — choose 3–5 items from your lists and write at least 5 sentences.'
+  },
+  'stage-call': {
+    tag: 'GQ Scholar Guide · Week 2',
+    title: 'Call to Adventure',
+    sub: '"Every great dream starts with a dreamer." — Harriet Tubman',
+    body: `<p>In which an adventure begins. Your Call to Adventure — your North Star — will guide you in the direction you want to go.</p>`,
+    prompt: 'Three things I wish people would ask me: ___. Three things I daydream about: ___. Three ways I like to spend my time: ___.\n\nNow describe the adventure you wish to begin.'
+  },
+  'stage-assistance': {
+    tag: 'GQ Scholar Guide · Week 3',
+    title: 'Assistance',
+    sub: '"Teamwork is the secret that makes common people achieve uncommon results." — Ifeanyi Enoch Onuoha',
+    body: `<p>In which our S/Hero seeks support. There is wisdom available — but only if you are willing to accept assistance.</p>`,
+    prompt: 'Three things I struggle with: ___. Three things I learned about myself last year: ___. Three desired superpowers: ___.\n\nNow describe what assistance you might need on your adventure.'
+  },
+  'stage-departure': {
+    tag: 'GQ Scholar Guide · Week 4',
+    title: 'Departure',
+    sub: '"I don\'t know what the future may hold, but I know who holds the future." — Ralph Abernathy',
+    body: `<p>In which our S/Hero begins their adventure. As you begin, you\'ll step into a new world. What would be different in a new world you could create?</p>`,
+    prompt: 'Three things I\'m ready to try: ___. Three things I feel nervous to try: ___. Three things I wish I could master: ___.\n\nNow describe what you might find in a new world on your adventure.'
+  },
+  'stage-trials': {
+    tag: 'GQ Scholar Guide · Week 5',
+    title: 'Trials',
+    sub: '"Any challenge at hand is an opportunity to dig deeper." — Denise Vasi',
+    body: `<p>In which our S/Hero faces new challenges. The quest is full of adventure and growth — yet also difficulty. You are ready for it.</p>`,
+    prompt: 'Three things that frustrate me: ___. Three things that help me during tough times: ___. Three things I do that aren\'t helpful: ___.\n\nNow describe the trials your character might face and how they navigate them.'
+  },
+  'stage-approach': {
+    tag: 'GQ Scholar Guide · Week 6',
+    title: 'Approach',
+    sub: '"It\'s not the load you carry that breaks you down. It\'s the way you carry it." — Lena Horne',
+    body: `<p>In which our S/Hero activates inner courage. You are not the same S/Hero you once were. You approach trials with new wisdom.</p>`,
+    prompt: 'Three things I\'ve learned are important to me: ___. Three things I\'m fearful of: ___. Three things that give me hope: ___.\n\nNow describe the ways your character courageously approaches trials.'
+  },
+  'stage-crisis': {
+    tag: 'GQ Scholar Guide · Week 7',
+    title: 'Crisis',
+    sub: '"There is always light. Only if we are brave enough to be it." — Amanda Gorman',
+    body: `<p>In which the biggest trials are faced. The quest is full of difficulty and dark hours. How is your character approaching some of their biggest trials?</p>`,
+    prompt: 'Three things I didn\'t know about myself: ___. Three of my most courageous moments: ___. Three things that make me feel strong/calm/powerful: ___.\n\nNow describe some of the biggest trials your character faces and how they navigate them.'
+  },
+  'stage-treasure': {
+    tag: 'GQ Scholar Guide · Week 8',
+    title: 'Treasure',
+    sub: '"Success is liking yourself, what you do, and how you do it." — Maya Angelou',
+    body: `<p>In which rewards are collected. You are rewarded for your efforts. Remember to seek joy and celebration along this adventure.</p>`,
+    prompt: 'Three ways I like to be celebrated: ___. Three things that bring me joy: ___. Three things I treasure: ___.\n\nNow describe your character\'s greatest rewards and celebrations.'
+  },
+  'stage-result': {
+    tag: 'GQ Scholar Guide · Week 9',
+    title: 'Result',
+    sub: '"I don\'t paint dreams or nightmares. I paint my reality." — Frida Kahlo',
+    body: `<p>In which our S/Hero reflects on the journey. Over time, some things change while others remain the same. It\'s easy to forget how far we\'ve come.</p>`,
+    prompt: 'Three worries I had about my adventure: ___. Three new perspectives I have: ___. Three unexpected surprises: ___.\n\nNow describe your character\'s experience on the adventure so far.'
+  },
+  'stage-return': {
+    tag: 'GQ Scholar Guide · Week 10',
+    title: 'Return',
+    sub: '"There is nothing like returning to a place that remains unchanged to find the ways in which you yourself have altered." — Nelson Mandela',
+    body: `<p>In which our S/Hero returns to their ordinary world. One does not complete the journey unchanged. How has your character grown?</p>`,
+    prompt: 'Three WINS this semester: ___. Three new memories I\'ve collected: ___. Three ideas/beliefs that no longer work for me: ___.\n\nNow describe what your character has learned on their quest.'
+  },
+  'stage-new-life': {
+    tag: 'GQ Scholar Guide · Week 11',
+    title: 'New Life',
+    sub: '"Life is too magical to put barriers on it." — Nikisha Brunson',
+    body: `<p>In which a new chapter begins. Welcome to a new day. Reimagine the next best chapter of your journey. Nothing is impossible.</p>`,
+    prompt: 'Three ways I\'m the same: ___. Three things I hope for: ___. Three emotions I want to feel: ___.\n\nNow describe a future your character is excited about.'
+  },
+  'stage-resolution': {
+    tag: 'GQ Scholar Guide · Week 12',
+    title: 'Resolution',
+    sub: '"The triumph can\'t be had without the struggle." — Wilma Rudolph',
+    body: `<p>In which our S/Hero has a triumphant homecoming. You\'ve completed the Quest. Celebrate your effort and growth.</p>`,
+    prompt: 'Three things you\'re glad you tried: ___. Three times you showed up at your best: ___. Three skills you have now that you didn\'t before: ___.\n\nNow celebrate your character\'s triumphs. Describe the ways your character has succeeded.'
+  },
+};
+
+function openModal(id) {
+  const data = modalData[id];
+  if (!data) return;
+  document.getElementById('modal-inner').innerHTML = `
+    <div class="modal-tag">${data.tag}</div>
+    <div class="modal-title">${data.title}</div>
+    <div class="modal-sub">${data.sub}</div>
+    <div class="modal-divider"></div>
+    <div class="modal-body">${data.body}</div>
+    ${data.prompt ? `<div class="modal-prompt-box">${data.prompt}</div>` : ''}
+  `;
+  document.getElementById('modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (!e || e.target === document.getElementById('modal') || e.target.classList.contains('modal-close')) {
+    document.getElementById('modal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal({ target: document.getElementById('modal') }); });
+</script>
+</body>
+</html>

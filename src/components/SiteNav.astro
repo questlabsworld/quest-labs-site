@@ -1,0 +1,25 @@
+---
+const links = [
+  { href: '/', label: 'Portal' },
+  { href: '/program', label: 'Program' },
+  { href: '/science', label: 'Science' },
+  { href: '/about', label: 'About' },
+];
+const current = Astro.url.pathname;
+---
+
+<nav class="site-nav">
+  <a href="/"><img src="/QUEST LABS.png" alt="Quest Labs" class="site-nav__logo" /></a>
+  <ul class="site-nav__links">
+    {links.map(l => (
+      <li>
+        <a
+          href={l.href}
+          class:list={['site-nav__link', { 'site-nav__link--active': current === l.href || (l.href !== '/' && current.startsWith(l.href)) }]}
+        >
+          {l.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

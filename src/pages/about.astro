@@ -1,0 +1,154 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Quest Labs — About">
+
+<div class="about-hero">
+  <div class="about-eyebrow">Quest Labs · The Creator</div>
+  <h1 class="about-title">About</h1>
+  <p class="about-sub">The practitioner-researcher behind the methodology.</p>
+</div>
+
+<div class="about-grid">
+  <div class="about-image-block">
+    <div class="about-image-placeholder">
+      <span class="about-image-label">Creator Photo</span>
+    </div>
+  </div>
+
+  <div class="about-text-block">
+    <div class="about-section-label">Makēda</div>
+    <h2 class="about-name">Quest Prime · Practitioner-Researcher</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+    <p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+  </div>
+</div>
+
+</Layout>
+
+<style>
+  .about-hero {
+    text-align: center;
+    padding: 6rem 2rem 3rem;
+    background: transparent;
+  }
+
+  .about-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1.25rem;
+    opacity: 0;
+    animation: progFadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .about-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    opacity: 0;
+    animation: progFadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .about-sub {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+    opacity: 0;
+    animation: progFadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 1100px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    align-items: start;
+  }
+
+  .about-image-block {
+    padding-right: 3rem;
+  }
+
+  .about-image-placeholder {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: var(--obsidian);
+    border: 1px solid var(--border-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-image-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .about-text-block {
+    padding-left: 3rem;
+    border-left: 1px solid var(--border-dim);
+  }
+
+  .about-section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .about-name {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: var(--text);
+    margin-bottom: 1.75rem;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+  }
+
+  .about-text-block p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .about-image-block {
+      padding-right: 0;
+    }
+
+    .about-text-block {
+      padding-left: 0;
+      border-left: none;
+      border-top: 1px solid var(--border-dim);
+      padding-top: 2rem;
+    }
+  }
+</style>
