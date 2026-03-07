@@ -10,7 +10,14 @@ const current = Astro.url.pathname;
 
 <nav class="site-nav">
   <a href="/"><img src="/QUEST LABS.png" alt="Quest Labs" class="site-nav__logo" /></a>
-  <ul class="site-nav__links">
+
+  <button class="site-nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <ul class="site-nav__links" id="navLinks">
     {links.map(l => (
       <li>
         <a
@@ -23,3 +30,21 @@ const current = Astro.url.pathname;
     ))}
   </ul>
 </nav>
+
+<script is:inline>
+  const burger = document.getElementById('navBurger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+  });
+  // close menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', false);
+    });
+  });
+</script>
