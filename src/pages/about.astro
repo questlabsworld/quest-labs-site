@@ -12,18 +12,17 @@ import Layout from '../layouts/Layout.astro';
 
 <div class="about-grid">
   <div class="about-image-block">
-    <div class="about-image-placeholder">
-      <span class="about-image-label">Creator Photo</span>
-    </div>
+    <img src="/makeda.JPG" alt="Makēda Gershenson" class="about-photo" />
   </div>
 
   <div class="about-text-block">
     <div class="about-section-label">Makēda</div>
     <h2 class="about-name">Quest Prime · Practitioner-Researcher</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-    <p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+    <p>Since 2008, Makēda Gershenson has been building playgrounds for the future. As founder of Quest Labs | Mosaics in the Making, she facilitates sandbox sessions and research collaborations that function less like classrooms and more like portals — places where play becomes possibility and constraints are composted.</p>
+    <p>Her work dances between the collision point of education, workforce evolution, and radical foresight, weaving decolonial scholarship and embodied practice into experiences that move people from what they've inherited to what they're brave enough to create.</p>
+    <p>She doesn't do either/or: her approach holds the tension between rigor and relevance, inquiry and artistry, and analysis with care.</p>
+    <p>Whether facilitating sandbox sessions that crack open new capacities, conducting organizational research that remaps who holds power over tomorrow, or exploring how a single metaphor can unlock what once seemed impossible, Makēda creates the conditions for you to see the stories you've been living inside… and then craft a different future together.</p>
+    <p>A practice of not imagining alone, but in constellations.</p>
   </div>
 </div>
 
@@ -85,22 +84,11 @@ import Layout from '../layouts/Layout.astro';
     padding-right: 3rem;
   }
 
-  .about-image-placeholder {
+  .about-photo {
     width: 100%;
     aspect-ratio: 3 / 4;
-    background: var(--obsidian);
-    border: 1px solid var(--border-dim);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .about-image-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-faint);
+    object-fit: cover;
+    display: block;
   }
 
   .about-text-block {

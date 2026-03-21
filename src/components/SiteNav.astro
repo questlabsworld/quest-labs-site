@@ -28,8 +28,28 @@ const current = Astro.url.pathname;
         </a>
       </li>
     ))}
+    <li>
+      <button class="site-nav__link site-nav__contact" onclick="openContactModal()">Contact</button>
+    </li>
   </ul>
 </nav>
+
+<style>
+  .site-nav__contact {
+    background: transparent;
+    border: 1px solid #7c3aed;
+    color: #b794f4;
+    cursor: pointer;
+    padding: 0.35rem 0.9rem;
+    font-family: inherit;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .site-nav__contact:hover {
+    background: #7c3aed;
+    color: #fff;
+  }
+</style>
 
 <script is:inline>
   const burger = document.getElementById('navBurger');
