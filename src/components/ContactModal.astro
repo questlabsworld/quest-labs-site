@@ -1,0 +1,227 @@
+---
+const web3Key = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
+---
+
+<!-- CONTACT MODAL -->
+<div id="contactModal" class="ql-modal-overlay" aria-hidden="true">
+  <div class="ql-modal" role="dialog" aria-modal="true" aria-labelledby="qlModalTitle">
+    <button class="ql-modal-close" id="qlModalClose" aria-label="Close">✕</button>
+    <p class="ql-modal-eyebrow">Quest Labs · Get in Touch</p>
+    <h2 class="ql-modal-title" id="qlModalTitle">Reserve Your Spot</h2>
+    <p class="ql-modal-sub">Send us a note and we'll be in touch about the next cohort.</p>
+
+    <form id="qlContactForm" class="ql-modal-form" data-key={web3Key}>
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="ql-field">
+        <label for="ql-name">Name</label>
+        <input type="text" id="ql-name" name="name" placeholder="Your name" required>
+      </div>
+      <div class="ql-field">
+        <label for="ql-email">Email</label>
+        <input type="email" id="ql-email" name="email" placeholder="your.email@example.com" required>
+      </div>
+      <div class="ql-field">
+        <label for="ql-message">Message</label>
+        <textarea id="ql-message" name="message" rows="4" placeholder="Tell us a bit about yourself and what draws you to the Quest..." required></textarea>
+      </div>
+      <button type="submit" class="ql-modal-submit" id="qlSubmitBtn">Send →</button>
+    </form>
+
+    <div id="qlSuccess" class="ql-modal-success" style="display:none">
+      <div class="ql-success-glyph">✦</div>
+      <p>Message received. We'll be in touch.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .ql-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+  .ql-modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .ql-modal {
+    background: #0b0e14;
+    border: 1px solid rgba(212, 160, 23, 0.25);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    transform: scale(0.95) translateY(12px);
+    transition: transform 0.25s ease;
+  }
+  .ql-modal-overlay.open .ql-modal {
+    transform: scale(1) translateY(0);
+  }
+  .ql-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    color: var(--text-faint, #555);
+    font-size: 1rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  .ql-modal-close:hover { color: var(--text, #f0ecf8); }
+  .ql-modal-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--teal, #0fb8a0);
+    margin-bottom: 0.75rem;
+  }
+  .ql-modal-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold-pale, #f0d97a);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.04em;
+  }
+  .ql-modal-sub {
+    font-size: 0.9rem;
+    color: var(--text-dim, #9a9aaa);
+    margin-bottom: 1.75rem;
+    line-height: 1.6;
+  }
+  .ql-modal-form { display: flex; flex-direction: column; gap: 1.1rem; }
+  .ql-field { display: flex; flex-direction: column; gap: 0.4rem; }
+  .ql-field label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim, #9a9aaa);
+  }
+  .ql-field input,
+  .ql-field textarea {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text, #f0ecf8);
+    padding: 0.65rem 0.9rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .ql-field input:focus,
+  .ql-field textarea:focus {
+    border-color: rgba(212, 160, 23, 0.5);
+  }
+  .ql-field input::placeholder,
+  .ql-field textarea::placeholder { color: rgba(255,255,255,0.2); }
+  .ql-modal-submit {
+    margin-top: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--gold, #d4a017);
+    color: #0b0e14;
+    border: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    align-self: flex-start;
+  }
+  .ql-modal-submit:hover { opacity: 0.85; }
+  .ql-modal-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ql-modal-success {
+    text-align: center;
+    padding: 2rem 0 1rem;
+  }
+  .ql-success-glyph {
+    font-size: 2.5rem;
+    color: var(--teal, #0fb8a0);
+    margin-bottom: 1rem;
+  }
+  .ql-modal-success p {
+    color: var(--text-dim, #9a9aaa);
+    font-style: italic;
+    font-size: 1rem;
+  }
+</style>
+
+<script is:inline>
+  // ===== CONTACT MODAL =====
+  function openContactModal() {
+    document.getElementById('contactModal').classList.add('open');
+    document.getElementById('contactModal').setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeContactModal() {
+    const modal = document.getElementById('contactModal');
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      document.getElementById('qlContactForm').style.display = '';
+      document.getElementById('qlSuccess').style.display = 'none';
+      document.getElementById('qlContactForm').reset();
+    }, 250);
+  }
+  document.getElementById('qlModalClose').addEventListener('click', closeContactModal);
+  document.getElementById('contactModal').addEventListener('click', function(e) {
+    if (e.target === this) closeContactModal();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeContactModal();
+  });
+  document.getElementById('qlContactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('qlSubmitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    const formData = new FormData(this);
+    const name = formData.get('name');
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: this.dataset.key,
+          subject: 'Contact Form Submission from ' + name,
+          from_name: name,
+          replyto: formData.get('email'),
+          email: formData.get('email'),
+          message: formData.get('message'),
+          botcheck: formData.get('botcheck'),
+        })
+      });
+      const result = await res.json();
+      if (result.success) {
+        document.getElementById('qlContactForm').style.display = 'none';
+        document.getElementById('qlSuccess').style.display = 'block';
+        setTimeout(closeContactModal, 3000);
+      } else {
+        alert('Something went wrong. Please try again.');
+        btn.disabled = false;
+        btn.textContent = 'Send →';
+      }
+    } catch {
+      alert('Something went wrong. Please try again.');
+      btn.disabled = false;
+      btn.textContent = 'Send →';
+    }
+  });
+</script>
