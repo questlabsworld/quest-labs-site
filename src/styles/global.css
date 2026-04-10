@@ -83,16 +83,18 @@ body {
   .site-nav__links {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 1.25rem;
     margin: 0;
     padding: 0;
     align-items: center;
+    flex-shrink: 0;
   }
 
   .site-nav__link {
     color: rgba(240, 236, 248, 0.45);
     text-decoration: none;
     transition: color 0.2s;
+    white-space: nowrap;
   }
 
   .site-nav__link:hover,
@@ -190,8 +192,8 @@ body {
      ======================== */
   .section-eyebrow {
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.25em;
+    font-size: 14px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--teal);
     margin-bottom: 20px;
@@ -321,8 +323,8 @@ body {
 
   .hero-eyebrow {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.25em;
+    font-size: 14px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-faint);
     margin-bottom: 36px;
@@ -405,7 +407,7 @@ body {
 
   .scroll-hint span {
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 13px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -816,6 +818,69 @@ body {
     .eco-fllip-right { align-items: center; }
   }
 
+  /* black menagerie card */
+  .eco-glyph--menagerie { color: var(--ember); }
+
+  .eco-bm-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+    width: 100%;
+  }
+
+  .eco-bm-input {
+    padding: 0.6rem 0.9rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(139,116,171,0.25);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .eco-bm-input::placeholder { color: var(--text-faint); }
+
+  .eco-bm-submit { width: 100%; }
+
+  .eco-bm-note {
+    font-size: 0.75rem;
+    color: var(--text-faint);
+    margin: 4px 0 0;
+  }
+
+  /* educators cohort card form */
+  .eco-card--educators .eco-fllip-left { min-width: 200px; }
+
+  .eco-edu-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .eco-edu-input {
+    padding: 0.6rem 0.9rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(139,116,171,0.25);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .eco-edu-input::placeholder { color: var(--text-faint); }
+
+  .eco-edu-submit { align-self: flex-start; margin-top: 4px; }
+
+  .eco-edu-note {
+    font-size: 0.75rem;
+    color: var(--text-faint);
+    margin: 6px 0 0;
+  }
+
   .eco-stats {
     display: flex;
     gap: 20px;
@@ -978,6 +1043,11 @@ body {
     gap: 6px;
   }
 
+  .fllip-spacer {
+    width: 1.5rem;
+    flex-shrink: 0;
+  }
+
   .fl-big {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2em, 4vw, 3.5em);
@@ -1114,6 +1184,213 @@ body {
     opacity: 0.4;
   }
 
+  /* ========================
+     BLACK MENAGERIE
+     ======================== */
+  #black-menagerie {
+    padding: 100px 2rem;
+    background: rgba(10, 6, 20, 0.6);
+    border-top: 1px solid rgba(139, 116, 171, 0.1);
+  }
+
+  .bm-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .bm-eyebrow { color: var(--ember); text-align: left; }
+
+  .bm-title { text-align: left; margin-bottom: 1.5rem; }
+
+  .bm-tagline {
+    font-size: 1.15rem;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .bm-body {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .bm-form-block {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    border: 1px solid rgba(139, 116, 171, 0.15);
+    background: rgba(69, 49, 96, 0.08);
+  }
+
+  .bm-form-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+  }
+
+  .bm-form {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .bm-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.65rem 1rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(139, 116, 171, 0.25);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+  }
+
+  .bm-input::placeholder { color: var(--text-faint); }
+
+  .bm-submit {
+    padding: 0.65rem 1.5rem;
+    background: var(--ember);
+    color: #fff;
+    border: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .bm-submit:hover { opacity: 0.85; }
+
+  .bm-form-note {
+    font-size: 0.8rem;
+    color: var(--text-faint);
+    margin: 0;
+  }
+
+  /* ========================
+     EDUCATORS COHORT
+     ======================== */
+  #educators-cohort {
+    padding: 100px 2rem;
+    border-top: 1px solid rgba(139, 116, 171, 0.1);
+  }
+
+  .ec-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .ec-eyebrow { color: var(--teal); text-align: left; }
+
+  .ec-title { text-align: left; margin-bottom: 1.5rem; }
+
+  .ec-tagline {
+    font-size: 1.15rem;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .ec-body {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .ec-stats {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(139, 116, 171, 0.1);
+    border-bottom: 1px solid rgba(139, 116, 171, 0.1);
+  }
+
+  .ec-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .ec-num {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    color: var(--gold-pale);
+    line-height: 1.1;
+  }
+
+  .ec-stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .ec-form-block {
+    margin-top: 2rem;
+    padding: 2rem;
+    border: 1px solid rgba(139, 116, 171, 0.15);
+    background: rgba(69, 49, 96, 0.08);
+  }
+
+  .ec-form-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+  }
+
+  .ec-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .ec-input {
+    padding: 0.65rem 1rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(139, 116, 171, 0.25);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+  }
+
+  .ec-input::placeholder { color: var(--text-faint); }
+
+  .ec-submit {
+    align-self: flex-start;
+    padding: 0.65rem 1.5rem;
+    background: var(--teal);
+    color: #0a0614;
+    border: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .ec-submit:hover { opacity: 0.85; }
+
+  .ec-form-note {
+    font-size: 0.8rem;
+    color: var(--text-faint);
+    margin: 0;
+  }
+
   /* RESPONSIVE (index) */
   @media (max-width: 900px) {
     #hero, #futures-portal, #lore, #fllip, #ecosystem { padding: 80px 24px; }
@@ -1238,7 +1515,7 @@ body {
     background: transparent;
     color: var(--text);
     text-align: center;
-    padding: 5rem 4rem 4rem;
+    padding: 5rem 4rem 2rem;
     position: relative;
     overflow: hidden;
   }
@@ -1513,7 +1790,46 @@ body {
     margin: 1.75rem 0;
   }
 
-  @media(max-width:600px){ .abc-strip { grid-template-columns: repeat(4,1fr); } }
+  /* portal-specific abc layout */
+  .portal-abc-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .portal-abc-sub {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 0.5rem;
+  }
+
+  .portal-abc-strip {
+    grid-template-columns: repeat(7, 1fr);
+    margin: 1.5rem 0 0;
+  }
+
+  @media (max-width: 700px) {
+    .portal-abc-strip {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    /* last 3 letters: span to fill row evenly */
+    .portal-abc-strip .abc-cell:nth-child(5) { grid-column: span 1; }
+    .portal-abc-strip .abc-cell:nth-child(6) { grid-column: span 1; }
+    .portal-abc-strip .abc-cell:nth-child(7) { grid-column: span 2; }
+  }
+
+  @media (max-width: 420px) {
+    .portal-abc-strip {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .portal-abc-strip .abc-cell:nth-child(5),
+    .portal-abc-strip .abc-cell:nth-child(6),
+    .portal-abc-strip .abc-cell:nth-child(7) { grid-column: span 1; }
+    .portal-abc-strip .abc-cell:last-child { grid-column: span 2; }
+  }
+
+  @media(max-width:600px){ .abc-strip:not(.portal-abc-strip) { grid-template-columns: repeat(4,1fr); } }
 
   .abc-cell {
     background: var(--deep);
@@ -1929,8 +2245,8 @@ body {
 
   .prog-hero-eyebrow {
     font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.25em;
+    font-size: 0.875rem;
+    letter-spacing: 0.2em;
     color: var(--prog-lavender);
     text-transform: uppercase;
     margin-bottom: 1.5rem;
@@ -2704,6 +3020,18 @@ body {
     .prog-next-ctas { grid-template-columns: 1fr; }
     .prog-next-card { min-height: auto; }
     .prog-earthday-section { padding: 64px 24px; }
+  }
+
+  /* ── BET ON OUR BECOMING ── */
+  .prog-patrons-section {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .prog-patrons-section .prog-next-card--patrons {
+    width: 100%;
+    max-width: 100%;
   }
 
   /* ── CLOSING ── */

@@ -27,7 +27,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="ecosystem-nebula"></div>
   <div class="ecosystem-nebula-2"></div>
 
-  <p class="section-eyebrow">You've Crossed the Threshold · Three Cycles</p>
+  <p class="section-eyebrow">You've Crossed the Threshold · Four Cycles</p>
   <h2 class="section-title">Join the Ecosystem</h2>
   <p class="section-sub">The portal is open. Now choose your cycle — from open exploration to deep immersion.</p>
 
@@ -43,13 +43,18 @@ import Layout from '../layouts/Layout.astro';
       <a href="https://luma.com/questlabs" class="btn-primary" target="_blank" rel="noopener noreferrer">Find a Session →</a>
     </div>
 
-    <div class="eco-card">
+    <div class="eco-card eco-card--menagerie">
       <div class="eco-ring"></div>
-      <div class="eco-glyph">✦</div>
-      <div class="eco-tag">Open Knowledge · Collective</div>
-      <h3 class="eco-label">Digital Garden</h3>
-      <p class="eco-desc">Plant seeds in the Living Knowledgebase. Zettelkasten method. We all feed this. Every node connects.</p>
-      <a href="#" class="btn-primary">Coming Soon</a>
+      <div class="eco-glyph eco-glyph--menagerie">◆</div>
+      <div class="eco-tag">Coming · Black Friday 2026</div>
+      <h3 class="eco-label">The Black Menagerie</h3>
+      <p class="eco-desc">A futures literacy card game rooted in Afroasian methodology - part game, part oracle, part mirror. Five creatures. Seventy-eight cards. Two editions: Think Cards for Humanity and an educator activity deck.</p>
+      <form class="eco-bm-form" name="black-menagerie" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="black-menagerie" />
+        <input class="eco-bm-input" type="email" name="email" placeholder="your email" required />
+        <button class="btn-primary eco-bm-submit" type="submit">Get Early Access →</button>
+      </form>
+      <p class="eco-bm-note">No spam. Just a heads up when the doors open.</p>
     </div>
 
     <div class="eco-card eco-card--fllip">
@@ -62,6 +67,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="fllip-letter"><span class="fl-big">F</span><span class="fl-word">Futures</span></div>
           <div class="fllip-letter"><span class="fl-big">L</span><span class="fl-word">Literacies</span></div>
           <div class="fllip-letter"><span class="fl-big">I</span><span class="fl-word">Invitational</span></div>
+          <div class="fllip-letter fllip-spacer"></div>
           <div class="fllip-letter"><span class="fl-big">P</span><span class="fl-word">Playground</span></div>
         </div>
       </div>
@@ -69,7 +75,7 @@ import Layout from '../layouts/Layout.astro';
         <p class="eco-desc" style="max-width:none; text-align:left;">Twelve weeks of embodied, participatory, healing-centered personal and collective futures development methodology.</p>
         <div class="eco-stats">
           <div class="eco-stat"><span class="eco-num">12</span><span class="eco-stat-label">Weeks</span></div>
-          <div class="eco-stat"><span class="eco-num">5</span><span class="eco-stat-label">Founding Questors</span></div>
+          <div class="eco-stat"><span class="eco-num">6</span><span class="eco-stat-label">Founding Questors</span></div>
           <div class="eco-stat"><span class="eco-num">7</span><span class="eco-stat-label">Literacies</span></div>
           <div class="eco-stat"><span class="eco-num">∞</span><span class="eco-stat-label">Possible Futures</span></div>
         </div>
@@ -77,27 +83,54 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
 
+    <div class="eco-card eco-card--fllip eco-card--educators">
+      <div class="eco-ring"></div>
+      <div class="eco-fllip-left">
+        <div class="eco-glyph">◎</div>
+        <div class="eco-tag">Now Taking Sign-Ups · Back to School 2026</div>
+        <h3 class="eco-label">Educators Cohort</h3>
+        <div class="eco-stats" style="flex-direction:column; gap:12px; margin-top:4px;">
+          <div class="eco-stat"><span class="eco-num">20</span><span class="eco-stat-label">Educators Max</span></div>
+          <div class="eco-stat"><span class="eco-num">ABCDEFG</span><span class="eco-stat-label">Futures Literacies Framework</span></div>
+          <div class="eco-stat"><span class="eco-num">Fall 2026</span><span class="eco-stat-label">Launch</span></div>
+        </div>
+      </div>
+      <div class="eco-fllip-right">
+        <p class="eco-desc" style="max-width:none; text-align:left;">A community of praxis for educators trying to fit hope and future transformation into systems built for the past. Classroom teachers, instructional coaches, curriculum designers, and school leaders — practicing futures literacy as a living discipline.</p>
+        <form class="eco-edu-form" name="educators-cohort" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="educators-cohort" />
+          <input class="eco-edu-input" type="text" name="name" placeholder="your name" required />
+          <input class="eco-edu-input" type="email" name="email" placeholder="your email" required />
+          <input class="eco-edu-input" type="text" name="role" placeholder="your role (e.g. 5th grade teacher, instructional coach...)" required />
+          <button class="btn-primary eco-edu-submit" type="submit">Raise My Hand →</button>
+        </form>
+        <p class="eco-edu-note">Spots are limited. Sign-up is an expression of interest, not a commitment.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ===== ABCDEFG LORE ===== -->
+<!-- ===== ABCDEFG FRAMEWORK ===== -->
 <section id="lore">
-  <div class="lore-grid">
-    <div class="lore-text">
-      <p class="section-eyebrow">The Framework · ABCDEFG</p>
-      <h2 class="section-title">Seven Literacies for a World in Transition</h2>
-      <p>Our futures are not missing. Our relationship to our futures has been <strong>crafted and commandeered</strong>. Decades of deficit-model education trained whole generations to react to crises rather than author alternatives — to manage uncertainty rather than inhabit it with skill.</p>
-      <p>Quest Labs builds the <strong>infrastructure for what comes next</strong>. Not in service of onto broken systems. Built from scratch, from the ground up, with community wisdom as the foundation.</p>
-      <p>The <strong>ABCDEFG Futures Literacies Framework</strong> emerged from <strong>545 contributions by 170 educators</strong> across two healing-centered gatherings. It is not a curriculum. It is a living methodology: seven interlocking capacities that, together, form a complete ecology of futures intelligence.</p>
-      <p>This is shadow work and emergence work. <em>Everything everywhere all at once.</em></p>
-      <a href="/science" class="btn-secondary" style="display:inline-block; margin-top:16px;">Explore the Science</a>
+  <div class="portal-abc-inner">
+    <p class="section-eyebrow">The Framework · ABCDEFG</p>
+    <h2 class="section-title">Seven Literacies for a World in Transition</h2>
+    <p class="portal-abc-sub">Most futures literacy frameworks center cognitive sense-making. The ABCDEFG Framework works across a fuller set of dimensions. Embodied futures asks something different of people. That pause is the point.</p>
+    <div class="abc-strip portal-abc-strip">
+      <div class="abc-cell"><span class="abc-letter">A</span><span class="abc-word">Affective</span><span class="abc-desc">Emotional intelligence · feeling states · mood · emotional processing</span></div>
+      <div class="abc-cell"><span class="abc-letter">B</span><span class="abc-word">Behavioral</span><span class="abc-desc">Actions · practices · habits · rituals · repeated behaviors</span></div>
+      <div class="abc-cell"><span class="abc-letter">C</span><span class="abc-word">Cognitive</span><span class="abc-desc">Thinking · analysis · knowledge · understanding · mental processing</span></div>
+      <div class="abc-cell"><span class="abc-letter">D</span><span class="abc-word">Dialectical</span><span class="abc-desc">Tensions · contradictions · both/and thinking · holding complexity</span></div>
+      <div class="abc-cell"><span class="abc-letter">E</span><span class="abc-word">Experiential</span><span class="abc-desc">Direct engagement · learning through experience · participatory practice</span></div>
+      <div class="abc-cell"><span class="abc-letter">F</span><span class="abc-word">Fun / Creative</span><span class="abc-desc">Play · imagination · joy · creativity · experimentation</span></div>
+      <div class="abc-cell"><span class="abc-letter">G</span><span class="abc-word">Generative</span><span class="abc-desc">Creating · midwiving new possibilities · hospicing toward transformation</span></div>
     </div>
-
-    <div class="lore-visual">
-      <div class="abcdefg-radial" id="radialChart"></div>
-    </div>
+    <a href="/science" class="btn-secondary" style="display:inline-block; margin-top:1.5rem;">Explore the Foundations</a>
   </div>
 </section>
+
+
 
 <!-- FOOTER -->
 <footer>
@@ -109,56 +142,12 @@ import Layout from '../layouts/Layout.astro';
     <ul class="footer-links">
       <li><a href="/program">FLIP</a></li>
       <li><a href="/science">ABCDEFG Framework</a></li>
-      <li><a href="#">Mosaics in the Making</a></li>
-      <li><a href="/science">Research</a></li>
+      <li><a href="/science">Foundations</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
   </div>
   <div class="footer-copy">© 2026 Quest Labs · Makēda · All futures reserved · Berlin & Beyond</div>
 </footer>
 
-<script is:inline>
-// ===== ABCDEFG RADIAL =====
-const radial = document.getElementById('radialChart');
-const letters = [
-  { l: 'A', w: 'Affective', color: '#e8621a', angle: -90 },
-  { l: 'B', w: 'Behavioral', color: '#d4a017', angle: -38 },
-  { l: 'C', w: 'Cognitive', color: '#0fb8a0', angle: 14 },
-  { l: 'D', w: 'Dialectical', color: '#c4446c', angle: 66 },
-  { l: 'E', w: 'Experiential', color: '#7c3aed', angle: 118 },
-  { l: 'F', w: 'Fun/Creative', color: '#0fb8a0', angle: 170 },
-  { l: 'G', w: 'Generative', color: '#d4a017', angle: 222 }
-];
-const radius = 118;
-letters.forEach(item => {
-  const rad = (item.angle * Math.PI) / 180;
-  const x = 160 + radius * Math.cos(rad);
-  const y = 160 + radius * Math.sin(rad);
-
-  const line = document.createElement('div');
-  line.className = 'radial-line';
-  const dist = radius - 40;
-  line.style.cssText = `width:${dist}px; transform-origin: left center; transform: rotate(${item.angle}deg); left: 160px; top: 160px; background: linear-gradient(90deg, rgba(${hexToRgb(item.color)},0.3) 0%, transparent 100%);`;
-  radial.appendChild(line);
-
-  const node = document.createElement('div');
-  node.className = 'radial-node';
-  node.style.cssText = `left: ${x}px; top: ${y}px; border-color: ${item.color}40; --node-transform: translate(-50%,-50%); transform: translate(-50%,-50%);`;
-  node.innerHTML = `<span class="nl" style="color:${item.color}">${item.l}</span><span class="nw">${item.w}</span>`;
-  node.title = item.w;
-  radial.appendChild(node);
-});
-
-const center = document.createElement('div');
-center.className = 'radial-center';
-center.textContent = 'FLF';
-radial.appendChild(center);
-
-function hexToRgb(hex) {
-  const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
-  return `${r},${g},${b}`;
-}
-
-</script>
 
 </Layout>

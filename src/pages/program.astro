@@ -13,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
   <h1 class="prog-hero-title">
     The<br><span class="prog-accent">Questor's</span><br>Invitational
   </h1>
-  <p class="prog-hero-sub">A 12-week creative & futures journey.<br>Come as far as you can.</p>
+  <p class="prog-hero-sub">A 12-week creative & futures journey.<br>You're invited to meet your future Self.</p>
   <div class="prog-hero-cta">
     <a href="#tiers" class="prog-btn prog-btn-primary">Choose Your Path</a>
     <a href="#journey" class="prog-btn prog-btn-ghost">Explore the Arc</a>
@@ -31,15 +31,46 @@ import Layout from '../layouts/Layout.astro';
 <section id="what">
   <div class="prog-reveal">
     <p class="prog-section-label">The Premise</p>
-    <h2 class="prog-section-title">Somewhere between 2026 and 2032,<br>there is a <em>portal</em>. <em>Are you ready to dive in?</em></h2>
-    
+    <h2 class="prog-section-title">Somewhere between 2026 and 2032,<br>there is a <em>portal</em>.</h2>
+
     <p class="prog-section-body">
-      This threshold is not to be crossed, but built… from both sides. <br><br>
-      Over 12 weeks, a founding cohort of 7 travelers move through 12 worlds. Each week the world changes: same crew, different physics. We keep what serves our future Self and collective. We discover what we’re building toward. And by the final session we will each hold <strong style = "color:rgba(255,255,255,0.9)">2032 Job Description</strong>, assembled piece by piece from 12 week of practices derived from morning pages, creative practices, and sandbox sessions. <br><br>
-      Not a resume. A living document. Equal parts manifesto, methodology, and spell. 
+      We’re not simply crossing the threshold. We’re building it.<br><br>
+      Over 12 weeks, a founding cohort of 7 travelers move through 12 worlds. Each week the world changes: same crew, different physics. We keep what serves our future Self and collective. We discover what we’re building toward.<br><br>
+      By the final session, each traveler holds a <strong style="color:rgba(255,255,255,0.9)">2032 Job Description</strong> assembled piece by piece across 12 weeks of morning pages, Artist Dates, and sandbox practice.<br><br>
+      Not a resume. A living document. Equal parts manifesto, methodology, and spell.
     </p>
   </div>
 </section>
+
+<!-- EARTH DAY LAUNCH + NEXT COHORT -->
+<div class="prog-earthday-section" id="cohort">
+  <div class="prog-earthday-inner">
+
+    <div class="prog-earthday-top prog-reveal">
+      <div class="prog-earth-orb">🌍</div>
+      <div class="prog-earthday-headline">
+        <p class="prog-section-label">Cohort 01 · Founding</p>
+        <h2 class="prog-section-title" style="text-align:left;">Launching<br><em>Earth Day.</em></h2>
+        <div class="prog-earthday-date">April 22, 2026</div>
+        <div class="prog-cohort-full-notice">
+          <span class="prog-full-badge">Cohort Full</span>
+          <span>The founding cohort is full.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="prog-next-ctas prog-reveal" style="transition-delay:0.2s">
+
+      <div class="prog-next-card">
+        <p class="prog-section-label" style="text-align:left;">Cohort 02 · Future</p>
+        <h3 class="prog-next-card-title">Save Your Spot<br>on the Next Cohort</h3>
+        <p class="prog-next-card-body">The next cohort opens after the founding cohort completes in 2026. Add your name now — you'll be first to know when the doors open.</p>
+        <button onclick="openContactModal()" class="prog-btn prog-btn-primary" style="margin-top:auto;cursor:pointer;border:none;font-family:inherit;">Reserve My Spot →</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <div class="prog-divider"></div>
 
@@ -312,7 +343,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="prog-journey-inner">
     <div class="prog-reveal">
       <h2 class="prog-section-title">Every stage.<br><em>A question waiting.</em></h2>
-      <p class="prog-section-body">The 12-week arc follows the Hero's Journey — but this version was lived first. The GQ Scholar Guide is the proof of concept. Click any stage to see the prompt.</p>
+      <p class="prog-section-body">12 weeks. 12 worlds. An arc that must be lived before it can be mapped. Click any stage to find your question.</p>
     </div>
 
     <div class="prog-journey-flow prog-reveal" style="transition-delay:0.15s;margin-top:3rem;">
@@ -330,28 +361,28 @@ import Layout from '../layouts/Layout.astro';
             <div class="prog-stage-num">01</div>
             <div class="prog-stage-content">
               <div class="prog-stage-name">Status Quo</div>
-              <div class="prog-stage-prompt">We meet our S/Hero in their ordinary world</div>
+              <div class="prog-stage-prompt">We meet our S/Hero in their ordinary world. What does ordinary actually cost you?</div>
             </div>
           </li>
           <li class="prog-journey-stage" onclick="openModal('stage-call')">
             <div class="prog-stage-num">02</div>
             <div class="prog-stage-content">
               <div class="prog-stage-name">Your Call to Adventure</div>
-              <div class="prog-stage-prompt">An adventure begins</div>
+              <div class="prog-stage-prompt">Something stirs. A pull you've been ignoring. What have you been pretending not to hear?</div>
             </div>
           </li>
           <li class="prog-journey-stage" onclick="openModal('stage-assistance')">
             <div class="prog-stage-num">03</div>
             <div class="prog-stage-content">
               <div class="prog-stage-name">Assistance</div>
-              <div class="prog-stage-prompt">Our S/Hero seeks support</div>
+              <div class="prog-stage-prompt">Our S/Hero looks around and finds they are not alone. Who shows up when you actually ask?</div>
             </div>
           </li>
           <li class="prog-journey-stage" onclick="openModal('stage-departure')">
             <div class="prog-stage-num">04</div>
             <div class="prog-stage-content">
               <div class="prog-stage-name">Departure</div>
-              <div class="prog-stage-prompt">Our S/Hero begins their adventure</div>
+              <div class="prog-stage-prompt">The familiar drops away. Our S/Hero begins. What are you finally willing to leave behind?</div>
             </div>
           </li>
         </ul>
@@ -370,28 +401,28 @@ import Layout from '../layouts/Layout.astro';
             <div class="prog-stage-num">05</div>
             <div class="prog-stage-content">
               <div class="prog-stage-name">Trials</div>
-              <div class="prog-stage-prompt">New challenges appear</div>
+              <div class="prog-stage-prompt">The road gets complicated. Old patterns show up in new costumes. What keeps finding you?</div>
             </div>
           </li>
           <li class="prog-journey-stage" onclick="openModal('stage-approach')">
             <div class="prog-stage-num">06</div>
             <div class="prog-stage-content">
               <div class="prog-stage-name">Approach</div>
-              <div class="prog-stage-prompt">Our S/Hero activates inner courage</div>
+              <div class="prog-stage-prompt">Our S/Hero gets quiet. Goes inward. What do you know that you haven't said out loud yet?</div>
             </div>
           </li>
           <li class="prog-journey-stage" onclick="openModal('stage-crisis')">
             <div class="prog-stage-num">07</div>
             <div class="prog-stage-content">
               <div class="prog-stage-name">Crisis</div>
-              <div class="prog-stage-prompt">The biggest trials are faced</div>
+              <div class="prog-stage-prompt">The biggest thing. The one you've been circling. What would change if you stopped managing it?</div>
             </div>
           </li>
           <li class="prog-journey-stage" onclick="openModal('stage-treasure')">
             <div class="prog-stage-num">08</div>
             <div class="prog-stage-content">
               <div class="prog-stage-name">Treasure</div>
-              <div class="prog-stage-prompt">Rewards are collected</div>
+              <div class="prog-stage-prompt">Something real surfaces. Hard-won and yours. What did you find that you weren't looking for?</div>
             </div>
           </li>
         </ul>
@@ -410,28 +441,28 @@ import Layout from '../layouts/Layout.astro';
             <div class="prog-stage-num">09</div>
             <div class="prog-stage-content">
               <div class="prog-stage-name">Result</div>
-              <div class="prog-stage-prompt">Our S/Hero reflects on the journey</div>
+              <div class="prog-stage-prompt">The arc begins to show its shape. Our S/Hero looks back. What looks different from here?</div>
             </div>
           </li>
           <li class="prog-journey-stage" onclick="openModal('stage-return')">
             <div class="prog-stage-num">10</div>
             <div class="prog-stage-content">
               <div class="prog-stage-name">Return</div>
-              <div class="prog-stage-prompt">Our S/Hero returns to their ordinary world</div>
+              <div class="prog-stage-prompt">The ordinary world again. Same address, different person. What can you see now that you couldn't before?</div>
             </div>
           </li>
           <li class="prog-journey-stage" onclick="openModal('stage-new-life')">
             <div class="prog-stage-num">11</div>
             <div class="prog-stage-content">
               <div class="prog-stage-name">New Life</div>
-              <div class="prog-stage-prompt">A new chapter begins</div>
+              <div class="prog-stage-prompt">A new chapter opens. Not because everything changed. Because you did. What are you ready to begin?</div>
             </div>
           </li>
           <li class="prog-journey-stage" onclick="openModal('stage-resolution')">
             <div class="prog-stage-num">12</div>
             <div class="prog-stage-content">
               <div class="prog-stage-name">Resolution</div>
-              <div class="prog-stage-prompt">A triumphant homecoming</div>
+              <div class="prog-stage-prompt">A triumphant homecoming. The 2032 Job Description complete. What version of yourself just walked through the door?</div>
             </div>
           </li>
         </ul>
@@ -502,74 +533,45 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </div>
 
-<!-- EARTH DAY LAUNCH + NEXT COHORT -->
-<div class="prog-earthday-section" id="cohort">
-  <div class="prog-earthday-inner">
-
-    <div class="prog-earthday-top prog-reveal">
-      <div class="prog-earth-orb">🌍</div>
-      <div class="prog-earthday-headline">
-        <p class="prog-section-label">Cohort 01 · Founding</p>
-        <h2 class="prog-section-title" style="text-align:left;">Launching<br><em>Earth Day.</em></h2>
-        <div class="prog-earthday-date">April 22, 2026</div>
-        <div class="prog-cohort-full-notice">
-          <span class="prog-full-badge">Cohort Full</span>
-          <span>The founding cohort is full.</span>
+<!-- BET ON OUR BECOMING -->
+<div class="prog-patrons-section">
+  <div class="prog-next-card prog-next-card--patrons prog-reveal">
+    <p class="prog-section-label" style="text-align:left;">Open Now · All Welcome</p>
+    <h3 class="prog-next-card-title">Bet on Our Becoming</h3>
+    <p class="prog-next-card-body">You don't have to wait for a cohort to be part of this. Choose how you show up.</p>
+    <div class="prog-patron-tiers">
+      <div class="prog-patron-tier">
+        <div class="prog-patron-header">
+          <span class="prog-patron-name">Witness</span>
+          <span class="prog-patron-price">Free</span>
         </div>
+        <div class="prog-patron-desc">watch it unfold. tune in. frequency is open.</div>
+      </div>
+      <div class="prog-patron-tier">
+        <div class="prog-patron-header">
+          <span class="prog-patron-name">Participant</span>
+          <span class="prog-patron-price">0–10 €/mo</span>
+        </div>
+        <div class="prog-patron-desc">show up to sandbox sessions. contribute to the garden.</div>
+      </div>
+      <div class="prog-patron-tier">
+        <div class="prog-patron-header">
+          <span class="prog-patron-name">Contributor</span>
+          <span class="prog-patron-price">25 €/mo</span>
+        </div>
+        <div class="prog-patron-desc">co-author credits. early tool access. research opt-in.</div>
+      </div>
+      <div class="prog-patron-tier prog-patron-tier--top">
+        <div class="prog-patron-header">
+          <span class="prog-patron-name">Steward</span>
+          <span class="prog-patron-price">100+ €/mo</span>
+        </div>
+        <div class="prog-patron-desc">named in publications. game design. help build.</div>
       </div>
     </div>
-
-    <div class="prog-next-ctas prog-reveal" style="transition-delay:0.2s">
-
-      <div class="prog-next-card">
-        <p class="prog-section-label" style="text-align:left;">Cohort 02 · Future</p>
-        <h3 class="prog-next-card-title">Save Your Spot<br>on the Next Cohort</h3>
-        <p class="prog-next-card-body">The next cohort opens after the founding cohort completes in 2026. Add your name now — you'll be first to know when the doors open.</p>
-        <button onclick="openContactModal()" class="prog-btn prog-btn-primary" style="margin-top:auto;cursor:pointer;border:none;font-family:inherit;">Reserve My Spot →</button>
-      </div>
-
-      <div class="prog-next-card prog-next-card--patrons">
-        <p class="prog-section-label" style="text-align:left;">Open Now · All Welcome</p>
-        <h3 class="prog-next-card-title">Bet on Our Becoming</h3>
-        <p class="prog-next-card-body">You don't have to wait for a cohort to be part of this. Choose how you show up.</p>
-        <div class="prog-patron-tiers">
-          <div class="prog-patron-tier">
-            <div class="prog-patron-header">
-              <span class="prog-patron-name">Witness</span>
-              <span class="prog-patron-price">Free</span>
-            </div>
-            <div class="prog-patron-desc">watch it unfold. tune in. frequency is open.</div>
-          </div>
-          <div class="prog-patron-tier">
-            <div class="prog-patron-header">
-              <span class="prog-patron-name">Participant</span>
-              <span class="prog-patron-price">0–10 €/mo</span>
-            </div>
-            <div class="prog-patron-desc">show up to sandbox sessions. contribute to the garden.</div>
-          </div>
-          <div class="prog-patron-tier">
-            <div class="prog-patron-header">
-              <span class="prog-patron-name">Contributor</span>
-              <span class="prog-patron-price">25 €/mo</span>
-            </div>
-            <div class="prog-patron-desc">co-author credits. early tool access. research opt-in.</div>
-          </div>
-          <div class="prog-patron-tier prog-patron-tier--top">
-            <div class="prog-patron-header">
-              <span class="prog-patron-name">Steward</span>
-              <span class="prog-patron-price">100+ €/mo</span>
-            </div>
-            <div class="prog-patron-desc">named in publications. game design. help build.</div>
-          </div>
-        </div>
-        <a href="#" class="prog-btn prog-btn-ghost" style="margin-top:auto;">Choose Your Role →</a>
-      </div>
-
-    </div>
+    <a href="#" class="prog-btn prog-btn-ghost" style="margin-top:auto;">Choose Your Role →</a>
   </div>
 </div>
-
-<div class="prog-divider"></div>
 
 <!-- CLOSING -->
 <div class="prog-closing-section">
