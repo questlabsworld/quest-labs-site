@@ -9,10 +9,9 @@ import Layout from '../layouts/Layout.astro';
 <!-- HERO -->
 <div class="prog-hero">
   <div class="prog-hero-bg"></div>
-  <p class="prog-hero-eyebrow">Quest Labs ✦ 2026</p>
-  <h1 class="prog-hero-title">
-    The<br><span class="prog-accent">Questor's</span><br>Invitational
-  </h1>
+  <p class="prog-hero-eyebrow">Futures Literacies Invitational Playground</p>
+  <h1 class="prog-hero-title prog-hero-title--flip">FLIP</h1>
+  <p class="prog-hero-subtitle">The Questor's Invitational</p>
   <p class="prog-hero-sub">A 12-week creative & futures journey.<br>You're invited to meet your future Self.</p>
   <div class="prog-hero-cta">
     <a href="#tiers" class="prog-btn prog-btn-primary">Choose Your Path</a>
@@ -61,14 +60,31 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="prog-next-ctas prog-reveal" style="transition-delay:0.2s">
 
-      <div class="prog-next-card">
-        <p class="prog-section-label" style="text-align:left;">Cohort 02 · Future</p>
-        <h3 class="prog-next-card-title">Save Your Spot<br>on the Next Cohort</h3>
-        <p class="prog-next-card-body">The next cohort opens after the founding cohort completes in 2026. Add your name now -you'll be first to know when the doors open.</p>
-        <button onclick="openContactModal()" class="prog-btn prog-btn-primary" style="margin-top:auto;cursor:pointer;border:none;font-family:inherit;">Reserve My Spot →</button>
-      </div>
-
     </div>
+  </div>
+</div>
+
+<!-- COHORT 02 WAITLIST -->
+<div class="prog-waitlist-section" id="waitlist">
+  <div class="prog-waitlist-inner prog-reveal">
+    <p class="prog-waitlist-eyebrow">Cohort 02 · Now Forming</p>
+    <h2 class="prog-waitlist-heading">Your spot is waiting.</h2>
+    <p class="prog-waitlist-body">Cohort 02 opens after the founding cohort completes. Add your name now. You'll be first through the door, before it opens publicly.</p>
+
+    <form class="prog-waitlist-form" id="waitlistForm" name="cohort-02-waitlist" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="cohort-02-waitlist" />
+      <input class="prog-waitlist-input" type="text" name="name" placeholder="your name" required />
+      <input class="prog-waitlist-input" type="email" name="email" placeholder="your email" required />
+      <textarea class="prog-waitlist-input prog-waitlist-textarea" name="navigating" rows="3" placeholder="what are you navigating right now?"></textarea>
+      <button class="prog-btn prog-btn-primary prog-waitlist-submit" type="submit">Reserve my spot in Cohort 02 →</button>
+    </form>
+
+    <div class="prog-waitlist-confirm" id="waitlistConfirm" style="display:none;">
+      <p class="prog-waitlist-confirm-msg">You're on the list. We'll find you when the portal opens. In the meantime — the Sandbox Sessions are open. Come play.</p>
+      <a href="https://luma.com/questlabs" class="prog-btn prog-btn-ghost" target="_blank" rel="noopener noreferrer">Find a Sandbox Session →</a>
+    </div>
+
+    <p class="prog-waitlist-note">No commitment. Just your name at the threshold.</p>
   </div>
 </div>
 
@@ -546,6 +562,7 @@ import Layout from '../layouts/Layout.astro';
           <span class="prog-patron-price">Free</span>
         </div>
         <div class="prog-patron-desc">watch it unfold. tune in. frequency is open.</div>
+        <a href="https://luma.com/questlabs" class="prog-btn prog-btn-ghost prog-patron-cta" target="_blank" rel="noopener noreferrer">Find a session →</a>
       </div>
       <div class="prog-patron-tier">
         <div class="prog-patron-header">
@@ -553,13 +570,15 @@ import Layout from '../layouts/Layout.astro';
           <span class="prog-patron-price">0–10 €/mo</span>
         </div>
         <div class="prog-patron-desc">show up to sandbox sessions. contribute to the garden.</div>
+        <a href="https://paypal.me/mosaicinthemaking/10EUR" class="prog-btn prog-btn-ghost prog-patron-cta" target="_blank" rel="noopener noreferrer">Contribute €10 →</a>
       </div>
-      <div class="prog-patron-tier">
+      <div class="prog-patron-tier prog-patron-tier--featured">
         <div class="prog-patron-header">
           <span class="prog-patron-name">Contributor</span>
           <span class="prog-patron-price">25 €/mo</span>
         </div>
         <div class="prog-patron-desc">co-author credits. early tool access. research opt-in.</div>
+        <a href="https://paypal.me/mosaicinthemaking/25EUR" class="prog-btn prog-btn-ghost prog-patron-cta" target="_blank" rel="noopener noreferrer">Contribute €25 →</a>
       </div>
       <div class="prog-patron-tier prog-patron-tier--top">
         <div class="prog-patron-header">
@@ -567,9 +586,13 @@ import Layout from '../layouts/Layout.astro';
           <span class="prog-patron-price">100+ €/mo</span>
         </div>
         <div class="prog-patron-desc">named in publications. game design. help build.</div>
+        <a href="https://paypal.me/mosaicinthemaking/100EUR" class="prog-btn prog-btn-ghost prog-patron-cta" target="_blank" rel="noopener noreferrer">Contribute €100 →</a>
+      </div>
+      <div class="prog-patron-tier prog-patron-tier--open">
+        <div class="prog-patron-desc">Or choose your own amount — every contribution keeps the door open.</div>
+        <a href="https://paypal.me/mosaicinthemaking" class="prog-btn prog-btn-ghost prog-patron-cta" target="_blank" rel="noopener noreferrer">Give what feels right →</a>
       </div>
     </div>
-    <a href="#" class="prog-btn prog-btn-ghost" style="margin-top:auto;">Choose Your Role →</a>
   </div>
 </div>
 
@@ -595,6 +618,18 @@ import Layout from '../layouts/Layout.astro';
 
 </Layout>
 <script is:inline>
+// ── WAITLIST FORM ──
+const waitlistForm = document.getElementById('waitlistForm');
+if (waitlistForm) {
+  waitlistForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(waitlistForm);
+    await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
+    waitlistForm.style.display = 'none';
+    document.getElementById('waitlistConfirm').style.display = 'block';
+  });
+}
+
 // ── SCROLL REVEAL ──
 const progReveals = document.querySelectorAll('.prog-reveal');
 const progObserver = new IntersectionObserver((entries) => {

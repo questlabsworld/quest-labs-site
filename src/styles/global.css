@@ -1391,6 +1391,55 @@ body {
     margin: 0;
   }
 
+  /* ========================
+     COHORT 02 BRIDGE
+     ======================== */
+  #cohort-bridge {
+    padding: 5rem 2rem;
+    border-top: 1px solid rgba(139, 116, 171, 0.2);
+    border-bottom: 1px solid rgba(139, 116, 171, 0.2);
+    background: radial-gradient(ellipse 80% 100% at 50% 50%, rgba(69, 49, 96, 0.18) 0%, transparent 70%);
+    text-align: center;
+  }
+
+  .cohort-bridge-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .cohort-bridge-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--prog-lavender, #b0a3c8);
+    margin-bottom: 1rem;
+    opacity: 0.7;
+  }
+
+  .cohort-bridge-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--gold-pale);
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .cohort-bridge-body {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .cohort-bridge-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   /* RESPONSIVE (index) */
   @media (max-width: 900px) {
     #hero, #futures-portal, #lore, #fllip, #ecosystem { padding: 80px 24px; }
@@ -2038,6 +2087,35 @@ body {
     line-height: 1.55;
   }
 
+  .sci-closing {
+    border-top: 1px solid var(--border-dim);
+    margin-top: 4rem;
+    padding: 3.5rem 0 4rem;
+  }
+
+  .sci-closing-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .sci-closing-body {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 560px;
+    margin-bottom: 2rem;
+  }
+
+  .sci-closing-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
   .crew-founding-note {
     font-size: 0.95em;
     color: var(--text-dim);
@@ -2271,6 +2349,24 @@ body {
   .prog-accent {
     font-style: italic;
     color: var(--prog-lavender);
+  }
+
+  .prog-hero-title--flip {
+    font-size: clamp(5rem, 18vw, 14rem);
+    letter-spacing: 0.12em;
+  }
+
+  .prog-hero-subtitle {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(240, 236, 248, 0.5);
+    margin-bottom: 1.25rem;
+    opacity: 0;
+    animation: progFadeUp 0.8s ease 0.5s forwards;
+    position: relative;
+    z-index: 2;
   }
 
   .prog-hero-sub {
@@ -2982,6 +3078,26 @@ body {
     border-color: rgba(139,116,171,0.2);
   }
 
+  .prog-patron-tier--featured {
+    border-color: rgba(212,160,23,0.35);
+    background: rgba(212,160,23,0.04);
+  }
+
+  .prog-patron-tier--featured .prog-patron-price { color: var(--gold); }
+
+  .prog-patron-tier--open {
+    border-color: rgba(139,116,171,0.08);
+    background: rgba(139,116,171,0.03);
+    font-style: italic;
+  }
+
+  .prog-patron-cta {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.72em;
+    padding: 6px 12px;
+  }
+
   .prog-patron-header {
     display: flex;
     justify-content: space-between;
@@ -3032,6 +3148,95 @@ body {
   .prog-patrons-section .prog-next-card--patrons {
     width: 100%;
     max-width: 100%;
+  }
+
+  /* ── COHORT 02 WAITLIST ── */
+  .prog-waitlist-section {
+    padding: 5rem 2rem;
+    background: rgba(69, 49, 96, 0.12);
+    border-top: 1px solid rgba(139, 116, 171, 0.35);
+    border-bottom: 1px solid rgba(139, 116, 171, 0.35);
+    box-shadow: inset 0 0 80px rgba(69, 49, 96, 0.15);
+  }
+
+  .prog-waitlist-inner {
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .prog-waitlist-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--prog-lavender);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .prog-waitlist-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--gold-pale);
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+
+  .prog-waitlist-body {
+    color: rgba(240, 236, 248, 0.7);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .prog-waitlist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .prog-waitlist-input {
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(139, 116, 171, 0.3);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+  }
+
+  .prog-waitlist-input:focus {
+    outline: none;
+    border-color: rgba(139, 116, 171, 0.7);
+  }
+
+  .prog-waitlist-input::placeholder { color: rgba(240, 236, 248, 0.25); }
+
+  .prog-waitlist-textarea { resize: vertical; }
+
+  .prog-waitlist-submit { align-self: flex-start; margin-top: 0.25rem; }
+
+  .prog-waitlist-confirm {
+    margin-bottom: 1.25rem;
+  }
+
+  .prog-waitlist-confirm-msg {
+    color: rgba(240, 236, 248, 0.75);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .prog-waitlist-note {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: rgba(240, 236, 248, 0.3);
+    margin: 0;
   }
 
   /* ── CLOSING ── */
