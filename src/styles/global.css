@@ -964,30 +964,33 @@ body {
   /* ABCDEFG RADIAL */
   .abcdefg-radial {
     position: relative;
-    width: 320px; height: 320px;
+    width: 480px; height: 480px;
   }
 
   .radial-center {
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 80px; height: 80px;
+    width: 120px; height: 120px;
     background: radial-gradient(circle, var(--teal-dark) 0%, var(--void) 70%);
     border: 1px solid var(--teal);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-family: 'Playfair Display', serif;
-    font-size: 11px;
+    font-size: 10px;
     color: var(--teal);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
+    text-align: center;
+    padding: 0 12px;
+    line-height: 1.4;
     z-index: 2;
   }
 
   .radial-node {
     position: absolute;
     top: 50%; left: 50%;
-    width: 52px; height: 52px;
-    margin: -26px 0 0 -26px;
+    width: 78px; height: 78px;
+    margin: -39px 0 0 -39px;
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     flex-direction: column;
@@ -999,8 +1002,8 @@ body {
   }
 
   .radial-node:hover { transform: var(--node-transform) scale(1.2) !important; }
-  .radial-node .nl { font-size: 1.1em; font-weight: 700; }
-  .radial-node .nw { font-size: 7px; font-family: 'Space Mono', monospace; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; color: var(--text-faint); margin-top: 1px; line-height: 1.2; max-width: 44px; }
+  .radial-node .nl { font-size: 1.3em; font-weight: 700; }
+  .radial-node .nw { font-size: 8px; font-family: 'Space Mono', monospace; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; color: var(--text-faint); margin-top: 2px; line-height: 1.2; max-width: 64px; }
 
   .radial-line {
     position: absolute;
@@ -1699,7 +1702,7 @@ body {
 
   .section-num {
     font-family: 'Space Mono', monospace;
-    font-size: 0.55rem;
+    font-size: 1.1rem;
     letter-spacing: 0.2em;
     color: var(--text-faint);
     text-transform: uppercase;

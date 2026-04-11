@@ -66,8 +66,8 @@ import Layout from '../layouts/Layout.astro';
     <div class="lore-grid">
       <div class="lore-text">
         <h2 class="section-title">Seven Literacies for a World in Transition</h2>
-        <p>Our relationship to our futures has been <strong>crafted and commandeered</strong>. Decades of deficit-model education trained whole generations to react to crises rather than author alternatives, to manage uncertainty rather than inhabit it with skill.</p>
-        <p>Quest Labs builds the <strong>infrastructure for what comes next</strong>. Not in service of onto broken systems. Built from scratch, from the ground up, with community wisdom as the foundation.</p>
+        <p>Our relationship to our futures has been <strong>crafted and commandeered</strong>. Decades of deficit-model education trained whole generations to react to crises rather than be the authors of alternative futures and to dance with uncertainty instead of trying to control the unprecedented.</p>
+        <p>Quest Labs builds the <strong>infrastructure for what comes next</strong> while crumbling systems meet their maker. Built from scratch, from the ground up, with community wisdom as the foundation.</p>
         <p>The <strong>ABCDEFG Futures Literacies Framework</strong> emerged from <strong>545 contributions by 170 educators</strong> across two healing-centered gatherings. It is not a curriculum. It is a living methodology: seven interlocking capacities that, together, form a complete ecology of futures intelligence.</p>
         <p>This is shadow work and emergence work. <em>Everything everywhere all at once.</em></p>
       </div>
@@ -84,6 +84,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="section-title">The practice</div>
     </div>
     <p class="lead">The framework emerged from lived experiences, not just theory behind a desk.</p>
+    <p>Most learning prepares you for a world that already existed. Participatory Action Learning and Action Research (PALAR) prepares you for what is arriving. You learn by moving, by reflecting, by moving again, with a cohort of people navigating the same uncertainty from different angles. The moment you are trying to meet becomes the curriculum. We learn what we need to learn by doing what needs to be done, together, and paying attention. That is the whole methodology.</p>
   </div>
 
   <!-- 04 DISTINCTLY QUEST LABS -->
@@ -121,7 +122,7 @@ import Layout from '../layouts/Layout.astro';
   <!-- CLOSING -->
   <div class="sci-closing">
     <h2 class="sci-closing-heading">The methodology is living. Come meet it.</h2>
-    <p class="sci-closing-body">The ABCDEFG framework, the tools, the lineage — these are not artifacts. They are practices in motion inside every FLIP cohort and every Sandbox Session.</p>
+    <p class="sci-closing-body">The ABCDEFG framework, the tools, the lineage: these are not artifacts. They are practices in motion inside every FLIP cohort and every Sandbox Session.</p>
     <div class="sci-closing-links">
       <a href="/program#waitlist" class="btn-primary">Join the FLIP waitlist →</a>
       <a href="https://luma.com/questlabs" class="btn-secondary" target="_blank" rel="noopener noreferrer">Find a Sandbox Session →</a>
@@ -142,15 +143,15 @@ const letters = [
   { l: 'F', w: 'Fun/Creative', color: '#0fb8a0', angle: 170 },
   { l: 'G', w: 'Generative', color: '#d4a017', angle: 222 }
 ];
-const radius = 118;
+const radius = 177;
 letters.forEach(item => {
   const rad = (item.angle * Math.PI) / 180;
-  const x = 160 + radius * Math.cos(rad);
-  const y = 160 + radius * Math.sin(rad);
+  const x = 240 + radius * Math.cos(rad);
+  const y = 240 + radius * Math.sin(rad);
   const line = document.createElement('div');
   line.className = 'radial-line';
-  const dist = radius - 40;
-  line.style.cssText = `width:${dist}px; transform-origin: left center; transform: rotate(${item.angle}deg); left: 160px; top: 160px; background: linear-gradient(90deg, rgba(${hexToRgb(item.color)},0.3) 0%, transparent 100%);`;
+  const dist = radius - 60;
+  line.style.cssText = `width:${dist}px; transform-origin: left center; transform: rotate(${item.angle}deg); left: 240px; top: 240px; background: linear-gradient(90deg, rgba(${hexToRgb(item.color)},0.3) 0%, transparent 100%);`;
   radial.appendChild(line);
   const node = document.createElement('div');
   node.className = 'radial-node';
@@ -161,12 +162,24 @@ letters.forEach(item => {
 });
 const center = document.createElement('div');
 center.className = 'radial-center';
-center.textContent = 'FLF';
+center.textContent = 'Futures Literacies';
 radial.appendChild(center);
 function hexToRgb(hex) {
   const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
   return `${r},${g},${b}`;
 }
 </script>
+
+<style>
+  /* Science page: stack lore-grid and center the radial chart */
+  .lore-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .lore-visual {
+    justify-content: center;
+    height: auto !important;
+    padding: 2rem 0;
+  }
+</style>
 
 </Layout>
