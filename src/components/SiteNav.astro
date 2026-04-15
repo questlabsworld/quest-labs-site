@@ -2,7 +2,7 @@
 const links = [
   { href: '/', label: 'Portal' },
   { href: '/program', label: 'Program' },
-  { href: '/science', label: 'Foundations' },
+  { href: '/foundations', label: 'Foundations' },
   { href: '/about', label: 'About' },
 ];
 const current = Astro.url.pathname;
@@ -29,7 +29,7 @@ const current = Astro.url.pathname;
       </li>
     ))}
     <li>
-      <button class="site-nav__link site-nav__contact" onclick="openContactModal()">Contact</button>
+      <a href="mailto:questlabs.world@proton.me" class="site-nav__link site-nav__contact">Contact</a>
     </li>
   </ul>
 </nav>
