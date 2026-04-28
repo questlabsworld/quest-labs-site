@@ -1603,7 +1603,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
     font-size: clamp(3rem, 8vw, 7rem);
-    line-height: 0.92;
+    line-height: 1.05;
     letter-spacing: -0.02em;
     margin-bottom: 0.5rem;
     text-transform: uppercase;

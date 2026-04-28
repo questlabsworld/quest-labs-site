@@ -16,6 +16,12 @@ import Layout from '../layouts/Layout.astro';
   <h1 class="hero-title">The Future Is Not<br>Predicted. It Is <span class="hero-highlight">Played.</span></h1>
   <p class="hero-sub">A living laboratory for futures literacy, healing-centered design, and the art of navigating what hasn't happened yet.</p>
 
+  <div style="display:flex; gap:2rem; flex-wrap:wrap; margin-top:1.5rem;">
+    <a href="/educators" style="font-size:13px; color:var(--color-muted, #9A90B8); text-decoration:none; border-bottom: 0.5px solid currentColor; padding-bottom:2px;">Educator or school leader →</a>
+    <a href="/program" style="font-size:13px; color:var(--color-muted, #9A90B8); text-decoration:none; border-bottom: 0.5px solid currentColor; padding-bottom:2px;">Ready to go deep →</a>
+    <a href="/foundations" style="font-size:13px; color:var(--color-muted, #9A90B8); text-decoration:none; border-bottom: 0.5px solid currentColor; padding-bottom:2px;">Researcher or funder →</a>
+  </div>
+
   <div class="scroll-hint">
     <div class="scroll-line"></div>
     <span>Scroll to Begin</span>
@@ -49,11 +55,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="eco-tag">Coming · Black Friday 2026</div>
       <h3 class="eco-label">The Black Menagerie</h3>
       <p class="eco-desc">A futures literacy card game rooted in Afroasian methodology - part game, part oracle, part mirror. Five creatures. Seventy-eight cards. Two editions: Think Cards for Humanity and an educator activity deck.</p>
-      <form class="eco-bm-form" name="black-menagerie" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="black-menagerie" />
-        <input class="eco-bm-input" type="email" name="email" placeholder="your email" required />
-        <button class="btn-primary eco-bm-submit" type="submit">Get Early Access →</button>
-      </form>
+      <a href="/black-menagerie" class="btn-primary">Get Early Access →</a>
       <p class="eco-bm-note">No spam. Just a heads up when the doors open.</p>
     </div>
 
@@ -96,13 +98,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="eco-fllip-right">
         <p class="eco-desc" style="max-width:none; text-align:left;">A community of praxis for educators trying to fit hope and future transformation into systems built for the past. Classroom teachers, instructional coaches, curriculum designers, and school leaders - join us to practice futures literacy as a living discipline in a playful way.</p>
-        <form class="eco-edu-form" name="educators-cohort" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="educators-cohort" />
-          <input class="eco-edu-input" type="text" name="name" placeholder="your name" required />
-          <input class="eco-edu-input" type="email" name="email" placeholder="your email" required />
-          <input class="eco-edu-input" type="text" name="role" placeholder="your role (e.g. 5th grade teacher, instructional coach...)" required />
-          <button class="btn-primary eco-edu-submit" type="submit">Raise My Hand →</button>
-        </form>
+        <a href="/educators" class="btn-primary" style="align-self:flex-start;">Raise My Hand →</a>
         <p class="eco-edu-note">Spots are limited. Sign-up is an expression of interest, not a commitment.</p>
       </div>
     </div>
