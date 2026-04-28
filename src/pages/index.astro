@@ -16,11 +16,12 @@ import Layout from '../layouts/Layout.astro';
   <h1 class="hero-title">The Future Is Not<br>Predicted. It Is <span class="hero-highlight">Played.</span></h1>
   <p class="hero-sub">A living laboratory for futures literacy, healing-centered design, and the art of navigating what hasn't happened yet.</p>
 
-  <div style="display:flex; gap:2rem; flex-wrap:wrap; margin-top:1.5rem;">
-    <a href="/educators" style="font-size:13px; color:var(--color-muted, #9A90B8); text-decoration:none; border-bottom: 0.5px solid currentColor; padding-bottom:2px;">Educator or school leader?</a>
-    <a href="/program" style="font-size:13px; color:var(--color-muted, #9A90B8); text-decoration:none; border-bottom: 0.5px solid currentColor; padding-bottom:2px;">Ready to go deep?</a>
-    <a href="/foundations" style="font-size:13px; color:var(--color-muted, #9A90B8); text-decoration:none; border-bottom: 0.5px solid currentColor; padding-bottom:2px;">Researcher or funder?</a>
-  </div>
+  <nav class="stakeholder-nav" aria-label="Find your path">
+    <a href="/educators">Educator or school leader?</a>
+    <a href="/program">Ready to go deep?</a>
+    <a href="/about#work-with-us">Bringing this to your org?</a>
+    <a href="/educators#sponsored">Funding futures work?</a>
+  </nav>
 
   <div class="scroll-hint">
     <div class="scroll-line"></div>
@@ -155,5 +156,33 @@ import Layout from '../layouts/Layout.astro';
   <div class="footer-copy">© 2026 Quest Labs · Makēda · All futures reserved · Berlin & Beyond</div>
 </footer>
 
+
+
+<style>
+  .stakeholder-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    margin-top: 1.75rem;
+  }
+  .stakeholder-nav a {
+    font-size: 13px;
+    color: #9A90B8;
+    text-decoration: none;
+    padding: 0 1rem;
+    line-height: 1;
+  }
+  .stakeholder-nav a:first-child {
+    padding-left: 0;
+  }
+  .stakeholder-nav a + a {
+    border-left: 1px solid rgba(154, 144, 184, 0.25);
+  }
+  .stakeholder-nav a:hover {
+    text-decoration: underline;
+    color: #b8b0d4;
+  }
+</style>
 
 </Layout>
