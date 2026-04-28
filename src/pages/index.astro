@@ -16,11 +16,11 @@ import Layout from '../layouts/Layout.astro';
   <h1 class="hero-title">The Future Is Not<br>Predicted. It Is <span class="hero-highlight">Played.</span></h1>
   <p class="hero-sub">A living laboratory for futures literacy, healing-centered design, and the art of navigating what hasn't happened yet.</p>
 
-  <nav class="stakeholder-nav" aria-label="Find your path">
+  <nav class="routing-strip" aria-label="Find your path">
     <a href="/educators">Educator or school leader?</a>
     <a href="/program">Ready to go deep?</a>
-    <a href="/about#work-with-us">Bringing this to your org?</a>
-    <a href="/educators#sponsored">Funding futures work?</a>
+    <a href="/about#work-with-us">Bringing this to your org or school?</a>
+    <a href="/educators#sponsored">Funding futures work that matters?</a>
   </nav>
 
   <div class="scroll-hint">
@@ -56,7 +56,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="eco-tag">Coming · Black Friday 2026</div>
       <h3 class="eco-label">The Black Menagerie</h3>
       <p class="eco-desc">A futures literacy card game rooted in Afroasian methodology - part game, part oracle, part mirror. Five creatures. Seventy-eight cards. Two editions: Think Cards for Humanity and an educator activity deck.</p>
-      <a href="/black-menagerie" class="btn-primary">Get Early Access →</a>
+      <a href="/black-menagerie" class="cta-secondary">Get Early Access →</a>
       <p class="eco-bm-note">No spam. Just a heads up when the doors open.</p>
     </div>
 
@@ -99,7 +99,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="eco-fllip-right">
         <p class="eco-desc" style="max-width:none; text-align:left;">A community of praxis for educators trying to fit hope and future transformation into systems built for the past. Classroom teachers, instructional coaches, curriculum designers, and school leaders - join us to practice futures literacy as a living discipline in a playful way.</p>
-        <a href="/educators" class="btn-primary" style="align-self:flex-start;">Raise My Hand →</a>
+        <a href="/educators" class="cta-primary" style="align-self:flex-start;">Raise My Hand →</a>
         <p class="eco-edu-note">Spots are limited. Sign-up is an expression of interest, not a commitment.</p>
       </div>
     </div>
@@ -139,6 +139,11 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
+<div class="page-bridge" style="max-width:860px; margin-left:auto; margin-right:auto; padding-left:2.5rem; padding-right:2.5rem;">
+  <p>Not sure where to start?</p>
+  <a href="https://lu.ma/questlabs" class="bridge-link">Find a Sandbox Session — open door, no commitment →</a>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -158,31 +163,5 @@ import Layout from '../layouts/Layout.astro';
 
 
 
-<style>
-  .stakeholder-nav {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0;
-    margin-top: 1.75rem;
-  }
-  .stakeholder-nav a {
-    font-size: 13px;
-    color: #9A90B8;
-    text-decoration: none;
-    padding: 0 1rem;
-    line-height: 1;
-  }
-  .stakeholder-nav a:first-child {
-    padding-left: 0;
-  }
-  .stakeholder-nav a + a {
-    border-left: 1px solid rgba(154, 144, 184, 0.25);
-  }
-  .stakeholder-nav a:hover {
-    text-decoration: underline;
-    color: #b8b0d4;
-  }
-</style>
 
 </Layout>
