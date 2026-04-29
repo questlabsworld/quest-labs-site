@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Quest Labs: The Black Menagerie">
+
+<div class="bm-page">
+
+  <div class="bm-hero">
+    <div class="bm-eyebrow">Quest Labs · Signature Tool · Coming Black Friday 2026</div>
+    <h1 class="bm-title">The Black<br>Menagerie</h1>
+    <p class="bm-sub">A futures literacy card game: part game, part oracle, part mirror.<br>Five creatures. Seventy-eight cards. Two editions.</p>
+    <div class="bm-badge">Black Friday · November 2026</div>
+  </div>
+
+  <div class="bm-creatures">
+    <div class="bm-section-label">The Five Archetypes</div>
+    <h2 class="bm-section-heading">Meet the Menagerie</h2>
+    <p class="bm-section-sub">Each creature holds a different relationship with uncertainty, emergence, and what wants to be born. You will recognize yourself in them. You will grow into the others.</p>
+
+    <div class="bm-grid">
+      <div class="bm-card">
+        <img src="/black-swan.png" alt="Black Swan" class="bm-img" />
+        <h3 class="bm-creature-name">Black Swan</h3>
+        <p class="bm-creature-q">What change is coming that we have not named yet?</p>
+      </div>
+      <div class="bm-card">
+        <img src="/black-elephant.png" alt="Black Elephant" class="bm-img" />
+        <h3 class="bm-creature-name">Black Elephant</h3>
+        <p class="bm-creature-q">What do we all know but have not spoken aloud?</p>
+      </div>
+      <div class="bm-card">
+        <img src="/black-jellyfish.png" alt="Black Jellyfish" class="bm-img" />
+        <h3 class="bm-creature-name">Black Jellyfish</h3>
+        <p class="bm-creature-q">What are we feeling in our bodies about what is next?</p>
+      </div>
+      <div class="bm-card">
+        <img src="/black-marsh-turtle.png" alt="Black Marsh Turtle" class="bm-img" />
+        <h3 class="bm-creature-name">Black Marsh Turtle</h3>
+        <p class="bm-creature-q">What do we need to slow down with? Where is rest calling?</p>
+      </div>
+      <div class="bm-card">
+        <img src="/black-sheep.png" alt="Black Sheep" class="bm-img" />
+        <h3 class="bm-creature-name">Black Sheep</h3>
+        <p class="bm-creature-q">What playful disruption wants to emerge?</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bm-editions">
+    <div class="bm-section-label">Two Editions</div>
+    <div class="bm-editions-grid">
+      <div class="bm-edition">
+        <h3>Think Cards for Humanity</h3>
+        <p>The original deck. Futures signals, provocations, and navigational questions for anyone trying to think clearly about what is coming and what to do about it.</p>
+      </div>
+      <div class="bm-edition">
+        <h3>Educator Activity Deck</h3>
+        <p>Adapted for classroom and staffroom use. The same five archetypes, designed for facilitation in educational contexts. Built alongside Flip the Script.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bm-lives">
+    <div class="bm-section-label">Where It Lives Now</div>
+    <h2 class="bm-section-heading">Already in the Room</h2>
+    <p class="bm-lives-text">The card game is not out yet, but the creatures are already in the room. The Black Menagerie is a navigational lens inside every FLIP cohort and Sandbox Session. Come meet it in practice before it lands in your hands.</p>
+    <div class="cta-group" style="justify-content:center; margin-top:2rem;">
+      <a href="https://lu.ma/questlabs" class="cta-primary" target="_blank" rel="noopener noreferrer">Find a Sandbox Session</a>
+      <a href="/program" class="cta-secondary">Explore FLIP</a>
+    </div>
+  </div>
+
+  <div class="bm-access">
+    <h2 class="bm-access-heading">Get Early Access</h2>
+    <p class="bm-access-sub">No spam. Just a note when pre-orders go live. Black Friday 2026.</p>
+    <form class="bm-form" onsubmit="handleBMSubmit(event)">
+      <input type="email" id="bm-email" placeholder="Your email" required class="bm-input" />
+      <button type="submit" class="cta-primary" id="bm-btn">Notify Me</button>
+    </form>
+    <p class="bm-form-note" id="bm-msg"></p>
+  </div>
+
+  <div class="page-bridge" style="max-width:860px; margin-left:auto; margin-right:auto; padding-left:2.5rem; padding-right:2.5rem;">
+    <p>Already in the ecosystem?</p>
+    <a href="/educators" class="bridge-link">Educators: the creatures are your navigational lens in Flip the Script</a>
+    <a href="/foundations" class="bridge-link" style="margin-top:0.5rem;">See the theoretical lineage behind the archetypes</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Quest Labs</div>
+      <div class="footer-tagline">Healing-Centered Futures</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="/program">FLIP</a></li>
+      <li><a href="/educators">Educators</a></li>
+      <li><a href="/foundations">Foundations</a></li>
+      <li><a href="/black-menagerie">Black Menagerie</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://mosaiclifecoaching.co" target="_blank" rel="noopener noreferrer">Mosaics in the Making</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">2026 Quest Labs · Makeda · All futures reserved · Berlin &amp; Beyond</div>
+</footer>
+
+</Layout>
+
+<script is:inline>
+function handleBMSubmit(e) {
+  e.preventDefault();
+  document.getElementById('bm-btn').textContent = 'On the list';
+  document.getElementById('bm-btn').disabled = true;
+  document.getElementById('bm-msg').textContent = 'You will hear from us when pre-orders open.';
+}
+</script>
+
+<style>
+  .bm-page {
+    --bm-violet: #6B3FA0;
+    --bm-violet-mid: #8B5CC8;
+    --bm-violet-light: #B48FE0;
+    --bm-lavender: #C4A8E8;
+    padding-top: 1rem;
+  }
+
+  .bm-hero { text-align:center; padding:6rem 2rem 4rem; }
+  .bm-eyebrow { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--bm-violet-light); margin-bottom:1.25rem; opacity:0; animation:progFadeUp 0.8s ease 0.2s forwards; }
+  .bm-title { font-family:'Cinzel',serif; font-weight:900; font-size:clamp(3rem,8vw,7rem); letter-spacing:0.06em; text-transform:uppercase; color:var(--bm-lavender); line-height:1.05; margin-bottom:1.25rem; opacity:0; animation:progFadeUp 0.8s ease 0.4s forwards; }
+  .bm-sub { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1rem,2vw,1.3rem); color:var(--text-dim); max-width:580px; margin:0 auto 1.5rem; line-height:1.6; opacity:0; animation:progFadeUp 0.8s ease 0.6s forwards; }
+  .bm-badge { display:inline-block; font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--bm-violet-light); border:0.5px solid rgba(180,143,224,0.4); padding:0.4rem 1rem; border-radius:2px; margin-top:0.5rem; }
+
+  .bm-creatures, .bm-editions, .bm-lives, .bm-access { max-width:1060px; margin:0 auto; padding:4rem 2.5rem; border-top:0.5px solid var(--border-dim); }
+  .bm-section-label { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--bm-violet-light); margin-bottom:0.75rem; }
+  .bm-section-heading { font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,4vw,3rem); font-weight:500; color:var(--text); margin-bottom:1rem; }
+  .bm-section-sub { color:var(--text-dim); font-size:1rem; line-height:1.8; max-width:680px; margin-bottom:2.5rem; }
+
+  .bm-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1.5rem; }
+  .bm-card { background:rgba(107,63,160,0.05); border:0.5px solid rgba(107,63,160,0.2); border-radius:4px; overflow:hidden; transition:border-color 0.2s; }
+  .bm-card:hover { border-color:rgba(180,143,224,0.4); }
+  .bm-img { width:100%; aspect-ratio:1/1; object-fit:cover; display:block; }
+  .bm-creature-name { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500; color:var(--bm-lavender); padding:0.75rem 1rem 0.25rem; }
+  .bm-creature-q { font-style:italic; font-size:0.85rem; color:var(--text-dim); padding:0 1rem 1rem; line-height:1.6; }
+
+  .bm-editions-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1.5rem; }
+  .bm-edition { background:rgba(107,63,160,0.05); border:0.5px solid rgba(107,63,160,0.2); border-radius:4px; padding:1.75rem; }
+  .bm-edition h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:500; color:var(--bm-lavender); margin-bottom:0.75rem; }
+  .bm-edition p { color:var(--text-dim); font-size:0.9rem; line-height:1.7; }
+
+  .bm-lives { text-align:center; }
+  .bm-lives-text { color:var(--text-dim); font-size:1rem; line-height:1.8; max-width:640px; margin:0 auto; }
+
+  .bm-access { text-align:center; }
+  .bm-access-heading { font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:500; color:var(--text); margin-bottom:0.75rem; }
+  .bm-access-sub { color:var(--text-dim); font-size:0.95rem; margin-bottom:1.5rem; }
+  .bm-form { display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap; }
+  .bm-input { background:rgba(255,255,255,0.03); border:0.5px solid var(--border-dim); border-radius:2px; padding:0.75rem 1rem; color:var(--text); font-family:'Inter',sans-serif; font-size:0.9rem; min-width:260px; outline:none; }
+  .bm-input:focus { border-color:rgba(107,63,160,0.5); }
+  .bm-form-note { color:var(--bm-violet-light); font-size:0.85rem; margin-top:0.75rem; font-style:italic; }
+
+  @media (max-width: 640px) {
+    .bm-editions-grid { grid-template-columns: 1fr; }
+    .bm-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

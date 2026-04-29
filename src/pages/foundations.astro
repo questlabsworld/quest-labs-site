@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Quest Labs — Foundations">
+<Layout title="Quest Labs: Foundations">
 
 <div class="page">
 
@@ -10,7 +10,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="cover">
     <div class="cover-rule"></div>
     <div class="cover-eyebrow">Quest Labs · 2026</div>
-    <div class="cover-title">Foundations.</div>
+    <div class="cover-title">Foundations<span class="cover-dot">.</span></div>
     <div class="cover-sub">Where this comes from, what holds it together, and what makes it distinctly Quest Labs.</div>
   </div>
 
@@ -77,7 +77,46 @@ import Layout from '../layouts/Layout.astro';
         <p>This is shadow work and emergence work. <em>Everything everywhere all at once.</em></p>
       </div>
       <div class="lore-visual">
-        <div class="abcdefg-radial" id="radialChart"></div>
+        <svg
+          class="abcdefg-svg"
+          viewBox="0 0 700 700"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="ABCDEFG Futures Literacies: seven capacities in a circle"
+        >
+          <circle cx="350" cy="350" r="200" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" stroke-dasharray="4 8"/>
+          <line x1="350" y1="350" x2="350" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+          <line x1="350" y1="350" x2="506" y2="225" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+          <line x1="350" y1="350" x2="545" y2="395" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+          <line x1="350" y1="350" x2="437" y2="530" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+          <line x1="350" y1="350" x2="263" y2="530" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+          <line x1="350" y1="350" x2="155" y2="395" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+          <line x1="350" y1="350" x2="194" y2="225" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+          <circle cx="350" cy="350" r="82" fill="rgba(10,10,15,0.9)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+          <text x="350" y="342" text-anchor="middle" font-size="13" font-family="Inter, sans-serif" font-weight="300" fill="rgba(255,255,255,0.45)" letter-spacing="0.15em">FUTURES</text>
+          <text x="350" y="362" text-anchor="middle" font-size="13" font-family="Inter, sans-serif" font-weight="300" fill="rgba(255,255,255,0.45)" letter-spacing="0.15em">LITERACIES</text>
+          <circle cx="350" cy="150" r="66" fill="rgba(10,10,15,0.92)" stroke="#e8621a" stroke-width="1.5" stroke-opacity="0.85"/>
+          <text x="350" y="145" text-anchor="middle" dominant-baseline="central" font-size="38" font-family="Cormorant Garamond, serif" font-weight="500" fill="#e8621a">A</text>
+          <text x="350" y="175" text-anchor="middle" font-size="11" font-family="Inter, sans-serif" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="0.1em">AFFECTIVE</text>
+          <circle cx="506" cy="225" r="66" fill="rgba(10,10,15,0.92)" stroke="#d4a017" stroke-width="1.5" stroke-opacity="0.85"/>
+          <text x="506" y="220" text-anchor="middle" dominant-baseline="central" font-size="38" font-family="Cormorant Garamond, serif" font-weight="500" fill="#d4a017">B</text>
+          <text x="506" y="250" text-anchor="middle" font-size="11" font-family="Inter, sans-serif" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="0.1em">BEHAVIORAL</text>
+          <circle cx="545" cy="395" r="66" fill="rgba(10,10,15,0.92)" stroke="#0fb8a0" stroke-width="1.5" stroke-opacity="0.85"/>
+          <text x="545" y="390" text-anchor="middle" dominant-baseline="central" font-size="38" font-family="Cormorant Garamond, serif" font-weight="500" fill="#0fb8a0">C</text>
+          <text x="545" y="420" text-anchor="middle" font-size="11" font-family="Inter, sans-serif" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="0.1em">COGNITIVE</text>
+          <circle cx="437" cy="530" r="66" fill="rgba(10,10,15,0.92)" stroke="#c4446c" stroke-width="1.5" stroke-opacity="0.85"/>
+          <text x="437" y="525" text-anchor="middle" dominant-baseline="central" font-size="38" font-family="Cormorant Garamond, serif" font-weight="500" fill="#c4446c">D</text>
+          <text x="437" y="555" text-anchor="middle" font-size="11" font-family="Inter, sans-serif" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="0.1em">DIALECTICAL</text>
+          <circle cx="263" cy="530" r="66" fill="rgba(10,10,15,0.92)" stroke="#7c3aed" stroke-width="1.5" stroke-opacity="0.85"/>
+          <text x="263" y="525" text-anchor="middle" dominant-baseline="central" font-size="38" font-family="Cormorant Garamond, serif" font-weight="500" fill="#7c3aed">E</text>
+          <text x="263" y="555" text-anchor="middle" font-size="11" font-family="Inter, sans-serif" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="0.1em">EXPERIENTIAL</text>
+          <circle cx="155" cy="395" r="66" fill="rgba(10,10,15,0.92)" stroke="#2dd4bf" stroke-width="1.5" stroke-opacity="0.85"/>
+          <text x="155" y="390" text-anchor="middle" dominant-baseline="central" font-size="38" font-family="Cormorant Garamond, serif" font-weight="500" fill="#2dd4bf">F</text>
+          <text x="155" y="420" text-anchor="middle" font-size="11" font-family="Inter, sans-serif" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="0.1em">FUN / CREATIVE</text>
+          <circle cx="194" cy="225" r="66" fill="rgba(10,10,15,0.92)" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.85"/>
+          <text x="194" y="220" text-anchor="middle" dominant-baseline="central" font-size="38" font-family="Cormorant Garamond, serif" font-weight="500" fill="#f59e0b">G</text>
+          <text x="194" y="250" text-anchor="middle" font-size="11" font-family="Inter, sans-serif" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="0.1em">GENERATIVE</text>
+        </svg>
       </div>
     </div>
   </div>
@@ -143,55 +182,43 @@ import Layout from '../layouts/Layout.astro';
 
 </div><!-- end .page -->
 
-<script is:inline>
-// ===== ABCDEFG RADIAL =====
-const radial = document.getElementById('radialChart');
-const letters = [
-  { l: 'A', w: 'Affective', color: '#e8621a', angle: -90 },
-  { l: 'B', w: 'Behavioral', color: '#d4a017', angle: -38 },
-  { l: 'C', w: 'Cognitive', color: '#0fb8a0', angle: 14 },
-  { l: 'D', w: 'Dialectical', color: '#c4446c', angle: 66 },
-  { l: 'E', w: 'Experiential', color: '#7c3aed', angle: 118 },
-  { l: 'F', w: 'Fun/Creative', color: '#0fb8a0', angle: 170 },
-  { l: 'G', w: 'Generative', color: '#d4a017', angle: 222 }
-];
-const radius = 177;
-letters.forEach(item => {
-  const rad = (item.angle * Math.PI) / 180;
-  const x = 240 + radius * Math.cos(rad);
-  const y = 240 + radius * Math.sin(rad);
-  const line = document.createElement('div');
-  line.className = 'radial-line';
-  const dist = radius - 60;
-  line.style.cssText = `width:${dist}px; transform-origin: left center; transform: rotate(${item.angle}deg); left: 240px; top: 240px; background: linear-gradient(90deg, rgba(${hexToRgb(item.color)},0.3) 0%, transparent 100%);`;
-  radial.appendChild(line);
-  const node = document.createElement('div');
-  node.className = 'radial-node';
-  node.style.cssText = `left: ${x}px; top: ${y}px; border-color: ${item.color}40; --node-transform: translate(-50%,-50%); transform: translate(-50%,-50%);`;
-  node.innerHTML = `<span class="nl" style="color:${item.color}">${item.l}</span><span class="nw">${item.w}</span>`;
-  node.title = item.w;
-  radial.appendChild(node);
-});
-const center = document.createElement('div');
-center.className = 'radial-center';
-center.textContent = 'Futures Literacies';
-radial.appendChild(center);
-function hexToRgb(hex) {
-  const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
-  return `${r},${g},${b}`;
-}
-</script>
+
 
 <style>
-  /* Science page: stack lore-grid and center the radial chart */
-  .lore-grid {
-    grid-template-columns: 1fr !important;
+  .cover-title {
+    white-space: nowrap;
+    font-size: clamp(2.8rem, 10vw, 8rem) !important;
+    line-height: 1 !important;
+    overflow: visible;
   }
-  .lore-visual {
-    justify-content: center;
-    height: auto !important;
-    padding: 2rem 0;
+  .cover-dot { display: inline; }
+  .page { overflow-x: hidden; }
+  .lore-grid { grid-template-columns: 1fr !important; gap: 3rem; }
+  .lore-visual { justify-content: center; height: auto !important; padding: 1rem 0 2rem; display: flex; }
+  .abcdefg-svg { width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto; overflow: visible; }
+  @media (max-width: 640px) {
+    .cover-title { white-space: normal; font-size: clamp(2.5rem, 14vw, 5rem) !important; }
+    .abcdefg-svg { max-width: 100%; }
   }
 </style>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Quest Labs</div>
+      <div class="footer-tagline">Healing-Centered Futures</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="/program">FLIP</a></li>
+      <li><a href="/educators">Educators</a></li>
+      <li><a href="/foundations">Foundations</a></li>
+      <li><a href="/black-menagerie">Black Menagerie</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://mosaiclifecoaching.co" target="_blank" rel="noopener noreferrer">Mosaics in the Making</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">2026 Quest Labs · Makeda · All futures reserved · Berlin &amp; Beyond</div>
+</footer>
 
 </Layout>

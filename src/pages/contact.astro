@@ -1,0 +1,152 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Quest Labs: Contact">
+
+<div class="contact-page">
+
+  <div class="contact-hero">
+    <div class="contact-eyebrow">Quest Labs · Get in Touch</div>
+    <h1 class="contact-title">Say Hello</h1>
+    <p class="contact-sub">Whether you're bringing this to your school, your org, or just curious what is possible, the door is open.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-context">
+      <div class="context-block">
+        <div class="context-label">For schools and districts</div>
+        <p>Custom sandbox sessions, Sarkar Sandbox facilitation, STEEP Bingo for staff development, futures literacy workshops. Built around what your educators actually need.</p>
+      </div>
+      <div class="context-block">
+        <div class="context-label">For organizations</div>
+        <p>Organizational futures research, participatory foresight facilitation, leadership coaching, and custom futures literacy experiences via Mosaics in the Making.</p>
+      </div>
+      <div class="context-block">
+        <div class="context-label">As an individual</div>
+        <p>Ready to go deep? Join a <a href="/program" class="inline-link">FLIP cohort</a> or the <a href="/educators" class="inline-link">Flip the Script educators cohort</a>. Cohort 02 is forming now.</p>
+      </div>
+      <div class="context-block">
+        <div class="context-label">For researchers and funders</div>
+        <p>Collaboration inquiries, sponsored seats in Flip the Script, and partnership conversations welcome. <a href="https://lu.ma/questlabs" class="inline-link" target="_blank">Or start with a Sandbox Session.</a></p>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+            class="contact-form" id="contactForm" onsubmit="handleContact(event)">
+        <input type="hidden" name="form-name" value="contact" />
+        <p style="display:none;"><label>Skip: <input name="bot-field" /></label></p>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="c-name">Your name</label>
+            <input type="text" id="c-name" name="name" placeholder="How you'd like to be called" required />
+          </div>
+          <div class="field">
+            <label for="c-email">Your email</label>
+            <input type="email" id="c-email" name="email" placeholder="Where we can reach you" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="c-subject">What brings you here?</label>
+          <select id="c-subject" name="subject" required>
+            <option value="" disabled selected>Choose one</option>
+            <option value="school">I'm bringing this to a school or district</option>
+            <option value="org">I'm bringing this to an organization</option>
+            <option value="flip">I'm interested in the FLIP cohort (individual)</option>
+            <option value="educators">I'm interested in Flip the Script (educators cohort)</option>
+            <option value="sponsor">I want to sponsor a seat</option>
+            <option value="research">Research or funding collaboration</option>
+            <option value="sandbox">I just want to find a Sandbox Session</option>
+            <option value="other">Something else entirely</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="c-msg">Tell me more</label>
+          <textarea id="c-msg" name="message" rows="5" placeholder="What's the context? What are you hoping for?"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="c-org">Organization or school (optional)</label>
+          <input type="text" id="c-org" name="organization" placeholder="Where you're working from" />
+        </div>
+
+        <button type="submit" class="cta-primary" id="contact-btn">Send it</button>
+        <p class="form-note" id="contact-msg">We'll get back to you within a few days.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="page-bridge" style="max-width:860px; margin-left:auto; margin-right:auto; padding-left:2.5rem; padding-right:2.5rem;">
+    <p>Not ready to reach out yet?</p>
+    <a href="https://lu.ma/questlabs" class="bridge-link">Find a Sandbox Session first, open door, no commitment</a>
+    <a href="/foundations" class="bridge-link" style="margin-top:0.5rem;">Read the Foundations to see where this comes from</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Quest Labs</div>
+      <div class="footer-tagline">Healing-Centered Futures</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="/program">FLIP</a></li>
+      <li><a href="/educators">Educators</a></li>
+      <li><a href="/foundations">Foundations</a></li>
+      <li><a href="/black-menagerie">Black Menagerie</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="https://mosaiclifecoaching.co" target="_blank" rel="noopener noreferrer">Mosaics in the Making</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">2026 Quest Labs · Makeda · All futures reserved · Berlin &amp; Beyond</div>
+</footer>
+
+</Layout>
+
+<script is:inline>
+function handleContact(e) {
+  setTimeout(() => {
+    document.getElementById('contact-btn').textContent = 'Sent';
+    document.getElementById('contact-btn').disabled = true;
+    document.getElementById('contact-msg').textContent = 'Got it. Makeda will be in touch within a few days.';
+    document.getElementById('contact-msg').style.color = 'var(--violet-light, #B48FE0)';
+  }, 100);
+}
+</script>
+
+<style>
+  .contact-page { padding-top:1rem; }
+  .contact-hero { text-align:center; padding:6rem 2rem 3rem; }
+  .contact-eyebrow { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--teal); margin-bottom:1.25rem; opacity:0; animation:progFadeUp 0.8s ease 0.2s forwards; }
+  .contact-title { font-family:'Cinzel',serif; font-weight:900; font-size:clamp(2.5rem,6vw,5rem); letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-pale); margin-bottom:1rem; line-height:1.1; opacity:0; animation:progFadeUp 0.8s ease 0.4s forwards; }
+  .contact-sub { font-style:italic; font-size:1.1rem; color:var(--text-dim); max-width:520px; margin:0 auto; line-height:1.7; opacity:0; animation:progFadeUp 0.8s ease 0.6s forwards; }
+  .contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:4rem; max-width:1060px; margin:4rem auto; padding:0 2.5rem; align-items:start; }
+  .contact-context { display:flex; flex-direction:column; gap:2rem; border-right:0.5px solid var(--border-dim); padding-right:3rem; }
+  .context-label { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; }
+  .context-block p { color:var(--text-dim); font-size:0.9rem; line-height:1.7; margin:0; }
+  .inline-link { color:var(--teal); text-decoration:none; border-bottom:0.5px solid rgba(142,142,154,0.3); }
+  .inline-link:hover { color:var(--gold); }
+  .contact-form-wrap { padding-left:1rem; }
+  .contact-form { display:flex; flex-direction:column; gap:1.5rem; }
+  .field-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .field { display:flex; flex-direction:column; gap:0.5rem; }
+  .field label { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-dim); }
+  .field input, .field textarea, .field select { background:rgba(255,255,255,0.03); border:0.5px solid var(--border-dim); border-radius:2px; padding:0.75rem 1rem; color:var(--text); font-family:'Inter',sans-serif; font-size:0.9rem; font-weight:300; outline:none; width:100%; box-sizing:border-box; transition:border-color 0.2s; }
+  .field select { cursor:pointer; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235C5578' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; padding-right:2.5rem; }
+  .field select option { background:#0d0d14; color:var(--text); }
+  .field input:focus, .field textarea:focus, .field select:focus { border-color:rgba(107,63,160,0.6); }
+  .field textarea { resize:vertical; min-height:120px; }
+  .form-note { font-size:0.8rem; color:var(--text-dim); margin:0; font-style:italic; }
+  @media (max-width:768px) {
+    .contact-grid { grid-template-columns:1fr; gap:3rem; }
+    .contact-context { border-right:none; border-bottom:0.5px solid var(--border-dim); padding-right:0; padding-bottom:2rem; }
+    .contact-form-wrap { padding-left:0; }
+    .field-row { grid-template-columns:1fr; }
+  }
+</style>
