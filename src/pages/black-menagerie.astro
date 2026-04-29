@@ -15,7 +15,8 @@ import Layout from '../layouts/Layout.astro';
 
   <div class="bm-creatures">
     <div class="bm-section-label">The Five Archetypes</div>
-    <h2 class="bm-section-heading">Meet the Menagerie</h2>
+    <h2 class="bm-section-heading">Meet the Black Menagerie</h2>
+    <p class="bm-decolonial">A decolonial, feminist extension of the Menagerie of postnormal potentialities (Sardar &amp; Sweeney, 2016)</p>
     <p class="bm-section-sub">Each creature holds a different relationship with uncertainty, emergence, and what wants to be born. You will recognize yourself in them. You will grow into the others.</p>
 
     <div class="bm-grid">
@@ -136,6 +137,7 @@ function handleBMSubmit(e) {
   .bm-creatures, .bm-editions, .bm-lives, .bm-access { max-width:1060px; margin:0 auto; padding:4rem 2.5rem; border-top:0.5px solid var(--border-dim); }
   .bm-section-label { font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--bm-violet-light); margin-bottom:0.75rem; }
   .bm-section-heading { font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,4vw,3rem); font-weight:500; color:var(--text); margin-bottom:1rem; }
+  .bm-decolonial { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; color:var(--bm-violet-light); font-style:italic; margin-bottom:1rem; }
   .bm-section-sub { color:var(--text-dim); font-size:1rem; line-height:1.8; max-width:680px; margin-bottom:2.5rem; }
 
   .bm-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1.5rem; }
