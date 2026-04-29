@@ -4,10 +4,6 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Flip the Script · Quest Labs">
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-
 <div class="edu-page">
 
   <!-- HERO -->
@@ -474,8 +470,6 @@ import Layout from '../layouts/Layout.astro';
     line-height: 1.7;
     font-size: 15px;
     font-weight: 300;
-    /* Sit above the SiteNav (which is fixed at top of page in global.css) */
-    padding-top: 4.5rem;
 
     /* LAYOUT */
     & .container { max-width: 860px; margin: 0 auto; padding: 0 2.5rem; }
@@ -997,36 +991,6 @@ import Layout from '../layouts/Layout.astro';
       margin-top: 1rem;
     }
 
-    /* PAGE FOOTER */
-    & .edu-footer {
-      padding: 3rem 2.5rem;
-      border-top: 0.5px solid var(--edu-border-soft);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    & .edu-footer p {
-      font-size: 12px;
-      color: var(--edu-text-dim);
-      margin: 0;
-      max-width: 100%;
-    }
-    & .footer-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-      padding: 0;
-    }
-    & .footer-links a {
-      font-size: 12px;
-      color: var(--edu-text-dim);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    & .footer-links a:hover { color: var(--edu-lavender); }
-
     /* RESPONSIVE */
     @media (max-width: 640px) {
       & .container, & .container-wide { padding: 0 1.25rem; }
@@ -1040,7 +1004,6 @@ import Layout from '../layouts/Layout.astro';
       & .ecosystem-row { grid-template-columns: 1fr; }
       & .norms { grid-template-columns: 1fr; }
       & .signup-section { padding: 2rem 1.25rem; }
-      & .edu-footer { flex-direction: column; }
     }
   }
 </style>

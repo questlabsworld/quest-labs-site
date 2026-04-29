@@ -162,8 +162,14 @@ function handleBMSubmit(e) {
   .bm-input:focus { border-color:rgba(107,63,160,0.5); }
   .bm-form-note { color:var(--bm-violet-light); font-size:0.85rem; margin-top:0.75rem; font-style:italic; }
 
+  @media (max-width: 768px) {
+    .bm-creatures, .bm-editions, .bm-lives, .bm-access { padding: 3rem 1.5rem; }
+  }
   @media (max-width: 640px) {
     .bm-editions-grid { grid-template-columns: 1fr; }
     .bm-grid { grid-template-columns: repeat(2, 1fr); }
+    .bm-input { min-width: 0; width: 100%; }
+    .bm-form { flex-direction: column; align-items: stretch; }
+    .bm-hero { padding: 4rem 1.5rem 3rem; }
   }
 </style>
