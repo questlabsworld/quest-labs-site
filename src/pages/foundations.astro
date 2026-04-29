@@ -218,12 +218,12 @@ import Layout from '../layouts/Layout.astro';
   .cover-title {
     font-family: 'Cinzel', serif;
     font-weight: 900;
-    font-size: clamp(3.5rem, 10vw, 8rem);
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
     letter-spacing: 0.06em;
-    line-height: 1;
+    line-height: 1.05;
     color: var(--gold-pale);
     margin-bottom: 1.5rem;
-    white-space: nowrap;
+    white-space: normal;
     overflow: visible;
     opacity: 0;
     animation: progFadeUp 0.7s ease 0.4s forwards;
@@ -424,7 +424,6 @@ import Layout from '../layouts/Layout.astro';
     .sci-closing { padding: 3rem 1.5rem; }
   }
   @media (max-width: 640px) {
-    .cover-title { white-space: normal; font-size: clamp(2.8rem, 14vw, 5rem); }
     .abcdefg-svg { max-width: 100%; }
     .pos-item[style*="span 2"] { grid-column: span 1; }
   }
@@ -442,7 +441,6 @@ import Layout from '../layouts/Layout.astro';
       <li><a href="/foundations">Foundations</a></li>
       <li><a href="/black-menagerie">Black Menagerie</a></li>
       <li><a href="/about">About</a></li>
-      <li><a href="https://mosaiclifecoaching.co" target="_blank" rel="noopener noreferrer">Mosaics in the Making</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
   </div>

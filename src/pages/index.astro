@@ -153,15 +153,428 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <ul class="footer-links">
       <li><a href="/program">FLIP</a></li>
+      <li><a href="/educators">Educators</a></li>
       <li><a href="/foundations">Foundations</a></li>
-      <li><a href="https://mosaiclifecoaching.co" target="_blank" rel="noopener noreferrer">Mosaics in the Making</a></li>
+      <li><a href="/black-menagerie">Black Menagerie</a></li>
+      <li><a href="/about">About</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
   </div>
-  <div class="footer-copy">© 2026 Quest Labs · Makēda · All futures reserved · Berlin & Beyond</div>
+  <div class="footer-copy">2026 Quest Labs · Makeda · All futures reserved · Berlin &amp; Beyond</div>
 </footer>
 
 
 
 
 </Layout>
+
+<style>
+  /* ── SHARED SECTION TYPOGRAPHY ── */
+  .section-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+    max-width: 640px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    overflow: hidden;
+  }
+  .hero-glow {
+    position: absolute;
+    top: 10%; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(ellipse, rgba(107,63,160,0.18) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-glow-2 {
+    position: absolute;
+    bottom: 5%; right: 10%;
+    width: 400px; height: 400px;
+    background: radial-gradient(ellipse, rgba(139,116,171,0.1) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .portal-ring {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 0.5px solid rgba(139,116,171,0.08);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .portal-ring:nth-child(3) { width: 400px; height: 400px; }
+  .portal-ring:nth-child(4) { width: 600px; height: 600px; border-color: rgba(139,116,171,0.05); }
+  .portal-ring:nth-child(5) { width: 800px; height: 800px; border-color: rgba(139,116,171,0.03); }
+
+  #hero > * { position: relative; z-index: 1; }
+
+  .hero-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1.75rem;
+    opacity: 0;
+    animation: progFadeUp 0.8s ease 0.2s forwards;
+  }
+  .hero-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    color: var(--gold-pale);
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    opacity: 0;
+    animation: progFadeUp 0.8s ease 0.4s forwards;
+  }
+  .hero-highlight {
+    color: var(--violet-light, #B48FE0);
+    font-style: italic;
+  }
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-style: italic;
+    color: var(--text-dim);
+    max-width: 580px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: progFadeUp 0.8s ease 0.6s forwards;
+  }
+  .routing-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    animation: progFadeUp 0.8s ease 0.8s forwards;
+  }
+  .routing-strip a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border: 0.5px solid rgba(139,116,171,0.25);
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .routing-strip a:hover {
+    color: var(--violet-light, #B48FE0);
+    border-color: rgba(180,143,224,0.5);
+  }
+  .scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.52rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(240,236,248,0.2);
+    opacity: 0;
+    animation: progFadeUp 0.8s ease 1.1s forwards;
+  }
+  .scroll-line {
+    width: 0.5px;
+    height: 36px;
+    background: rgba(240,236,248,0.15);
+  }
+
+  /* ── ECOSYSTEM ── */
+  #ecosystem {
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+  }
+  .ecosystem-nebula {
+    position: absolute;
+    top: 20%; left: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(ellipse, rgba(107,63,160,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .ecosystem-nebula-2 {
+    position: absolute;
+    bottom: 10%; right: -5%;
+    width: 400px; height: 400px;
+    background: radial-gradient(ellipse, rgba(139,92,200,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .ecosystem-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+  }
+  .eco-card {
+    background: rgba(255,255,255,0.02);
+    border: 0.5px solid var(--border-dim);
+    border-radius: 4px;
+    padding: 2rem 2.25rem;
+    transition: border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .eco-card:hover { border-color: rgba(139,116,171,0.35); }
+  .eco-ring {
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 0.5px solid rgba(139,116,171,0.08);
+    pointer-events: none;
+  }
+  .eco-glyph {
+    font-size: 1.5rem;
+    color: rgba(139,116,171,0.4);
+    margin-bottom: 0.75rem;
+    line-height: 1;
+  }
+  .eco-glyph--menagerie { color: rgba(180,143,224,0.5); }
+  .eco-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+  }
+  .eco-label {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+  .eco-desc {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+    max-width: 560px;
+  }
+  .eco-bm-note, .eco-edu-note {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+    color: rgba(240,236,248,0.25);
+    margin-top: 0.5rem;
+  }
+
+  /* FLIP + Educators wide cards */
+  .eco-card--fllip {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 2rem;
+  }
+  .eco-card--educators { border-color: rgba(107,63,160,0.25); }
+  .eco-fllip-left { display: flex; flex-direction: column; }
+  .eco-fllip-right { display: flex; flex-direction: column; justify-content: center; gap: 1rem; }
+
+  .fllip-acronym {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+  .fllip-letter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+  }
+  .fl-big {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--violet-light, #B48FE0);
+    line-height: 1;
+  }
+  .fl-word {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.45rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(240,236,248,0.3);
+  }
+  .eco-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 0.5rem 0;
+  }
+  .eco-stat { display: flex; flex-direction: column; gap: 0.15rem; }
+  .eco-num {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--violet-light, #B48FE0);
+    line-height: 1;
+  }
+  .eco-stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  /* ── ABC LORE ── */
+  #lore {
+    padding: 5rem 2rem;
+    border-top: 0.5px solid var(--border-dim);
+    text-align: center;
+  }
+  .portal-abc-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .portal-abc-sub {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+  }
+  .abc-strip {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border: 0.5px solid var(--border-dim);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  .abc-cell {
+    padding: 1.25rem 0.75rem;
+    border-right: 0.5px solid var(--border-dim);
+    text-align: center;
+    transition: background 0.2s;
+  }
+  .abc-cell:last-child { border-right: none; }
+  .abc-cell:hover { background: rgba(107,63,160,0.06); }
+  .abc-letter {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--violet-light, #B48FE0);
+    margin-bottom: 0.4rem;
+  }
+  .abc-word {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .abc-desc {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  /* ── COHORT BRIDGE ── */
+  #cohort-bridge {
+    padding: 5rem 2rem;
+    border-top: 0.5px solid var(--border-dim);
+    text-align: center;
+  }
+  .cohort-bridge-inner {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  .cohort-bridge-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--violet-light, #B48FE0);
+    margin-bottom: 0.75rem;
+  }
+  .cohort-bridge-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .cohort-bridge-body {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  .cohort-bridge-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    #hero { min-height: 80vh; padding: 5rem 1.5rem 3rem; }
+    #ecosystem, #lore, #cohort-bridge { padding: 4rem 1.5rem; }
+    .eco-card--fllip { grid-template-columns: 1fr; gap: 1.25rem; }
+    .abc-strip { grid-template-columns: repeat(4, 1fr); }
+    .abc-cell:nth-child(4) { border-right: none; }
+    .abc-cell:nth-child(n+5) { border-top: 0.5px solid var(--border-dim); }
+    .abc-cell:nth-child(7) { grid-column: span 4; }
+  }
+  @media (max-width: 480px) {
+    .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
+    .routing-strip { gap: 0.4rem; }
+    .routing-strip a { font-size: 0.52rem; padding: 0.4rem 0.75rem; }
+    .abc-strip { grid-template-columns: 1fr 1fr; }
+    .abc-cell:nth-child(2n) { border-right: none; }
+    .abc-cell:nth-child(n+3) { border-top: 0.5px solid var(--border-dim); }
+    .abc-cell:nth-child(7) { grid-column: span 2; }
+  }
+</style>
