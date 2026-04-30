@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro';
 <div class="edu-page">
 
   <!-- ═══════════════════════════════════════════
-       HERO — keep as-is
+       HERO: keep as-is
   ═══════════════════════════════════════════ -->
   <div class="container">
     <div class="hero">
@@ -42,7 +42,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="divider"></div>
 
   <!-- ═══════════════════════════════════════════
-       BEAT 1 — THE MIRROR
+       BEAT 1: THE MIRROR
        "You've been here before. This is different."
   ═══════════════════════════════════════════ -->
   <section>
@@ -52,7 +52,7 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="pull" style="margin-bottom:2rem;">
         <p>"A sensitive and thoughtful educator with a great capacity for learning. Her passion and commitment to teaching is clear and unwavering."</p>
-        <cite style="font-size:0.78rem; letter-spacing:0.06em; color:var(--edu-lavender); font-style:normal; opacity:0.85; display:block; margin-top:0.5rem;">— Ira Lit, Program Director, Stanford Teacher Education Program</cite>
+        <cite style="font-size:0.78rem; letter-spacing:0.06em; color:var(--edu-lavender); font-style:normal; opacity:0.85; display:block; margin-top:0.5rem;">- Ira Lit, Program Director, Stanford Teacher Education Program</cite>
       </div>
 
       <p>The world we're being asked to prepare students for keeps morphing faster than our nervous systems, and the systems built to support us, were ever designed to handle.</p>
@@ -87,7 +87,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Pull quote — standalone visual moment -->
+  <!-- Pull quote: standalone visual moment -->
   <section class="pull-quote-section">
     <div class="container">
       <blockquote class="pull-quote-solo">
@@ -97,7 +97,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ═══════════════════════════════════════════
-       BEAT 2 — WHO THIS IS FOR
+       BEAT 2: WHO THIS IS FOR
        Fast self-sorting. One and they know.
   ═══════════════════════════════════════════ -->
   <section>
@@ -129,7 +129,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ═══════════════════════════════════════════
-       BEAT 3 — WHAT ACTUALLY HAPPENS
+       BEAT 3: WHAT ACTUALLY HAPPENS
        Proof of structure + proof of care.
   ═══════════════════════════════════════════ -->
   <section id="what-happens">
@@ -171,7 +171,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ═══════════════════════════════════════════
-       BEAT 4 — YOUR NEXT DOOR
+       BEAT 4: YOUR NEXT DOOR
        Three clean options. One CTA each.
   ═══════════════════════════════════════════ -->
   <section id="spring-sandbox">
@@ -191,7 +191,7 @@ import Layout from '../layouts/Layout.astro';
 
         <div class="door-card door-card--featured">
           <div class="door-emoji">🔥</div>
-          <h3 class="door-title">I'm in — Fall 2026 Cohort</h3>
+          <h3 class="door-title">I'm in: Fall 2026 Cohort</h3>
           <p>12 weeks. 20 educators max. Healing-centered futures practice built specifically for people who touch the conditions in which young people learn. Sign-up is an expression of interest, not a commitment.</p>
           <a href="#signup" class="btn btn-primary door-cta">Raise my hand →</a>
           <p class="cta-micro">expression of interest · 20 spots</p>
@@ -206,10 +206,10 @@ import Layout from '../layouts/Layout.astro';
 
       </div>
 
-      <!-- Spring Sandbox session details — accordion -->
+      <!-- Spring Sandbox session details: accordion -->
       <div class="spring-details">
         <button class="accordion-trigger" onclick="toggleAccordion(this)" aria-expanded="false">
-          <span>Spring Sandbox — session details</span>
+          <span>Spring Sandbox: session details</span>
           <span class="accordion-icon">+</span>
         </button>
         <div class="accordion-content" hidden>
@@ -246,7 +246,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- MARCIA'S QUOTE -->
       <div class="pull" style="margin-top:3rem; margin-bottom:0;">
         <p>"She has a deep understanding of people and their needs, a skill that cannot be learned; it is instinctual. Her diverse background and experience is an invaluable asset in our ever-changing and more inclusive society."</p>
-        <cite style="font-size:0.78rem; letter-spacing:0.06em; color:var(--edu-lavender); font-style:normal; opacity:0.85; display:block; margin-top:0.5rem;">— Marcia I. Perez, parent of a former student</cite>
+        <cite style="font-size:0.78rem; letter-spacing:0.06em; color:var(--edu-lavender); font-style:normal; opacity:0.85; display:block; margin-top:0.5rem;">- Marcia I. Perez, parent of a former student</cite>
       </div>
 
       <!-- Spring form -->
@@ -364,7 +364,7 @@ import Layout from '../layouts/Layout.astro';
 
 <style is:global>
   /* =========================================================
-     EDUCATORS PAGE — scoped under .edu-page using CSS nesting
+     EDUCATORS PAGE: scoped under .edu-page using CSS nesting
   ========================================================= */
 
   .edu-page {
@@ -595,7 +595,7 @@ import Layout from '../layouts/Layout.astro';
       line-height: 1.5;
     }
 
-    /* PULL QUOTE — standalone centred Beat 1 moment */
+    /* PULL QUOTE: standalone centred Beat 1 moment */
     & .pull-quote-section {
       padding: 4rem 0;
       background: rgba(107,63,160,0.04);
@@ -658,7 +658,7 @@ import Layout from '../layouts/Layout.astro';
       line-height: 1.5;
     }
     & .prob-col ul li:last-child { border-bottom: none; }
-    & .prob-col ul li::before { content: '— '; color: var(--edu-text-dim); }
+    & .prob-col ul li::before { content: '- '; color: var(--edu-text-dim); }
     & .prob-col.bright h4 { color: var(--edu-violet-light); }
     & .prob-col.bright ul li { color: rgba(253,252,250,0.85); }
     & .prob-col.bright ul li::before { color: var(--edu-violet-mid); }
@@ -757,7 +757,7 @@ import Layout from '../layouts/Layout.astro';
       max-width: 100%;
     }
 
-    /* THREE DOORS — Beat 4 */
+    /* THREE DOORS: Beat 4 */
     & .three-doors {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

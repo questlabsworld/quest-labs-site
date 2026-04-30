@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="bm-hero">
     <div class="bm-eyebrow">Quest Labs · Signature Tool · Coming Black Friday 2026</div>
     <h1 class="bm-title">The Black<br>Menagerie</h1>
-    <p class="bm-sub">A futures literacy card game: part game, part oracle, part mirror.<br>Five creatures. Seventy-eight cards. Two editions.</p>
+    <p class="bm-sub"><span class="bm-accent">A futures literacy card game:</span> part game, part oracle, part mirror.<br>Five creatures. Seventy-eight cards. Two editions.</p>
     <div class="bm-badge">Black Friday · November 2026</div>
   </div>
 
@@ -21,29 +21,32 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="bm-grid">
       <div class="bm-card">
-        <img src="/images/creatures/black-swan.webp" alt="Black Swan — a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="295" height="298" />
+        <img src="/images/creatures/black-swan.webp" alt="Black Swan, a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="295" height="298" />
         <h3 class="bm-creature-name">Black Swan</h3>
         <p class="bm-creature-q">What change is coming that we have not named yet?</p>
       </div>
       <div class="bm-card">
-        <img src="/images/creatures/black-elephant.webp" alt="Black Elephant — a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="299" height="284" />
+        <img src="/images/creatures/black-elephant.webp" alt="Black Elephant, a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="299" height="284" />
         <h3 class="bm-creature-name">Black Elephant</h3>
         <p class="bm-creature-q">What do we all know but have not spoken aloud?</p>
       </div>
       <div class="bm-card">
-        <img src="/images/creatures/black-jellyfish.webp" alt="Black Jellyfish — a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="294" height="281" />
+        <img src="/images/creatures/black-jellyfish.webp" alt="Black Jellyfish, a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="294" height="281" />
         <h3 class="bm-creature-name">Black Jellyfish</h3>
         <p class="bm-creature-q">What are we feeling in our bodies about what is next?</p>
       </div>
       <div class="bm-card">
-        <img src="/images/creatures/black-marsh-turtle.webp" alt="Black Marsh Turtle — a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="310" height="306" />
+        <img src="/images/creatures/black-marsh-turtle.webp" alt="Black Marsh Turtle, a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="310" height="306" />
         <h3 class="bm-creature-name">Black Marsh Turtle</h3>
         <p class="bm-creature-q">What do we need to slow down with? Where is rest calling?</p>
       </div>
       <div class="bm-card">
-        <img src="/images/creatures/black-sheep.webp" alt="Black Sheep — a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="306" height="311" />
+        <img src="/images/creatures/black-sheep.webp" alt="Black Sheep, a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="306" height="311" />
         <h3 class="bm-creature-name">Black Sheep</h3>
         <p class="bm-creature-q">What playful disruption wants to emerge?</p>
+      </div>
+      <div class="bm-card bm-card--prompt">
+        <p class="bm-prompt-text">Which archetype can help you meet this moment?</p>
       </div>
     </div>
   </div>
@@ -141,12 +144,40 @@ function handleBMSubmit(e) {
   .bm-decolonial { font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.1em; color:var(--bm-violet-light); font-style:italic; margin-bottom:1rem; }
   .bm-section-sub { color:var(--text-dim); font-size:1rem; line-height:1.8; max-width:680px; margin-bottom:2.5rem; }
 
-  .bm-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1.5rem; }
+  .bm-accent {
+    background: linear-gradient(135deg, #B48FE0, #8B5CC8, #C4A8E8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-style: italic;
+  }
+
+  .bm-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; }
   .bm-card { background:rgba(107,63,160,0.05); border:0.5px solid rgba(107,63,160,0.2); border-radius:4px; overflow:hidden; transition:border-color 0.2s; }
   .bm-card:hover { border-color:rgba(180,143,224,0.4); }
   .bm-img { width:100%; aspect-ratio:1/1; object-fit:cover; display:block; }
   .bm-creature-name { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500; color:var(--bm-lavender); padding:0.75rem 1rem 0.25rem; }
   .bm-creature-q { font-style:italic; font-size:0.85rem; color:var(--text-dim); padding:0 1rem 1rem; line-height:1.6; }
+
+  .bm-card--prompt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(107,63,160,0.18), rgba(180,143,224,0.10));
+    border: 1px solid rgba(180,143,224,0.35);
+    border-radius: 4px;
+    padding: 2rem 1.5rem;
+    min-height: 200px;
+  }
+  .bm-prompt-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-style: italic;
+    color: #d4aaff;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+  }
 
   .bm-editions-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1.5rem; }
   .bm-edition { background:rgba(107,63,160,0.05); border:0.5px solid rgba(107,63,160,0.2); border-radius:4px; padding:1.75rem; }
@@ -169,7 +200,7 @@ function handleBMSubmit(e) {
   }
   @media (max-width: 640px) {
     .bm-editions-grid { grid-template-columns: 1fr; }
-    .bm-grid { grid-template-columns: repeat(2, 1fr); }
+    .bm-grid { grid-template-columns: 1fr; }
     .bm-input { min-width: 0; width: 100%; }
     .bm-form { flex-direction: column; align-items: stretch; }
     .bm-hero { padding: 4rem 1.5rem 3rem; }
