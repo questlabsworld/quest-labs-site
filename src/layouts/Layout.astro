@@ -27,11 +27,11 @@ const currentPageLabel = pageLabels[pathname] ?? null;
 
 const navLinks = [
   { label: 'Home',            href: '/' },
-  { label: 'FLIP Program',    href: '/program' },
+  { label: 'FLIP',            href: '/program' },
   { label: 'Educators',       href: '/educators' },
   { label: 'Foundations',     href: '/foundations' },
   { label: 'About',           href: '/about' },
-  { label: 'Sponsor',         href: '/bet' },
+  { label: 'Bet on Us',       href: '/bet' },
 ];
 ---
 
@@ -522,12 +522,6 @@ const navLinks = [
           </a>
         </li>
       ))}
-      <li>
-        <a href="/contact" class:list={['site-nav__link', 'site-nav__contact', { 'site-nav__link--active': isActive('/contact') }]}
-           aria-current={isActive('/contact') ? 'page' : undefined}>
-          Contact
-        </a>
-      </li>
     </ul>
   </nav>
 
