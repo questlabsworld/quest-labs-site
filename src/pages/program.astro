@@ -14,9 +14,9 @@ import Layout from '../layouts/Layout.astro';
   <p class="prog-hero-subtitle">The Questor's Invitational</p>
   <p class="prog-hero-sub">A 12-week creative & futures journey.<br>You're invited to meet your future Self.</p>
   <div class="prog-hero-cta">
-    <a href="#tiers" class="prog-btn prog-btn-primary">Choose Your Path</a>
-    <a href="#journey" class="prog-btn prog-btn-ghost">Explore the Arc</a>
-    <a href="#cohort" class="prog-btn prog-btn-ghost">Join a Cohort →</a>
+    <a href="#cohort" class="prog-btn prog-btn-primary">Join a Cohort →</a>
+    <a href="#journey" class="prog-btn prog-btn-ghost cta-secondary">Explore the Arc</a>
+    <a href="#tiers" class="cta-ghost">Choose Your Path</a>
   </div>
   <div class="prog-scroll-hint">
     <span>Scroll</span>
@@ -33,9 +33,10 @@ import Layout from '../layouts/Layout.astro';
     <h2 class="prog-section-title">Somewhere between 2026 and 2032,<br>there is a <em>portal</em>.</h2>
 
     <p class="prog-section-body">
-      We’re crossing a threshold into the unknown.<br><br>
+      We’re crossing a threshold into the unknown...<br><br>
       ...but don’t lose hope.<br><br>
-      🤫 A whisper of wisdom from beyond? Remember, someone built this world.<br><br>
+      🤫 A whisper of wisdom from beyond?<br><br>
+      Remember, someone built this world.<br><br>
       We’re here to build a new one. 🌍<br><br>
       Over 12 weeks, a cohort of 6 brave travelers move through 12 worlds. Each week the world changes: same crew, different questions. We keep what serves our future Self and collective. We discover what we’re building toward.<br><br>
       By the final session, each traveler holds a <strong style="color:rgba(255,255,255,0.9)">2032 Job Description</strong> assembled piece by piece across 12 weeks of Artists Way practices and Sandbox Sessions.<br><br>
@@ -627,6 +628,10 @@ import Layout from '../layouts/Layout.astro';
       <li><a href="/contact">Contact</a></li>
     </ul>
   </div>
+  <div class="footer-anchor">
+    Not sure where to start?
+    <a href="https://lu.ma/questlabs">Find a free Sandbox Session →</a>
+  </div>
   <div class="footer-copy">2026 Quest Labs · Makēda · All futures reserved · Berlin &amp; Beyond</div>
 </footer>
 
@@ -952,6 +957,14 @@ document.addEventListener('keydown', e => {
     background: transparent;
   }
   .prog-btn-ghost:hover { color: var(--text); border-color: rgba(180, 143, 224, 0.6); }
+  .cta-ghost {
+    font-size: 0.85rem;
+    opacity: 0.55;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.4rem 0;
+  }
+  .cta-ghost:hover { opacity: 0.85; }
 
   /* ── DIVIDER ── */
   .prog-divider {

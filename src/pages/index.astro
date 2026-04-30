@@ -15,6 +15,10 @@ import Layout from '../layouts/Layout.astro';
   <p class="hero-eyebrow">Quest Labs · Healing-Centered Futures · Est. 2022</p>
   <h1 class="hero-title">The Future Is Not<br>Predicted. It Is <span class="hero-highlight">Played.</span></h1>
   <p class="hero-sub">A living lab for futures literacy, healing-centered design, and the art of navigating what hasn't happened yet.</p>
+  <div class="hero-ctas">
+    <a href="#ecosystem" class="cta-primary">Find your entry point →</a>
+    <a href="/educators" class="cta-secondary">I'm an educator</a>
+  </div>
 </section>
 
 <!-- ===== WHERE DO YOU BELONG ===== -->
@@ -114,6 +118,10 @@ import Layout from '../layouts/Layout.astro';
       <li><a href="/contact">Contact</a></li>
     </ul>
   </div>
+  <div class="footer-anchor">
+    Not sure where to start?
+    <a href="https://lu.ma/questlabs">Find a free Sandbox Session →</a>
+  </div>
   <div class="footer-copy">2026 Quest Labs · Makēda · All futures reserved · Berlin &amp; Beyond</div>
 </footer>
 
@@ -189,7 +197,7 @@ import Layout from '../layouts/Layout.astro';
   .portal-ring:nth-child(4) { width: 600px; height: 600px; border-color: rgba(139,116,171,0.05); }
   .portal-ring:nth-child(5) { width: 800px; height: 800px; border-color: rgba(139,116,171,0.03); }
 
-  #hero > * { position: relative; z-index: 1; }
+  #hero > *:not(.portal-ring):not(.hero-glow):not(.hero-glow-2) { position: relative; z-index: 1; }
 
   .hero-eyebrow {
     font-family: 'Space Mono', monospace;
@@ -222,6 +230,38 @@ import Layout from '../layouts/Layout.astro';
     line-height: 1.7;
     margin-bottom: 3rem;
   }
+  /* Hero entry CTAs */
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  .cta-primary {
+    display: inline-block;
+    padding: 0.65rem 1.4rem;
+    background: var(--violet, #6B3FA0);
+    color: var(--text, #f0ecf8);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .cta-primary:hover { background: var(--violet-mid, #8B5CC8); }
+  .cta-secondary {
+    display: inline-block;
+    padding: 0.65rem 1.4rem;
+    border: 1.5px solid rgba(240, 236, 248, 0.6);
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: var(--text, #f0ecf8);
+    line-height: 1.4;
+  }
+  .cta-secondary:hover { border-color: var(--text); }
+
   /* Hero CTA */
   .hero-cta-primary {
     display: inline-flex;

@@ -7,12 +7,11 @@ interface Props {
 const { title, currentPage = '/' } = Astro.props;
 
 const navLinks = [
+  { label: 'Start here',      href: '/#ecosystem' },
   { label: 'FLIP',            href: '/program' },
   { label: 'Educators',       href: '/educators' },
-  { label: 'Foundations',     href: '/foundations' },
   { label: 'Black Menagerie', href: '/black-menagerie' },
   { label: 'About',           href: '/about' },
-  { label: 'Contact',         href: '/contact' },
 ];
 ---
 
@@ -274,6 +273,21 @@ const navLinks = [
       transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--violet-light); }
+    .footer-anchor {
+      max-width: 1100px;
+      margin: 1rem auto 0;
+      font-size: 0.85rem;
+      opacity: 0.65;
+      padding: 1rem 0;
+      border-top: 0.5px solid rgba(240, 236, 248, 0.2);
+      font-family: 'Mulish', sans-serif;
+    }
+    .footer-anchor a {
+      color: var(--violet-light);
+      text-decoration: none;
+    }
+    .footer-anchor a:hover { text-decoration: underline; }
+
     .footer-copy {
       max-width: 1100px;
       margin: 0 auto;

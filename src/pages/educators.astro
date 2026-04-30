@@ -207,7 +207,8 @@ import Layout from '../layouts/Layout.astro';
           <div class="door-emoji">🌊</div>
           <h3 class="door-title">Dip a toe</h3>
           <p>Spring Sandbox — free virtual sessions, May through July 2026. Come feel the practice before the fall. No commitment. Donation based. Spring participants get first access to the Fall founding cohort.</p>
-          <a href="#spring-form" class="btn btn-ghost door-cta">Save my spot →</a>
+          <a href="#spring-form" class="btn btn-ghost door-cta">Taste it first — save a Spring spot →</a>
+          <p class="cta-micro">free · no commitment</p>
         </div>
 
         <div class="door-card door-card--featured">
@@ -215,6 +216,7 @@ import Layout from '../layouts/Layout.astro';
           <h3 class="door-title">I'm in — Fall 2026 Cohort</h3>
           <p>12 weeks. 20 educators max. Healing-centered futures practice built specifically for people who touch the conditions in which young people learn. Sign-up is an expression of interest, not a commitment.</p>
           <a href="#signup" class="btn btn-primary door-cta">Raise my hand →</a>
+          <p class="cta-micro">expression of interest · 20 spots</p>
         </div>
 
         <div class="door-card">
@@ -319,6 +321,10 @@ import Layout from '../layouts/Layout.astro';
       <li><a href="/contact">Contact</a></li>
     </ul>
   </div>
+  <div class="footer-anchor">
+    Not sure where to start?
+    <a href="https://lu.ma/questlabs">Find a free Sandbox Session →</a>
+  </div>
   <div class="footer-copy">2026 Quest Labs · Makēda · All futures reserved · Berlin &amp; Beyond</div>
 </footer>
 
@@ -394,11 +400,11 @@ import Layout from '../layouts/Layout.astro';
     --edu-border: rgba(107,63,160,0.2);
     --edu-border-soft: rgba(255,255,255,0.06);
 
-    font-family: 'Inter', sans-serif;
+    font-family: 'Mulish', 'Inter', sans-serif;
     color: var(--edu-text-primary);
     line-height: 1.7;
-    font-size: 15px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 400;
 
     /* LAYOUT */
     & .container { max-width: 860px; margin: 0 auto; padding: 0 2.5rem; }
@@ -558,8 +564,8 @@ import Layout from '../layouts/Layout.astro';
     }
 
     & p {
-      font-size: 15px;
-      font-weight: 300;
+      font-size: 16px;
+      font-weight: 400;
       line-height: 1.8;
       color: rgba(253,252,250,0.78);
       margin-bottom: 1rem;
@@ -816,6 +822,13 @@ import Layout from '../layouts/Layout.astro';
     & .door-cta {
       align-self: flex-start;
       margin-top: 0.25rem;
+    }
+
+    & .cta-micro {
+      font-size: 0.75rem;
+      opacity: 0.55;
+      margin: 4px 0 0;
+      font-style: italic;
     }
 
     /* ACCORDION */
