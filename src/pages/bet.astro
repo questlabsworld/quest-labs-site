@@ -1,62 +1,33 @@
 ---
-// src/pages/bet.astro
-// Quest Labs · /bet · Bet on Our Becoming
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bet on Our Becoming · Quest Labs</title>
-  <meta name="description" content="Wish you could do something to materially shift the trajectory of a wayward world? Bet on our becoming. Fund the futures work that matters." />
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/styles/global.css" />
-</head>
-<body>
+<Layout title="Bet on Our Becoming · Quest Labs">
 
-  <!-- Nav (mirrors site structure) -->
-  <header>
-    <nav>
-      <a href="/" class="logo-link">
-        <img src="/quest-labs-logo.png" alt="Quest Labs" class="logo" />
-      </a>
-      <ul>
-        <li><a href="/program">FLIP</a></li>
-        <li><a href="/educators">Educators</a></li>
-        <li><a href="/foundations">Foundations</a></li>
-        <li><a href="/black-menagerie">Black Menagerie</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/bet" class="nav-active">Bet</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="bet-page">
+<main class="bet-page">
 
     <!-- Hero -->
     <section class="bet-hero">
-      <p class="eyebrow">Quest Labs · Bet on Our Becoming</p>
       <h1>Bet on our becoming.</h1>
       <p class="hero-sub">
-        Wish you could do something to materially shift the trajectory of a wayward world driven by nefarious nonsense? You can. This is how.
+        Wish you could do something to <span class="accent-phrase">materially shift the trajectory of a wayward world driven by nefarious nonsense?</span> You can. This is how.
       </p>
       <p class="hero-body">
-        Quest Labs is fueled by <strong>FAITH</strong> — and by people who believe that real change starts in the body, the community, and the classroom long before it shows up in the news.
+        <span class="hero-brand">Quest Labs</span> is fueled by <strong class="faith-word">FAITH</strong> and by people who believe that real change starts in the body, the community, and the classroom long before it trickles into our media feed.
       </p>
       <div class="faith-reveal" aria-label="FAITH: Finding Alternative Innovative Transformative Heartspaces">
         <div class="faith-item" tabindex="0">
           <span class="faith-item-letter" aria-hidden="true">F</span>
           <div class="faith-item-text">
             <span class="faith-item-word">Finding</span>
-            <span class="faith-item-gloss">the quest is active — we are always seeking</span>
+            <span class="faith-item-gloss">the quest is to always question</span>
           </div>
         </div>
         <div class="faith-item" tabindex="0">
           <span class="faith-item-letter" aria-hidden="true">A</span>
           <div class="faith-item-text">
             <span class="faith-item-word">Alternative</span>
-            <span class="faith-item-gloss">futures that haven't been imagined yet</span>
+            <span class="faith-item-gloss">post-now futures that haven't been given space to breathe yet</span>
           </div>
         </div>
         <div class="faith-item" tabindex="0">
@@ -77,13 +48,16 @@
           <span class="faith-item-letter" aria-hidden="true">H</span>
           <div class="faith-item-text">
             <span class="faith-item-word">Heartspaces</span>
-            <span class="faith-item-gloss">lead with the heart — head follows</span>
+            <span class="faith-item-gloss">lead with the heart, let the head follow</span>
           </div>
         </div>
         <p class="faith-hint">hover each letter · tap on mobile</p>
       </div>
       <p class="hero-body">
-        You're not buying a product. You're betting on a future we haven't fully seen yet — but one we feel, and one our future ancestors are going to want to have been part of.
+        You're not buying a product. This isn't charity.
+      </p>
+      <p class="hero-body">
+        You're betting on a future we haven't fully seen or imagined yet. You might find yourself yearning for a world our future ancestors will be proud we chose.
       </p>
     </section>
 
@@ -91,12 +65,12 @@
 
     <!-- Tiers -->
     <section class="tiers-section">
-      <p class="section-label">Choose your bet</p>
+      <p class="section-label-large">Choose Your Bet</p>
 
       <!-- Tier 1: The Spark -->
       <div class="tier-card">
         <div class="tier-header">
-          <div class="tier-symbol">◯</div>
+          <div class="tier-symbol">🔥</div>
           <div class="tier-title-block">
             <h2 class="tier-name">The Spark</h2>
             <p class="tier-tagline">One light. One life. One ripple.</p>
@@ -120,15 +94,15 @@
       <!-- Tier 2: The Pair -->
       <div class="tier-card tier-featured">
         <div class="tier-header">
-          <div class="tier-symbol">◆</div>
+          <div class="tier-symbol">👥</div>
           <div class="tier-title-block">
             <h2 class="tier-name">The Pair</h2>
-            <p class="tier-tagline">Two lights travel further.</p>
+            <p class="tier-tagline">It takes two to tango.</p>
           </div>
           <div class="tier-price">$1,000</div>
         </div>
         <p class="tier-desc">
-          Because transformation runs deeper in pairs. Two seats, fully flexible — same cohort or different, your call or theirs. Send them to anyone, anytime. No strings.
+          Two seats, fully flexible, same cohort or different, your call or theirs. Send them to anyone, anytime. No strings.
         </p>
         <div class="tier-actions">
           <a href="https://www.paypal.com/ncp/payment/ZLWJJH3EVH4MJ" class="pay-btn" target="_blank" rel="noopener">
@@ -144,7 +118,7 @@
       <!-- Tier 3: The Constellation -->
       <div class="tier-card">
         <div class="tier-header">
-          <div class="tier-symbol">◈</div>
+          <div class="tier-symbol">💫</div>
           <div class="tier-title-block">
             <h2 class="tier-name">The Constellation</h2>
             <p class="tier-tagline">A pattern emerges.</p>
@@ -152,7 +126,7 @@
           <div class="tier-price">$5,000</div>
         </div>
         <p class="tier-desc">
-          Ten seats for a school, a team, a community you believe in. Enough to shift a staff room, a department, a cohort of educators. This is where institutional change starts — not in policy, but in people.
+          This is where institutional transformation begins: not through policies developed behind closed doors, but in communities of praxis.
         </p>
         <div class="tier-actions">
           <a href="https://www.paypal.com/ncp/payment/GR3WJPK28RWZ4" class="pay-btn" target="_blank" rel="noopener">
@@ -168,20 +142,20 @@
       <!-- Tier 4: The Universe -->
       <div class="tier-card">
         <div class="tier-header">
-          <div class="tier-symbol">◎</div>
+          <div class="tier-symbol">🪐</div>
           <div class="tier-title-block">
             <h2 class="tier-name">The Universe</h2>
-            <p class="tier-tagline">You seed the whole thing.</p>
+            <p class="tier-tagline">Water. Earthseed.</p>
           </div>
           <div class="tier-price">$10,000</div>
         </div>
         <p class="tier-desc">
-          Foundation-level partnership. You fund an entire cohort from the ground up — and you don't disappear when the check clears. This tier comes with real-time, collaborative documentation of the work as it unfolds: participant-voiced, Quest Labs-curated, the good-news feed we all desperately need.
+          You fund an entire cohort from the ground up and get to see the world weaving in action. This tier comes with real-time, collaborative documentation of the work as it unfolds: participant voices, transformation in action, and the most wholesome social media feed that will nourish your hope for tomorrow.
         </p>
         <ul class="tier-perks">
           <li>Named cohort sponsorship</li>
           <li>Collaborative real-time updates from participants + Quest Labs team</li>
-          <li>Positive social documentation — living proof something extraordinary is happening</li>
+          <li>Positive social documentation, living proof something extraordinary is happening</li>
           <li>Direct line to the Quest Labs founders throughout the cohort</li>
         </ul>
         <div class="tier-actions">
@@ -198,7 +172,7 @@
       <!-- Tier 5: The Wish -->
       <div class="tier-card">
         <div class="tier-header">
-          <div class="tier-symbol">✦</div>
+          <div class="tier-symbol">🎁</div>
           <div class="tier-title-block">
             <h2 class="tier-name">The Wish</h2>
             <p class="tier-tagline">As you wish.</p>
@@ -226,93 +200,114 @@
     <!-- Closing -->
     <section class="bet-closing">
       <p>
-        For larger partnerships, institutional funding, or conversations about embedding Quest Labs in your world —
+        <strong class="closing-contact">For larger partnerships, institutional funding, or conversations about embedding Quest Labs in your world,</strong>
         <a href="/contact">let's talk</a>.
       </p>
-      <p class="closing-sub">Word for 2026: <em>audacious.</em> Welcome to it.</p>
     </section>
 
   </main>
 
-  <!-- Footer (mirrors site structure) -->
-  <footer>
-    <div class="footer-inner">
-      <p class="footer-brand">Quest Labs</p>
-      <p class="footer-sub">Healing-Centered Futures</p>
-      <nav class="footer-nav">
-        <a href="/program">FLIP</a>
-        <a href="/educators">Educators</a>
-        <a href="/foundations">Foundations</a>
-        <a href="/black-menagerie">Black Menagerie</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-      </nav>
-      <p class="footer-copy">2026 Quest Labs · Makeda · All futures reserved · Berlin &amp; Beyond</p>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Quest Labs</div>
+      <div class="footer-tagline">Healing-Centered Futures</div>
     </div>
-  </footer>
+    <ul class="footer-links">
+      <li><a href="/program">FLIP</a></li>
+      <li><a href="/educators">Educators</a></li>
+      <li><a href="/foundations">Foundations</a></li>
+      <li><a href="/black-menagerie">Black Menagerie</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="footer-anchor">
+    Not sure where to start?
+    <a href="https://lu.ma/questlabs">Find a free Sandbox Session →</a>
+  </div>
+  <div class="footer-copy">2026 Quest Labs · Makēda · All futures reserved · Berlin &amp; Beyond</div>
+</footer>
 
-  <script>
-    document.querySelectorAll('.faith-item').forEach(item => {
-      item.addEventListener('click', () => {
-        item.classList.toggle('active');
-      });
+<script is:inline>
+  document.querySelectorAll('.faith-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active');
     });
-  </script>
+  });
+</script>
 
-</body>
-</html>
+</Layout>
 
-<style>
-  /* ── Bet page styles ── */
-  /* These extend your global.css — adjust tokens to match your site vars */
+<style is:global>
+  /* ── BET PAGE ── */
 
   .bet-page {
-    max-width: 720px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 4rem 1.5rem 5rem;
+    padding: 5rem 2.5rem 6rem;
+    position: relative;
+    z-index: 1;
   }
 
   /* Hero */
   .bet-hero {
-    margin-bottom: 3rem;
-  }
-
-  .eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    opacity: 0.5;
-    margin: 0 0 1.25rem;
+    margin-bottom: 4rem;
   }
 
   .bet-hero h1 {
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
-    font-weight: 500;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
     line-height: 1.1;
-    margin: 0 0 1.25rem;
+    letter-spacing: 0.04em;
+    color: var(--gold-pale);
+    margin: 0 0 1.5rem;
+  }
+
+  .accent-phrase {
+    color: var(--violet-light, #B48FE0);
+    font-style: italic;
   }
 
   .hero-sub {
-    font-size: 1.15rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     line-height: 1.75;
-    margin: 0 0 1.25rem;
-    max-width: 58ch;
+    margin: 0 0 1.5rem;
+    color: var(--text-dim);
+    max-width: 60ch;
   }
 
   .hero-body {
     font-size: 1rem;
-    line-height: 1.75;
+    line-height: 1.8;
     margin: 0 0 1.25rem;
-    max-width: 58ch;
-    opacity: 0.8;
+    max-width: 60ch;
+    color: var(--text-dim);
   }
 
-  /* FAITH block — Treatment C: hover to reveal */
+  .hero-brand {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--gold-pale);
+  }
+
+  .faith-word {
+    color: var(--violet-light, #B48FE0);
+    font-style: normal;
+  }
+
+  /* FAITH block */
   .faith-reveal {
-    margin: 2rem 0;
+    margin: 2.5rem 0;
     display: flex;
     flex-direction: column;
     gap: 2px;
+    border-left: 2px solid rgba(107, 63, 160, 0.4);
+    padding-left: 1.5rem;
   }
 
   .faith-item {
@@ -324,98 +319,112 @@
   }
 
   .faith-item-letter {
-    font-size: 3.75rem;
-    font-weight: 500;
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
     line-height: 1;
     width: 4rem;
     flex-shrink: 0;
-    opacity: 0.12;
-    transition: opacity 0.25s ease;
+    color: #ffffff;
+    opacity: 0.15;
+    transition: opacity 0.25s ease, color 0.25s ease;
   }
 
   .faith-item-text {
     overflow: hidden;
     max-height: 0;
     opacity: 0;
-    padding-left: 0.5rem;
+    padding-left: 0.75rem;
     transition: max-height 0.3s ease, opacity 0.25s ease;
   }
 
   .faith-item:hover .faith-item-letter,
-  .faith-item:focus .faith-item-letter {
+  .faith-item:focus .faith-item-letter,
+  .faith-item.active .faith-item-letter {
     opacity: 1;
+    color: #ffffff;
   }
 
   .faith-item:hover .faith-item-text,
-  .faith-item:focus .faith-item-text {
+  .faith-item:focus .faith-item-text,
+  .faith-item.active .faith-item-text {
     max-height: 80px;
     opacity: 1;
   }
 
   .faith-item-word {
     display: block;
-    font-size: 1.05rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
     font-weight: 500;
+    color: var(--text);
   }
 
   .faith-item-gloss {
     display: block;
-    font-size: 0.8rem;
-    opacity: 0.5;
-    margin-top: 2px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: var(--text-faint);
+    margin-top: 3px;
     line-height: 1.5;
   }
 
   .faith-hint {
-    font-size: 0.65rem;
-    opacity: 0.3;
-    letter-spacing: 0.08em;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin: 0.25rem 0 0 0.25rem;
+    margin: 0.5rem 0 0 0;
+    opacity: 0.4;
   }
 
   /* Mobile: tap to toggle */
   @media (hover: none) {
-    .faith-item.active .faith-item-letter { opacity: 1; }
+    .faith-item.active .faith-item-letter { opacity: 1; color: #ffffff; }
     .faith-item.active .faith-item-text { max-height: 80px; opacity: 1; }
   }
 
   /* Rules */
   .section-rule {
     border: none;
-    border-top: 1px solid currentColor;
-    opacity: 0.12;
-    margin: 3rem 0;
+    border-top: 0.5px solid var(--border-dim);
+    margin: 4rem 0;
   }
 
   /* Tiers */
+  .tiers-section {
+    margin-top: 1rem;
+  }
+
   .section-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    opacity: 0.5;
-    margin: 0 0 2rem;
+    color: var(--teal);
+    margin: 0 0 2.5rem;
   }
 
   .tier-card {
-    border: 1px solid currentColor;
-    border-opacity: 0.15;
-    border-radius: 2px;
-    padding: 2rem;
+    border: 0.5px solid var(--border-dim);
+    border-radius: 3px;
+    padding: 2rem 2rem 1.75rem;
     margin-bottom: 1.25rem;
     position: relative;
-    opacity: 1;
+    background: rgba(255, 255, 255, 0.02);
+    transition: border-color 0.2s, background 0.2s;
   }
 
-  /* Use outline style matching site's card aesthetic */
-  .tier-card {
-    outline: 1px solid rgba(128,128,128,0.2);
-    border: none;
+  .tier-card:hover {
+    border-color: rgba(139, 116, 171, 0.4);
+    background: rgba(107, 63, 160, 0.04);
   }
 
   .tier-featured {
-    outline: 2px solid currentColor;
-    outline-opacity: 0.6;
+    border-color: rgba(107, 63, 160, 0.45);
+    background: rgba(107, 63, 160, 0.07);
   }
 
   .tier-header {
@@ -426,10 +435,10 @@
   }
 
   .tier-symbol {
-    font-size: 1.5rem;
-    opacity: 0.4;
+    font-size: 1.75rem;
+    line-height: 1;
     flex-shrink: 0;
-    padding-top: 2px;
+    padding-top: 4px;
   }
 
   .tier-title-block {
@@ -437,32 +446,44 @@
   }
 
   .tier-name {
-    font-size: 1.35rem;
-    font-weight: 500;
-    margin: 0 0 2px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    margin: 0 0 3px;
     line-height: 1.2;
   }
 
   .tier-tagline {
-    font-size: 0.8rem;
-    opacity: 0.5;
-    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
     font-style: italic;
+    color: var(--text-dim);
+    margin: 0;
+    opacity: 0.75;
   }
 
   .tier-price {
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
     white-space: nowrap;
-    opacity: 0.85;
+    color: var(--violet-light, #B48FE0);
+    letter-spacing: 0.04em;
+  }
+
+  .tier-divider {
+    height: 0.5px;
+    background: var(--border-dim);
+    margin: 1rem 0;
   }
 
   .tier-desc {
     font-size: 0.95rem;
-    line-height: 1.75;
-    opacity: 0.75;
+    line-height: 1.8;
+    color: var(--text-dim);
     margin: 0 0 1.25rem;
-    max-width: 56ch;
   }
 
   .tier-perks {
@@ -472,15 +493,20 @@
   }
 
   .tier-perks li {
-    font-size: 0.85rem;
-    opacity: 0.65;
-    padding: 0.2rem 0;
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    padding: 0.25rem 0;
     line-height: 1.6;
+    padding-left: 1rem;
+    position: relative;
   }
 
   .tier-perks li::before {
-    content: "· ";
-    opacity: 0.5;
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--violet-light, #B48FE0);
+    font-size: 0.75rem;
   }
 
   /* Actions row */
@@ -489,23 +515,37 @@
     align-items: center;
     gap: 1.5rem;
     flex-wrap: wrap;
+    margin-top: 1.25rem;
   }
 
   .pay-btn {
     display: inline-block;
-    padding: 0.65rem 1.35rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     text-decoration: none;
-    border: 1px solid currentColor;
+    padding: 0.8rem 1.75rem;
     border-radius: 2px;
-    transition: opacity 0.15s ease;
+    background: var(--violet, #6B3FA0);
+    color: var(--text);
+    border: none;
+    transition: background 0.2s, transform 0.1s;
+    cursor: pointer;
   }
 
   .pay-btn:hover {
-    opacity: 0.65;
+    background: var(--violet-mid, #8B5CC8);
+    transform: translateY(-1px);
   }
+
+  /* Tier-specific button accents */
+  .tier-card:nth-child(1) .pay-btn { background: linear-gradient(135deg, #6B3FA0, #8B5CC8); }
+  .tier-card:nth-child(2) .pay-btn { background: linear-gradient(135deg, #8B5CC8, #B48FE0); color: #0d0619; }
+  .tier-card:nth-child(3) .pay-btn { background: linear-gradient(135deg, #453160, #6B3FA0); }
+  .tier-card:nth-child(4) .pay-btn { background: linear-gradient(135deg, #1A0B2B, #6B3FA0); border: 0.5px solid rgba(180,143,224,0.4); }
+  .tier-card:nth-child(5) .pay-btn { background: transparent; border: 0.5px solid rgba(180,143,224,0.5); color: var(--violet-light); }
+  .tier-card:nth-child(5) .pay-btn:hover { background: rgba(107,63,160,0.15); }
 
   /* QR code */
   .qr-wrap {
@@ -516,73 +556,82 @@
   }
 
   .qr-code {
-    width: 72px;
-    height: 72px;
+    width: 64px;
+    height: 64px;
     display: block;
-    opacity: 0.85;
+    opacity: 0.7;
+    border-radius: 2px;
   }
 
   .qr-label {
-    font-size: 0.65rem;
-    opacity: 0.4;
-    letter-spacing: 0.06em;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--text-faint);
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     margin: 0;
   }
 
   /* Closing */
   .bet-closing {
-    max-width: 52ch;
+    max-width: 60ch;
   }
 
   .bet-closing p {
     font-size: 1rem;
-    line-height: 1.75;
-    opacity: 0.75;
+    line-height: 1.8;
+    color: var(--text-dim);
     margin: 0 0 0.5rem;
   }
 
   .bet-closing a {
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    color: var(--violet-light);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(180,143,224,0.4);
+    transition: border-color 0.2s;
+  }
+
+  .bet-closing a:hover {
+    border-color: var(--violet-light);
+  }
+
+  .section-label-large {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--gold-pale);
+    margin: 0 0 2.5rem;
+    line-height: 1.2;
+  }
+
+  .closing-contact {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 600;
+    color: var(--text);
+    font-style: normal;
+    line-height: 1.4;
+    display: block;
   }
 
   .closing-sub {
-    font-size: 0.8rem !important;
-    opacity: 0.4 !important;
-    margin-top: 1.5rem !important;
-    font-style: italic;
-  }
-
-  /* Nav active state */
-  .nav-active {
-    opacity: 1 !important;
-    font-weight: 600;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.1em;
+    color: var(--teal) !important;
+    opacity: 0.7 !important;
+    margin-top: 2rem !important;
+    font-style: normal !important;
+    text-transform: uppercase;
   }
 
   /* Responsive */
-  @media (max-width: 540px) {
-    .bet-page {
-      padding: 2.5rem 1.25rem 4rem;
-    }
-
-    .tier-card {
-      padding: 1.5rem 1.25rem;
-    }
-
-    .tier-header {
-      flex-wrap: wrap;
-    }
-
-    .tier-price {
-      width: 100%;
-      margin-left: 2.5rem;
-      margin-top: -0.5rem;
-    }
-
-    .tier-actions {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+  @media (max-width: 640px) {
+    .bet-page { padding: 3rem 1.25rem 4rem; }
+    .tier-card { padding: 1.5rem 1.25rem; }
+    .tier-header { flex-wrap: wrap; }
+    .tier-price { width: 100%; margin-top: 0.25rem; }
+    .tier-actions { flex-direction: column; align-items: flex-start; }
   }
 </style>
