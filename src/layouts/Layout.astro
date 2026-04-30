@@ -7,10 +7,12 @@ const { title } = Astro.props;
 
 const pathname = Astro.url.pathname;
 
-// Returns true when the nav link matches the current page
-const isActive = (href: string): boolean => {
+// Returns true when the nav link (or any of its dropdown children) matches the current page
+const isActive = (href: string, dropdown?: { href: string }[]): boolean => {
   if (href === '/') return pathname === '/';
-  return pathname === href || pathname.startsWith(href + '/');
+  if (pathname === href || pathname.startsWith(href + '/')) return true;
+  if (dropdown) return dropdown.some(d => pathname === d.href || pathname.startsWith(d.href + '/'));
+  return false;
 };
 
 // Human-readable label for the current page (shown near logo as breadcrumb)
@@ -607,12 +609,11 @@ const navLinks = [
         <li class:list={['site-nav__item', { 'has-dropdown': l.dropdown }]}>
           <a
             href={l.href}
-            class:list={['site-nav__link', { 'site-nav__link--active': isActive(l.href) }]}
-            aria-current={isActive(l.href) ? 'page' : undefined}
+            class:list={['site-nav__link', { 'site-nav__link--active': isActive(l.href, l.dropdown) }]}
+            aria-current={isActive(l.href, l.dropdown) ? 'page' : undefined}
           >
             {l.label}
-            {l.dropdown && <span class="site-nav__chevron" aria-hidden="true">›</span>}
-            {isActive(l.href) && <span class="site-nav__dot" aria-hidden="true" />}
+            {isActive(l.href, l.dropdown) && <span class="site-nav__dot" aria-hidden="true" />}
           </a>
           {l.dropdown && (
             <ul class="site-nav__dropdown">
