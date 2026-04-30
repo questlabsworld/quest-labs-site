@@ -222,8 +222,8 @@ const navLinks = [
     .site-nav__dropdown {
       position: absolute;
       top: calc(100% + 14px);
-      left: 50%;
-      transform: translateX(-50%) translateY(-6px);
+      left: 0;
+      transform: translateY(-6px);
       list-style: none;
       margin: 0;
       padding: 0.5rem 0;
@@ -245,8 +245,7 @@ const navLinks = [
       content: '';
       position: absolute;
       top: -5px;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 14px;
       width: 8px;
       height: 8px;
       background: rgba(8, 4, 18, 0.94);
@@ -258,7 +257,7 @@ const navLinks = [
     .has-dropdown:hover .site-nav__dropdown {
       opacity: 1;
       visibility: visible;
-      transform: translateX(-50%) translateY(0);
+      transform: translateY(0);
     }
 
     .site-nav__dropdown li {
@@ -283,17 +282,6 @@ const navLinks = [
     }
     .site-nav__dropdown-link.site-nav__link--active {
       color: #FDFCFA;
-    }
-    /* Thin left accent on active dropdown item */
-    .site-nav__dropdown-link.site-nav__link--active::before {
-      content: '';
-      display: inline-block;
-      width: 2px;
-      height: 0.75em;
-      background: var(--violet-light, #B48FE0);
-      border-radius: 1px;
-      margin-right: 0.55em;
-      vertical-align: middle;
     }
 
     /* hamburger */
