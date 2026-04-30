@@ -1726,31 +1726,6 @@ document.addEventListener('keydown', e => {
 
 
 <script is:inline>
-  // Scroll-reveal for .prog-reveal elements
-  const revealEls = document.querySelectorAll('.prog-reveal');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => revealObserver.observe(el));
-
-  // Waitlist form
-  const waitlistForm = document.getElementById('waitlistForm');
-  const waitlistConfirm = document.getElementById('waitlistConfirm');
-  if (waitlistForm) {
-    waitlistForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const data = new FormData(waitlistForm);
-      await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
-      waitlistForm.style.display = 'none';
-      if (waitlistConfirm) waitlistConfirm.style.display = 'block';
-    });
-  }
-
   // ── PROGRAM TESTIMONIALS CAROUSEL ──
   (function() {
     const slides = document.querySelectorAll('.prog-testimonial-slide');
@@ -1779,5 +1754,4 @@ document.addEventListener('keydown', e => {
     document.getElementById('progNext').addEventListener('click', () => goTo(current + 1));
     setInterval(() => goTo(current + 1), 6000);
   })();
-
 </script>
