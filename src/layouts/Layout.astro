@@ -26,12 +26,14 @@ const pageLabels: Record<string, string> = {
 const currentPageLabel = pageLabels[pathname] ?? null;
 
 const navLinks = [
-  { label: 'Home',            href: '/' },
-  { label: 'FLIP',            href: '/program' },
-  { label: 'Educators',       href: '/educators' },
-  { label: 'Foundations',     href: '/foundations' },
-  { label: 'About',           href: '/about' },
-  { label: 'Bet on Us',       href: '/bet' },
+  { label: 'Home',       href: '/' },
+  { label: 'FLIP',       href: '/program', dropdown: [
+      { label: 'Foundations',     href: '/foundations' },
+      { label: 'Black Menagerie', href: '/black-menagerie' },
+  ]},
+  { label: 'Educators',  href: '/educators' },
+  { label: 'About',      href: '/about' },
+  { label: 'Bet on Us',  href: '/bet' },
 ];
 ---
 
@@ -193,6 +195,102 @@ const navLinks = [
     .site-nav__contact.site-nav__link--active {
       background: rgba(107, 63, 160, 0.2);
       border-color: rgba(180, 143, 224, 0.5);
+    }
+
+    /* ── DROPDOWN NAV ── */
+    .site-nav__item {
+      position: relative;
+      list-style: none;
+    }
+
+    .site-nav__chevron {
+      display: inline-block;
+      margin-left: 0.3em;
+      font-size: 0.9em;
+      opacity: 0.55;
+      transition: transform 0.2s, opacity 0.2s;
+      vertical-align: middle;
+    }
+    .has-dropdown:hover .site-nav__chevron {
+      transform: rotate(90deg);
+      opacity: 1;
+    }
+
+    .site-nav__dropdown {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      list-style: none;
+      margin: 0;
+      padding: 0.5rem 0;
+      min-width: 190px;
+      background: rgba(8, 4, 18, 0.94);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 0.5px solid rgba(139, 116, 171, 0.25);
+      border-radius: 4px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 0 0.5px rgba(180, 143, 224, 0.08) inset;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+      z-index: 9100;
+    }
+
+    /* Subtle top notch */
+    .site-nav__dropdown::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      background: rgba(8, 4, 18, 0.94);
+      border-left: 0.5px solid rgba(139, 116, 171, 0.25);
+      border-top: 0.5px solid rgba(139, 116, 171, 0.25);
+      rotate: 45deg;
+    }
+
+    .has-dropdown:hover .site-nav__dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .site-nav__dropdown li {
+      list-style: none;
+    }
+
+    .site-nav__dropdown-link {
+      display: block;
+      padding: 0.6rem 1.25rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(240, 236, 248, 0.58);
+      text-decoration: none;
+      transition: color 0.18s, background 0.18s;
+      white-space: nowrap;
+    }
+    .site-nav__dropdown-link:hover {
+      color: var(--violet-light, #B48FE0);
+      background: rgba(107, 63, 160, 0.14);
+    }
+    .site-nav__dropdown-link.site-nav__link--active {
+      color: #FDFCFA;
+    }
+    /* Thin left accent on active dropdown item */
+    .site-nav__dropdown-link.site-nav__link--active::before {
+      content: '';
+      display: inline-block;
+      width: 2px;
+      height: 0.75em;
+      background: var(--violet-light, #B48FE0);
+      border-radius: 1px;
+      margin-right: 0.55em;
+      vertical-align: middle;
     }
 
     /* hamburger */
@@ -511,15 +609,31 @@ const navLinks = [
 
     <ul class="site-nav__links" id="navLinks">
       {navLinks.map(l => (
-        <li>
+        <li class:list={['site-nav__item', { 'has-dropdown': l.dropdown }]}>
           <a
             href={l.href}
             class:list={['site-nav__link', { 'site-nav__link--active': isActive(l.href) }]}
             aria-current={isActive(l.href) ? 'page' : undefined}
           >
             {l.label}
+            {l.dropdown && <span class="site-nav__chevron" aria-hidden="true">›</span>}
             {isActive(l.href) && <span class="site-nav__dot" aria-hidden="true" />}
           </a>
+          {l.dropdown && (
+            <ul class="site-nav__dropdown">
+              {l.dropdown.map((d: { label: string; href: string }) => (
+                <li>
+                  <a
+                    href={d.href}
+                    class:list={['site-nav__dropdown-link', { 'site-nav__link--active': isActive(d.href) }]}
+                    aria-current={isActive(d.href) ? 'page' : undefined}
+                  >
+                    {d.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </li>
       ))}
     </ul>
