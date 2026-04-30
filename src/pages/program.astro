@@ -99,7 +99,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="prog-testimonials-carousel">
     <div class="prog-testimonials-track">
 
-      <blockquote class="prog-testimonial-slide prog-t-active">
+      <blockquote class="prog-testimonial-slide">
         <p class="prog-testimonial-quote">"She was really supportive of my practice, never pushing me further than I wanted to go but advising me and reassuring me about how I was progressing. She really helped me get back on track, holding my hand just enough along the way."</p>
         <cite class="prog-testimonial-cite">— Clare, returning to a personal practice</cite>
       </blockquote>
@@ -117,11 +117,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <div class="prog-t-controls">
       <button class="prog-t-btn" id="progPrev" aria-label="Previous">←</button>
-      <div class="prog-t-dots">
-        <button class="prog-t-dot prog-t-dot-active" aria-label="Slide 1"></button>
-        <button class="prog-t-dot" aria-label="Slide 2"></button>
-        <button class="prog-t-dot" aria-label="Slide 3"></button>
-      </div>
+      <div class="prog-t-dots" id="progDots"></div>
       <button class="prog-t-btn" id="progNext" aria-label="Next">→</button>
     </div>
   </div>
@@ -1689,6 +1685,10 @@ document.addEventListener('keydown', e => {
     .prog-patron-tier--open { flex-direction: column; }
   }
 
+
+</style>
+
+<style is:global>
   /* ── PROGRAM TESTIMONIALS CAROUSEL ── */
   .prog-testimonials-section {
     padding: 5rem 2.5rem;
@@ -1699,7 +1699,7 @@ document.addEventListener('keydown', e => {
   .prog-testimonials-carousel { max-width: 700px; margin: 0 auto; text-align: center; }
   .prog-testimonials-track { min-height: 220px; display: flex; align-items: center; justify-content: center; }
   .prog-testimonial-slide { display: none; flex-direction: column; align-items: center; margin: 0; }
-  .prog-testimonial-slide.prog-t-active { display: flex; }
+  .prog-testimonial-slide.active { display: flex; }
   .prog-testimonial-quote {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.4rem, 3.5vw, 2rem);
@@ -1721,8 +1721,7 @@ document.addEventListener('keydown', e => {
     width: 7px; height: 7px; border-radius: 50%; background: rgba(180,143,224,0.2);
     cursor: pointer; transition: background 0.2s; border: none; padding: 0;
   }
-  .prog-t-dot.prog-t-dot-active { background: #B48FE0; }
-
+  .prog-t-dot.active { background: #B48FE0; }
 </style>
 
 
@@ -1754,20 +1753,28 @@ document.addEventListener('keydown', e => {
 
   // ── PROGRAM TESTIMONIALS CAROUSEL ──
   (function() {
-    const slides = Array.from(document.querySelectorAll('.prog-testimonial-slide'));
-    const dots   = Array.from(document.querySelectorAll('.prog-t-dot'));
-    if (!slides.length) return;
+    const slides = document.querySelectorAll('.prog-testimonial-slide');
+    const dotsContainer = document.getElementById('progDots');
     let current = 0;
 
+    slides.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'prog-t-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(d);
+    });
+
     function goTo(n) {
-      slides[current].classList.remove('prog-t-active');
-      dots[current].classList.remove('prog-t-dot-active');
+      slides[current].classList.remove('active');
+      dotsContainer.children[current].classList.remove('active');
       current = (n + slides.length) % slides.length;
-      slides[current].classList.add('prog-t-active');
-      dots[current].classList.add('prog-t-dot-active');
+      slides[current].classList.add('active');
+      dotsContainer.children[current].classList.add('active');
     }
 
-    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+    slides[0].classList.add('active');
+
     document.getElementById('progPrev').addEventListener('click', () => goTo(current - 1));
     document.getElementById('progNext').addEventListener('click', () => goTo(current + 1));
     setInterval(() => goTo(current + 1), 6000);
