@@ -14,7 +14,8 @@ import Layout from '../layouts/Layout.astro';
 
   <p class="hero-eyebrow">Quest Labs · Healing-Centered Futures · Est. 2022</p>
   <h1 class="hero-title">The Future Is Not<br>Predicted. It Is <span class="hero-highlight">Played.</span></h1>
-  <p class="hero-sub">A living lab for futures literacy, healing-centered design, and the art of navigating what hasn't happened yet.</p>
+  <p class="hero-sub">A living lab for the art of navigating the unknown.</p>
+  <p class="hero-sub hero-sub--2">Built for people who refuse to keep preparing for a world that no longer exists.</p>
   <div class="hero-ctas">
     <a href="#ecosystem" class="cta-primary">Find your entry point →</a>
     <a href="/educators" class="cta-secondary">I'm an educator</a>
@@ -228,7 +229,12 @@ import Layout from '../layouts/Layout.astro';
     color: var(--text-dim);
     max-width: 580px;
     line-height: 1.7;
-    margin-bottom: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  .hero-sub--2 {
+    font-size: clamp(0.85rem, 1.6vw, 1.05rem);
+    margin-bottom: 2.5rem;
+    opacity: 0.7;
   }
   /* Hero entry CTAs */
   .hero-ctas {
