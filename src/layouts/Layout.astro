@@ -1,17 +1,37 @@
 ---
 interface Props {
   title: string;
-  currentPage?: string;
 }
 
-const { title, currentPage = '/' } = Astro.props;
+const { title } = Astro.props;
+
+const pathname = Astro.url.pathname;
+
+// Returns true when the nav link matches the current page
+const isActive = (href: string): boolean => {
+  if (href === '/') return pathname === '/';
+  return pathname === href || pathname.startsWith(href + '/');
+};
+
+// Human-readable label for the current page (shown near logo as breadcrumb)
+const pageLabels: Record<string, string> = {
+  '/program':        'FLIP Program',
+  '/educators':      'Flip the Script',
+  '/foundations':    'Foundations',
+  '/about':          'About',
+  '/bet':            'Sponsor',
+  '/black-menagerie':'Black Menagerie',
+  '/contact':        'Contact',
+};
+const currentPageLabel = pageLabels[pathname] ?? null;
 
 const navLinks = [
-  { label: 'Start here',      href: '/#ecosystem' },
-  { label: 'FLIP',            href: '/program' },
+  { label: 'Home',            href: '/' },
+  { label: 'FLIP Program',    href: '/program' },
   { label: 'Educators',       href: '/educators' },
+  { label: 'Foundations',     href: '/foundations' },
   { label: 'About',           href: '/about' },
-  { label: 'Bet on Us',       href: '/bet' },
+  { label: 'Sponsor',         href: '/bet' },
 ];
 ---
 
@@ -92,10 +112,31 @@ const navLinks = [
       box-sizing: border-box;
     }
 
+    /* Brand: logo + current-page breadcrumb */
+    .site-nav__brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
     .site-nav__logo {
       height: 104px;
       width: auto;
       flex-shrink: 0;
+    }
+    .site-nav__crumb {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(240, 236, 248, 0.38);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    .site-nav__crumb-sep {
+      color: rgba(180, 143, 224, 0.35);
     }
 
     .site-nav__links {
@@ -117,9 +158,41 @@ const navLinks = [
       transition: color 0.2s;
     }
 
-    .site-nav__link:hover,
-    .site-nav__link--active {
+    .site-nav__link:hover {
       color: var(--violet-light, #B48FE0);
+    }
+    .site-nav__link--active {
+      color: #FDFCFA;
+      position: relative;
+    }
+    /* Small dot under active link */
+    .site-nav__dot {
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--violet-light, #B48FE0);
+      display: block;
+    }
+    /* Contact pill */
+    .site-nav__contact {
+      border: 0.5px solid rgba(107, 63, 160, 0.45);
+      border-radius: 2px;
+      padding: 0.3rem 0.8rem;
+      color: var(--violet-light, #B48FE0) !important;
+      transition: background 0.2s, border-color 0.2s !important;
+    }
+    .site-nav__contact:hover {
+      background: rgba(107, 63, 160, 0.15);
+      border-color: rgba(180, 143, 224, 0.6);
+      color: #FDFCFA !important;
+    }
+    .site-nav__contact.site-nav__link--active {
+      background: rgba(107, 63, 160, 0.2);
+      border-color: rgba(180, 143, 224, 0.5);
     }
 
     /* hamburger */
@@ -303,6 +376,7 @@ const navLinks = [
     @media (max-width: 640px) {
       .site-nav { padding: 0 1.25rem; height: 90px; }
       .site-nav__logo { height: 80px; }
+      .site-nav__crumb { display: none; }
       .site-nav__burger { display: flex; }
 
       .site-nav__links {
@@ -419,7 +493,15 @@ const navLinks = [
   <canvas id="starfield"></canvas>
 
   <nav class="site-nav">
-    <a href="/"><img src="/images/logo/quest-labs-logo.png" alt="Quest Labs" class="site-nav__logo" /></a>
+    <div class="site-nav__brand">
+      <a href="/"><img src="/images/logo/quest-labs-logo.png" alt="Quest Labs — go to homepage" class="site-nav__logo" /></a>
+      {currentPageLabel && (
+        <span class="site-nav__crumb" aria-label={`Current page: ${currentPageLabel}`}>
+          <span class="site-nav__crumb-sep">·</span>
+          {currentPageLabel}
+        </span>
+      )}
+    </div>
 
     <button class="site-nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
@@ -432,12 +514,20 @@ const navLinks = [
         <li>
           <a
             href={l.href}
-            class:list={['site-nav__link', { 'site-nav__link--active': currentPage === l.href }]}
+            class:list={['site-nav__link', { 'site-nav__link--active': isActive(l.href) }]}
+            aria-current={isActive(l.href) ? 'page' : undefined}
           >
             {l.label}
+            {isActive(l.href) && <span class="site-nav__dot" aria-hidden="true" />}
           </a>
         </li>
       ))}
+      <li>
+        <a href="/contact" class:list={['site-nav__link', 'site-nav__contact', { 'site-nav__link--active': isActive('/contact') }]}
+           aria-current={isActive('/contact') ? 'page' : undefined}>
+          Contact
+        </a>
+      </li>
     </ul>
   </nav>
 
