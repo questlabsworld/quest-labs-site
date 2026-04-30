@@ -78,11 +78,11 @@ import Layout from '../layouts/Layout.astro';
         <div>
           <div class="bet-tier-symbol">🪐</div>
           <h2 class="bet-tier-name">The Universe</h2>
-          <p class="bet-tier-tagline">You seed the whole thing.</p>
+          <p class="bet-tier-tagline">Water Earthseed.</p>
         </div>
         <div class="bet-tier-price">$10,000</div>
       </div>
-      <p class="bet-tier-desc">Foundation-level partnership. You fund an entire cohort from the ground up, and you don't disappear when the check clears. This tier comes with real-time, collaborative documentation of the work as it unfolds: participant-voiced, Quest Labs-curated, the good-news feed we all desperately need.</p>
+      <p class="bet-tier-desc">Foundation-level partnership. You fund an entire cohort from the ground up, and you don't disappear when the check clears. This tier comes with real-time, collaborative documentation of the work as it unfolds: participant-voiced, Quest Labs-curated, the most wholesome social media feed we're thirsty for.</p>
       <ul class="bet-tier-perks">
         <li>Named cohort sponsorship</li>
         <li>Collaborative real-time updates from participants and the Quest Labs team</li>
@@ -96,7 +96,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="bet-tier">
       <div class="bet-tier-top">
         <div>
-          <div class="bet-tier-symbol">✦</div>
+          <div class="bet-tier-symbol">🎁</div>
           <h2 class="bet-tier-name">The Wish</h2>
           <p class="bet-tier-tagline">As you wish.</p>
         </div>
@@ -109,9 +109,8 @@ import Layout from '../layouts/Layout.astro';
   </div>
 
   <div class="page-bridge" style="max-width:860px; margin-left:auto; margin-right:auto; padding-left:2.5rem; padding-right:2.5rem;">
-    <p>For larger partnerships, institutional funding, or conversations about embedding Quest Labs in your world:</p>
+    <p class="bet-closing-cta">For larger partnerships, institutional funding, or conversations about embedding Quest Labs in your world:</p>
     <a href="/contact" class="bridge-link">Let's talk →</a>
-    <p class="bet-closing-sub">Word for 2026: <em>audacious.</em> Welcome to it.</p>
   </div>
 
 </div>
@@ -338,11 +337,12 @@ import Layout from '../layouts/Layout.astro';
   .bet-pay-btn:hover { background: var(--violet-mid, #8B5CC8); }
 
   /* ── CLOSING ── */
-  .bet-closing-sub {
-    font-style: italic;
-    color: var(--text-dim);
-    font-size: 0.95rem;
-    margin-top: 1rem;
+  .bet-closing-cta {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
   }
 
   @media (max-width: 640px) {
