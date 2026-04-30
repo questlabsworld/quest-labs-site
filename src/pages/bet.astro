@@ -110,7 +110,7 @@ import Layout from '../layouts/Layout.astro';
 
   <div class="page-bridge" style="max-width:860px; margin-left:auto; margin-right:auto; padding-left:2.5rem; padding-right:2.5rem;">
     <p class="bet-closing-cta">For larger partnerships, institutional funding, or conversations about embedding Quest Labs in your world:</p>
-    <a href="/contact" class="bridge-link">Let's talk →</a>
+    <a href="/contact" class="bridge-link bet-talk-link">Let's talk →</a>
   </div>
 
 </div>
@@ -344,6 +344,14 @@ import Layout from '../layouts/Layout.astro';
   .bet-pay-btn:hover { background: var(--violet-mid, #8B5CC8); }
 
   /* ── CLOSING ── */
+  .bet-talk-link {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+
   .bet-closing-cta {
     font-size: 1.15rem;
     font-weight: 700;
