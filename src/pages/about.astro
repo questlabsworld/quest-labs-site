@@ -4,64 +4,75 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Quest Labs: About">
 
+<!-- ── HERO ── -->
 <div class="about-hero">
   <div class="about-eyebrow">Quest Labs · The Creator</div>
   <h1 class="about-title">About</h1>
   <p class="about-sub">The practitioner-researcher behind the praxis.</p>
 </div>
 
+<!-- ── BIO GRID ── -->
 <div class="about-grid">
   <div class="about-image-block">
     <img src="/images/about/makeda.webp" alt="Makēda Gershenson" class="about-photo" loading="lazy" width="801" height="1200" />
+    <div class="about-image-stats">
+      <div class="about-stat">
+        <span class="about-stat__num">2008</span>
+        <span class="about-stat__label">Year one</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat__num">20+</span>
+        <span class="about-stat__label">Years of practice</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat__num">170</span>
+        <span class="about-stat__label">Educators shaped</span>
+      </div>
+    </div>
   </div>
 
   <div class="about-text-block">
     <div class="about-section-label">Makēda</div>
     <h2 class="about-name">Quest Prime · Practitioner-Researcher</h2>
-    <p>Since 2008, I've been building playgrounds for the future. As founder of Quest Labs | Mosaics in the Making, I facilitate sandbox sessions and research collaborations that function less like classrooms and more like portals, places where play becomes possibility and constraints are composted.</p>
+    <p>Since 2008, I've been building playgrounds for the future. As founder of Quest Labs | Mosaics in the Making, I facilitate sandbox sessions and research collaborations that function less like classrooms and more like portals — places where play becomes possibility and constraints are composted.</p>
     <p>My work dances at the intersection of education, workforce evolution, and radical foresight, weaving decolonial scholarship and embodied practice into experiences that move people from what they've inherited to what they're brave enough to create.</p>
     <p>I hold tension tenderly and am rigorously playful toward co-crafting infrastructures of care.</p>
-    <p>Whether I'm facilitating sandbox sessions that crack open new capacities, conducting organizational research that remaps who holds power over tomorrow, or exploring how a single metaphor can unlock what once seemed impossible, I create the conditions for you to see the stories you've been living inside and then craft a different future together.</p>
+    <p>Whether I'm facilitating sandbox sessions that crack open new capacities, conducting organizational research that remaps who holds power over tomorrow, or exploring how a single metaphor can unlock what once seemed impossible — I create the conditions for you to see the stories you've been living inside and then craft a different future together.</p>
 
     <div class="about-bio-detail">
       <div class="about-bio-label">A little bit about me</div>
-      <ul class="about-bio-list">
-        <li>Founder of Mosaics in the Making (2012) and Quest Labs (2022), a living lab for what's coming our way.</li>
-        <li>Spent nearly twenty years building spaces where people think, feel, and act differently.</li>
-        <li>Classrooms in Palo Alto, the South Bronx, and international schools across the globe. Staff development, restorative practices, and futures facilitation in creative ways that aren't yet commonly practiced.</li>
-        <li>Dual BAs and an MEd from Stanford. Executive MBA from Quantic. MA candidate in Futures Research at FU Berlin Institut Futur; my thesis examines how embodied, play-based learning develops futures capacities among educators.</li>
-        <li>Trained directly with some of the folx who have shaped the field: Riel Miller (UNESCO Futures Literacy Programme), Sohail Inayatullah (CLA &amp; Futures Triangle), Ivana Milojević, and Jake Dunagan (IFTF). Co-authored <em>The Power of Metaphor</em> following Inayatullah and Milojević's CLA Masterclass.</li>
-        <li>Developer of <span style="color:#FDFCFA;">The Black Menagerie</span>, a card-based archetype exploration for futures thinking, and the <span style="color:#FDFCFA;">ABCs for Futures Literacies</span> framework, developed through participatory research with 545 contributions from 170 educators across two healing-centered futures gatherings. This is a living methodology built with the people it serves.</li>
-      </ul>
-    </div>
+      <div class="bio-cards">
 
-    <div id="work-with-us" style="margin-top:3rem; padding-top:3rem; border-top:0.5px solid rgba(107,63,160,0.2);">
-      <p style="font-size:11px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:#B48FE0; margin-bottom:0.75rem;">Work with Makēda</p>
-      <h2 style="font-family:'Cormorant Garamond', serif; font-size:2.2rem; font-weight:500; color:#FDFCFA; margin-bottom:1.5rem; line-height:1.2;">Four ways to bring<br>this work to your world</h2>
+        <div class="bio-card">
+          <div class="bio-card__tag">Founding</div>
+          <p class="bio-card__text">Founder of Mosaics in the Making (2012) and Quest Labs (2022), a living lab for what's coming our way.</p>
+        </div>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:2rem;">
-        <div style="background:rgba(107,63,160,0.06); border:0.5px solid rgba(107,63,160,0.25); border-radius:4px; padding:1.5rem;">
-          <div style="font-size:13px; font-weight:500; color:#FDFCFA; margin-bottom:0.5rem;">For your school or district</div>
-          <div style="font-size:13px; color:#9A90B8; line-height:1.6;">Custom Sandbox Sessions, Sarkar Sandbox facilitation, STEEP Bingo for staff development, futures literacy workshops. Built around what your educators actually need.</div>
+        <div class="bio-card">
+          <div class="bio-card__tag">Practice</div>
+          <p class="bio-card__text">Nearly twenty years building spaces where people think, feel, and act differently.</p>
         </div>
-        <div style="background:rgba(107,63,160,0.06); border:0.5px solid rgba(107,63,160,0.25); border-radius:4px; padding:1.5rem;">
-          <div style="font-size:13px; font-weight:500; color:#FDFCFA; margin-bottom:0.5rem;">For your organization</div>
-          <div style="font-size:13px; color:#9A90B8; line-height:1.6;">Organizational futures research, STEEP Bingo for leadership teams, participatory foresight facilitation, custom futures literacy experiences via Mosaics in the Making.</div>
-        </div>
-        <div style="background:rgba(107,63,160,0.06); border:0.5px solid rgba(107,63,160,0.25); border-radius:4px; padding:1.5rem;">
-          <div style="font-size:13px; font-weight:500; color:#FDFCFA; margin-bottom:0.5rem;">As an individual</div>
-          <div style="font-size:13px; color:#9A90B8; line-height:1.6;">Join a FLIP cohort or the Flip the Script educators cohort. Twelve weeks of embodied, healing-centered futures development. The founding cohort is full. Cohort 02 is forming now.</div>
-        </div>
-        <div style="background:rgba(107,63,160,0.06); border:0.5px solid rgba(107,63,160,0.25); border-radius:4px; padding:1.5rem;">
-          <div style="font-size:13px; font-weight:500; color:#FDFCFA; margin-bottom:0.5rem;">Sponsor a seat</div>
-          <div style="font-size:13px; color:#9A90B8; line-height:1.6;">20 sponsored seats available for the Flip the Script Fall 2026 founding cohort. Fund an educator's place in the room. Pay it forward and materially disrupt systems of oppression and harm.</div>
-        </div>
-      </div>
 
-      <div class="cta-group">
-        <a href="/contact" class="cta-primary">Let's talk</a>
-        <a href="/bet" class="cta-secondary">Sponsor a seat</a>
-        <a href="/program#waitlist" class="cta-secondary">Join a cohort</a>
+        <div class="bio-card">
+          <div class="bio-card__tag">Reach</div>
+          <p class="bio-card__text">Classrooms in Palo Alto, the South Bronx, and international schools across the globe — staff development, restorative practices, and futures facilitation.</p>
+        </div>
+
+        <div class="bio-card">
+          <div class="bio-card__tag">Education</div>
+          <p class="bio-card__text">Dual BAs and an MEd from Stanford. Executive MBA from Quantic. MA candidate in Futures Research at FU Berlin Institut Futur.</p>
+        </div>
+
+        <div class="bio-card">
+          <div class="bio-card__tag">Lineage</div>
+          <p class="bio-card__text">Trained with Riel Miller (UNESCO), Sohail Inayatullah (CLA), Ivana Milojević, and Jake Dunagan (IFTF). Co-authored <em>The Power of Metaphor</em>.</p>
+        </div>
+
+        <div class="bio-card">
+          <div class="bio-card__tag">Frameworks</div>
+          <p class="bio-card__text">Developer of <span class="text-bright">The Black Menagerie</span> and the <span class="text-bright">ABCs for Futures Literacies</span> — built with 545 contributions from 170 educators. A living methodology.</p>
+        </div>
+
       </div>
     </div>
 
@@ -77,11 +88,42 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </div>
 
-<div class="page-bridge" style="max-width:860px; margin-left:auto; margin-right:auto; padding-left:2.5rem; padding-right:2.5rem;">
-  <p>Want to experience the practice before reaching out?</p>
-  <a href="https://lu.ma/questlabs" class="bridge-link">Find a Sandbox Session, open door, no commitment</a>
-  <a href="/educators" class="bridge-link" style="margin-top:0.5rem;">Educator? Flip the Script is where this comes alive in the classroom</a>
-</div>
+<!-- ── WORK WITH MAKĒDA (full-width, below grid) ── -->
+<section id="work-with-us" class="work-section">
+  <div class="work-section__inner">
+    <p class="work-eyebrow">Work with Makēda</p>
+    <h2 class="work-title">Four ways to bring<br>this work to your world</h2>
+
+    <div class="work-cards">
+      <div class="work-card">
+        <div class="work-card__num">01</div>
+        <div class="work-card__heading">For your school or district</div>
+        <p class="work-card__body">Custom Sandbox Sessions, Sarkar Sandbox facilitation, STEEP Bingo for staff development, futures literacy workshops. Built around what your educators actually need.</p>
+      </div>
+      <div class="work-card">
+        <div class="work-card__num">02</div>
+        <div class="work-card__heading">For your organization</div>
+        <p class="work-card__body">Organizational futures research, STEEP Bingo for leadership teams, participatory foresight facilitation, custom futures literacy experiences via Mosaics in the Making.</p>
+      </div>
+      <div class="work-card">
+        <div class="work-card__num">03</div>
+        <div class="work-card__heading">As an individual</div>
+        <p class="work-card__body">Join a FLIP cohort or the Flip the Script educators cohort. Twelve weeks of embodied, healing-centered futures development. The founding cohort is full. Cohort 02 is forming now.</p>
+      </div>
+      <div class="work-card">
+        <div class="work-card__num">04</div>
+        <div class="work-card__heading">Sponsor a seat</div>
+        <p class="work-card__body">20 sponsored seats available for the Flip the Script Fall 2026 founding cohort. Fund an educator's place in the room. Pay it forward and materially disrupt systems of oppression and harm.</p>
+      </div>
+    </div>
+
+    <div class="cta-group">
+      <a href="/contact" class="cta-primary">Let's talk</a>
+      <a href="/bet" class="cta-secondary">Sponsor a seat</a>
+      <a href="/program#waitlist" class="cta-secondary">Join a cohort</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="footer-inner">
@@ -99,8 +141,10 @@ import Layout from '../layouts/Layout.astro';
     </ul>
   </div>
   <div class="footer-anchor">
-    Not sure where to start?
+    Want to experience the practice first?
     <a href="https://lu.ma/questlabs">Find a free Sandbox Session →</a>
+    &nbsp;·&nbsp;
+    <a href="/educators">Educator? Flip the Script is where this comes alive.</a>
   </div>
   <div class="footer-copy">2026 Quest Labs · Makēda · All futures reserved · Berlin &amp; Beyond</div>
 </footer>
@@ -108,32 +152,287 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-  .about-hero { text-align:center; padding:6rem 2rem 3rem; }
-  .about-eyebrow { font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--teal); margin-bottom:1.25rem; opacity:0; animation:progFadeUp 0.8s ease 0.2s forwards; }
-  .about-title { font-family:'Cinzel',serif; font-weight:900; font-size:clamp(2.8rem,6vw,4.5rem); letter-spacing:0.08em; text-transform:uppercase; color:var(--gold-pale); margin-bottom:1rem; line-height:1.1; opacity:0; animation:progFadeUp 0.8s ease 0.4s forwards; }
-  .about-sub { font-style:italic; font-size:1.1rem; color:var(--text-dim); max-width:520px; margin:0 auto; line-height:1.7; opacity:0; animation:progFadeUp 0.8s ease 0.6s forwards; }
-  .about-grid { display:grid; grid-template-columns:1fr 1fr; max-width:1100px; margin:5rem auto; padding:0 2rem; align-items:start; }
-  .about-image-block { padding-right:3rem; }
-  .about-photo { width:100%; height:auto; display:block; }
-  .about-text-block { padding-left:3rem; border-left:1px solid var(--border-dim); }
-  .about-section-label { font-family:'Space Mono',monospace; font-size:1rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem; }
-  .about-name { font-family:'Cinzel',serif; font-weight:700; font-size:clamp(1.2rem,2.5vw,1.8rem); color:var(--text); margin-bottom:1.75rem; line-height:1.3; }
-  .about-text-block p { color:var(--text-dim); font-size:1rem; line-height:1.8; margin-bottom:1.25rem; }
-  .about-bio-detail { margin-top:2rem; padding-top:2rem; border-top:0.5px solid var(--border-dim); }
-  .about-bio-label { font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
-  .about-bio-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.9rem; }
-  .about-bio-list li { color:var(--text-dim); font-size:0.92rem; line-height:1.75; padding-left:1rem; border-left:1.5px solid rgba(107,63,160,0.3); }
-  .about-bio-list li em { color:var(--text); font-style:italic; }
+  /* ── HERO ── */
+  .about-hero {
+    text-align: center;
+    padding: 5rem 2rem 2.5rem;
+  }
+  .about-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1.25rem;
+    opacity: 0;
+    animation: progFadeUp 0.8s ease 0.2s forwards;
+  }
+  .about-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+    opacity: 0;
+    animation: progFadeUp 0.8s ease 0.4s forwards;
+  }
+  .about-sub {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+    opacity: 0;
+    animation: progFadeUp 0.8s ease 0.6s forwards;
+  }
 
-  .about-closing { margin-top:2.5rem; }
-  .about-divider { border:none; border-top:1px solid var(--border-dim); margin-bottom:1.25rem; }
-  .about-closing-text { font-style:italic; color:var(--text-dim); margin-bottom:0.75rem !important; }
-  .about-closing-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
-  .about-closing-links a { font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.08em; color:var(--teal); text-decoration:none; }
-  .about-closing-links a:hover { color:var(--gold); }
-  @media (max-width:768px) {
-    .about-grid { grid-template-columns:1fr; gap:3rem; }
-    .about-image-block { padding-right:0; }
-    .about-text-block { padding-left:0; border-left:none; border-top:1px solid var(--border-dim); padding-top:2rem; }
+  /* ── BIO GRID ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 3.5rem auto 0;
+    padding: 0 2.5rem;
+    align-items: start;
+  }
+  .about-image-block {
+    position: sticky;
+    top: calc(112px + 2rem);
+  }
+  .about-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+  }
+
+  /* ── STAT STRIP below photo ── */
+  .about-image-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(107, 63, 160, 0.15);
+    border: 0.5px solid rgba(107, 63, 160, 0.2);
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+    overflow: hidden;
+  }
+  .about-stat {
+    background: var(--bg);
+    padding: 0.85rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    transition: background 0.2s;
+  }
+  .about-stat:hover { background: rgba(107, 63, 160, 0.06); }
+  .about-stat__num {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--gold-pale);
+    line-height: 1;
+  }
+  .about-stat__label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .about-text-block {
+    border-left: 0.5px solid var(--border-dim);
+    padding-left: 3rem;
+  }
+  .about-section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .about-name {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    line-height: 1.35;
+  }
+  .about-text-block p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.85;
+    margin-bottom: 1.1rem;
+  }
+  .text-bright { color: #FDFCFA; }
+
+  /* ── BIO DETAIL ── */
+  .about-bio-detail {
+    margin-top: 1.75rem;
+    padding-top: 1.75rem;
+    border-top: 0.5px solid var(--border-dim);
+  }
+  .about-bio-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  /* ── BIO CARDS (2×3 grid) ── */
+  .bio-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(107, 63, 160, 0.15);
+    border: 0.5px solid rgba(107, 63, 160, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .bio-card {
+    background: var(--bg);
+    padding: 1.1rem 1.1rem 1.2rem;
+    transition: background 0.2s;
+  }
+  .bio-card:hover { background: rgba(107, 63, 160, 0.06); }
+  .bio-card__tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--violet-light, #B48FE0);
+    margin-bottom: 0.45rem;
+    opacity: 0.75;
+  }
+  .bio-card__text {
+    color: var(--text-dim);
+    font-size: 0.875rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .bio-card__text em { color: var(--text); font-style: italic; }
+
+  @media (max-width: 580px) {
+    .bio-cards { grid-template-columns: 1fr; }
+  }
+
+  /* ── CLOSING ── */
+  .about-closing { margin-top: 2rem; }
+  .about-divider {
+    border: none;
+    border-top: 0.5px solid var(--border-dim);
+    margin-bottom: 1rem;
+  }
+  .about-closing-text {
+    font-style: italic;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem !important;
+  }
+  .about-closing-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .about-closing-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--teal);
+    text-decoration: none;
+  }
+  .about-closing-links a:hover { color: var(--gold); }
+
+  /* ── WORK WITH SECTION (full-width) ── */
+  .work-section {
+    border-top: 0.5px solid var(--border-dim);
+    margin-top: 4.5rem;
+    padding: 4rem 2.5rem;
+  }
+  .work-section__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .work-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--violet-light, #B48FE0);
+    margin-bottom: 0.75rem;
+  }
+  .work-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    font-weight: 500;
+    color: #FDFCFA;
+    margin-bottom: 2.5rem;
+    line-height: 1.2;
+  }
+
+  /* Cards: 4-up with hairline dividers between them */
+  .work-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(107, 63, 160, 0.18);
+    border: 0.5px solid rgba(107, 63, 160, 0.22);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .work-card {
+    background: var(--bg);
+    padding: 1.75rem 1.5rem;
+    transition: background 0.2s;
+  }
+  .work-card:hover { background: rgba(107, 63, 160, 0.07); }
+  .work-card__num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: rgba(180, 143, 224, 0.45);
+    margin-bottom: 0.75rem;
+  }
+  .work-card__heading {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #FDFCFA;
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
+  }
+  .work-card__body {
+    font-size: 0.875rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .work-cards { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 0 1.5rem;
+    }
+    .about-image-block { position: static; }
+    .about-image-stats { grid-template-columns: repeat(3, 1fr); }
+    .about-text-block {
+      border-left: none;
+      border-top: 0.5px solid var(--border-dim);
+      padding-left: 0;
+      padding-top: 2rem;
+    }
+    .work-section { padding: 3rem 1.5rem; }
+    .work-cards { grid-template-columns: 1fr; }
   }
 </style>
