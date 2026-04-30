@@ -70,6 +70,39 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </div>
 
+<!-- TESTIMONIALS CAROUSEL -->
+<div class="prog-testimonials-section">
+  <div class="prog-testimonials-carousel">
+    <div class="prog-testimonials-track">
+
+      <blockquote class="prog-testimonial-slide prog-t-active">
+        <p class="prog-testimonial-quote">"She was really supportive of my practice, never pushing me further than I wanted to go but advising me and reassuring me about how I was progressing. She really helped me get back on track, holding my hand just enough along the way."</p>
+        <cite class="prog-testimonial-cite">— Clare, returning to a personal practice</cite>
+      </blockquote>
+
+      <blockquote class="prog-testimonial-slide">
+        <p class="prog-testimonial-quote">"She's not only listening to what you're saying verbally, but she's also listening to your tone, your word choice — she's able to develop a more well-informed understanding of your state and situation. Makēda has been an invaluable source of support for me."</p>
+        <cite class="prog-testimonial-cite">— Stephanie, building a music career</cite>
+      </blockquote>
+
+      <blockquote class="prog-testimonial-slide">
+        <p class="prog-testimonial-quote">"By asking the right questions, providing the right tools, and being very supportive, Makēda helped me succeed in my academic studies, personal life, and with a difficult transition towards my professional life. Today I am much happier."</p>
+        <cite class="prog-testimonial-cite">— Etienne, navigating a life transition</cite>
+      </blockquote>
+
+    </div>
+    <div class="prog-t-controls">
+      <button class="prog-t-btn" id="progPrev" aria-label="Previous">←</button>
+      <div class="prog-t-dots">
+        <button class="prog-t-dot prog-t-dot-active" aria-label="Slide 1"></button>
+        <button class="prog-t-dot" aria-label="Slide 2"></button>
+        <button class="prog-t-dot" aria-label="Slide 3"></button>
+      </div>
+      <button class="prog-t-btn" id="progNext" aria-label="Next">→</button>
+    </div>
+  </div>
+</div>
+
 <!-- COHORT 02 WAITLIST -->
 <div class="prog-waitlist-section" id="waitlist">
   <div class="prog-waitlist-inner prog-reveal">
@@ -1656,6 +1689,40 @@ document.addEventListener('keydown', e => {
     .prog-patron-tier--open { flex-direction: column; }
   }
 
+  /* ── PROGRAM TESTIMONIALS CAROUSEL ── */
+  .prog-testimonials-section {
+    padding: 5rem 2.5rem;
+    background: rgba(107,63,160,0.04);
+    border-top: 0.5px solid rgba(139,116,171,0.12);
+    border-bottom: 0.5px solid rgba(139,116,171,0.12);
+  }
+  .prog-testimonials-carousel { max-width: 700px; margin: 0 auto; text-align: center; }
+  .prog-testimonials-track { min-height: 220px; display: flex; align-items: center; justify-content: center; }
+  .prog-testimonial-slide { display: none; flex-direction: column; align-items: center; margin: 0; }
+  .prog-testimonial-slide.prog-t-active { display: flex; }
+  .prog-testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-style: italic;
+    color: #FDFCFA;
+    line-height: 1.75;
+    margin: 0 0 1.25rem;
+  }
+  .prog-testimonial-cite { font-size: 0.78rem; letter-spacing: 0.06em; color: #B48FE0; font-style: normal; opacity: 0.85; }
+  .prog-t-controls { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-top: 2.5rem; }
+  .prog-t-btn {
+    background: transparent; border: 0.5px solid rgba(180,143,224,0.35); color: #B48FE0;
+    width: 2.2rem; height: 2.2rem; border-radius: 50%; cursor: pointer; font-size: 1rem;
+    transition: border-color 0.2s, color 0.2s; display: flex; align-items: center; justify-content: center;
+  }
+  .prog-t-btn:hover { border-color: #B48FE0; color: #f0ecf8; }
+  .prog-t-dots { display: flex; gap: 0.5rem; align-items: center; }
+  .prog-t-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: rgba(180,143,224,0.2);
+    cursor: pointer; transition: background 0.2s; border: none; padding: 0;
+  }
+  .prog-t-dot.prog-t-dot-active { background: #B48FE0; }
+
 </style>
 
 
@@ -1684,5 +1751,26 @@ document.addEventListener('keydown', e => {
       if (waitlistConfirm) waitlistConfirm.style.display = 'block';
     });
   }
+
+  // ── PROGRAM TESTIMONIALS CAROUSEL ──
+  (function() {
+    const slides = Array.from(document.querySelectorAll('.prog-testimonial-slide'));
+    const dots   = Array.from(document.querySelectorAll('.prog-t-dot'));
+    if (!slides.length) return;
+    let current = 0;
+
+    function goTo(n) {
+      slides[current].classList.remove('prog-t-active');
+      dots[current].classList.remove('prog-t-dot-active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('prog-t-active');
+      dots[current].classList.add('prog-t-dot-active');
+    }
+
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+    document.getElementById('progPrev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('progNext').addEventListener('click', () => goTo(current + 1));
+    setInterval(() => goTo(current + 1), 6000);
+  })();
 
 </script>
