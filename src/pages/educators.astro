@@ -49,7 +49,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="section-tag">The situation</div>
       <h2>The script we're all<br>still <em>reading from</em></h2>
-      <p>The world we're being asked to prepare students for keeps arriving faster than our nervous systems, and the systems built to support us, were ever designed to handle. Most offerings meet educators right there, in that weight, and add more to carry.</p>
+      <p>The world we're being asked to prepare students for keeps morphing faster than our nervous systems, and the systems built to support us, were ever designed to handle.</p>
       <p>There IS something different. This is what we reach for.</p>
 
       <div class="problem-cols">
@@ -193,6 +193,39 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ═══════════════════════════════════════════
+       TESTIMONIALS CAROUSEL
+  ═══════════════════════════════════════════ -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="testimonials-carousel" id="testimonialsCarousel">
+        <div class="testimonials-track" id="testimonialsTrack">
+
+          <blockquote class="testimonial-slide">
+            <p class="testimonial-quote">"A sensitive and thoughtful educator with a great capacity for learning. Her passion and commitment to teaching is clear and unwavering."</p>
+            <cite class="testimonial-cite">— Ira Lit, Program Director, Stanford Teacher Education Program</cite>
+          </blockquote>
+
+          <blockquote class="testimonial-slide">
+            <p class="testimonial-quote">"Here was a young person of great personal magnetism and force. She is also in that group of exceptional individuals who can pursue a vision and make it come to pass."</p>
+            <cite class="testimonial-cite">— William Ennis, former educator</cite>
+          </blockquote>
+
+          <blockquote class="testimonial-slide">
+            <p class="testimonial-quote">"She has a deep understanding of people and their needs, a skill that cannot be learned; it is instinctual. Her diverse background and experience is an invaluable asset in our ever-changing and more inclusive society."</p>
+            <cite class="testimonial-cite">— Marcia I. Perez, parent of a former student</cite>
+          </blockquote>
+
+        </div>
+        <div class="testimonials-controls">
+          <button class="t-btn t-prev" id="tPrev" aria-label="Previous">←</button>
+          <div class="t-dots" id="tDots"></div>
+          <button class="t-btn t-next" id="tNext" aria-label="Next">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        BEAT 4 — YOUR NEXT DOOR
        Three clean options. One CTA each.
   ═══════════════════════════════════════════ -->
@@ -206,8 +239,8 @@ import Layout from '../layouts/Layout.astro';
         <div class="door-card">
           <div class="door-emoji">🌊</div>
           <h3 class="door-title">Dip a toe</h3>
-          <p>Spring Sandbox — free virtual sessions, May through July 2026. Come feel the practice before the fall. No commitment. Donation based. Spring participants get first access to the Fall founding cohort.</p>
-          <a href="#spring-form" class="btn btn-ghost door-cta">Taste it first — save a Spring spot →</a>
+          <p>Spring Sandbox: free virtual session, May through July 2026. Come feel the practice before the fall. No commitment. Donation based. Spring participants get first access to the Fall founding cohort.</p>
+          <a href="#spring-form" class="btn btn-ghost door-cta">Taste it first: save a Spring spot →</a>
           <p class="cta-micro">free · no commitment</p>
         </div>
 
@@ -378,6 +411,39 @@ import Layout from '../layouts/Layout.astro';
       icon.textContent = '−';
     }
   }
+
+  // ── TESTIMONIALS CAROUSEL ──
+  (function() {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dotsContainer = document.getElementById('tDots');
+    let current = 0;
+
+    // build dots
+    slides.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = 't-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(d);
+    });
+
+    function goTo(n) {
+      slides[current].classList.remove('active');
+      dotsContainer.children[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dotsContainer.children[current].classList.add('active');
+    }
+
+    // show first slide
+    slides[0].classList.add('active');
+
+    document.getElementById('tPrev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('tNext').addEventListener('click', () => goTo(current + 1));
+
+    // auto-advance every 6s
+    setInterval(() => goTo(current + 1), 6000);
+  })();
 </script>
 
 <style is:global>
@@ -1000,6 +1066,87 @@ import Layout from '../layouts/Layout.astro';
       & .accordion-content { padding: 0 1rem 1rem; }
     }
   }
+
+  /* ── TESTIMONIALS CAROUSEL ── */
+  .testimonials-section {
+    padding: 5rem 2.5rem;
+    border-top: 0.5px solid rgba(255,255,255,0.06);
+    border-bottom: 0.5px solid rgba(255,255,255,0.06);
+    background: rgba(107,63,160,0.04);
+  }
+  .testimonials-carousel {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .testimonials-track {
+    position: relative;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .testimonial-slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    animation: tFade 0.4s ease;
+  }
+  .testimonial-slide.active { display: flex; }
+  @keyframes tFade {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .testimonials-section .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-style: italic;
+    color: #FDFCFA;
+    line-height: 1.75;
+    margin: 0 0 1.25rem;
+  }
+  .testimonial-cite {
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: #C4A8E8;
+    font-style: normal;
+    opacity: 0.85;
+  }
+  .testimonials-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .t-btn {
+    background: transparent;
+    border: 0.5px solid rgba(196,168,232,0.35);
+    color: #C4A8E8;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: border-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+  .t-btn:hover { border-color: #C4A8E8; color: #FDFCFA; }
+  .t-dots { display: flex; gap: 0.5rem; align-items: center; }
+  .t-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(196,168,232,0.2);
+    cursor: pointer;
+    transition: background 0.2s;
+    border: none;
+    padding: 0;
+  }
+  .t-dot.active { background: #C4A8E8; }
 </style>
 
 </Layout>
