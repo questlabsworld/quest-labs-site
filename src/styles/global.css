@@ -227,7 +227,7 @@ body {
   .btn-primary {
     display: inline-block;
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text);
@@ -244,7 +244,7 @@ body {
   .btn-secondary {
     display: inline-block;
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-dim);
@@ -495,7 +495,7 @@ body {
 
   .prompt-instruction {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -536,7 +536,7 @@ body {
 
   .prompt-submit {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text);
@@ -568,7 +568,7 @@ body {
 
   .wordcloud-label {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -579,7 +579,7 @@ body {
     align-items: center;
     gap: 8px;
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 0.1em;
     color: var(--teal);
   }
@@ -619,7 +619,7 @@ body {
     text-align: center;
     margin-top: 20px;
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 0.15em;
     color: var(--text-faint);
   }
@@ -747,7 +747,7 @@ body {
 
   .eco-tag {
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 13px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -910,7 +910,7 @@ body {
 
   .eco-stat-label {
     font-family: 'Space Mono', monospace;
-    font-size: 8px;
+    font-size: 13px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -977,7 +977,7 @@ body {
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-family: 'Playfair Display', serif;
-    font-size: 10px;
+    font-size: 13px;
     color: var(--teal);
     letter-spacing: 0.08em;
     text-align: center;
@@ -1003,7 +1003,7 @@ body {
 
   .radial-node:hover { transform: var(--node-transform) scale(1.2) !important; }
   .radial-node .nl { font-size: 1.3em; font-weight: 700; }
-  .radial-node .nw { font-size: 8px; font-family: 'Space Mono', monospace; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; color: var(--text-faint); margin-top: 2px; line-height: 1.2; max-width: 64px; }
+  .radial-node .nw { font-size: 13px; font-family: 'Space Mono', monospace; letter-spacing: 0.05em; text-transform: uppercase; text-align: center; color: var(--text-faint); margin-top: 2px; line-height: 1.2; max-width: 64px; }
 
   .radial-line {
     position: absolute;
@@ -1064,7 +1064,7 @@ body {
 
   .fl-word {
     font-family: 'Space Mono', monospace;
-    font-size: 8px;
+    font-size: 13px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -1106,7 +1106,7 @@ body {
 
   .cohort-label {
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 13px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -1152,7 +1152,7 @@ body {
 
   .footer-links a {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -1164,7 +1164,7 @@ body {
 
   .footer-copy {
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 13px;
     letter-spacing: 0.08em;
     color: var(--text-faint);
     text-align: center;
@@ -1333,7 +1333,7 @@ body {
 
   .ec-stat-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -1412,7 +1412,7 @@ body {
 
   .cohort-bridge-eyebrow {
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--prog-lavender, #b0a3c8);
@@ -1477,7 +1477,7 @@ body {
 
   .about-eyebrow {
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--teal);
@@ -1522,7 +1522,7 @@ body {
 
   .about-image-label {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -1530,7 +1530,7 @@ body {
 
   .about-section-label {
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--gold);
@@ -1590,7 +1590,7 @@ body {
 
   .cover-eyebrow {
     font-family: 'Space Mono', monospace;
-    font-size: 0.58rem;
+    font-size: 0.75rem;
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: var(--gold-pale);
@@ -1662,7 +1662,7 @@ body {
 
   .cover-meta-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.52rem;
+    font-size: 0.75rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -1770,7 +1770,7 @@ body {
 
   .pos-year {
     font-family: 'Space Mono', monospace;
-    font-size: 0.55rem;
+    font-size: 0.75rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -1808,7 +1808,7 @@ body {
 
   .turtle-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.55rem;
+    font-size: 0.75rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--teal);
@@ -1919,7 +1919,7 @@ body {
   }
 
   .abc-desc {
-    font-size: 0.62rem;
+    font-size: 0.75rem;
     color: var(--text-faint);
     line-height: 1.4;
     display: block;
@@ -1980,7 +1980,7 @@ body {
 
   .mvp-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.55rem;
+    font-size: 0.75rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     opacity: 0.7;
@@ -2013,7 +2013,7 @@ body {
 
   .field-eyebrow {
     font-family: 'Space Mono', monospace;
-    font-size: 0.52rem;
+    font-size: 0.75rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -2139,7 +2139,7 @@ body {
 
   .crew-table th {
     font-family: 'Space Mono', monospace;
-    font-size: 0.52rem;
+    font-size: 0.75rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -2163,7 +2163,7 @@ body {
   .crew-role {
     display: inline-block;
     font-family: 'Space Mono', monospace;
-    font-size: 0.52rem;
+    font-size: 0.75rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     padding: 0.15rem 0.4rem;
@@ -2183,7 +2183,7 @@ body {
 
   .riipen-table th {
     font-family: 'Space Mono', monospace;
-    font-size: 0.52rem;
+    font-size: 0.75rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -2254,7 +2254,7 @@ body {
 
   .callout-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.52rem;
+    font-size: 0.75rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -2266,7 +2266,7 @@ body {
     padding: 2.5rem 3rem;
     border-top: 1px solid var(--border-dim);
     font-family: 'Space Mono', monospace;
-    font-size: 0.55rem;
+    font-size: 0.75rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-faint);
@@ -2277,7 +2277,7 @@ body {
 
   @media print {
     .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    body { font-size: 12px; }
+    body { font-size: 13px; }
   }
 
   /* ========================
@@ -2474,7 +2474,7 @@ body {
 
   .prog-section-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     letter-spacing: 0.25em;
     color: var(--prog-lavender);
     text-transform: uppercase;
@@ -2579,7 +2579,7 @@ body {
 
   .prog-tier-tagline {
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
@@ -2738,7 +2738,7 @@ body {
     position: absolute;
     top: 1rem; right: 1rem;
     font-family: 'Space Mono', monospace;
-    font-size: 0.55rem;
+    font-size: 0.75rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--prog-gold);
@@ -2870,7 +2870,7 @@ body {
 
   .prog-stage-num {
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     color: var(--prog-lavender);
     opacity: 0.5;
     width: 24px;
@@ -3006,7 +3006,7 @@ body {
     border: 1px solid rgba(139,116,171,0.35);
     color: var(--gold-pale);
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 13px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     padding: 5px 12px;
@@ -3118,7 +3118,7 @@ body {
 
   .prog-patron-price {
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 13px;
     letter-spacing: 0.12em;
     color: var(--gold);
     white-space: nowrap;
@@ -3169,7 +3169,7 @@ body {
 
   .prog-waitlist-eyebrow {
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--prog-lavender);
@@ -3236,7 +3236,7 @@ body {
 
   .prog-waitlist-note {
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     letter-spacing: 0.1em;
     color: rgba(240, 236, 248, 0.3);
     margin: 0;
@@ -3299,7 +3299,7 @@ body {
 
   .prog-footer p {
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     letter-spacing: 0.1em;
     color: rgba(240, 236, 248, 0.2);
     text-transform: uppercase;
@@ -3385,7 +3385,7 @@ body {
 
   .prog-modal-sub {
     font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #8B74AB;
