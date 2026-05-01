@@ -12,15 +12,17 @@ import Layout from '../layouts/Layout.astro';
   <div class="bm-hero">
     <div class="bm-eyebrow">Quest Labs · Signature Tool · Coming Black Friday 2026</div>
     <h1 class="bm-title">The Black<br>Menagerie</h1>
-    <p class="bm-sub"><span class="bm-accent">A futures literacy card game:</span> part game, part oracle, part mirror.<br>Five creatures. Seventy-eight cards. Two editions.</p>
+    <p class="bm-sub"><span class="bm-accent">78 cards. Five creatures. Draw one. See what shifts.</span></p>
+    <p class="bm-sub bm-sub--mechanic">Tarot structure. Scenario thinking. Perspective-taking. <span class="bm-highlight">A card-based futures literacy practice</span> for anyone trying to navigate what is coming and who they need to become to meet it.</p>
     <div class="bm-badge">Black Friday · November 2026</div>
   </div>
 
   <div class="bm-creatures">
     <div class="bm-section-label">The Five Archetypes</div>
     <h2 class="bm-section-heading">Meet the Black Menagerie</h2>
-    <p class="bm-decolonial">A decolonial, feminist extension of the Menagerie of postnormal potentialities (Sardar &amp; Sweeney, 2016)</p>
-    <p class="bm-section-sub">Each creature holds a different relationship with uncertainty, emergence, and what wants to be born. You will recognize yourself in them. You will grow into the others.</p>
+    <p class="bm-decolonial">Sardar &amp; Sweeney (2016) gave us the Menagerie of Postnormal Potentialities.<br>The Black Menagerie extends it with a decolonial feminist lens and puts it in your hands.<br>Three creatures became five.<br>Postnormal futures scholarship became a game you can play.</p>
+    <p class="bm-section-sub">Each creature holds a different relationship with uncertainty, emergence, and what wants to be born.</p>
+    <p class="bm-section-sub bm-section-sub--mirror">You will recognize yourself in them.<br>You will grow into the others.</p>
 
     <div class="bm-grid">
       <div class="bm-card">
@@ -48,9 +50,10 @@ import Layout from '../layouts/Layout.astro';
         <h3 class="bm-creature-name">Black Sheep</h3>
         <p class="bm-creature-q">What playful disruption wants to emerge?</p>
       </div>
-      <div class="bm-card bm-card--prompt">
+      <a href="https://luma.com/llnorjxw" class="bm-card bm-card--prompt" target="_blank" rel="noopener noreferrer">
         <p class="bm-prompt-text">Which archetype can help you meet this moment?</p>
-      </div>
+        <span class="bm-prompt-cta">Play it live · July 23 →</span>
+      </a>
     </div>
   </div>
 
@@ -58,8 +61,8 @@ import Layout from '../layouts/Layout.astro';
     <div class="bm-section-label">Two Editions</div>
     <div class="bm-editions-grid">
       <div class="bm-edition">
-        <h3>Think Cards for Humanity</h3>
-        <p>The original deck. Futures signals, provocations, and navigational questions for anyone trying to think clearly about what is coming and what to do about it.</p>
+        <h3>Think <em>Cards for Humanity</em></h3>
+        <p>The original deck. Futures signals, provocations, and navigational questions for anyone trying to think more creatively, clearly, and courageously about what is coming and what to do about it.</p>
       </div>
       <div class="bm-edition">
         <h3>Educator Activity Deck</h3>
@@ -71,7 +74,8 @@ import Layout from '../layouts/Layout.astro';
   <div class="bm-lives">
     <div class="bm-section-label">Where It Lives Now</div>
     <h2 class="bm-section-heading">Already in the Room</h2>
-    <p class="bm-lives-text">The card game is not out yet, but the creatures are already in the room. The Black Menagerie is a navigational lens inside every FLIP cohort and Sandbox Session. Come meet it in practice before it lands in your hands.</p>
+    <p class="bm-lives-text">The Black Menagerie debuted at the <strong>2025 International Healing-Centered Education Conference</strong>. It is a navigational lens inside every FLIP cohort and Sandbox Session. The card game is not yet in your hands, but the creatures are already in the room.</p>
+    <p class="bm-lives-text bm-lives-text--cta">Come meet them in practice.</p>
     <div class="cta-group" style="justify-content:center; margin-top:2rem;">
       <a href="https://lu.ma/questlabs" class="cta-primary" target="_blank" rel="noopener noreferrer">Find a Sandbox Session</a>
       <a href="/program" class="cta-secondary">Explore FLIP</a>
@@ -80,7 +84,7 @@ import Layout from '../layouts/Layout.astro';
 
   <div class="bm-access">
     <h2 class="bm-access-heading">Get Early Access</h2>
-    <p class="bm-access-sub">No spam. Just a note when pre-orders go live. Black Friday 2026.</p>
+    <p class="bm-access-sub">Sign up for emails · pre-orders · limited print run · Black Friday 2026</p>
     <form class="bm-form" onsubmit="handleBMSubmit(event)">
       <input type="email" id="bm-email" placeholder="Your email" required class="bm-input" />
       <button type="submit" class="cta-primary" id="bm-btn">Notify Me</button>
@@ -138,14 +142,21 @@ function handleBMSubmit(e) {
   .bm-hero { text-align:center; padding:6rem 2rem 4rem; }
   .bm-eyebrow { font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--bm-violet-light); margin-bottom:1.25rem; opacity:0; animation:progFadeUp 0.8s ease 0.2s forwards; }
   .bm-title { font-family:'Cinzel',serif; font-weight:900; font-size:clamp(2.8rem,6vw,4.5rem); letter-spacing:0.06em; text-transform:uppercase; color:var(--bm-lavender); line-height:1.05; margin-bottom:1.25rem; opacity:0; animation:progFadeUp 0.8s ease 0.4s forwards; }
-  .bm-sub { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1rem,2vw,1.3rem); color:var(--text-dim); max-width:580px; margin:0 auto 1.5rem; line-height:1.6; opacity:0; animation:progFadeUp 0.8s ease 0.6s forwards; }
+  .bm-sub { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.2rem,2.5vw,1.6rem); color:var(--text-dim); max-width:620px; margin:0 auto 1.5rem; line-height:1.6; opacity:0; animation:progFadeUp 0.8s ease 0.6s forwards; }
   .bm-badge { display:inline-block; font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--bm-violet-light); border:0.5px solid rgba(180,143,224,0.4); padding:0.4rem 1rem; border-radius:2px; margin-top:0.5rem; }
 
   .bm-creatures, .bm-editions, .bm-lives, .bm-access { max-width:1060px; margin:0 auto; padding:4rem 2.5rem; border-top:0.5px solid var(--border-dim); }
   .bm-section-label { font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--bm-violet-light); margin-bottom:0.75rem; }
   .bm-section-heading { font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,4vw,3rem); font-weight:500; color:var(--text); margin-bottom:1rem; }
-  .bm-decolonial { font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.1em; color:var(--bm-violet-light); font-style:italic; margin-bottom:1rem; }
+  .bm-decolonial { font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--bm-violet-light); font-style:italic; line-height:1.7; margin-bottom:1.25rem; max-width:700px; border-left:2px solid rgba(180,143,224,0.35); padding-left:1.25rem; }
   .bm-section-sub { color:var(--text-dim); font-size:1rem; line-height:1.8; max-width:680px; margin-bottom:2.5rem; }
+
+  .bm-sub--mechanic {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    margin-top: 0.75rem;
+    opacity: 0;
+    animation: progFadeUp 0.8s ease 0.75s forwards;
+  }
 
   .bm-accent {
     background: linear-gradient(135deg, #B48FE0, #8B5CC8, #C4A8E8);
@@ -154,16 +165,38 @@ function handleBMSubmit(e) {
     background-clip: text;
     font-style: italic;
   }
+  .bm-highlight {
+    background: linear-gradient(135deg, #C4A8E8, #B48FE0, #8B5CC8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-style: italic;
+    font-weight: 600;
+  }
+  .bm-section-sub--mirror {
+    font-style: italic;
+    color: rgba(240, 236, 248, 0.75);
+    font-size: 1.05rem;
+    margin-top: 0;
+  }
+  .bm-lives-text--cta {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--bm-lavender);
+    margin-top: 1rem;
+  }
 
-  .bm-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; }
+  .bm-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:1.25rem; }
   .bm-card { background:rgba(107,63,160,0.05); border:0.5px solid rgba(107,63,160,0.2); border-radius:4px; overflow:hidden; transition:border-color 0.2s; }
   .bm-card:hover { border-color:rgba(180,143,224,0.4); }
-  .bm-img { width:100%; aspect-ratio:1/1; object-fit:cover; display:block; }
-  .bm-creature-name { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500; color:var(--bm-lavender); padding:0.75rem 1rem 0.25rem; }
-  .bm-creature-q { font-style:italic; font-size:0.85rem; color:var(--text-dim); padding:0 1rem 1rem; line-height:1.6; }
+  .bm-img { width:100%; aspect-ratio:1/1; object-fit:contain; background:rgba(14,7,26,0.8); display:block; padding:0.5rem; box-sizing:border-box; }
+  .bm-creature-name { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:500; color:var(--bm-lavender); padding:0.75rem 1rem 0.25rem; }
+  .bm-creature-q { font-style:italic; font-size:1rem; color:var(--text-dim); padding:0 1rem 1rem; line-height:1.6; }
 
   .bm-card--prompt {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, rgba(107,63,160,0.18), rgba(180,143,224,0.10));
@@ -171,6 +204,13 @@ function handleBMSubmit(e) {
     border-radius: 4px;
     padding: 2rem 1.5rem;
     min-height: 200px;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+    gap: 1rem;
+  }
+  .bm-card--prompt:hover {
+    border-color: rgba(180,143,224,0.65);
+    background: linear-gradient(135deg, rgba(107,63,160,0.28), rgba(180,143,224,0.18));
   }
   .bm-prompt-text {
     font-family: 'Cormorant Garamond', serif;
@@ -180,6 +220,13 @@ function handleBMSubmit(e) {
     text-align: center;
     line-height: 1.5;
     margin: 0;
+  }
+  .bm-prompt-cta {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(180, 143, 224, 0.7);
   }
 
   .bm-editions-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1.5rem; }
@@ -200,6 +247,7 @@ function handleBMSubmit(e) {
 
   @media (max-width: 768px) {
     .bm-creatures, .bm-editions, .bm-lives, .bm-access { padding: 3rem 1.5rem; }
+    .bm-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 640px) {
     .bm-editions-grid { grid-template-columns: 1fr; }

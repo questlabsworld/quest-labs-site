@@ -36,7 +36,10 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
       <div class="cta-group">
-        <a href="#spring-sandbox" class="btn btn-primary">Join Spring Sandbox</a>
+        <div class="cta-with-note">
+          <a href="#spring-sandbox" class="btn btn-primary">Join Spring Sandbox</a>
+          <span class="cta-micro-note">free · no commitment</span>
+        </div>
         <a href="#signup" class="btn btn-ghost">Fall 2026 Cohort</a>
       </div>
     </div>
@@ -52,11 +55,6 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="section-tag">The situation</div>
       <h2>The script we're all<br>still <em>reading from</em></h2>
-
-      <div class="pull" style="margin-bottom:2rem;">
-        <p>"A sensitive and thoughtful educator with a great capacity for learning. Her passion and commitment to teaching is clear and unwavering."</p>
-        <cite style="font-size:0.78rem; letter-spacing:0.06em; color:var(--edu-lavender); font-style:normal; opacity:0.85; display:block; margin-top:0.5rem;">- Ira Lit, Program Director, Stanford Teacher Education Program</cite>
-      </div>
 
       <p>The world we're being asked to prepare students for keeps morphing faster than our nervous systems, and the systems built to support us, were ever designed to handle.</p>
       <p>There IS something different. This is what we reach for.</p>
@@ -105,6 +103,7 @@ import Layout from '../layouts/Layout.astro';
   ═══════════════════════════════════════════ -->
   <section>
     <div class="container">
+      <p class="field-credential">Built from 545 contributions by 170 educators across two healing-centered gatherings. Debuted at the 2025 International Healing-Centered Education Conference.</p>
       <div class="section-tag">Who belongs here</div>
       <h2>The whole adult<br><em>ecosystem</em></h2>
       <p class="role-list">Classroom teachers. Instructional coaches. Curriculum designers. Principals. Assistant principals. Department heads. District leads. Learning experience designers. If you touch the conditions in which young people learn, this room is for you.</p>
@@ -244,12 +243,6 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- MARCIA'S QUOTE -->
-      <div class="pull" style="margin-top:3rem; margin-bottom:0;">
-        <p>"She has a deep understanding of people and their needs, a skill that cannot be learned; it is instinctual. Her diverse background and experience is an invaluable asset in our ever-changing and more inclusive society."</p>
-        <cite style="font-size:0.78rem; letter-spacing:0.06em; color:var(--edu-lavender); font-style:normal; opacity:0.85; display:block; margin-top:0.5rem;">- Marcia I. Perez, parent of a former student</cite>
       </div>
 
       <!-- Spring form -->
@@ -474,6 +467,31 @@ import Layout from '../layouts/Layout.astro';
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    & .cta-with-note {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    & .cta-micro-note {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: rgba(196, 168, 232, 0.55);
+      text-transform: lowercase;
+      padding-left: 0.25rem;
+    }
+    & .field-credential {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: rgba(180, 143, 224, 0.6);
+      line-height: 1.7;
+      max-width: 580px;
+      margin-bottom: 2rem;
+      border-left: 2px solid rgba(107, 63, 160, 0.4);
+      padding-left: 1rem;
     }
 
     /* BUTTONS */
@@ -549,10 +567,11 @@ import Layout from '../layouts/Layout.astro';
     }
 
     & p {
-      font-size: 16px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
       font-weight: 400;
-      line-height: 1.8;
-      color: rgba(253,252,250,0.78);
+      line-height: 1.85;
+      color: rgba(253,252,250,0.82);
       margin-bottom: 1rem;
       max-width: 620px;
     }
@@ -571,10 +590,10 @@ import Layout from '../layouts/Layout.astro';
 
     & .inline-blurb {
       max-width: 620px;
-      font-size: 14px;
-      color: rgba(253,252,250,0.65);
+      font-size: 1rem;
+      color: rgba(253,252,250,0.78);
       margin-bottom: 0.75rem;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     & .role-list {
@@ -644,25 +663,26 @@ import Layout from '../layouts/Layout.astro';
     }
     & .prob-col:first-child { border-right: 0.5px solid var(--edu-border); }
     & .prob-col h4 {
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: none;
       color: var(--edu-text-dim);
       margin-bottom: 1rem;
     }
     & .prob-col ul { list-style: none; padding: 0; }
     & .prob-col ul li {
-      font-size: 13px;
+      font-size: 1rem;
       font-weight: 300;
       color: rgba(253,252,250,0.65);
       padding: 0.5rem 0;
       border-bottom: 0.5px solid var(--edu-border-soft);
-      line-height: 1.5;
+      line-height: 1.6;
     }
     & .prob-col ul li:last-child { border-bottom: none; }
     & .prob-col ul li::before { content: '- '; color: var(--edu-text-dim); }
-    & .prob-col.bright h4 { color: var(--edu-violet-light); }
+    & .prob-col.bright h4 { color: var(--edu-lavender); }
     & .prob-col.bright ul li { color: rgba(253,252,250,0.85); }
     & .prob-col.bright ul li::before { color: var(--edu-violet-mid); }
 
@@ -684,7 +704,7 @@ import Layout from '../layouts/Layout.astro';
       padding: 1.25rem 1.5rem;
       border-right: 0.5px solid var(--edu-border);
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
+      font-size: 1.15rem;
       font-style: italic;
       color: var(--edu-lavender);
       display: flex;
@@ -692,10 +712,10 @@ import Layout from '../layouts/Layout.astro';
     }
     & .who-text {
       padding: 1.25rem 1.5rem;
-      font-size: 13px;
+      font-size: 1rem;
       font-weight: 300;
-      color: rgba(253,252,250,0.7);
-      line-height: 1.65;
+      color: rgba(253,252,250,0.78);
+      line-height: 1.75;
     }
 
     /* SESSION ARC */
@@ -744,18 +764,19 @@ import Layout from '../layouts/Layout.astro';
       padding: 1rem 1.25rem;
     }
     & .norm h4 {
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--edu-violet-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-transform: none;
+      color: var(--edu-lavender);
       margin-bottom: 0.4rem;
     }
     & .norm p {
-      font-size: 13px;
+      font-size: 1rem;
       font-weight: 300;
-      color: rgba(253,252,250,0.65);
-      line-height: 1.6;
+      color: rgba(253,252,250,0.75);
+      line-height: 1.7;
       margin: 0;
       max-width: 100%;
     }
@@ -797,9 +818,9 @@ import Layout from '../layouts/Layout.astro';
       margin-bottom: 0;
     }
     & .door-card p {
-      font-size: 13px;
-      color: rgba(253,252,250,0.7);
-      line-height: 1.7;
+      font-size: 1rem;
+      color: rgba(253,252,250,0.78);
+      line-height: 1.75;
       flex: 1;
       max-width: 100%;
       margin: 0;
@@ -889,8 +910,8 @@ import Layout from '../layouts/Layout.astro';
       margin-bottom: 0.4rem;
     }
     & .tool-card p {
-      font-size: 13px;
-      line-height: 1.55;
+      font-size: 1rem;
+      line-height: 1.65;
       color: var(--edu-text-muted);
       margin: 0;
       max-width: 100%;
