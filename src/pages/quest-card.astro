@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Quest Card · Quest Labs"
+  description="The Quest Card is your portable futures compass. Five archetypes from the Black Menagerie — each a different relationship with uncertainty, emergence, and what wants to be born."
+>
+
+<div class="qc-page">
+
+  <div class="qc-hero">
+    <div class="qc-eyebrow">Quest Labs · Tool</div>
+    <h1 class="qc-title">Quest Card</h1>
+    <p class="qc-sub"><span class="qc-accent">Five archetypes. One question. Draw and see what shifts.</span></p>
+    <p class="qc-sub qc-sub--body">A portable compass for navigating uncertainty. The Black Menagerie's five creatures, each holding a different relationship with what is coming and what wants to emerge.</p>
+  </div>
+
+  <div class="qc-archetypes">
+    <div class="qc-section-label">The Five Archetypes</div>
+    <h2 class="qc-section-heading">Meet the Black Menagerie</h2>
+    <p class="qc-origin">Sardar &amp; Sweeney (2016) gave us the Menagerie of Postnormal Potentialities.<br>The Black Menagerie extends it with a decolonial feminist lens.<br>Three creatures became five. Postnormal futures scholarship became a game you can play.</p>
+
+    <div class="qc-grid">
+      <div class="qc-card">
+        <img src="/images/creatures/black-swan.webp" alt="Black Swan archetype" class="qc-img" loading="lazy" width="295" height="298" />
+        <div class="qc-card-body">
+          <h3 class="qc-creature-name">Black Swan</h3>
+          <p class="qc-creature-q">What change is coming that we have not named yet?</p>
+        </div>
+      </div>
+      <div class="qc-card">
+        <img src="/images/creatures/black-elephant.webp" alt="Black Elephant archetype" class="qc-img" loading="lazy" width="299" height="284" />
+        <div class="qc-card-body">
+          <h3 class="qc-creature-name">Black Elephant</h3>
+          <p class="qc-creature-q">What do we all know but have not spoken aloud?</p>
+        </div>
+      </div>
+      <div class="qc-card">
+        <img src="/images/creatures/black-jellyfish.webp" alt="Black Jellyfish archetype" class="qc-img" loading="lazy" width="294" height="281" />
+        <div class="qc-card-body">
+          <h3 class="qc-creature-name">Black Jellyfish</h3>
+          <p class="qc-creature-q">What are we feeling in our bodies about what is next?</p>
+        </div>
+      </div>
+      <div class="qc-card">
+        <img src="/images/creatures/black-marsh-turtle.webp" alt="Black Marsh Turtle archetype" class="qc-img" loading="lazy" width="310" height="306" />
+        <div class="qc-card-body">
+          <h3 class="qc-creature-name">Black Marsh Turtle</h3>
+          <p class="qc-creature-q">What do we need to slow down with? Where is rest calling?</p>
+        </div>
+      </div>
+      <div class="qc-card">
+        <img src="/images/creatures/black-sheep.webp" alt="Black Sheep archetype" class="qc-img" loading="lazy" width="306" height="311" />
+        <div class="qc-card-body">
+          <h3 class="qc-creature-name">Black Sheep</h3>
+          <p class="qc-creature-q">What playful disruption wants to emerge?</p>
+        </div>
+      </div>
+      <a href="https://lu.ma/questlabs" class="qc-card qc-card--cta" target="_blank" rel="noopener noreferrer">
+        <p class="qc-cta-text">Which archetype can help you meet this moment?</p>
+        <span class="qc-cta-link">Play it live · July 23 →</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="qc-editions">
+    <div class="qc-section-label">Two Editions</div>
+    <div class="qc-editions-grid">
+      <div class="qc-edition">
+        <h3>Think <em>Cards for Humanity</em></h3>
+        <p>The original deck. Futures signals, provocations, and navigational questions for anyone trying to think more creatively, clearly, and courageously about what is coming and what to do about it.</p>
+      </div>
+      <div class="qc-edition">
+        <h3>Educator Activity Deck</h3>
+        <p>Adapted for classroom and staffroom use. The same five archetypes, designed for facilitation in educational contexts. Built alongside Flip the Script.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qc-status">
+    <div class="qc-section-label">Where It Lives Now</div>
+    <h2 class="qc-section-heading">Already in the Room</h2>
+    <p class="qc-status-text">The Black Menagerie debuted at the <strong>2025 International Healing-Centered Education Conference</strong>. It is embedded in every FLIP cohort and Sandbox Session. The card game is not yet in your hands — but the creatures are already in the room.</p>
+    <p class="qc-status-cta">Come meet them in practice.</p>
+    <div class="qc-cta-group">
+      <a href="https://lu.ma/questlabs" class="cta-primary" target="_blank" rel="noopener noreferrer">Find a Sandbox Session</a>
+      <a href="/black-menagerie" class="cta-secondary">Full Black Menagerie →</a>
+    </div>
+  </div>
+
+  <div class="qc-notify">
+    <h2 class="qc-notify-heading">Get Early Access</h2>
+    <p class="qc-notify-sub">Sign up for pre-orders · limited print run · Black Friday 2026</p>
+    <form class="qc-form" name="quest-card-notify" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleQCSubmit(event)">
+      <input type="hidden" name="form-name" value="quest-card-notify" />
+      <p style="display:none;"><label>Skip: <input name="bot-field" /></label></p>
+      <input type="email" id="qc-email" name="email" placeholder="Your email" required class="qc-input" />
+      <button type="submit" class="cta-primary" id="qc-btn">Notify Me</button>
+    </form>
+    <p class="qc-form-note" id="qc-msg"></p>
+  </div>
+
+  <div class="page-bridge" style="max-width:860px; margin-left:auto; margin-right:auto; padding-left:2.5rem; padding-right:2.5rem;">
+    <p>Already in the ecosystem?</p>
+    <a href="/educators" class="bridge-link">Educators: the creatures are your navigational lens in Flip the Script</a>
+    <a href="/foundations" class="bridge-link" style="margin-top:0.5rem;">See the theoretical lineage behind the archetypes</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Quest Labs</div>
+      <div class="footer-tagline">Healing-Centered Futures</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="/bet">Bet on Us</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="footer-anchor">
+    Not sure where to start?
+    <a href="https://lu.ma/questlabs">Find a free Sandbox Session →</a>
+  </div>
+  <div class="footer-copy">2026 Quest Labs · Makēda · All futures reserved · Berlin &amp; Beyond</div>
+</footer>
+
+</Layout>
+
+<script is:inline>
+async function handleQCSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('qc-btn');
+  const msg = document.getElementById('qc-msg');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  try {
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(e.target)).toString()
+    });
+    btn.textContent = 'On the list';
+    msg.textContent = 'You will hear from us when pre-orders open.';
+  } catch {
+    btn.textContent = 'Notify Me';
+    btn.disabled = false;
+    msg.textContent = 'Something went wrong. Try again or email questlabs.world@proton.me directly.';
+  }
+}
+</script>
+
+<style>
+  .qc-page {
+    --qc-violet: #6B3FA0;
+    --qc-violet-mid: #8B5CC8;
+    --qc-violet-light: #B48FE0;
+    --qc-lavender: #C4A8E8;
+    padding-top: 1rem;
+  }
+
+  .qc-hero { text-align:center; padding:6rem 2rem 4rem; }
+  .qc-eyebrow { font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--qc-violet-light); margin-bottom:1.25rem; opacity:0; animation:progFadeUp 0.8s ease 0.2s forwards; }
+  .qc-title { font-family:'Cinzel',serif; font-weight:900; font-size:clamp(2.8rem,6vw,4.5rem); letter-spacing:0.06em; text-transform:uppercase; color:var(--qc-lavender); line-height:1.05; margin-bottom:1.25rem; opacity:0; animation:progFadeUp 0.8s ease 0.4s forwards; }
+  .qc-sub { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.1rem,2.5vw,1.5rem); color:var(--text-dim); max-width:620px; margin:0 auto 1.25rem; line-height:1.6; opacity:0; animation:progFadeUp 0.8s ease 0.6s forwards; }
+  .qc-sub--body { font-size:clamp(1rem,2vw,1.2rem); opacity:0; animation:progFadeUp 0.8s ease 0.75s forwards; }
+  .qc-accent { background:linear-gradient(135deg,#B48FE0,#8B5CC8,#C4A8E8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-style:italic; }
+
+  .qc-archetypes, .qc-editions, .qc-status, .qc-notify { max-width:1060px; margin:0 auto; padding:4rem 2.5rem; border-top:0.5px solid var(--border-dim); }
+  .qc-section-label { font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--qc-violet-light); margin-bottom:0.75rem; }
+  .qc-section-heading { font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,4vw,3rem); font-weight:500; color:var(--text); margin-bottom:1rem; }
+  .qc-origin { font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--qc-violet-light); font-style:italic; line-height:1.7; margin-bottom:2rem; max-width:700px; border-left:2px solid rgba(180,143,224,0.35); padding-left:1.25rem; }
+
+  .qc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
+  .qc-card { background:rgba(107,63,160,0.05); border:0.5px solid rgba(107,63,160,0.2); border-radius:4px; overflow:hidden; transition:border-color 0.2s; }
+  .qc-card:hover { border-color:rgba(180,143,224,0.4); }
+  .qc-img { width:100%; aspect-ratio:1/1; object-fit:contain; background:rgba(14,7,26,0.8); display:block; padding:0.5rem; box-sizing:border-box; }
+  .qc-card-body { padding:0.75rem 1rem 1rem; }
+  .qc-creature-name { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:500; color:var(--qc-lavender); margin-bottom:0.25rem; }
+  .qc-creature-q { font-style:italic; font-size:1rem; color:var(--text-dim); line-height:1.6; }
+
+  .qc-card--cta { display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(135deg,rgba(107,63,160,0.18),rgba(180,143,224,0.10)); border:1px solid rgba(180,143,224,0.35); padding:2rem 1.5rem; min-height:200px; text-decoration:none; gap:1rem; }
+  .qc-card--cta:hover { border-color:rgba(180,143,224,0.65); background:linear-gradient(135deg,rgba(107,63,160,0.28),rgba(180,143,224,0.18)); }
+  .qc-cta-text { font-family:'Cormorant Garamond',serif; font-size:clamp(1.1rem,2.5vw,1.5rem); font-style:italic; color:#d4aaff; text-align:center; line-height:1.5; margin:0; }
+  .qc-cta-link { font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(180,143,224,0.7); }
+
+  .qc-editions-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1.5rem; }
+  .qc-edition { background:rgba(107,63,160,0.05); border:0.5px solid rgba(107,63,160,0.2); border-radius:4px; padding:1.75rem; }
+  .qc-edition h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:500; color:var(--qc-lavender); margin-bottom:0.75rem; }
+  .qc-edition p { color:var(--text-dim); font-size:0.9rem; line-height:1.7; }
+
+  .qc-status { text-align:center; }
+  .qc-status-text { color:var(--text-dim); font-size:1rem; line-height:1.8; max-width:640px; margin:0 auto; }
+  .qc-status-cta { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem; color:var(--qc-lavender); margin-top:1rem; }
+  .qc-cta-group { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:2rem; }
+
+  .qc-notify { text-align:center; }
+  .qc-notify-heading { font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:500; color:var(--text); margin-bottom:0.75rem; }
+  .qc-notify-sub { color:var(--text-dim); font-size:0.95rem; margin-bottom:1.5rem; }
+  .qc-form { display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap; }
+  .qc-input { background:rgba(255,255,255,0.03); border:0.5px solid var(--border-dim); border-radius:2px; padding:0.75rem 1rem; color:var(--text); font-family:'Inter',sans-serif; font-size:0.9rem; min-width:260px; outline:none; }
+  .qc-input:focus { border-color:rgba(107,63,160,0.5); }
+  .qc-form-note { color:var(--qc-violet-light); font-size:0.85rem; margin-top:0.75rem; font-style:italic; }
+
+  @media (max-width:768px) {
+    .qc-archetypes, .qc-editions, .qc-status, .qc-notify { padding:3rem 1.5rem; }
+    .qc-grid { grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width:640px) {
+    .qc-editions-grid { grid-template-columns:1fr; }
+    .qc-grid { grid-template-columns:1fr; }
+    .qc-input { min-width:0; width:100%; }
+    .qc-form { flex-direction:column; align-items:stretch; }
+    .qc-hero { padding:4rem 1.5rem 3rem; }
+  }
+</style>

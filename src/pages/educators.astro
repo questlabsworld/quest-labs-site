@@ -276,12 +276,23 @@ import Layout from '../layouts/Layout.astro';
         <div class="section-tag" style="text-align:center">Fall 2026 · 20 spots</div>
         <h2>Ready to <em>flip it</em>?</h2>
         <p>Sign-up is an expression of interest, not a commitment. Spots are limited. We'll be in touch with everything you need to decide.</p>
-        <form class="signup-form" onsubmit="handleSubmit(event)">
-          <input type="text" placeholder="Your name" required id="name-input" />
-          <input type="email" placeholder="Your email" required id="email-input" />
+        <form class="signup-form" name="educators-fall-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+          <input type="hidden" name="form-name" value="educators-fall-signup" />
+          <p style="display:none;"><label>Skip: <input name="bot-field" /></label></p>
+          <input type="text" name="name" placeholder="Your name" required id="name-input" />
+          <input type="email" name="email" placeholder="Your email" required id="email-input" />
           <button type="submit" class="btn btn-primary" id="submit-btn">Raise My Hand →</button>
         </form>
         <p class="signup-note" id="signup-msg">No spam. Just a heads up when the doors open.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="edu-onepager-section">
+    <div class="container">
+      <div class="edu-onepager">
+        <a href="/makeda-gershenson.pdf" target="_blank" rel="noopener" class="edu-onepager__link">Download the one-pager →</a>
+        <p class="edu-onepager__note">Share this with your superintendent or curriculum director before you reach out.</p>
       </div>
     </div>
   </section>
@@ -332,14 +343,26 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     const btn = document.getElementById('submit-btn');
     const msg = document.getElementById('signup-msg');
-    btn.textContent = '✦ Received';
+    btn.textContent = 'Sending…';
     btn.disabled = true;
-    msg.textContent = 'You\'re on the list. We\'ll be in touch before Fall 2026.';
-    msg.style.color = 'var(--edu-lavender)';
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(e.target)).toString()
+      });
+      btn.textContent = '✦ Received';
+      msg.textContent = 'You\'re on the list. We\'ll be in touch before Fall 2026.';
+      msg.style.color = 'var(--edu-lavender)';
+    } catch (err) {
+      btn.textContent = 'Raise My Hand →';
+      btn.disabled = false;
+      msg.textContent = 'Something went wrong. Try again or email questlabs.world@proton.me directly.';
+    }
   }
 
   function toggleAccordion(trigger) {
@@ -988,6 +1011,34 @@ import Layout from '../layouts/Layout.astro';
       font-size: 13px;
       color: var(--edu-text-dim);
       margin-top: 1rem;
+    }
+
+    & .edu-onepager-section {
+      padding: 2.5rem 0 3rem;
+      border-top: 0.5px solid var(--edu-border, rgba(255,255,255,0.08));
+    }
+    & .edu-onepager {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.4rem;
+    }
+    & .edu-onepager__link {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--edu-violet-mid, #B48FE0);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    & .edu-onepager__link:hover { color: var(--edu-gold, #E8D5A3); }
+    & .edu-onepager__note {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: var(--edu-text-dim, #7A6F94);
+      margin: 0;
     }
 
     /* RESPONSIVE */

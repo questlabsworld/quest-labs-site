@@ -50,7 +50,7 @@ import Layout from '../layouts/Layout.astro';
         <h3 class="bm-creature-name">Black Sheep</h3>
         <p class="bm-creature-q">What playful disruption wants to emerge?</p>
       </div>
-      <a href="https://luma.com/llnorjxw" class="bm-card bm-card--prompt" target="_blank" rel="noopener noreferrer">
+      <a href="https://lu.ma/questlabs" class="bm-card bm-card--prompt" target="_blank" rel="noopener noreferrer">
         <p class="bm-prompt-text">Which archetype can help you meet this moment?</p>
         <span class="bm-prompt-cta">Play it live · July 23 →</span>
       </a>
@@ -85,8 +85,10 @@ import Layout from '../layouts/Layout.astro';
   <div class="bm-access">
     <h2 class="bm-access-heading">Get Early Access</h2>
     <p class="bm-access-sub">Sign up for emails · pre-orders · limited print run · Black Friday 2026</p>
-    <form class="bm-form" onsubmit="handleBMSubmit(event)">
-      <input type="email" id="bm-email" placeholder="Your email" required class="bm-input" />
+    <form class="bm-form" name="black-menagerie-notify" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleBMSubmit(event)">
+      <input type="hidden" name="form-name" value="black-menagerie-notify" />
+      <p style="display:none;"><label>Skip: <input name="bot-field" /></label></p>
+      <input type="email" id="bm-email" name="email" placeholder="Your email" required class="bm-input" />
       <button type="submit" class="cta-primary" id="bm-btn">Notify Me</button>
     </form>
     <p class="bm-form-note" id="bm-msg"></p>
@@ -122,11 +124,25 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script is:inline>
-function handleBMSubmit(e) {
+async function handleBMSubmit(e) {
   e.preventDefault();
-  document.getElementById('bm-btn').textContent = 'On the list';
-  document.getElementById('bm-btn').disabled = true;
-  document.getElementById('bm-msg').textContent = 'You will hear from us when pre-orders open.';
+  const btn = document.getElementById('bm-btn');
+  const msg = document.getElementById('bm-msg');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  try {
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(e.target)).toString()
+    });
+    btn.textContent = 'On the list';
+    msg.textContent = 'You will hear from us when pre-orders open.';
+  } catch {
+    btn.textContent = 'Notify Me';
+    btn.disabled = false;
+    msg.textContent = 'Something went wrong. Try again or email questlabs.world@proton.me directly.';
+  }
 }
 </script>
 

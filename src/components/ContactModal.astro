@@ -1,5 +1,4 @@
 ---
-const web3Key = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
 ---
 
 <!-- CONTACT MODAL -->
@@ -10,8 +9,9 @@ const web3Key = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
     <h2 class="ql-modal-title" id="qlModalTitle">Reserve Your Spot</h2>
     <p class="ql-modal-sub">Send us a note and we'll be in touch about the next cohort.</p>
 
-    <form id="qlContactForm" class="ql-modal-form" data-key={web3Key}>
-      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+    <form id="qlContactForm" class="ql-modal-form" name="contact-modal" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact-modal" />
+      <p style="display:none;"><label>Skip: <input name="bot-field" /></label></p>
 
       <div class="ql-field">
         <label for="ql-name">Name</label>
@@ -192,34 +192,17 @@ const web3Key = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
     const btn = document.getElementById('qlSubmitBtn');
     btn.disabled = true;
     btn.textContent = 'Sending...';
-    const formData = new FormData(this);
-    const name = formData.get('name');
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          access_key: this.dataset.key,
-          subject: 'Contact Form Submission from ' + name,
-          from_name: name,
-          replyto: formData.get('email'),
-          email: formData.get('email'),
-          message: formData.get('message'),
-          botcheck: formData.get('botcheck'),
-        })
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(this)).toString()
       });
-      const result = await res.json();
-      if (result.success) {
-        document.getElementById('qlContactForm').style.display = 'none';
-        document.getElementById('qlSuccess').style.display = 'block';
-        setTimeout(closeContactModal, 3000);
-      } else {
-        alert('Something went wrong. Please try again.');
-        btn.disabled = false;
-        btn.textContent = 'Send →';
-      }
+      document.getElementById('qlContactForm').style.display = 'none';
+      document.getElementById('qlSuccess').style.display = 'block';
+      setTimeout(closeContactModal, 3000);
     } catch {
-      alert('Something went wrong. Please try again.');
+      alert('Something went wrong. Please try again or email questlabs.world@proton.me directly.');
       btn.disabled = false;
       btn.textContent = 'Send →';
     }

@@ -36,9 +36,16 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="contact-form-wrap">
+      <!-- Tier banner: shown by JS when ?tier= is present -->
+      <div id="tier-banner" class="tier-banner" style="display:none">
+        <span class="tier-banner__glyph">✦</span>
+        <span id="tier-banner__text"></span>
+      </div>
+
       <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
             class="contact-form" id="contactForm" onsubmit="handleContact(event)">
         <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="tier" id="tier-field" value="" />
         <p style="display:none;"><label>Skip: <input name="bot-field" /></label></p>
 
         <div class="field-row">
@@ -113,6 +120,33 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script is:inline>
+// ── Tier detection ──────────────────────────────────────────
+(function() {
+  const tier = new URLSearchParams(window.location.search).get('tier');
+  if (!tier) return;
+
+  const labels = {
+    witness:  'Witness tier · 4 milestone sessions · perfect if your time is limited',
+    traveler: 'Traveler tier · 8 sessions, every other week · the full arc in compressed form',
+    questor:  'Questor tier · 12 sessions, full arc · you\'re all in',
+  };
+
+  const label = labels[tier.toLowerCase()];
+  if (!label) return;
+
+  // Show banner
+  const banner = document.getElementById('tier-banner');
+  document.getElementById('tier-banner__text').textContent = 'You\'re reaching out about the ' + label;
+  banner.style.display = 'flex';
+
+  // Store tier in hidden field
+  document.getElementById('tier-field').value = tier;
+
+  // Pre-select "FLIP cohort" in the subject dropdown
+  const select = document.getElementById('c-subject');
+  if (select) select.value = 'flip';
+})();
+
 function handleContact(e) {
   e.preventDefault();
   const btn = document.getElementById('contact-btn');
@@ -133,7 +167,7 @@ function handleContact(e) {
   .catch(() => {
     btn.textContent = 'Try again';
     btn.disabled = false;
-    msg.textContent = 'Something went sideways. Try emailing mosaicbymakeda@gmail.com directly.';
+    msg.textContent = 'Something went sideways. Try emailing questlabs.world@proton.me directly.';
     msg.style.color = '#E57373';
   });
 }
@@ -162,6 +196,8 @@ function handleContact(e) {
   .field input:focus, .field textarea:focus, .field select:focus { border-color:rgba(107,63,160,0.6); }
   .field textarea { resize:vertical; min-height:120px; }
   .form-note { font-size:0.8rem; color:var(--text-dim); margin:0; font-style:italic; }
+  .tier-banner { display:flex; align-items:flex-start; gap:0.75rem; background:rgba(107,63,160,0.12); border:0.5px solid rgba(180,143,224,0.35); border-radius:2px; padding:0.9rem 1.1rem; margin-bottom:1.5rem; font-size:0.85rem; color:var(--violet-light); line-height:1.5; }
+  .tier-banner__glyph { flex-shrink:0; margin-top:0.05rem; }
   @media (max-width:768px) {
     .contact-grid { grid-template-columns:1fr; gap:3rem; }
     .contact-context { border-right:none; border-bottom:0.5px solid var(--border-dim); padding-right:0; padding-bottom:2rem; }

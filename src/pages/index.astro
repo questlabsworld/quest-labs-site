@@ -20,10 +20,6 @@ import Layout from '../layouts/Layout.astro';
   <p class="hero-descriptor">Quest Labs builds the tools, programs, and community for people learning to navigate uncertainty with creativity, courage, and care.</p>
   <p class="hero-sub">A living lab for the art of navigating the unknown.</p>
   <p class="hero-sub hero-sub--2">Built for people who refuse to keep preparing for a world that no longer exists.</p>
-  <div class="hero-ctas">
-    <a href="#ecosystem" class="cta-primary">Find your entry point →</a>
-    <a href="/educators" class="cta-secondary">I'm an educator</a>
-  </div>
   <p class="hero-scroll-hint">↓</p>
 </section>
 
@@ -88,13 +84,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="abc-cell"><span class="abc-letter">F</span><span class="abc-word">Fun / Creative</span><span class="abc-desc">Play · imagination · joy · creativity · experimentation</span></div>
       <div class="abc-cell"><span class="abc-letter">G</span><span class="abc-word">Generative</span><span class="abc-desc">Creating · midwiving new possibilities · hospicing toward transformation</span></div>
     </div>
-    <div class="abc-activate">
-      <p class="abc-activate-text">Sandbox Sessions are where all seven literacies come alive in practice. Open door. Donations based. No commitment required.</p>
-      <div class="abc-activate-ctas">
-        <a href="https://lu.ma/questlabs" class="cta-primary" target="_blank" rel="noopener noreferrer">Find a Sandbox Session →</a>
-        <a href="/foundations" class="btn-secondary">Explore the Foundations</a>
-      </div>
-    </div>
+    <a href="/foundations" class="abc-foundations-link">Explore the theoretical foundations →</a>
   </div>
 </section>
 
@@ -106,7 +96,6 @@ import Layout from '../layouts/Layout.astro';
     <p class="cohort-bridge-body">FLIP, the Futures Literacies Invitational Playground, is a 12-week embodied journey toward your 2032 self. The founding cohort is full and already in motion. Cohort 02 is now forming.</p>
     <div class="cohort-bridge-ctas">
       <a href="/program#waitlist" class="btn-primary">Join the Cohort 02 waitlist →</a>
-      <a href="/program" class="btn-secondary">Explore the program →</a>
     </div>
   </div>
 </section>
@@ -523,29 +512,19 @@ import Layout from '../layouts/Layout.astro';
     hyphens: auto;
   }
 
-  /* ABCs activation block */
-  .abc-activate {
-    margin-top: 2rem;
-    padding: 1.75rem 2rem;
-    border: 0.5px solid rgba(107, 63, 160, 0.3);
-    border-radius: 3px;
-    background: rgba(107, 63, 160, 0.05);
-    text-align: center;
+  /* ABCs foundations link */
+  .abc-foundations-link {
+    display: inline-block;
+    margin-top: 1.75rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    text-decoration: none;
+    transition: color 0.2s;
   }
-  .abc-activate-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-style: italic;
-    color: var(--text-dim);
-    margin-bottom: 1.25rem;
-    line-height: 1.7;
-  }
-  .abc-activate-ctas {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  .abc-foundations-link:hover { color: var(--gold); }
 
   /* ── COHORT BRIDGE ── */
   #cohort-bridge {

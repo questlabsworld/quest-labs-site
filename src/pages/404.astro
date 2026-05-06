@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="404 · Quest Labs"
+  description="This page doesn't exist — but the future does. Find your way back to Quest Labs."
+>
+
+<div class="not-found">
+  <div class="nf-glyph">✦</div>
+  <p class="nf-eyebrow">Quest Labs · 404</p>
+  <h1 class="nf-title">This portal<br>leads nowhere.</h1>
+  <p class="nf-sub">The page you're looking for doesn't exist — but the future does. Here's where you probably meant to go.</p>
+
+  <nav class="nf-nav">
+    <a href="/" class="nf-link">
+      <span class="nf-link__label">Home</span>
+      <span class="nf-link__desc">Back to the beginning</span>
+    </a>
+    <a href="/program" class="nf-link">
+      <span class="nf-link__label">FLIP Program</span>
+      <span class="nf-link__desc">12-week futures cohort · Cohort 02 forming</span>
+    </a>
+    <a href="/educators" class="nf-link">
+      <span class="nf-link__label">Flip the Script</span>
+      <span class="nf-link__desc">For educators, coaches &amp; school leaders</span>
+    </a>
+    <a href="/about" class="nf-link">
+      <span class="nf-link__label">About</span>
+      <span class="nf-link__desc">The practitioner-researcher behind the praxis</span>
+    </a>
+    <a href="/contact" class="nf-link">
+      <span class="nf-link__label">Contact</span>
+      <span class="nf-link__desc">Say hello</span>
+    </a>
+  </nav>
+
+  <a href="https://lu.ma/questlabs" class="nf-sandbox" target="_blank" rel="noopener noreferrer">
+    Or just find a free Sandbox Session →
+  </a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Quest Labs</div>
+      <div class="footer-tagline">Healing-Centered Futures</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="/bet">Bet on Us</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">2026 Quest Labs · Makēda · All futures reserved · Berlin &amp; Beyond</div>
+</footer>
+
+</Layout>
+
+<style>
+  .not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 2rem 5rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .nf-glyph {
+    font-size: 2rem;
+    color: var(--violet-light, #B48FE0);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: progFadeUp 0.7s ease 0.1s forwards;
+  }
+
+  .nf-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1.25rem;
+    opacity: 0;
+    animation: progFadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .nf-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    opacity: 0;
+    animation: progFadeUp 0.8s ease 0.35s forwards;
+  }
+
+  .nf-sub {
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text-dim);
+    line-height: 1.75;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: progFadeUp 0.7s ease 0.5s forwards;
+  }
+
+  .nf-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 0.5px solid var(--border-dim);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: progFadeUp 0.7s ease 0.65s forwards;
+  }
+
+  .nf-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--border-dim);
+    background: rgba(255,255,255,0.01);
+    transition: background 0.2s;
+    gap: 1rem;
+  }
+  .nf-link:last-child { border-bottom: none; }
+  .nf-link:hover { background: rgba(107,63,160,0.08); }
+
+  .nf-link__label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .nf-link__desc {
+    font-size: 0.8rem;
+    color: var(--text-faint);
+    text-align: right;
+    font-style: italic;
+  }
+
+  .nf-sandbox {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    text-decoration: none;
+    opacity: 0;
+    animation: progFadeUp 0.7s ease 0.8s forwards;
+    transition: color 0.2s;
+  }
+  .nf-sandbox:hover { color: var(--violet-light); }
+
+  @media (max-width: 480px) {
+    .nf-link { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+    .nf-link__desc { text-align: left; }
+  }
+</style>

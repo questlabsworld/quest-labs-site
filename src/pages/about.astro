@@ -87,6 +87,10 @@ import Layout from '../layouts/Layout.astro';
         <a href="/educators">Flip the Script</a>
         <a href="/about#work-with-us">Work with Makēda</a>
       </div>
+      <div class="about-onepager">
+        <a href="/makeda-gershenson.pdf" target="_blank" rel="noopener" class="about-onepager__link">Download the one-pager →</a>
+        <p class="about-onepager__note">Everything you need to know. One page. 90 seconds.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -348,6 +352,29 @@ import Layout from '../layouts/Layout.astro';
     text-decoration: none;
   }
   .about-closing-links a:hover { color: var(--gold); }
+
+  .about-onepager {
+    margin-top: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .about-onepager__link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--violet-light, #B48FE0);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .about-onepager__link:hover { color: var(--gold); }
+  .about-onepager__note {
+    font-size: 0.78rem;
+    font-style: italic;
+    color: var(--text-faint);
+    margin: 0;
+  }
 
   /* ── WORK WITH SECTION (full-width) ── */
   .work-section {
