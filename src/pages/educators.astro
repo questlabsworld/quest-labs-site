@@ -42,6 +42,10 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <a href="#signup" class="btn btn-ghost">Fall 2026 Cohort</a>
       </div>
+      <div class="hero-onepager">
+        <a href="/makeda-gershenson.pdf" target="_blank" rel="noopener" class="hero-onepager__link">Download the one-pager →</a>
+        <span class="hero-onepager__note">Share this with your superintendent or curriculum director before you reach out.</span>
+      </div>
     </div>
   </div>
 
@@ -505,6 +509,29 @@ import Layout from '../layouts/Layout.astro';
       text-transform: lowercase;
       padding-left: 0.25rem;
     }
+    & .hero-onepager {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+    & .hero-onepager__link {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--edu-violet-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    & .hero-onepager__link:hover { color: var(--edu-lavender); }
+    & .hero-onepager__note {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: var(--edu-text-dim);
+    }
+
     & .field-credential {
       font-family: 'Space Mono', monospace;
       font-size: 0.75rem;
