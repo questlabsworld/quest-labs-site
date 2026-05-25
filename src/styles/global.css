@@ -76,7 +76,7 @@ body {
     border-bottom: 1px solid rgba(139, 116, 171, 0.08);
     box-sizing: border-box;
     font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
   }
@@ -199,7 +199,7 @@ body {
      ======================== */
   .section-eyebrow {
     font-family: 'Space Mono', monospace;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--teal);
@@ -234,7 +234,7 @@ body {
   .btn-primary {
     display: inline-block;
     font-family: 'Space Mono', monospace;
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text);
@@ -251,7 +251,7 @@ body {
   .btn-secondary {
     display: inline-block;
     font-family: 'Space Mono', monospace;
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-dim);
@@ -330,7 +330,7 @@ body {
 
   .hero-eyebrow {
     font-family: 'Space Mono', monospace;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-faint);
