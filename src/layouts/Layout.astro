@@ -40,16 +40,13 @@ const pageLabels: Record<string, string> = {
 const currentPageLabel = pageLabels[pathname] ?? null;
 
 const navLinks = [
-  { label: 'Home', href: '/', dropdown: [
-      { label: 'Foundations', href: '/foundations' },
-  ]},
-  { label: 'FLIP', href: '/program', dropdown: [
-      { label: 'FLIP',            href: '/program' },
+  { label: 'Foundations', href: '/foundations' },
+  { label: 'The Program', href: '/program', dropdown: [
       { label: 'Black Menagerie', href: '/black-menagerie' },
   ]},
-  { label: 'Educators',    href: '/educators' },
-  { label: 'About',        href: '/about' },
-  { label: 'Bet on Us',    href: '/bet' },
+  { label: 'Educators',   href: '/educators' },
+  { label: 'About',       href: '/about' },
+  { label: 'Bet on Us',   href: '/bet' },
 ];
 ---
 

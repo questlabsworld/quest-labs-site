@@ -52,6 +52,44 @@ import Layout from '../layouts/Layout.astro';
   <div class="divider"></div>
 
   <!-- ═══════════════════════════════════════════
+       THREE DOORS — moved to top for clarity
+  ═══════════════════════════════════════════ -->
+  <section>
+    <div class="container">
+      <div class="section-tag">Your next door</div>
+      <h2>Ready? Here are your<br><em>three doors.</em></h2>
+      <div class="three-doors">
+
+        <div class="door-card">
+          <div class="door-emoji">🌊</div>
+          <h3 class="door-title">Dip a toe</h3>
+          <p>Spring Sandbox: free virtual session, May through July 2026. Come feel the practice before the fall. No commitment. Donation based. Spring participants get first access to the Fall founding cohort.</p>
+          <a href="#spring-form" class="btn btn-ghost door-cta">Taste it first: save a Spring spot →</a>
+          <p class="cta-micro">free · no commitment</p>
+        </div>
+
+        <div class="door-card door-card--featured">
+          <div class="door-emoji">🔥</div>
+          <h3 class="door-title">I'm in: Fall 2026 Cohort</h3>
+          <p>12 weeks. 20 educators max. A futures practice built specifically for people who touch the conditions in which young people learn. Sign-up is an expression of interest, not a commitment.</p>
+          <a href="#signup" class="btn btn-primary door-cta">Raise my hand →</a>
+          <p class="cta-micro">expression of interest · 20 spots</p>
+        </div>
+
+        <div class="door-card">
+          <div class="door-emoji">🏫</div>
+          <h3 class="door-title">Join the Leadership Cohort and Bring this to your school</h3>
+          <p>Custom Sandbox Sessions, Sarkar Sandbox facilitation, STEEPS BINGO for staff development. Built around what your educators actually need.</p>
+          <a href="/contact" class="btn btn-ghost door-cta">Let's talk →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════════
        BEAT 1: THE MIRROR
        "You've been here before. This is different."
   ═══════════════════════════════════════════ -->
@@ -177,40 +215,10 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ═══════════════════════════════════════════
-       BEAT 4: YOUR NEXT DOOR
-       Three clean options. One CTA each.
+       BEAT 4: SPRING DETAILS + FORMS
   ═══════════════════════════════════════════ -->
   <section id="spring-sandbox">
     <div class="container">
-      <div class="section-tag">Your next door</div>
-      <h2>Ready? Here are your<br><em>three doors.</em></h2>
-
-      <div class="three-doors">
-
-        <div class="door-card">
-          <div class="door-emoji">🌊</div>
-          <h3 class="door-title">Dip a toe</h3>
-          <p>Spring Sandbox: free virtual session, May through July 2026. Come feel the practice before the fall. No commitment. Donation based. Spring participants get first access to the Fall founding cohort.</p>
-          <a href="#spring-form" class="btn btn-ghost door-cta">Taste it first: save a Spring spot →</a>
-          <p class="cta-micro">free · no commitment</p>
-        </div>
-
-        <div class="door-card door-card--featured">
-          <div class="door-emoji">🔥</div>
-          <h3 class="door-title">I'm in: Fall 2026 Cohort</h3>
-          <p>12 weeks. 20 educators max. A futures practice built specifically for people who touch the conditions in which young people learn. Sign-up is an expression of interest, not a commitment.</p>
-          <a href="#signup" class="btn btn-primary door-cta">Raise my hand →</a>
-          <p class="cta-micro">expression of interest · 20 spots</p>
-        </div>
-
-        <div class="door-card">
-          <div class="door-emoji">🏫</div>
-          <h3 class="door-title">Join the Leadership Cohort and Bring this to your school</h3>
-          <p>Custom Sandbox Sessions, Sarkar Sandbox facilitation, STEEPS BINGO for staff development. Built around what your educators actually need.</p>
-          <a href="/contact" class="btn btn-ghost door-cta">Let's talk →</a>
-        </div>
-
-      </div>
 
       <!-- Spring Sandbox session details: accordion -->
       <div class="spring-details">

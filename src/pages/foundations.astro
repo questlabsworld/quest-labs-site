@@ -12,14 +12,15 @@ import Layout from '../layouts/Layout.astro';
   <!-- HERO -->
   <div class="cover">
     <div class="cover-rule"></div>
-    <div class="cover-eyebrow">Quest Labs · 2026</div>
+    <div class="cover-eyebrow">Quest Labs · Est. 2022</div>
     <div class="cover-title">Foundations<span class="cover-dot">.</span></div>
-    <div class="cover-sub">Where this comes from, what holds it together, and what makes it distinctly Quest Labs.</div>
   </div>
+
+  <p class="foundations-intro">Quest Labs is built on a methodology. This page shares the roots of the practice: where it came from, what holds it together, and what makes it uniquely Quest Labs.</p>
 
   <div class="cta-group" style="justify-content:center; margin-bottom:2rem;">
     <a href="https://lu.ma/questlabs" class="cta-primary">Find a Sandbox Session →</a>
-    <a href="/program" class="cta-secondary">Explore FLIP →</a>
+    <a href="/program" class="cta-secondary">Explore The Program →</a>
   </div>
 
   <!-- ══════════════════════════════════
@@ -43,7 +44,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="pos-item pos-inayat">
         <div class="pos-scholar" style="color:var(--gold)">Causal Layered Analysis</div>
         <div class="pos-year">Sohail Inayatullah · MetafutureSchool / UNESCO Chair</div>
-        <div class="pos-what">CLA. Futures Triangle. Narrative Foresight. Portal of Possibilities grew out of conversation with this work. CLA MadLibs applies Inayatullah's four layers directly and makes academic rigor playful. Makēda co-authored <em>The Power of Metaphor</em> following Inayatullah &amp; Milojević's CLA Masterclass.</div>
+        <div class="pos-what">CLA. Futures Triangle. Narrative Foresight. Portal of Possibilities grew out of conversation with this work. CLA MadLibs applies Inayatullah's four layers directly and makes academic rigor playful. Makēda co-authored <a href="https://jfsdigital.org/2026/05/07/25501/" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px"><em>Metaphors for Reimagined Futures</em></a> following Inayatullah &amp; Milojević's CLA Masterclass.</div>
       </div>
 
       <div class="pos-item pos-dunagan">
@@ -356,6 +357,17 @@ import Layout from '../layouts/Layout.astro';
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold-pale);
+  }
+  .foundations-intro {
+    max-width: 580px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.8;
+    letter-spacing: 0.01em;
   }
   .lead {
     font-family: 'Cormorant Garamond', serif;
