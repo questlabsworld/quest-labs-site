@@ -15,12 +15,13 @@ import Layout from '../layouts/Layout.astro';
   <div class="container">
     <div class="hero">
       <div class="hero-eyebrow">Quest Labs · Educators Cohort · Fall 2026</div>
-      <h1>Flip the<br><em>Script</em></h1>
+      <h1 class="hero-flip">FLIP</h1>
+      <p class="hero-program-name">Futures Literacy <em>in Play</em></p>
       <p class="hero-sub">A community of praxis for educators trying to fit hope and future transformation into systems built for the past.</p>
       <div class="hero-stats">
         <div class="stat">
           <span class="stat-num">20</span>
-          <span class="stat-label">Educators max</span>
+          <span class="stat-label">Per cohort</span>
         </div>
         <div class="stat">
           <span class="stat-num">12</span>
@@ -71,15 +72,15 @@ import Layout from '../layouts/Layout.astro';
         <div class="door-card door-card--featured">
           <div class="door-emoji">🔥</div>
           <h3 class="door-title">I'm in: Fall 2026 Cohort</h3>
-          <p>12 weeks. 20 educators max. A futures practice built specifically for people who touch the conditions in which young people learn. Sign-up is an expression of interest, not a commitment.</p>
+          <p>12 weeks. 20 educators per cohort, with multiple cohorts running. A futures practice built specifically for people who touch the conditions in which young people learn. Sign-up is an expression of interest, not a commitment.</p>
           <a href="#signup" class="btn btn-primary door-cta">Raise my hand →</a>
-          <p class="cta-micro">expression of interest · 20 spots</p>
+          <p class="cta-micro">expression of interest · limited capacity</p>
         </div>
 
         <div class="door-card">
           <div class="door-emoji">🏫</div>
-          <h3 class="door-title">Join the Leadership Cohort and Bring this to your school</h3>
-          <p>Custom Sandbox Sessions, Sarkar Sandbox facilitation, STEEPS BINGO for staff development. Built around what your educators actually need.</p>
+          <h3 class="door-title">Bring this to your whole school or team</h3>
+          <p>Leadership Cohort option: Custom Sandbox Sessions, Sarkar Sandbox facilitation, STEEPS Bingo half-day for staff development. For teams from the same building or district. Built around what your educators actually need.</p>
           <a href="/contact" class="btn btn-ghost door-cta">Let's talk →</a>
         </div>
 
@@ -285,7 +286,7 @@ import Layout from '../layouts/Layout.astro';
   <section id="signup">
     <div class="container">
       <div class="signup-section">
-        <div class="section-tag" style="text-align:center">Fall 2026 · 20 spots</div>
+        <div class="section-tag" style="text-align:center">Fall 2026 · 20 per cohort · limited capacity</div>
         <h2>Ready to <em>flip it</em>?</h2>
         <p>Sign-up is an expression of interest, not a commitment. Spots are limited. We'll be in touch with everything you need to decide.</p>
         <form class="signup-form" name="educators-fall-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
@@ -466,6 +467,29 @@ import Layout from '../layouts/Layout.astro';
     }
     & .hero h1 em {
       font-style: italic;
+      color: var(--edu-lavender);
+    }
+    & .hero-flip {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(4rem, 14vw, 9rem) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.18em !important;
+      color: var(--edu-cream) !important;
+      line-height: 1 !important;
+      margin-bottom: 0.5rem !important;
+    }
+    & .hero-program-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--edu-text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.4;
+    }
+    & .hero-program-name em {
+      font-style: normal;
       color: var(--edu-lavender);
     }
     & .hero-sub {
