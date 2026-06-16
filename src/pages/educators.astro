@@ -16,7 +16,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="hero">
       <div class="hero-eyebrow">Quest Labs · Educators Cohort · Fall 2026</div>
       <h1 class="hero-flip">FLIP</h1>
-      <p class="hero-program-name">Futures Literacy <em>in Play</em></p>
+      <p class="hero-program-name">Futures Literacies <em>in Praxis</em></p>
       <p class="hero-sub">A community of praxis for educators trying to fit hope and future transformation into systems built for the past.</p>
       <div class="hero-stats">
         <div class="stat">
@@ -38,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="cta-group">
         <div class="cta-with-note">
-          <a href="#spring-sandbox" class="btn btn-primary">Join Spring Sandbox</a>
+          <a href="#summer-sandbox" class="btn btn-primary">Join Summer Sandbox</a>
           <span class="cta-micro-note">free · no commitment</span>
         </div>
         <a href="#signup" class="btn btn-ghost">Fall 2026 Cohort</a>
@@ -64,8 +64,8 @@ import Layout from '../layouts/Layout.astro';
         <div class="door-card">
           <div class="door-emoji">🌊</div>
           <h3 class="door-title">Dip a toe</h3>
-          <p>Spring Sandbox: free virtual session, May through July 2026. Come feel the practice before the fall. No commitment. Donation based. Spring participants get first access to the Fall founding cohort.</p>
-          <a href="#spring-form" class="btn btn-ghost door-cta">Taste it first: save a Spring spot →</a>
+          <p>Summer Sandbox: free virtual session, May through July 2026. Come feel the practice before the fall. No commitment. Donation based. Summer participants get first access to the Fall founding cohort.</p>
+          <a href="#summer-form" class="btn btn-ghost door-cta">Taste it first: save a Summer spot →</a>
           <p class="cta-micro">free · no commitment</p>
         </div>
 
@@ -189,7 +189,7 @@ import Layout from '../layouts/Layout.astro';
 
       <p class="inline-blurb">Five archetypes from the Black Menagerie serve as your navigational lens throughout. You'll meet them in the room. <a href="/black-menagerie" class="inline-link">Meet the Black Menagerie →</a></p>
 
-      <p class="inline-blurb">Built on the ABCs for Futures Literacies framework that emerged from 545 contributions by 170 educators. Not a curriculum. A living methodology. <a href="/foundations" class="inline-link">Explore the foundations ↗</a></p>
+      <p class="inline-blurb">Built on the Futures Alphabet framework that emerged from 545 contributions by 170 educators. Not a curriculum. A living methodology. <a href="/foundations" class="inline-link">Explore the foundations ↗</a></p>
 
       <div class="section-tag" style="margin-top:3.5rem">How we hold it</div>
       <h3 class="subhead">The norms that make the room possible</h3>
@@ -218,30 +218,30 @@ import Layout from '../layouts/Layout.astro';
   <!-- ═══════════════════════════════════════════
        BEAT 4: SPRING DETAILS + FORMS
   ═══════════════════════════════════════════ -->
-  <section id="spring-sandbox">
+  <section id="summer-sandbox">
     <div class="container">
 
-      <!-- Spring Sandbox session details: accordion -->
+      <!-- Summer Sandbox session details: accordion -->
       <div class="spring-details">
         <button class="accordion-trigger" onclick="toggleAccordion(this)" aria-expanded="false">
-          <span>Spring Sandbox: session details</span>
+          <span>Summer Sandbox: session details</span>
           <span class="accordion-icon">+</span>
         </button>
         <div class="accordion-content" hidden>
           <div class="tools-grid" style="margin-top:1.25rem">
             <div class="tool-card">
               <span class="tool-badge edu">Session A · 75 min</span>
-              <h4>Sarkar Sandbox 4.0</h4>
+              <h4>Sarkar Sandbox <span class="session-tip" data-tip="Feel It">◈</span></h4>
               <p>The full immersive format. Futures generative, embodied, participatory. This is the room. Come feel it.</p>
             </div>
             <div class="tool-card">
               <span class="tool-badge edu">Session B · 75 min</span>
-              <h4>Black Menagerie</h4>
+              <h4>Black Menagerie <span class="session-tip" data-tip="Meet Them">◈</span></h4>
               <p>A taste of the card game at the center of the ecosystem. Five creatures. Futures signals. Collective sense-making.</p>
             </div>
             <div class="tool-card">
-              <span class="tool-badge edu">Session C · 60 min</span>
-              <h4>Co-Design Conversation</h4>
+              <span class="tool-badge edu">Session C · 75 min</span>
+              <h4>Co-Design Conversation <span class="session-tip" data-tip="Shape Us">◈</span></h4>
               <p>What do you actually need as an educator right now? Your answers shape the Fall cohort. This is not a survey. This is a sandbox.</p>
             </div>
           </div>
@@ -258,10 +258,10 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <!-- Spring form -->
-      <div id="spring-form" style="margin-top:3rem">
+      <!-- Summer form -->
+      <div id="summer-form" style="margin-top:3rem">
         <div class="signup-section signup-section--inline">
-          <div class="section-tag">Register for Spring Sandbox</div>
+          <div class="section-tag">Register for Summer Sandbox</div>
           <h3 class="signup-head">Save your spot</h3>
           <p class="signup-lede">Tell us your name, email, and which session(s) you're curious about. We'll send you everything you need.</p>
           <form class="signup-form signup-form--inline" id="springSandboxForm" name="spring-sandbox-signup" method="POST" data-netlify="true" onsubmit="handleSpringSubmit(event)">
@@ -269,10 +269,10 @@ import Layout from '../layouts/Layout.astro';
             <input type="text" name="name" placeholder="Your name" required id="spring-name" />
             <input type="email" name="email" placeholder="Your email" required id="spring-email" />
             <div class="session-checks" style="width:100%; margin-top:0;">
-              <label><input type="checkbox" name="session[]" value="Sarkar Sandbox 4.0 (75 min)" id="sess-a" /> Sarkar Sandbox 4.0 (75 min)</label>
+              <label><input type="checkbox" name="session[]" value="Sarkar Sandbox (75 min)" id="sess-a" /> Sarkar Sandbox (75 min)</label>
               <label><input type="checkbox" name="session[]" value="Black Menagerie (75 min)" id="sess-b" /> Black Menagerie (75 min)</label>
-              <label><input type="checkbox" name="session[]" value="Co-Design Conversation (60 min)" id="sess-c" /> Co-Design Conversation (60 min)</label>
-              <label><input type="checkbox" name="session[]" value="All sessions" id="sess-all" /> All of the above, obviously</label>
+              <label><input type="checkbox" name="session[]" value="Co-Design Conversation (75 min)" id="sess-c" /> Co-Design Conversation (75 min)</label>
+              <label><input type="checkbox" name="session[]" value="All sessions" id="sess-all" /> All of the above</label>
             </div>
             <button type="submit" class="btn btn-primary" id="spring-btn">Reserve My Spot →</button>
           </form>
@@ -417,7 +417,7 @@ import Layout from '../layouts/Layout.astro';
     font-family: 'Mulish', 'Inter', sans-serif;
     color: var(--edu-text-primary);
     line-height: 1.7;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
 
     /* LAYOUT */
@@ -984,6 +984,57 @@ import Layout from '../layouts/Layout.astro';
       border: 0.5px solid rgba(196,168,232,0.5);
       background: rgba(196,168,232,0.04);
     }
+    & .session-tip {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(180, 143, 224, 0.18);
+      color: var(--edu-lavender);
+      font-size: 10px;
+      text-align: center;
+      line-height: 16px;
+      cursor: help;
+      position: relative;
+      margin-left: 5px;
+      vertical-align: middle;
+      font-family: 'Space Mono', monospace;
+    }
+    & .session-tip::before {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: calc(100% + 7px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(107, 63, 160, 0.96);
+      color: var(--edu-cream);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      white-space: nowrap;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      z-index: 10;
+    }
+    & .session-tip::after {
+      content: '';
+      position: absolute;
+      bottom: calc(100% + 3px);
+      left: 50%;
+      transform: translateX(-50%);
+      border: 4px solid transparent;
+      border-top-color: rgba(107, 63, 160, 0.96);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      z-index: 10;
+    }
+    & .session-tip:hover::before,
+    & .session-tip:hover::after { opacity: 1; }
+
     & .tool-card h4 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.15rem;
