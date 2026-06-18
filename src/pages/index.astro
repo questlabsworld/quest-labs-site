@@ -55,7 +55,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="eco-intent">I'm an educator</div>
       <h3 class="eco-label">Flip the Script</h3>
       <p class="eco-desc">Built for teachers, coaches, and school leaders. Join the fall cohort or bring this to your school.</p>
-      <a href="/educators" class="eco-cta eco-cta--primary">Educators, this way →</a>
+      <a href="/cill" class="eco-cta eco-cta--primary">Educators, this way →</a>
     </div>
 
     <div class="eco-card">
@@ -119,6 +119,16 @@ import Layout from '../layouts/Layout.astro';
       </svg>
     </div>
     <a href="/foundations" class="abc-foundations-link">Explore the theoretical foundations →</a>
+  </div>
+</section>
+
+<!-- ===== BLACK MENAGERIE TEASER ===== -->
+<section id="black-menagerie-teaser">
+  <div class="bm-teaser-inner">
+    <p class="section-eyebrow">The Black Menagerie · Coming Black Friday 2026</p>
+    <h2 class="bm-teaser-headline">Five creatures.<br>Draw one. See what shifts.</h2>
+    <p class="bm-teaser-body">Scenario thinking. Perspective-taking. A card-based futures literacy practice for anyone trying to navigate what is coming and who they need to become to meet it.</p>
+    <a href="/black-menagerie" class="bm-teaser-link">Meet the five archetypes →</a>
   </div>
 </section>
 
@@ -611,6 +621,45 @@ import Layout from '../layouts/Layout.astro';
     transition: color 0.2s;
   }
   .abc-foundations-link:hover { color: var(--gold); }
+
+  /* ── BLACK MENAGERIE TEASER ── */
+  #black-menagerie-teaser {
+    padding: 5rem 2rem;
+    border-top: 0.5px solid var(--border-dim);
+    text-align: center;
+  }
+  .bm-teaser-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .bm-teaser-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--text);
+  }
+  .bm-teaser-body {
+    font-size: 1rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+    max-width: 520px;
+  }
+  .bm-teaser-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: opacity 0.2s;
+  }
+  .bm-teaser-link:hover { opacity: 0.7; }
 
   /* ── COHORT BRIDGE ── */
   #cohort-bridge {
