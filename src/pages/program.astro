@@ -16,15 +16,6 @@ import Layout from '../layouts/Layout.astro';
   <h1 class="prog-hero-title">FLIP</h1>
   <p class="prog-hero-subtitle">The Questor's Invitational</p>
   <p class="prog-hero-sub">A 12-week creative &amp; futures journey.<br>You're invited to meet your future Self.</p>
-  <div class="prog-hero-cta">
-    <a href="#waitlist" class="prog-btn prog-btn-primary">Join a Cohort →</a>
-    <a href="#journey" class="prog-btn prog-btn-ghost">Explore the Arc</a>
-    <a href="#tiers" class="cta-ghost">Choose Your Path</a>
-  </div>
-  <div class="prog-scroll-hint">
-    <span>Scroll</span>
-    <div class="prog-scroll-line"></div>
-  </div>
 </div>
 
 <div class="prog-divider"></div>
@@ -41,14 +32,22 @@ import Layout from '../layouts/Layout.astro';
       Remember, someone built this world.<br><br>
       We're here to build a new one.<br><br>
       Over 12 weeks, a cohort of 6 brave travelers move through 12 worlds. Each week the world changes: same crew, different questions. We keep what serves our future Self and collective. We discover what we're building toward.<br><br>
-      By the final session, each traveler holds a <strong class="text-bright">2032 Job Description</strong> assembled piece by piece across 12 weeks of Artist's Way practices and Sandbox Sessions.<br><br>
+      By the final session, each traveler holds either a <strong class="text-bright">Futures Affirmation</strong> or <strong class="text-bright">2032 Job Description</strong> assembled piece by piece across 12 weeks of Artist's Way practices and Sandbox Sessions.<br><br>
       Not a resume. A living document. Equal parts manifesto, methodology, and spell.
     </p>
-    <div class="prog-educator-bridge">
+
+    <div class="prog-educator-bridge" style="margin-top: 3rem;">
       <p class="prog-educator-bridge__label">Teaching? Leading a school?</p>
-      <a href="/cill" class="prog-educator-bridge__link">Flip the Script is built specifically for educators and school leaders →</a>
+      <a href="/cill" class="prog-educator-bridge__link">Futures Literacies in Praxis is built specifically for educators and school leaders →</a>
     </div>
   </div>
+
+  <div class="prog-premise-cta" style="margin-top: 3rem;">
+    <a href="#waitlist" class="prog-btn prog-btn-primary">Join a Cohort →</a>
+    <a href="#journey" class="prog-btn prog-btn-ghost">Explore the Arc</a>
+    <a href="#tiers" class="cta-ghost">Choose Your Path</a>
+  </div>
+
 </section>
 
 <div class="prog-divider"></div>
@@ -329,7 +328,7 @@ import Layout from '../layouts/Layout.astro';
 <div class="page-bridge" style="max-width:860px; margin-left:auto; margin-right:auto; padding-left:2.5rem; padding-right:2.5rem;">
   <p>Not ready for a full cohort?</p>
   <a href="https://lu.ma/questlabs" class="bridge-link">Start with a Sandbox Session, open door, donations based →</a>
-  <a href="/cill" class="bridge-link" style="margin-top:0.5rem;">Leading a school or classroom? Flip the Script is for you →</a>
+  <a href="/cill" class="bridge-link" style="margin-top:0.5rem;">Leading a school or classroom? Futures Literacies in Praxis is for you →</a>
 </div>
 
 <footer>
@@ -549,6 +548,16 @@ progReveals.forEach(r => progObserver.observe(r));
     max-width: 860px;
     margin: 0 auto;
   }
+  .prog-premise-cta {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 2.5rem 4rem;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
   .prog-educator-bridge {
     border-left: 2px solid rgba(107, 63, 160, 0.5);
     padding: 1rem 1.5rem;
