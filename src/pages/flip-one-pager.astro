@@ -1,0 +1,404 @@
+---
+// No Layout wrapper — this page is designed for print only
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLIP: Futures Literacies in Praxis · Quest Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --violet: #6B3FA0;
+      --violet-mid: #8B5CC8;
+      --lavender: #C4A8E8;
+      --cream: #FDFCFA;
+      --ink: #1A1028;
+      --ink-mid: #3D2D58;
+      --ink-dim: #6B5E85;
+      --border: rgba(107, 63, 160, 0.2);
+    }
+
+    html, body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 10pt;
+      line-height: 1.5;
+    }
+
+    /* ── PRINT BUTTON (screen only) ── */
+    .print-bar {
+      background: var(--violet);
+      color: white;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .print-bar button {
+      background: white;
+      color: var(--violet);
+      border: none;
+      padding: 0.35rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+
+    /* ── PAGE ── */
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 0 auto;
+      padding: 0.55in 0.6in 0.5in;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 0.3in;
+      border-bottom: 1.5pt solid var(--violet);
+      margin-bottom: 0.22in;
+    }
+    .header-left {}
+    .eyebrow {
+      font-size: 7pt;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      margin-bottom: 0.1in;
+    }
+    .program-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28pt;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 0.04in;
+    }
+    .program-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11pt;
+      font-style: italic;
+      color: var(--ink-dim);
+      letter-spacing: 0.04em;
+    }
+    .header-right {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.06in;
+    }
+    .header-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13pt;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .header-title {
+      font-size: 7.5pt;
+      color: var(--ink-dim);
+      letter-spacing: 0.06em;
+    }
+    .header-contact {
+      font-size: 7pt;
+      color: var(--violet);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── LEDE ── */
+    .lede {
+      margin-bottom: 0.18in;
+    }
+    .lede-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15pt;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.06in;
+      line-height: 1.25;
+    }
+    .lede-body {
+      font-size: 9.5pt;
+      color: var(--ink-mid);
+      line-height: 1.6;
+      max-width: 6.5in;
+    }
+
+    /* ── TWO COLUMN BODY ── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.22in;
+      margin-bottom: 0.18in;
+    }
+
+    .section-label {
+      font-size: 6.5pt;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--violet);
+      margin-bottom: 0.07in;
+      padding-bottom: 0.04in;
+      border-bottom: 0.5pt solid var(--border);
+    }
+
+    ul.outcomes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.055in;
+    }
+    ul.outcomes li {
+      font-size: 9pt;
+      color: var(--ink-mid);
+      line-height: 1.5;
+      padding-left: 0.12in;
+      position: relative;
+    }
+    ul.outcomes li::before {
+      content: '◎';
+      position: absolute;
+      left: 0;
+      color: var(--lavender);
+      font-size: 7pt;
+      top: 2pt;
+    }
+
+    .credentials-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.055in;
+    }
+    .credential {
+      font-size: 9pt;
+      color: var(--ink-mid);
+      line-height: 1.45;
+      padding-left: 0.12in;
+      position: relative;
+    }
+    .credential::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--ink-dim);
+    }
+    .credential strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* ── LOGISTICS + PRICING STRIP ── */
+    .bottom-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.22in;
+      margin-bottom: 0.18in;
+    }
+
+    .logistics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.04in 0.12in;
+    }
+    .log-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.02in;
+    }
+    .log-label {
+      font-size: 6.5pt;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+    }
+    .log-value {
+      font-size: 9pt;
+      color: var(--ink-mid);
+      line-height: 1.4;
+    }
+
+    .pricing-block p {
+      font-size: 9pt;
+      color: var(--ink-mid);
+      line-height: 1.6;
+      margin-bottom: 0.06in;
+    }
+    .pricing-block p:last-child { margin-bottom: 0; }
+    .equity-statement {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 10pt;
+      font-style: italic;
+      color: var(--violet);
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      border-top: 0.5pt solid var(--border);
+      padding-top: 0.1in;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+    .footer-left {
+      font-size: 7.5pt;
+      color: var(--ink-dim);
+    }
+    .footer-left strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .footer-right {
+      font-size: 7.5pt;
+      color: var(--violet);
+      text-align: right;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      .print-bar { display: none; }
+      html, body { background: white; }
+      .page {
+        width: 100%;
+        min-height: auto;
+        padding: 0.45in 0.5in;
+      }
+      a { color: inherit; text-decoration: none; }
+    }
+
+    @page {
+      size: letter;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="print-bar">
+  <span>This page is designed to print as a one-page PDF</span>
+  <button onclick="window.print()">Print / Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <p class="eyebrow">Quest Labs · Educators Program · Fall 2026</p>
+      <h1 class="program-title">FLIP</h1>
+      <p class="program-subtitle">Futures Literacies in Praxis</p>
+    </div>
+    <div class="header-right">
+      <span class="header-name">Makēda Gershenson</span>
+      <span class="header-title">Founder, Quest Labs · Practitioner-Researcher</span>
+      <span class="header-title">MEd, Stanford · MA Candidate, Institut Futur Berlin</span>
+      <span class="header-contact">questlabs.world/educators · questlabs.world@proton.me</span>
+    </div>
+  </div>
+
+  <!-- LEDE -->
+  <div class="lede">
+    <h2 class="lede-headline">The world your students are entering doesn't exist yet.<br>Most professional development doesn't help educators with that. FLIP does.</h2>
+    <p class="lede-body">FLIP is a 12-week virtual program that gives educators the tools to read what's coming: not to predict it, but to navigate it alongside their students with confidence and care. This is not another training to sit through. It is a practice to return to.</p>
+  </div>
+
+  <!-- OUTCOMES + CREDENTIALS -->
+  <div class="body-grid">
+    <div>
+      <p class="section-label">What your educator walks away with</p>
+      <ul class="outcomes">
+        <li>A personal futures literacy practice they can sustain independently</li>
+        <li>Tools to read trends and signals in their own school environment</li>
+        <li>A cross-school cohort of educators working with these trends to craft community charters</li>
+        <li>Renewed capacity: less burnout, more agency, more possibilities</li>
+      </ul>
+    </div>
+    <div>
+      <p class="section-label">The research and practice behind it</p>
+      <div class="credentials-list">
+        <p class="credential"><strong>Anticipation Conference, Milan</strong> — UNESCO Special Session</p>
+        <p class="credential"><strong>Institut Futur, Berlin</strong> — foundational research</p>
+        <p class="credential"><strong>Stanford University GSE</strong> — trained practitioner; alumni conference workshops</p>
+        <p class="credential"><strong>Una Europa</strong> — futures facilitation workshops</p>
+        <p class="credential"><strong>Intl. Healing-Centered Education Conference</strong> — featured three times</p>
+        <p class="credential">Developed from <strong>545 contributions by 170 educators</strong> across two international gatherings</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGISTICS + PRICING -->
+  <div class="bottom-strip">
+    <div>
+      <p class="section-label">The logistics</p>
+      <div class="logistics-grid">
+        <div class="log-item">
+          <span class="log-label">Format</span>
+          <span class="log-value">Virtual, via Zoom</span>
+        </div>
+        <div class="log-item">
+          <span class="log-label">Duration</span>
+          <span class="log-value">12 weeks</span>
+        </div>
+        <div class="log-item">
+          <span class="log-label">Cohort size</span>
+          <span class="log-value">20 educators per cohort, multiple cohorts running</span>
+        </div>
+        <div class="log-item">
+          <span class="log-label">Start date</span>
+          <span class="log-value">Fall 2026, now forming</span>
+        </div>
+        <div class="log-item" style="grid-column: span 2">
+          <span class="log-label">Leadership cohort</span>
+          <span class="log-value">Bring your whole team. Limited school-wide and district slots available.</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="section-label">Pricing</p>
+      <div class="pricing-block">
+        <p class="equity-statement">This work should reach every school, not only well-resourced ones.</p>
+        <p>Tiered pricing available to meet your school or district budget. Individual seats, leadership cohorts, and school-wide options. Contact us to find what works.</p>
+        <p style="font-weight:500;color:var(--ink)">questlabs.world@proton.me</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <strong>Quest Labs</strong> · A Living Lab for Futures Literacies · Berlin &amp; Beyond · Est. 2022
+    </div>
+    <div class="footer-right">
+      questlabs.world/educators
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
