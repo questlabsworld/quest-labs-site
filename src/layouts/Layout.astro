@@ -33,7 +33,7 @@ const pageLabels: Record<string, string> = {
   '/educators':           'Futures Literacies in Praxis',
   '/foundations':    'Foundations',
   '/about':          'About',
-  '/bet':            'Bet on Us',
+  '/bet':            'Invest in A Future',
   '/black-menagerie':'Black Menagerie',
   '/contact':        'Contact',
 };
@@ -42,11 +42,11 @@ const currentPageLabel = pageLabels[pathname] ?? null;
 const navLinks = [
   { label: 'The Program', href: '/program', dropdown: [
       { label: 'Black Menagerie', href: '/black-menagerie' },
+      { label: 'Foundations',     href: '/foundations' },
   ]},
-  { label: 'Educators',   href: '/educators' },
-  { label: 'Foundations', href: '/foundations' },
-  { label: 'About',       href: '/about' },
-  { label: 'Bet on Us',   href: '/bet' },
+  { label: 'Educators',          href: '/educators' },
+  { label: 'About',              href: '/about' },
+  { label: 'Invest in A Future', href: '/bet' },
 ];
 ---
 
