@@ -253,7 +253,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <div class="who-row">
               <div class="who-label">Cost</div>
-              <div class="who-text">Donations based. Pay what you can, pay what feels right, pay nothing if now is not the time. Registration is required so we can hold the space with intention. Cohort 01 is in motion. The Fall founding cohort is what's forming now.</div>
+              <div class="who-text">Donation based. Pay what you can, pay what feels right, pay nothing if now is not the time. Registration is required so we can hold the space with intention.</div>
             </div>
           </div>
         </div>
@@ -279,6 +279,58 @@ import Layout from '../layouts/Layout.astro';
           </form>
           <p class="signup-note" id="spring-msg">Donation based. No one turned away.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment / Pricing Tiers -->
+  <section id="investment">
+    <div class="container">
+      <div class="section-tag">The investment</div>
+      <h2>Three ways to<br><em>travel with us</em></h2>
+      <p>Choose what's true for you right now. This is not a gatekeeping question — it's an honest one. The practice meets you where you are.</p>
+
+      <div class="tier-grid">
+
+        <div class="tier-card">
+          <div class="tier-eyebrow">Witness</div>
+          <div class="tier-emoji">👁</div>
+          <h3 class="tier-name">The Orbit</h3>
+          <p class="tier-desc">Follow along from the edge. Session reflections, provocation drops, and the Mad Libs arc unfolding week by week — on Quest Labs <a href="https://www.instagram.com/questlabsworld" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.linkedin.com/company/quest-labs-world" target="_blank" rel="noopener">LinkedIn</a>. No registration. No commitment. Free, always.</p>
+          <p class="tier-for"><strong>Right for you if:</strong> You want to stay curious without committing. You're waiting for the right season.</p>
+          <div class="tier-price">Free</div>
+        </div>
+
+        <div class="tier-card tier-card--mid">
+          <div class="tier-eyebrow">Traveler</div>
+          <div class="tier-emoji">🧭</div>
+          <h3 class="tier-name">The Flexible Path</h3>
+          <p class="tier-desc">Make the sessions you can make. Flipped classroom model: pre-recorded session content, a dyad partner you meet with independently, integration sessions mid-week, occasional live attendance when you can show up. You're in the practice — at your pace.</p>
+          <p class="tier-for"><strong>Right for you if:</strong> Your schedule is full and your heart is in it. You need the container without the rigidity.</p>
+          <div class="tier-price">Investment: TBD</div>
+          <div class="tier-note">Sponsored seats available</div>
+        </div>
+
+        <div class="tier-card tier-card--full">
+          <div class="tier-eyebrow">World Weaver</div>
+          <div class="tier-emoji">🌀</div>
+          <h3 class="tier-name">The Full Arc</h3>
+          <p class="tier-desc">You're here. Every session, morning pages, artist's date, your dyad partner every week, the Wednesday three-word drop. Two touchpoints throughout the week: live session plus integration. The full 12-week arc, beginning to declaration.</p>
+          <p class="tier-for"><strong>Right for you if:</strong> You came to transform. In practice and in the room.</p>
+          <ul class="tier-outcomes">
+            <li>A futures-literate teaching practice you can name and defend</li>
+            <li>A professional portfolio with before-and-after evidence</li>
+            <li>A cohort of colleagues who know what you're building</li>
+            <li>A rubric your admin can read</li>
+          </ul>
+          <div class="tier-price">Investment: TBD</div>
+          <div class="tier-note">Sponsored seats available</div>
+        </div>
+
+      </div>
+
+      <div class="sponsored-note">
+        <strong>Sponsored seats.</strong> Every cohort holds seats for educators whose schools or districts cannot cover the cost. Access is not conditional on ability to pay. To inquire: <a href="mailto:questlabs.foresight@gmail.com">questlabs.foresight@gmail.com</a>
       </div>
     </div>
   </section>
@@ -856,6 +908,105 @@ import Layout from '../layouts/Layout.astro';
       max-width: 100%;
     }
 
+    /* INVESTMENT TIERS */
+    & .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 2.5rem 0 1.5rem;
+    }
+    & .tier-card {
+      background: var(--edu-void2);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.5rem 1.4rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    & .tier-card--mid {
+      border-color: var(--edu-violet);
+    }
+    & .tier-card--full {
+      border-color: var(--edu-lavender);
+      background: rgba(175,169,236,0.06);
+    }
+    & .tier-eyebrow {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--edu-violet);
+    }
+    & .tier-card--full .tier-eyebrow { color: var(--edu-lavender); }
+    & .tier-emoji { font-size: 1.6rem; line-height: 1; }
+    & .tier-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #fff;
+      margin: 0;
+    }
+    & .tier-desc {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(253,252,250,0.72);
+      margin: 0;
+    }
+    & .tier-desc a { color: var(--edu-violet); text-decoration: underline; text-underline-offset: 2px; }
+    & .tier-for {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: rgba(253,252,250,0.55);
+      margin: 0;
+    }
+    & .tier-outcomes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      padding: 0;
+      margin: 0;
+    }
+    & .tier-outcomes li {
+      font-size: 0.8rem;
+      color: rgba(253,252,250,0.65);
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+    & .tier-outcomes li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--edu-lavender);
+      font-size: 0.6rem;
+      top: 0.2rem;
+    }
+    & .tier-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--edu-lavender);
+      margin-top: auto;
+      padding-top: 0.5rem;
+    }
+    & .tier-note {
+      font-size: 0.72rem;
+      color: rgba(253,252,250,0.4);
+      font-style: italic;
+    }
+    & .sponsored-note {
+      background: rgba(175,169,236,0.07);
+      border-left: 2px solid var(--edu-violet);
+      padding: 1rem 1.25rem;
+      font-size: 0.85rem;
+      color: rgba(253,252,250,0.7);
+      line-height: 1.65;
+      border-radius: 0 6px 6px 0;
+    }
+    & .sponsored-note a { color: var(--edu-violet); text-decoration: underline; }
+
     /* THREE DOORS: Beat 4 */
     & .three-doors {
       display: grid;
@@ -1153,6 +1304,7 @@ import Layout from '../layouts/Layout.astro';
       & .who-row { grid-template-columns: 1fr; }
       & .who-label { border-right: none; border-bottom: 0.5px solid var(--edu-border-soft); padding: 1rem 1.25rem; }
       & .norms { grid-template-columns: 1fr; }
+      & .tier-grid { grid-template-columns: 1fr; }
       & .three-doors { grid-template-columns: 1fr; }
       & .signup-section { padding: 2rem 1.25rem; }
       & .pull-quote-solo { font-size: 1.15rem; }
