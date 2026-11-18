@@ -1,20 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const showSample = false;
 ---
 
 <Layout
   title="The Black Menagerie · Quest Labs"
-  description="The Black Menagerie is a card-based archetype exploration tool for futures thinking. Developed by Makēda Gershenson to unlock imagination, disrupt inherited narratives, and open new possibility spaces."
+  description="The Black Menagerie Conversation Deck: a card game where you speak through one of five animals, step into real future scenarios, and discover how many futures one moment holds. Pre-sale opens Black Friday 2026."
 >
 
 <div class="bm-page">
 
   <div class="bm-hero">
-    <div class="bm-eyebrow">Quest Labs · Signature Tool · Coming Black Friday 2026</div>
+    <div class="bm-eyebrow">Quest Labs · The Conversation Deck · Pre-sale opens Black Friday</div>
     <h1 class="bm-title">The Black<br>Menagerie</h1>
-    <p class="bm-sub"><span class="bm-accent">Five creatures. Draw one. See what shifts.</span></p>
-    <p class="bm-sub bm-sub--mechanic">Scenario thinking. Perspective-taking. <span class="bm-highlight">A card-based futures literacy practice</span> for anyone trying to navigate what is coming and who they need to become to meet it.</p>
-    <div class="bm-badge">Black Friday · November 2026</div>
+    <p class="bm-sub"><span class="bm-accent">Five animals. One moment. Many futures.<br>Which voice will you bring?</span></p>
+    <p class="bm-sub bm-sub--mechanic">A card game where you speak through one of five animals, step into real future scenarios, and <span class="bm-highlight">discover how many futures one moment holds.</span></p>
+    <p class="bm-sub bm-sub--season">A new season. A new perspective.</p>
+    <div class="cta-group bm-hero-ctas">
+      <a href="#presale" class="cta-primary">See the pre-sale</a>
+      <a href="https://lu.ma/questlabs" class="cta-secondary" target="_blank" rel="noopener noreferrer">Play it live · November 24</a>
+    </div>
+    <div class="bm-badge">Pre-sale · November 27, 2026 · Ships February 6, 2027</div>
   </div>
 
   <div class="bm-creatures">
@@ -26,65 +32,153 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="bm-grid">
       <div class="bm-card">
-        <img src="/images/creatures/black-swan.png" alt="Black Swan, a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="295" height="298" />
-        <h3 class="bm-creature-name">Black Swan</h3>
-        <p class="bm-creature-q">What change is coming that we have not named yet?</p>
+        <img src="/images/cards/black-swan-card.jpg" alt="Black Swan card from the Black Menagerie Conversation Deck" class="bm-img" loading="lazy" width="484" height="660" />
       </div>
       <div class="bm-card">
-        <img src="/images/creatures/black-elephant.png" alt="Black Elephant, a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="299" height="284" />
-        <h3 class="bm-creature-name">Black Elephant</h3>
-        <p class="bm-creature-q">What do we all know but have not spoken aloud?</p>
+        <img src="/images/cards/black-elephant-card.jpg" alt="Black Elephant card from the Black Menagerie Conversation Deck" class="bm-img" loading="lazy" width="484" height="660" />
       </div>
       <div class="bm-card">
-        <img src="/images/creatures/black-jellyfish.png" alt="Black Jellyfish, a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="294" height="281" />
-        <h3 class="bm-creature-name">Black Jellyfish</h3>
-        <p class="bm-creature-q">What are we feeling in our bodies about what is coming?</p>
+        <img src="/images/cards/black-jellyfish-card.jpg" alt="Black Jellyfish card from the Black Menagerie Conversation Deck" class="bm-img" loading="lazy" width="484" height="660" />
       </div>
       <div class="bm-card">
-        <img src="/images/creatures/black-marsh-turtle.png" alt="Black Marsh Turtle, a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="310" height="306" />
-        <h3 class="bm-creature-name">Black Marsh Turtle</h3>
-        <p class="bm-creature-q">What do we need to slow down with? Where is rest calling?</p>
+        <img src="/images/cards/black-marsh-turtle-card.jpg" alt="Black Marsh Turtle card from the Black Menagerie Conversation Deck" class="bm-img" loading="lazy" width="484" height="660" />
       </div>
       <div class="bm-card">
-        <img src="/images/creatures/black-sheep.png" alt="Black Sheep, a futures archetype from the Black Menagerie" class="bm-img" loading="lazy" width="306" height="311" />
-        <h3 class="bm-creature-name">Black Sheep</h3>
-        <p class="bm-creature-q">What playful disruption wants to emerge?</p>
+        <img src="/images/cards/black-sheep-card.jpg" alt="Black Sheep card from the Black Menagerie Conversation Deck" class="bm-img" loading="lazy" width="484" height="660" />
       </div>
-      <a href="https://lu.ma/questlabs" class="bm-card bm-card--prompt" target="_blank" rel="noopener noreferrer">
-        <p class="bm-prompt-text">Which archetype can help you meet this moment?</p>
-        <span class="bm-prompt-cta">Play it live · September 6 →</span>
-      </a>
     </div>
   </div>
 
-  <div class="bm-editions">
-    <div class="bm-section-label">Two Editions</div>
-    <div class="bm-editions-grid">
-      <div class="bm-edition">
-        <h3>Think <em>Cards for Humanity</em></h3>
-        <p>The original deck. Futures signals, provocations, and navigational questions for anyone trying to think more creatively, clearly, and courageously about what is coming and what to do about it.</p>
+  {showSample && (
+  <div class="bm-play">
+    <div class="bm-section-label">A look inside the deck</div>
+    <h2 class="bm-section-heading">Pick an animal</h2>
+    <p class="bm-section-sub">Which voice will you bring?</p>
+
+    <div class="bm-sample">
+      <div class="bm-tcard bm-tcard--animal">
+        <span class="bm-tkind">Animal</span>
+        <img src="/images/creatures/black-elephant.png" alt="" class="bm-timg" loading="lazy" width="299" height="284" />
+        <span class="bm-tname">Black Elephant</span>
+        <span class="bm-ttag">the truth in the room</span>
+        <span class="bm-tq">What's obvious here? Who gains from nobody saying it?</span>
+        <span class="bm-tmeta"><b>Gift</b> naming the unspoken<br><b>Risk</b> paralysis of everyone-knew</span>
+        <span class="bm-tmeta"><b>Would you rather</b> trust what a room already agrees on, or what only you can see?</span>
       </div>
-      <div class="bm-edition">
-        <h3>Educator Activity Deck</h3>
-        <p>Adapted for classroom and staffroom use. The same five archetypes, designed for facilitation in educational contexts. Built alongside Futures Literacies in Praxis.</p>
+
+      <div class="bm-tcard bm-tcard--cond">
+        <span class="bm-tkind">World</span>
+        <span class="bm-tname">Does something break?</span>
+        <span class="bm-tpartner">Collapse</span>
+      </div>
+
+      <div class="bm-tcard bm-tcard--scen">
+        <span class="bm-tkind">You are here</span>
+        <span class="bm-tscen">Water is rationed by household now. A neighbor knocks and asks to share your quota this week.</span>
+        <span class="bm-tsector">Political</span>
+      </div>
+      <div class="bm-tcard bm-tcard--scen">
+        <span class="bm-tkind">You are here</span>
+        <span class="bm-tscen">Your workplace moved to a four-day week. The pay stayed the same. Fridays belong to you now.</span>
+        <span class="bm-tsector">Economic</span>
+      </div>
+      <div class="bm-tcard bm-tcard--scen">
+        <span class="bm-tkind">You are here</span>
+        <span class="bm-tscen">Your street closes to cars every Sunday now. Kids play where the traffic was. Neighbors you never met run a tool library from an old parking spot.</span>
+        <span class="bm-tsector">Social</span>
+      </div>
+      <div class="bm-tcard bm-tcard--wild">
+        <span class="bm-tkind">Write Your Own</span>
+        <span class="bm-trule">This round, the table writes the scenario. Stuck? Something that changed on your street this year.</span>
       </div>
     </div>
+    <p class="bm-sample-note">Sample cards. Final art and copy will change before print.</p>
+  </div>
+  )}
+
+  <div class="bm-editions">
+    <div class="bm-section-label">The Decks</div>
+    <div class="bm-editions-grid">
+      <div class="bm-edition">
+        <div class="bm-edition-status">Pre-sale now</div>
+        <h3>The Conversation Deck</h3>
+        <p>54 cards: five animals, four worlds, 36 scenarios drawn from real-world signals, and cards to write your own. One rule: go to the world the fewest people picked. Play solo or with up to five, in about 45 minutes. No winners, no right answers. You win when your table sees the moment more clearly than when you sat down.</p>
+      </div>
+      <div class="bm-edition bm-edition--later">
+        <div class="bm-edition-status">Coming later</div>
+        <h3>The Game</h3>
+        <p>A collective world-building game, with Conditions and signature moves. The whole table builds one future together, and every voice changes where it lands.</p>
+        <p>Curious, or concerned, about what future is coming for you and your beloveds? Come play with different ideas and help us design it. Every game night is part of the R&amp;D.</p>
+      </div>
+      <div class="bm-edition bm-edition--later">
+        <div class="bm-edition-status">Coming later</div>
+        <h3>Educator Deck</h3>
+        <p>Adapted for classroom and staffroom use. The same five animals, designed for facilitation in educational contexts. Built alongside Futures Literacies in Praxis.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bm-presale" id="presale">
+    <div class="bm-section-label">Pre-sale · Opens November 27</div>
+    <h2 class="bm-section-heading">Bring in the new season</h2>
+    <div class="bm-tiers">
+      <div class="bm-tier">
+        <h3>Digital Starter</h3>
+        <div class="bm-price">$28.88</div>
+        <p>The Conversation Deck as digital files. Print at home or play on screen.</p>
+        <div class="bm-when">Delivered February 6, 2027</div>
+        <div class="bm-buy">
+          <a href="https://buy.stripe.com/cNieV75PZ3b5dIh0qr3wQ09" class="cta-primary" target="_blank" rel="noopener noreferrer">Buy · digital files</a>
+        </div>
+      </div>
+      <div class="bm-tier">
+        <h3>Starter Kit</h3>
+        <div class="bm-price">$38.88</div>
+        <p>The printed Conversation Deck in a tuck box, plus the digital files for free.</p>
+        <div class="bm-when">Ships February 6, 2027</div>
+        <div class="bm-buy">
+          <a href="https://buy.stripe.com/14A28l6U312X33D7ST3wQ03" class="cta-primary" target="_blank" rel="noopener noreferrer">Buy · ship to US</a>
+          <a href="https://buy.stripe.com/28E14h0vFdPJ33D8WX3wQ04" class="cta-secondary" target="_blank" rel="noopener noreferrer">Buy · ship to EU</a>
+        </div>
+      </div>
+      <div class="bm-tier bm-tier--featured">
+        <h3>Deluxe</h3>
+        <div class="bm-price">$68.88</div>
+        <p>Everything in Starter, plus premium cards, a special box, and an expansion pack of extra scenarios from across the diaspora.</p>
+        <div class="bm-when">Ships February 6, 2027</div>
+        <div class="bm-buy">
+          <a href="https://buy.stripe.com/aFa4gt92bh1V0Vv8WX3wQ05" class="cta-primary" target="_blank" rel="noopener noreferrer">Buy · ship to US</a>
+          <a href="https://buy.stripe.com/9B69ANcenbHB33D2yz3wQ06" class="cta-secondary" target="_blank" rel="noopener noreferrer">Buy · ship to EU</a>
+        </div>
+      </div>
+      <div class="bm-tier">
+        <h3>Full Menagerie</h3>
+        <div class="bm-price">$98.88</div>
+        <p>Your Gameplay Reservation. The full Deluxe kit now, plus The Game when it ships in April 2027. Come play and help us design it.</p>
+        <div class="bm-when">Deck February 6, 2027 · Game April 2027</div>
+        <div class="bm-buy">
+          <a href="https://buy.stripe.com/aFa8wJ3HRaDx47Hfll3wQ07" class="cta-primary" target="_blank" rel="noopener noreferrer">Buy · ship to US</a>
+          <a href="https://buy.stripe.com/3cIcMZ5PZ4f9bA97ST3wQ08" class="cta-secondary" target="_blank" rel="noopener noreferrer">Buy · ship to EU</a>
+        </div>
+      </div>
+    </div>
+    <p class="bm-sample-note">Prices in US dollars. Shipping is added at checkout: $8.88 to the US, $12.88 to the EU. Have a promo code? Enter it at checkout.</p>
   </div>
 
   <div class="bm-lives">
     <div class="bm-section-label">Where It Lives Now</div>
     <h2 class="bm-section-heading">Already in the Room</h2>
-    <p class="bm-lives-text">The Black Menagerie debuted at the <strong>2025 International Healing-Centered Education Conference</strong>. It is a navigational lens inside every FLIP cohort and Sandbox Session. The card game is not yet in your hands, but the creatures are already in the room.</p>
-    <p class="bm-lives-text bm-lives-text--cta">Come meet them in practice.</p>
+    <p class="bm-lives-text">The Black Menagerie debuted at the <strong>2025 International Healing-Centered Education Conference</strong>. It is a navigational lens inside every FLIP cohort and Sandbox Session. It has been playtested at game nights in Berlin. The deck ships February 6, and the creatures are already in the room.</p>
+    <p class="bm-lives-text bm-lives-text--cta">Come play a game night.</p>
     <div class="cta-group" style="justify-content:center; margin-top:2rem;">
-      <a href="https://lu.ma/questlabs" class="cta-primary" target="_blank" rel="noopener noreferrer">Find a Sandbox Session</a>
+      <a href="https://lu.ma/questlabs" class="cta-primary" target="_blank" rel="noopener noreferrer">Find a game night on Luma</a>
       <a href="/program" class="cta-secondary">Explore The Program</a>
     </div>
   </div>
 
   <div class="bm-access">
     <h2 class="bm-access-heading">Get Early Access</h2>
-    <p class="bm-access-sub">Sign up for emails · pre-orders · limited print run · Black Friday 2026</p>
+    <p class="bm-access-sub">Get the pre-sale link first · limited first print run · November 27, 2026</p>
     <form class="bm-form" name="black-menagerie-notify" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleBMSubmit(event)">
       <input type="hidden" name="form-name" value="black-menagerie-notify" />
       <p style="display:none;"><label>Skip: <input name="bot-field" /></label></p>
@@ -109,7 +203,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="footer-tagline">A Living Lab for Futures Literacies</div>
     </div>
     <ul class="footer-links">
-      <li><a href="/bet">Invest in A Future</a></li>
+      <li><a href="/seed">Seed our Becoming</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
@@ -157,7 +251,7 @@ async function handleBMSubmit(e) {
 
   .bm-hero { text-align:center; padding:6rem 2rem 4rem; }
   .bm-eyebrow { font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--bm-violet-light); margin-bottom:1.25rem; opacity:0; animation:progFadeUp 0.8s ease 0.2s forwards; }
-  .bm-title { font-family:'Cinzel',serif; font-weight:900; font-size:clamp(2.8rem,6vw,4.5rem); letter-spacing:0.06em; text-transform:uppercase; color:var(--bm-lavender); line-height:1.05; margin-bottom:1.25rem; opacity:0; animation:progFadeUp 0.8s ease 0.4s forwards; }
+  .bm-title { font-family:'Special Elite','Courier New',monospace; font-weight:400; font-size:clamp(2.8rem,6.5vw,4.8rem); letter-spacing:0.02em; color:var(--bm-lavender); line-height:1.05; margin-bottom:1.25rem; opacity:0; animation:progFadeUp 0.8s ease 0.4s forwards; }
   .bm-sub { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.2rem,2.5vw,1.6rem); color:var(--text-dim); max-width:620px; margin:0 auto 1.5rem; line-height:1.6; opacity:0; animation:progFadeUp 0.8s ease 0.6s forwards; }
   .bm-badge { display:inline-block; font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--bm-violet-light); border:0.5px solid rgba(180,143,224,0.4); padding:0.4rem 1rem; border-radius:2px; margin-top:0.5rem; }
 
@@ -203,49 +297,14 @@ async function handleBMSubmit(e) {
     margin-top: 1rem;
   }
 
-  .bm-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:1.25rem; }
-  .bm-card { background:rgba(107,63,160,0.05); border:0.5px solid rgba(107,63,160,0.2); border-radius:4px; overflow:hidden; transition:border-color 0.2s; }
-  .bm-card:hover { border-color:rgba(180,143,224,0.4); }
-  .bm-img { width:100%; height:280px; object-fit:contain; background:transparent; display:block; padding:0.5rem; box-sizing:border-box; }
-  .bm-creature-name { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:500; color:var(--bm-lavender); padding:0.75rem 1rem 0.25rem; }
-  .bm-creature-q { font-style:italic; font-size:1rem; color:var(--text-dim); padding:0 1rem 1rem; line-height:1.6; }
+  .bm-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; }
+  .bm-card { flex:0 1 calc((100% - 3rem) / 3); min-width:0; text-align:center; }
+  .bm-img { width:100%; height:auto; display:block; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.45); }
+  .bm-card-link { display:block; border-radius:10px; transition:transform 0.2s ease; }
+  .bm-card-link:hover { transform:translateY(-4px); }
 
-  .bm-card--prompt {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(107,63,160,0.18), rgba(180,143,224,0.10));
-    border: 1px solid rgba(180,143,224,0.35);
-    border-radius: 4px;
-    padding: 2rem 1.5rem;
-    min-height: 200px;
-    text-decoration: none;
-    transition: border-color 0.2s, background 0.2s;
-    gap: 1rem;
-  }
-  .bm-card--prompt:hover {
-    border-color: rgba(180,143,224,0.65);
-    background: linear-gradient(135deg, rgba(107,63,160,0.28), rgba(180,143,224,0.18));
-  }
-  .bm-prompt-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-    font-style: italic;
-    color: #d4aaff;
-    text-align: center;
-    line-height: 1.5;
-    margin: 0;
-  }
-  .bm-prompt-cta {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(180, 143, 224, 0.7);
-  }
 
-  .bm-editions-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1.5rem; }
+  .bm-editions-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem; margin-top:1.5rem; }
   .bm-edition { background:rgba(107,63,160,0.05); border:0.5px solid rgba(107,63,160,0.2); border-radius:4px; padding:1.75rem; }
   .bm-edition h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:500; color:var(--bm-lavender); margin-bottom:0.75rem; }
   .bm-edition p { color:var(--text-dim); font-size:0.9rem; line-height:1.7; }
@@ -261,13 +320,55 @@ async function handleBMSubmit(e) {
   .bm-input:focus { border-color:rgba(107,63,160,0.5); }
   .bm-form-note { color:var(--bm-violet-light); font-size:0.85rem; margin-top:0.75rem; font-style:italic; }
 
+  .bm-sub--season { font-size:clamp(1rem,2vw,1.2rem); color:var(--bm-lavender); opacity:0; animation:progFadeUp 0.8s ease 0.85s forwards; }
+  .bm-hero-ctas { justify-content:center; margin:1.5rem 0 1rem; }
+
+  .bm-play, .bm-presale { max-width:1060px; margin:0 auto; padding:4rem 2.5rem; border-top:0.5px solid var(--border-dim); }
+  .bm-sample { display:flex; gap:1rem; overflow-x:auto; padding:0.5rem 0 1.25rem; scroll-snap-type:x mandatory; }
+  .bm-tcard { flex:none; width:200px; min-height:345px; border-radius:10px; padding:1rem; display:flex; flex-direction:column; gap:0.5rem; scroll-snap-align:start; font-size:0.85rem; line-height:1.45; position:relative; }
+  .bm-tkind { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; opacity:0.75; }
+  .bm-tname { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:500; line-height:1.1; }
+  .bm-ttag { font-style:italic; color:var(--bm-violet-light); }
+  .bm-tq { font-style:italic; }
+  .bm-tmeta { font-size:0.75rem; color:var(--text-dim); }
+  .bm-tmeta b { color:var(--bm-lavender); font-weight:500; }
+  .bm-timg { width:100%; height:80px; object-fit:contain; }
+  .bm-trule { margin-top:auto; font-size:0.8rem; }
+  .bm-tpartner { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; opacity:0.7; }
+  .bm-tcard--animal { background:rgba(107,63,160,0.12); border:1px solid rgba(180,143,224,0.5); color:var(--text); }
+  .bm-tcard--cond { background:#efe4f7; color:#3a1f52; border:2px solid var(--bm-violet); }
+  .bm-tcard--scen { background:#f6f2ea; color:#1c1b29; }
+  .bm-tsector { margin-top:auto; align-self:flex-start; font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; background:#1c1b29; color:#f6f2ea; padding:0.15rem 0.45rem; border-radius:3px; }
+  .bm-tscen { font-size:0.95rem; }
+  .bm-tcard--wild { background:#d7a53b; color:#1c1b29; }
+  .bm-sample-note { color:var(--text-faint); font-size:0.85rem; font-style:italic; margin-top:0.5rem; }
+
+  .bm-edition-status { font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--bm-violet-light); margin-bottom:0.5rem; }
+  .bm-edition--later { opacity:0.75; }
+
+  .bm-tiers { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; margin-top:1.5rem; }
+  .bm-buy { display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem; }
+  .bm-buy a { text-align:center; }
+  .bm-tier { background:rgba(107,63,160,0.05); border:0.5px solid rgba(107,63,160,0.3); border-radius:4px; padding:1.5rem; display:flex; flex-direction:column; gap:0.5rem; }
+  .bm-tier--featured { border:1px solid rgba(180,143,224,0.7); background:rgba(107,63,160,0.14); }
+  .bm-tier h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:500; color:var(--bm-lavender); }
+  .bm-price { font-family:'Space Mono',monospace; font-size:1.5rem; color:var(--text); }
+  .bm-tier p { color:var(--text-dim); font-size:0.9rem; line-height:1.6; }
+  .bm-was { display:block; font-size:0.8rem; color:var(--text-faint); margin-top:0.25rem; }
+  .bm-when { margin-top:auto; font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--bm-violet-light); }
+
+  @media (max-width: 900px) {
+    .bm-editions-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .bm-tiers { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    }
   @media (max-width: 768px) {
-    .bm-creatures, .bm-editions, .bm-lives, .bm-access { padding: 3rem 1.5rem; }
-    .bm-grid { grid-template-columns: repeat(2, 1fr); }
+    .bm-creatures, .bm-editions, .bm-lives, .bm-access, .bm-play, .bm-presale { padding: 3rem 1.5rem; }
+    .bm-card { flex-basis:calc((100% - 1.5rem) / 2); }
   }
   @media (max-width: 640px) {
     .bm-editions-grid { grid-template-columns: 1fr; }
-    .bm-grid { grid-template-columns: 1fr; }
+    .bm-tiers { grid-template-columns: 1fr; }
+    .bm-card { flex-basis:100%; max-width:340px; }
     .bm-input { min-width: 0; width: 100%; }
     .bm-form { flex-direction: column; align-items: stretch; }
     .bm-hero { padding: 4rem 1.5rem 3rem; }
