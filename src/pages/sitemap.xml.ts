@@ -8,7 +8,7 @@ const pages = [
   { path: '/educators',       priority: '0.9', changefreq: 'weekly'  },
   { path: '/about',           priority: '0.8', changefreq: 'monthly' },
   { path: '/foundations',     priority: '0.7', changefreq: 'monthly' },
-  { path: '/bet',             priority: '0.7', changefreq: 'monthly' },
+  { path: '/seed',             priority: '0.7', changefreq: 'monthly' },
   { path: '/black-menagerie', priority: '0.6', changefreq: 'monthly' },
   { path: '/contact',         priority: '0.6', changefreq: 'yearly'  },
 ];

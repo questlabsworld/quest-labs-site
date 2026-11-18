@@ -1,0 +1,154 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const offers = [
+  {
+    name: 'Sponsor a cohort',
+    what: 'Six seats in FLIP, the 12-week embodied futures journey, for the people your organization serves. Your community gets the tools. We hold the room.',
+    community: '€7,500',
+    institutional: '€10,000',
+    featured: true,
+  },
+  {
+    name: 'Custom Sandbox Session',
+    what: 'Two to three hours of play and practice, shaped around a question your team or community is carrying right now.',
+    community: 'from €600',
+    institutional: 'from €1,200',
+  },
+  {
+    name: 'Black Menagerie game night',
+    what: 'Ninety minutes with the Black Menagerie deck. Five animals, real signals, many futures. Decks included for your team.',
+    community: 'from €750',
+    institutional: 'from €1,500',
+  },
+  {
+    name: 'Staff training, half-day',
+    what: 'Futures literacies for the people who hold other people: educators, facilitators, care workers, team leads.',
+    community: '€1,200',
+    institutional: '€2,500',
+  },
+];
+---
+
+<Layout
+  title="Partner with Quest Labs"
+  description="Bring Quest Labs to your people. Sponsor a cohort, host a Sandbox Session or a Black Menagerie game night, or train your staff in futures literacies. Clear prices, community and institutional rates."
+>
+
+<main class="pt-page">
+
+  <section class="pt-hero">
+    <p class="pt-eyebrow">Partner with Quest Labs</p>
+    <h1 class="pt-title">Bring the future<br>into the room</h1>
+    <p class="pt-sub">You support people. We help them meet what's coming with play, the body, and futures tools. Your organization funds the room. Your people keep the tools.</p>
+    <a href="/contact" class="cta-primary">Start a conversation</a>
+  </section>
+
+  <section class="pt-section">
+    <p class="pt-label">Ways to partner</p>
+    <div class="pt-grid">
+      {offers.map((o) => (
+        <article class={o.featured ? 'pt-card pt-card--featured' : 'pt-card'}>
+          {o.featured && <p class="pt-flag">Most impact</p>}
+          <h2 class="pt-name">{o.name}</h2>
+          <p class="pt-what">{o.what}</p>
+          <dl class="pt-prices">
+            <div><dt>Community rate</dt><dd>{o.community}</dd></div>
+            <div><dt>Institutional rate</dt><dd>{o.institutional}</dd></div>
+          </dl>
+        </article>
+      ))}
+    </div>
+    <p class="pt-note"><b>Community rate:</b> nonprofits, schools, community groups. <b>Institutional rate:</b> companies, universities, larger institutions. The institutional rate helps keep the community rate possible. Not sure which fits? Ask. We would rather find a way than lose the room.</p>
+  </section>
+
+  <section class="pt-section">
+    <p class="pt-label">How it works</p>
+    <ol class="pt-steps">
+      <li><span class="pt-step-n">1</span><div><h3>Talk</h3><p>A free 30-minute call. Who are your people, and what are they carrying?</p></div></li>
+      <li><span class="pt-step-n">2</span><div><h3>Shape</h3><p>We design the session or cohort around them, not the other way around.</p></div></li>
+      <li><span class="pt-step-n">3</span><div><h3>Play</h3><p>Your people step into the futures, and leave with tools they can use the next morning.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="pt-section">
+    <p class="pt-label">Already in the room</p>
+    <ul class="pt-proof">
+      <li>Debuted at the 2025 International Healing-Centered Education Conference</li>
+      <li>Played at Futures Games II, Schaltzeit, Berlin, November 2026</li>
+      <li>FLIP founding cohort, 2026</li>
+      <li>Work in 37 countries</li>
+    </ul>
+  </section>
+
+  <section class="pt-close">
+    <h2 class="pt-close-title">Let's find the right shape for your people.</h2>
+    <div class="pt-ctas">
+      <a href="/contact" class="cta-primary">Start a conversation</a>
+      <a href="/educators" class="cta-secondary">For schools and educators</a>
+    </div>
+    <p class="pt-quiet">Want to give without a program attached? <a href="/seed">Seed our becoming.</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Quest Labs</div>
+      <div class="footer-tagline">A Living Lab for Futures Literacies</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="/seed">Seed our Becoming</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">2026 Quest Labs · Makēda · All futures reserved · Berlin &amp; Beyond</div>
+</footer>
+
+</Layout>
+
+<style>
+  .pt-page { --pt-lilac:#B48FE0; --pt-lavender:#C4A8E8; padding-top:1rem; }
+  .pt-hero { text-align:center; padding:5rem 2rem 3.5rem; max-width:820px; margin:0 auto; }
+  .pt-eyebrow, .pt-label { font-family:'Space Mono',monospace; font-size:0.8rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--pt-lilac); margin-bottom:1rem; }
+  .pt-title { font-family:'Special Elite','Courier New',monospace; font-weight:400; font-size:clamp(2.4rem,6vw,4.2rem); color:var(--pt-lavender); line-height:1.08; margin-bottom:1.25rem; }
+  .pt-sub { color:var(--text-dim); font-size:1.1rem; line-height:1.8; margin:0 auto 2rem; max-width:640px; }
+
+  .pt-section, .pt-close { max-width:1060px; margin:0 auto; padding:3.5rem 2.5rem; border-top:0.5px solid var(--border-dim); }
+  .pt-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1.25rem; }
+  .pt-card { background:rgba(255,255,255,0.03); border:0.5px solid var(--border-dim); border-radius:10px; padding:1.5rem; display:flex; flex-direction:column; gap:0.9rem; }
+  .pt-card--featured { border-color:rgba(180,143,224,0.6); background:rgba(180,143,224,0.07); }
+  .pt-flag { font-family:'Space Mono',monospace; font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--pt-lavender); }
+  .pt-name { font-family:'Special Elite','Courier New',monospace; font-weight:400; font-size:1.4rem; color:var(--text); line-height:1.25; }
+  .pt-what { color:var(--text-dim); font-size:0.95rem; line-height:1.7; }
+  .pt-prices { margin-top:auto; display:flex; flex-direction:column; gap:0.6rem; border-top:0.5px solid var(--border-dim); padding-top:0.9rem; }
+  .pt-prices div { display:flex; justify-content:space-between; gap:1rem; align-items:baseline; }
+  .pt-prices dt { font-family:'Space Mono',monospace; font-size:0.78rem; color:var(--text-dim); }
+  .pt-prices dd { margin:0; font-family:'Space Mono',monospace; font-size:1rem; font-weight:700; color:var(--pt-lavender); white-space:nowrap; }
+  .pt-note { margin-top:1.5rem; color:var(--text-dim); font-size:0.95rem; line-height:1.7; max-width:760px; }
+  .pt-note b { color:var(--text); font-weight:600; }
+
+  .pt-steps { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem; }
+  .pt-steps li { display:flex; gap:1rem; align-items:flex-start; }
+  .pt-step-n { font-family:'Special Elite','Courier New',monospace; font-size:2rem; color:var(--pt-lilac); line-height:1; }
+  .pt-steps h3 { font-family:'Special Elite','Courier New',monospace; font-weight:400; font-size:1.25rem; color:var(--text); margin-bottom:0.35rem; }
+  .pt-steps p { color:var(--text-dim); font-size:0.95rem; line-height:1.65; }
+
+  .pt-proof { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.75rem 1.5rem; }
+  .pt-proof li { color:var(--text); font-size:0.98rem; line-height:1.6; padding-left:1.1rem; position:relative; }
+  .pt-proof li::before { content:'◆'; position:absolute; left:0; color:var(--pt-lilac); font-size:0.6rem; top:0.45rem; }
+
+  .pt-close { text-align:center; }
+  .pt-close-title { font-family:'Special Elite','Courier New',monospace; font-weight:400; font-size:clamp(1.6rem,3.5vw,2.4rem); color:var(--text); margin-bottom:1.5rem; }
+  .pt-ctas { display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap; }
+  .pt-quiet { margin-top:1.5rem; color:var(--text-dim); font-size:0.95rem; }
+  .pt-quiet a { color:var(--pt-lavender); }
+
+  @media (max-width:600px) {
+    .pt-hero { padding:3.5rem 1rem 2.5rem; }
+    .pt-section, .pt-close { padding:2.5rem 1rem; }
+    .pt-grid { grid-template-columns:1fr; }
+  }
+</style>
