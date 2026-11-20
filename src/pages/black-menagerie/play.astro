@@ -1,0 +1,326 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import signals from './_signals.json';
+
+const picks = [
+  { id: 'P7', highlight: 'share your quota', beat: { after: 'Water is rationed by household now.', emoji: '🚪', label: 'Knock, knock.' } },
+  { id: 'S5', highlight: 'a prescription for a community garden', beat: { after: 'two afternoons a week.', emoji: '🪴' } },
+  { id: 'T4', highlight: 'the network is down', beat: { after: 'the network is down,', emoji: '📵' } },
+  { id: 'E1', highlight: 'Fridays belong to you now.', beat: { after: 'Fridays belong to you now.', emoji: '🌤️' } },
+  { id: 'N1', highlight: 'what it should become', beat: { after: 'The smokestack is still standing.', emoji: '🏭' } },
+];
+
+const data = picks.map((p) => {
+  const s = signals.find((x) => x.id === p.id)!;
+  return { ...p, sector: s.sector, prompt: s.prompt, signal: s.signal, sources: s.sources };
+});
+
+const worlds = [
+  { name: 'Growth', q: 'What if it just keeps growing?' },
+  { name: 'Collapse', q: "What's falling apart?" },
+  { name: 'Discipline', q: 'How do we choose to live within limits?' },
+  { name: 'Transformation', q: 'What new thing is being born here? 🌱' },
+];
+---
+
+<Layout
+  title="Try a Signal · The Black Menagerie"
+  description="Step into five real signals from the Black Menagerie Conversation Deck. Read, lean toward a world, and see what's really happening."
+>
+
+<main class="pl-page">
+
+  <section class="pl-hero">
+    <p class="pl-eyebrow">The Black Menagerie · Try a signal</p>
+    <h1 class="pl-title">You are here.</h1>
+    <div class="pl-what">
+      <span class="pl-glass" aria-hidden="true">🔍</span>
+      <h2 class="pl-what-title">What's a signal?</h2>
+      <p>A clue.</p>
+      <p>Something real, happening right now,<br>that hints at where the future could go.</p>
+    </div>
+    <ol class="pl-how">
+      <li><b>Read.</b></li>
+      <li><b>Lean.</b></li>
+      <li>Then see what's really happening.</li>
+    </ol>
+  </section>
+
+  <section class="pl-stage" aria-live="polite">
+    <div class="pl-progress" aria-hidden="true">
+      {data.map((_, i) => <span class="pl-dot" data-i={i}></span>)}
+    </div>
+
+    <div class="pl-card" id="pl-card">
+      <div class="pl-card-top">
+        <span class="pl-sector" id="pl-sector"></span>
+        <span class="pl-count" id="pl-count"></span>
+      </div>
+      <p class="pl-here">You are here.</p>
+      <p class="pl-text" id="pl-text" aria-hidden="true"></p>
+      <p class="pl-sr" id="pl-sr"></p>
+      <div class="pl-beat" id="pl-beat" aria-hidden="true"><span class="pl-beat-emoji"></span><span class="pl-beat-label"></span></div>
+      <p class="pl-thinking" id="pl-thinking" aria-hidden="true"><span class="pl-blink"></span> · · ·</p>
+    </div>
+
+    <button class="pl-skip" id="pl-skip" type="button">Skip animation</button>
+
+    <div class="pl-lean" id="pl-lean" hidden>
+      <p class="pl-step"><b>Lean.</b></p>
+      <p class="pl-step-sub">Which world are you leaning toward?<br>Tap one.</p>
+      <div class="pl-worlds">
+        {worlds.map((w) => <button type="button" class="pl-world"><span class="pl-world-name">{w.name}</span>{w.q}</button>)}
+      </div>
+      <p class="pl-after" id="pl-after" hidden></p>
+      <button type="button" class="pl-star" id="pl-star" hidden><span aria-hidden="true">✦</span> This is real</button>
+    </div>
+
+    <div class="pl-real" id="pl-real" hidden>
+      <p class="pl-real-label">The signal</p>
+      <p class="pl-signal" id="pl-signal"></p>
+      <div class="pl-sources" id="pl-sources"></div>
+      <button type="button" class="cta-primary pl-next" id="pl-next">Next signal →</button>
+    </div>
+
+    <div class="pl-end" id="pl-end" hidden>
+      <h2 class="pl-end-title">That's a taste.</h2>
+      <p class="pl-sub">The full deck has 36 scenarios, five animal companions, and a table of people leaning different ways. That's where it gets good.</p>
+      <div class="pl-ctas">
+        <a href="/black-menagerie#presale" class="cta-primary">See the pre-sale</a>
+        <button type="button" class="cta-secondary" id="pl-again">Play again</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Quest Labs</div>
+      <div class="footer-tagline">A Living Lab for Futures Literacies</div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="/seed">Seed our Becoming</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">2026 Quest Labs · Makēda · All futures reserved · Berlin &amp; Beyond</div>
+</footer>
+
+<script type="application/json" id="pl-data" set:html={JSON.stringify(data)}></script>
+
+</Layout>
+
+<script is:inline>
+(() => {
+  const data = JSON.parse(document.getElementById('pl-data').textContent);
+  const $ = (id) => document.getElementById(id);
+  const card = $('pl-card'), text = $('pl-text'), sr = $('pl-sr'), beat = $('pl-beat');
+  const thinking = $('pl-thinking'), skip = $('pl-skip'), lean = $('pl-lean'), after = $('pl-after');
+  const star = $('pl-star'), real = $('pl-real'), end = $('pl-end'), stage = document.querySelector('.pl-stage');
+  const worlds = [...document.querySelectorAll('.pl-world')];
+  const dots = [...document.querySelectorAll('.pl-dot')];
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let idx = 0, run = 0, skipping = false;
+
+  const wait = (ms, r) => new Promise((res) => setTimeout(res, skipping || still || r !== run ? 0 : ms));
+
+  function reset() {
+    text.textContent = '';
+    beat.classList.remove('on');
+    thinking.classList.remove('on');
+    lean.hidden = true; after.hidden = true; star.hidden = true; real.hidden = true; end.hidden = true;
+    worlds.forEach((w) => { w.classList.remove('picked'); w.disabled = false; });
+    skip.hidden = still;
+    skipping = false;
+    card.hidden = false;
+  }
+
+  async function play(i) {
+    const r = ++run;
+    reset();
+    const d = data[i];
+    $('pl-sector').textContent = d.sector;
+    $('pl-count').textContent = `${i + 1} of ${data.length}`;
+    dots.forEach((el, j) => el.classList.toggle('on', j <= i));
+    sr.textContent = d.prompt;
+
+    const p = d.prompt.replace(/([.?!]) /g, '$1\n');
+    const hs = p.indexOf(d.highlight), he = hs + d.highlight.length;
+    const bAt = p.indexOf(d.beat.after) + d.beat.after.length;
+    let u = null;
+
+    for (let c = 0; c < p.length; c++) {
+      if (r !== run) return;
+      if (c === hs) { u = document.createElement('span'); u.className = 'pl-u'; text.appendChild(u); }
+      (u || text).appendChild(document.createTextNode(p[c]));
+      if (c === he - 1) u = null;
+      if (c === bAt - 1) {
+        await showBeat(d.beat, r);
+        if (d.beat.after.endsWith('.') && p[c + 1] === ' ') { (u || text).appendChild(document.createElement('br')); c++; }
+      }
+      await wait(p[c] === '.' || p[c] === ',' ? 260 : 32, r);
+    }
+    if (r !== run) return;
+    skip.hidden = true;
+    thinking.classList.add('on');
+    await wait(1400, r);
+    if (r !== run) return;
+    thinking.classList.remove('on');
+    lean.hidden = false;
+  }
+
+  async function showBeat(b, r) {
+    beat.querySelector('.pl-beat-emoji').textContent = b.emoji;
+    beat.querySelector('.pl-beat-label').textContent = b.label || '';
+    beat.classList.add('on');
+    await wait(b.label ? 1500 : 900, r);
+  }
+
+  skip.addEventListener('click', () => { skipping = true; skip.hidden = true; });
+
+  worlds.forEach((w) => w.addEventListener('click', () => {
+    worlds.forEach((x) => { x.disabled = true; });
+    w.classList.add('picked');
+    const nm = w.querySelector('.pl-world-name');
+    after.textContent = `You're leaning toward ${nm ? nm.textContent : 'this world'}.`;
+    after.hidden = false;
+    star.hidden = false;
+    star.focus();
+  }));
+
+  star.addEventListener('click', () => {
+    const d = data[idx];
+    star.hidden = true;
+    $('pl-signal').textContent = d.signal;
+    const box = $('pl-sources');
+    box.innerHTML = '';
+    d.sources.forEach((s, k) => {
+      const a = document.createElement('a');
+      a.href = s.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+      a.className = 'pl-source';
+      a.style.animationDelay = `${k * 140}ms`;
+      a.textContent = `${s.label} ↗`;
+      box.appendChild(a);
+    });
+    $('pl-next').textContent = idx === data.length - 1 ? 'Finish →' : 'Next signal →';
+    real.hidden = false;
+    real.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'nearest' });
+  });
+
+  $('pl-next').addEventListener('click', () => {
+    idx++;
+    if (idx >= data.length) {
+      run++;
+      card.hidden = true; lean.hidden = true; real.hidden = true; skip.hidden = true;
+      end.hidden = false;
+      return;
+    }
+    play(idx);
+    stage.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'start' });
+  });
+
+  $('pl-again').addEventListener('click', () => { idx = 0; play(0); });
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) { io.disconnect(); play(0); }
+    }, { threshold: 0.4 });
+    io.observe(card);
+  } else {
+    play(0);
+  }
+})();
+</script>
+
+<style is:global>
+  .pl-page { --pl-lilac:#B48FE0; --pl-lavender:#C4A8E8; --pl-amber:#F0B47A; padding-top:1rem; }
+  .pl-hero { text-align:center; padding:4.5rem 2rem 2rem; max-width:760px; margin:0 auto; }
+  .pl-eyebrow { font-family:'Space Mono',monospace; font-size:0.8rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--pl-lilac); margin-bottom:1rem; }
+  .pl-title { font-family:'Special Elite','Courier New',monospace; font-weight:400; font-size:clamp(2.4rem,6vw,4rem); color:var(--pl-lavender); line-height:1.08; margin-bottom:1rem; }
+  .pl-sub { color:var(--text-dim); font-size:1.05rem; line-height:1.75; max-width:600px; margin:0 auto; }
+  .pl-what { margin:1.5rem auto 0; max-width:440px; color:var(--text-dim); font-size:1.05rem; line-height:1.6; }
+  .pl-what p { margin:0 0 0.35rem; }
+  .pl-glass { display:block; font-size:2.6rem; margin-bottom:0.4rem; }
+  .pl-what-title { font-family:'Special Elite','Courier New',monospace; font-weight:400; font-size:1.5rem; color:var(--text); margin-bottom:0.5rem; }
+  .pl-how { list-style:none; padding:0; margin:1.75rem 0 0; display:flex; flex-direction:column; gap:0.35rem; font-size:1.1rem; color:var(--text); }
+  .pl-how b { font-family:'Special Elite','Courier New',monospace; font-weight:400; font-size:1.35rem; color:var(--pl-lavender); }
+  .pl-step-sub { color:var(--text-dim); font-size:1rem; line-height:1.6; margin:-0.5rem 0 1rem; }
+  .pl-card, .pl-lean, .pl-real { text-align:center; }
+  .pl-card-top { text-align:left; }
+  .pl-sources { justify-content:center; }
+  .pl-world { text-align:center; }
+
+  .pl-stage { max-width:620px; margin:0 auto; padding:1.5rem 1.25rem 5rem; display:flex; flex-direction:column; gap:1.25rem; scroll-margin-top:90px; }
+  .pl-progress { display:flex; gap:0.5rem; justify-content:center; }
+  .pl-dot { width:9px; height:9px; border-radius:50%; border:1px solid var(--pl-lilac); transition:background 0.3s; }
+  .pl-dot.on { background:var(--pl-lilac); }
+
+  .pl-card { position:relative; background:#141312; border:0.5px solid rgba(180,143,224,0.35); border-radius:16px; padding:1.75rem 1.75rem 2rem; min-height:320px; box-shadow:0 20px 60px rgba(0,0,0,0.35); }
+  .pl-card[hidden] { display:none; }
+  .pl-card-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }
+  .pl-sector { font:700 0.85rem 'Space Mono',monospace; letter-spacing:0.08em; text-transform:uppercase; color:var(--pl-lavender); }
+  .pl-count { font:0.75rem 'Space Mono',monospace; color:var(--text-dim); }
+  .pl-here { font-family:'Special Elite','Courier New',monospace; font-size:1.7rem; color:var(--text); margin-bottom:1rem; }
+  .pl-text { font-family:'Special Elite','Courier New',monospace; font-size:1.2rem; line-height:1.65; color:var(--text); min-height:6em; white-space:pre-wrap; }
+  .pl-u { text-decoration:underline; text-decoration-color:var(--pl-amber); text-decoration-thickness:2px; text-underline-offset:5px; }
+  .pl-sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+
+  .pl-beat { position:absolute; top:-1.4rem; right:1.25rem; display:flex; align-items:center; gap:0.5rem; background:#211d2b; border:1px solid var(--pl-lilac); border-radius:999px; padding:0.45rem 0.95rem; opacity:0; transform:translateY(8px) scale(0.9); transition:opacity 0.35s, transform 0.35s; pointer-events:none; }
+  .pl-beat.on { opacity:1; transform:none; }
+  .pl-beat.on::after { content:''; position:absolute; inset:-1px; border-radius:inherit; border:2px solid var(--pl-lilac); animation:pl-ripple 1.2s ease-out 2; }
+  .pl-beat-emoji { font-size:1.3rem; }
+  .pl-beat-label { font-family:'Special Elite','Courier New',monospace; color:var(--text); font-size:1rem; }
+  .pl-beat-label:empty { display:none; }
+  @keyframes pl-ripple { from { transform:scale(1); opacity:0.9; } to { transform:scale(1.6); opacity:0; } }
+
+  .pl-thinking { margin-top:0.75rem; font-family:'Space Mono',monospace; color:var(--pl-lilac); letter-spacing:0.2em; opacity:0; transition:opacity 0.3s; }
+  .pl-thinking.on { opacity:1; }
+  .pl-blink { display:inline-block; width:9px; height:9px; border-radius:50%; background:var(--pl-amber); margin-right:0.3rem; animation:pl-blink 0.9s steps(2) infinite; }
+  @keyframes pl-blink { 50% { opacity:0; } }
+
+  .pl-skip { align-self:flex-end; background:none; border:none; color:var(--text-dim); font:0.75rem 'Space Mono',monospace; text-decoration:underline; cursor:pointer; padding:0.25rem; }
+  .pl-skip[hidden] { display:none; }
+
+  .pl-lean[hidden], .pl-real[hidden], .pl-end[hidden], .pl-after[hidden], .pl-star[hidden] { display:none; }
+  .pl-lean, .pl-real { animation:pl-in 0.45s ease-out; }
+  .pl-step { font-family:'Special Elite','Courier New',monospace; color:var(--pl-lavender); font-size:1.35rem; margin-bottom:0.9rem; }
+  .pl-step b { font-weight:400; }
+  .pl-worlds { display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; }
+  .pl-world { text-align:left; background:rgba(255,255,255,0.03); border:0.5px solid rgba(180,143,224,0.45); border-radius:10px; padding:0.9rem 1rem; color:var(--text); font-family:'Special Elite','Courier New',monospace; font-size:1rem; line-height:1.35; cursor:pointer; transition:background 0.2s, border-color 0.2s, transform 0.2s; }
+  .pl-world-name { display:block; font:700 0.72rem 'Space Mono',monospace; letter-spacing:0.18em; text-transform:uppercase; color:var(--pl-lilac); margin-bottom:0.35rem; }
+  .pl-world:hover:not(:disabled) { background:rgba(180,143,224,0.12); transform:translateY(-2px); }
+  .pl-world:disabled { cursor:default; opacity:0.45; }
+  .pl-world.picked { opacity:1; border-color:var(--pl-amber); background:rgba(240,180,122,0.12); }
+  .pl-after { margin-top:1rem; color:var(--text-dim); font-size:0.98rem; line-height:1.6; }
+  .pl-star { margin-top:1.1rem; background:none; border:1px solid var(--pl-amber); color:var(--pl-amber); border-radius:999px; padding:0.65rem 1.3rem; font:700 0.85rem 'Space Mono',monospace; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; animation:pl-pulse 1.8s ease-in-out infinite; }
+  .pl-star:hover { background:rgba(240,180,122,0.12); }
+  @keyframes pl-pulse { 0%,100% { box-shadow:0 0 0 0 rgba(240,180,122,0.45); } 50% { box-shadow:0 0 0 10px rgba(240,180,122,0); } }
+
+  .pl-real { background:rgba(180,143,224,0.07); border:0.5px solid rgba(180,143,224,0.45); border-radius:14px; padding:1.4rem 1.5rem; }
+  .pl-real-label { font:700 0.78rem 'Space Mono',monospace; letter-spacing:0.15em; text-transform:uppercase; color:var(--pl-amber); margin-bottom:0.6rem; }
+  .pl-signal { color:var(--text); font-size:1.02rem; line-height:1.7; margin-bottom:1rem; }
+  .pl-sources { display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:1.4rem; }
+  .pl-source { font:0.85rem 'Space Mono',monospace; color:var(--pl-lavender); text-decoration:none; border:1px solid rgba(196,168,232,0.55); border-radius:999px; padding:0.45rem 0.95rem; animation:pl-pop 0.4s ease-out both; transition:background 0.2s; }
+  .pl-source:hover { background:rgba(196,168,232,0.14); }
+  @keyframes pl-pop { from { opacity:0; transform:translateY(6px) scale(0.92); } to { opacity:1; transform:none; } }
+  @keyframes pl-in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+
+  .pl-end { text-align:center; padding:2rem 0; animation:pl-in 0.45s ease-out; }
+  .pl-end-title { font-family:'Special Elite','Courier New',monospace; font-weight:400; font-size:clamp(1.8rem,4vw,2.6rem); color:var(--pl-lavender); margin-bottom:1rem; }
+  .pl-ctas { display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap; margin-top:1.75rem; }
+
+  @media (max-width:600px) {
+    .pl-hero { padding:3rem 1rem 1.5rem; }
+    .pl-stage { padding:1rem 1rem 4rem; }
+    .pl-card { padding:1.4rem 1.25rem 1.6rem; }
+    .pl-text { font-size:1.1rem; }
+    .pl-worlds { grid-template-columns:1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pl-beat.on::after, .pl-blink, .pl-star, .pl-source, .pl-lean, .pl-real, .pl-end { animation:none; }
+  }
+</style>

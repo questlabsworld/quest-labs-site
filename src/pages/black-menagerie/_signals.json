@@ -1,0 +1,1248 @@
+[
+  {
+    "id": "S1",
+    "sector": "Social",
+    "tone": "Hopeful",
+    "signal": "Barcelona's \"superblocks\" close inner streets to through traffic. A 2019 ISGlobal model estimated the full plan could prevent about 667 early deaths a year.",
+    "sources": [
+      {
+        "label": "ISGlobal",
+        "url": "https://www.isglobal.org/en/-/el-proyecto-original-de-las-supermanzanas-podria-evitar-cerca-de-700-muertes-prematuras-anuales-en-barcelona"
+      }
+    ],
+    "prompt": "Your block closed to cars. The intersection is a plaza now, and your grandmother walks there every morning. The corner shop owner says he's losing the customers who used to drive in."
+  },
+  {
+    "id": "S2",
+    "sector": "Social",
+    "tone": "Hopeful",
+    "signal": "Bogotá's Care Blocks (Manzanas del Cuidado) give unpaid caregivers, mostly women, free classes, rest, and childcare near home. 23 blocks were running by June 2024.",
+    "sources": [
+      {
+        "label": "Lincoln Institute",
+        "url": "https://www.lincolninst.edu/es/publications/land-lines-magazine/articles/bogota-gender-equity-part-plan/"
+      },
+      {
+        "label": "NPR",
+        "url": "https://www.npr.org/1205218707"
+      }
+    ],
+    "prompt": "The city opened a care center two streets away. Someone watches the kids while you finish school, take a dance class, or just sleep. The waiting list is 300 names long."
+  },
+  {
+    "id": "S3",
+    "sector": "Social",
+    "tone": "Hopeful",
+    "signal": "Kudumbashree, Kerala's women's self-help network, has about 4.5 million members in neighborhood groups that run savings, businesses, and local planning. (India)",
+    "sources": [
+      {
+        "label": "The South First",
+        "url": "https://thesouthfirst.com/news/as-kudumbashree-turns-25-heres-all-you-need-to-know-about-indias-largest-self-help-group"
+      }
+    ],
+    "prompt": "Twenty women on your street meet every week. They run a café, a savings fund, and now they sit on the council that plans the neighborhood. The men who used to run the council have stopped coming."
+  },
+  {
+    "id": "S4",
+    "sector": "Social",
+    "tone": "Hopeful",
+    "signal": "On the last Saturday of every month, Rwanda holds Umuganda: three hours of nationwide community work, then a neighborhood meeting. (Rwanda)",
+    "sources": [
+      {
+        "label": "Wikipedia: Umuganda",
+        "url": "https://en.wikipedia.org/wiki/Umuganda"
+      },
+      {
+        "label": "KT Press",
+        "url": "https://www.ktpress.rw/2014/12/rwandas-umuganda-that-everyones-involved-in/"
+      }
+    ],
+    "prompt": "It is the last Saturday of the month. Shops are closed. The whole street is out fixing the road together. Your neighbor skipped it again, and people are starting to talk."
+  },
+  {
+    "id": "S5",
+    "sector": "Social",
+    "tone": "Hopeful",
+    "signal": "In England, GPs referred about 1.3 million people to \"social prescribing\" in 2023: gardening groups, choirs, walking clubs, instead of or alongside medicine.",
+    "sources": [
+      {
+        "label": "UCL / Lancet Public Health",
+        "url": "https://www.ucl.ac.uk/news/2025/sep/social-prescribing-rises-sharply-among-englands-gps"
+      }
+    ],
+    "prompt": "Your doctor wrote you a prescription for a community garden, two afternoons a week. The garden has a waiting list. The pills were quicker."
+  },
+  {
+    "id": "S6",
+    "sector": "Social",
+    "tone": "Hard",
+    "signal": "South Korea's fertility rate fell to 0.72 in 2023, the lowest in the world. Seoul's was 0.55. (South Korea)",
+    "sources": [
+      {
+        "label": "SCMP",
+        "url": "https://www.scmp.com/news/asia/east-asia/article/3253465/south-korea-sets-new-record-worlds-lowest-fertility-rate-despite-spending-billions-stem-population"
+      }
+    ],
+    "prompt": "Your school is closing. There are not enough children to fill it. The town votes tonight: keep it open for the last twelve kids, or turn it into a care home."
+  },
+  {
+    "id": "S7",
+    "sector": "Social",
+    "tone": "Hard",
+    "signal": "India's 2024 heat wave pushed 37 cities above 45°C. Independent trackers counted over 700 heat deaths and 40,000 heatstroke cases. (India)",
+    "sources": [
+      {
+        "label": "Down To Earth",
+        "url": "https://www.downtoearth.org.in/climate-change/seeing-red-india-had-over-700-heat-deaths-in-2024-much-higher-than-official-toll-claim-scientists"
+      }
+    ],
+    "prompt": "It is 46°C at noon. The street vendors have nowhere to go. Your building has the only shade on the block."
+  },
+  {
+    "id": "T1",
+    "sector": "Technological",
+    "tone": "Hopeful",
+    "signal": "A twice-yearly injection, lenacapavir, prevented HIV in 100% of young women in the PURPOSE 1 trial. Science named it the 2024 Breakthrough of the Year.",
+    "sources": [
+      {
+        "label": "NPR",
+        "url": "https://www.npr.org/sections/goats-and-soda/2024/12/12/g-s1-37662/breakthrough-hiv-lenacapavir"
+      }
+    ],
+    "prompt": "Two shots a year now protect against HIV. The clinic down the road has a line out the door, and only enough doses for half of it."
+  },
+  {
+    "id": "T2",
+    "sector": "Technological",
+    "tone": "Hopeful",
+    "signal": "The R21 malaria vaccine began routine rollout in Africa in 2024. Malaria vaccines reached children in 17 countries that year.",
+    "sources": [
+      {
+        "label": "WHO",
+        "url": "https://www.who.int/news-room/feature-stories/detail/life-saving-malaria-vaccines-reach-children-in-17-endemic-countries-in-2024"
+      }
+    ],
+    "prompt": "This is the first rainy season your village's children have been vaccinated against malaria. Some parents are waiting to see what happens to the first children before they bring theirs."
+  },
+  {
+    "id": "T3",
+    "sector": "Technological",
+    "tone": "Hopeful",
+    "signal": "Pakistan imported about 17 GW of solar panels in 2024, double 2023, mostly for rooftops, as families escaped blackouts and high bills. (Pakistan)",
+    "sources": [
+      {
+        "label": "Ember via Arab News",
+        "url": "https://www.arabnews.pk/node/2596952"
+      },
+      {
+        "label": "Express Tribune",
+        "url": "https://tribune.com.pk/story/2539779/heres-how-pakistan-quietly-became-worlds-biggest-solar-importer"
+      }
+    ],
+    "prompt": "The power cuts used to come every afternoon. Now every rooftop on your street has panels. The power company says the grid is losing money, and the families who can't afford panels are paying more for what's left."
+  },
+  {
+    "id": "T4",
+    "sector": "Technological",
+    "tone": "Hopeful",
+    "signal": "India's UPI, a free public payment system, handled a record 24.5 billion payments in August 2026. Street vendors take payments by QR code. (India)",
+    "sources": [
+      {
+        "label": "Free Press Journal (NPCI data)",
+        "url": "https://www.freepressjournal.in/business/upi-transactions-hit-record-2451-billion-in-august-as-digital-payments-continue-rapid-growth"
+      }
+    ],
+    "prompt": "The chai seller on your corner takes payment with a QR code taped to his cart. So does the temple, the tailor, and your grandmother. Today the network is down, and nobody carries cash anymore."
+  },
+  {
+    "id": "T5",
+    "sector": "Technological",
+    "tone": "Hard",
+    "signal": "Data center electricity use is projected to more than double by 2030, to about 945 TWh (IEA).",
+    "sources": [
+      {
+        "label": "IEA Energy and AI",
+        "url": "https://www.iea.org/reports/energy-and-ai/executive-summary"
+      }
+    ],
+    "prompt": "A data center is being built at the edge of town. It will use more power than every home here combined. It also brings 400 jobs."
+  },
+  {
+    "id": "T6",
+    "sector": "Technological",
+    "tone": "Hard",
+    "signal": "Two days before Slovakia's 2023 election, a fake AI audio clip of a party leader \"discussing vote rigging\" spread on Facebook.",
+    "sources": [
+      {
+        "label": "Harvard Misinformation Review",
+        "url": "https://misinforeview.hks.harvard.edu/article/beyond-the-deepfake-hype-ai-democracy-and-the-slovak-case/"
+      }
+    ],
+    "prompt": "The night before the vote, a recording of the leading candidate goes viral. It sounds exactly like her. She says it is fake."
+  },
+  {
+    "id": "T7",
+    "sector": "Technological",
+    "tone": "Hard",
+    "signal": "The world made a record 62 million tonnes of e-waste in 2022. Only 22.3% was documented as properly recycled (UN Global E-waste Monitor 2024).",
+    "sources": [
+      {
+        "label": "UNITAR",
+        "url": "https://unitar.org/about/news-stories/press/global-e-waste-monitor-2024-electronic-waste-rising-five-times-faster-documented-e-waste-recycling"
+      }
+    ],
+    "prompt": "Your drawer holds four old phones. A repair shop opened downtown, but the newest phones are built so no one can open them."
+  },
+  {
+    "id": "E1",
+    "sector": "Economic",
+    "tone": "Hopeful",
+    "signal": "In the UK four-day week pilot (61 companies, 2022), 54 were still on it a year later and 31 made it permanent.",
+    "sources": [
+      {
+        "label": "Autonomy",
+        "url": "https://autonomy.work/2024/02/21/make-it-stick/"
+      },
+      {
+        "label": "NPR",
+        "url": "https://npr.org/2024/02/27/1234271434/4-day-workweek-successful-a-year-later-in-uk"
+      }
+    ],
+    "prompt": "Your workplace moved to a four-day week. The pay stayed the same. Fridays belong to you now. Your sister is a nurse, and her hospital says it can't do the same."
+  },
+  {
+    "id": "E2",
+    "sector": "Economic",
+    "tone": "Hopeful",
+    "signal": "Stockton's guaranteed income pilot gave 125 people $500 a month, no strings. Full-time work among recipients rose from 28% to 40% in a year.",
+    "sources": [
+      {
+        "label": "SEED",
+        "url": "https://www.stocktondemonstration.org/press-landing/stocktons-guaranteed-income-program-results-in-full-time-employment-improved-mental-health"
+      }
+    ],
+    "prompt": "Every month, $500 arrives with no forms and no conditions. You finally quit the second job and apply for the one you actually want. The program ends next year."
+  },
+  {
+    "id": "E3",
+    "sector": "Economic",
+    "tone": "Hopeful",
+    "signal": "The African Continental Free Trade Area started trading in 2021, aiming for one market of about 1.3 billion people. (Africa)",
+    "sources": [
+      {
+        "label": "UN Africa Renewal",
+        "url": "https://africarenewal.un.org/en/magazine/africas-free-trade-area-opens-business"
+      },
+      {
+        "label": "AfCFTA",
+        "url": "https://au-afcfta.org/about/"
+      }
+    ],
+    "prompt": "Your cousin's shea butter business just shipped its first order across three borders, with no tariffs. A bigger company next door is now selling the same thing for half the price."
+  },
+  {
+    "id": "E4",
+    "sector": "Economic",
+    "tone": "Hopeful",
+    "signal": "In Kenya, GiveDirectly's long-term basic income study found people did not work less, and those promised 12 years of income saved far more together.",
+    "sources": [
+      {
+        "label": "NPR",
+        "url": "https://www.npr.org/sections/goatsandsoda/2023/12/07/1217478771/its-one-of-the-biggest-experiments-in-fighting-global-poverty-now-the-results-ar"
+      },
+      {
+        "label": "GiveDirectly",
+        "url": "https://www.givedirectly.org/2023-ubi-results/"
+      }
+    ],
+    "prompt": "Everyone in your village gets a small income for the next twelve years. The savings group meets tonight to decide what to build first. Half want a school. Half want a water pump."
+  },
+  {
+    "id": "E5",
+    "sector": "Economic",
+    "tone": "Hard",
+    "signal": "Pakistan's 2022 floods put about a third of the country underwater, affected 33 million people, and caused over $30 billion in damage and losses. (Pakistan)",
+    "sources": [
+      {
+        "label": "Britannica",
+        "url": "https://www.britannica.com/event/Pakistan-floods-of-2022"
+      }
+    ],
+    "prompt": "The water has gone down, but the cotton fields are still mud. Your family's whole year of income is gone. A company has offered to buy the land."
+  },
+  {
+    "id": "E6",
+    "sector": "Economic",
+    "tone": "Hard",
+    "signal": "Cocoa prices hit record highs in 2024 after extreme weather in West Africa. Chocolate prices followed.",
+    "sources": [
+      {
+        "label": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2025/4/21/bitter-easter-truth-why-has-chocolate-become-so-expensive"
+      }
+    ],
+    "prompt": "Chocolate is a luxury now, like saffron. The farmers who grow it still cannot afford it."
+  },
+  {
+    "id": "E7",
+    "sector": "Economic",
+    "tone": "Hard",
+    "signal": "The ILO projects heat will cost the equivalent of 80 million full-time jobs by 2030, mostly in farming and construction.",
+    "sources": [
+      {
+        "label": "ILO",
+        "url": "https://www.ilo.org/resource/news/increase-heat-stress-predicted-bring-productivity-loss-equivalent-80"
+      }
+    ],
+    "prompt": "Outdoor work stops from noon to four. Your paycheck shrinks every summer. Your boss offers night shifts at the same pay."
+  },
+  {
+    "id": "N1",
+    "sector": "Environmental",
+    "tone": "Hopeful",
+    "signal": "In the first half of 2025, renewables made more of the world's electricity than coal, for the first time on record (Ember).",
+    "sources": [
+      {
+        "label": "NPR",
+        "url": "https://www.npr.org/2025/10/09/nx-s1-5564746/renewable-energy-coal-electricity-first"
+      }
+    ],
+    "prompt": "The last coal plant in your region closed this year. The smokestack is still standing. People are arguing about what it should become."
+  },
+  {
+    "id": "N2",
+    "sector": "Environmental",
+    "tone": "Hopeful",
+    "signal": "The ozone layer is healing. A 2023 UN-backed assessment says it should recover by about 2040 for most of the world, and 2066 over Antarctica.",
+    "sources": [
+      {
+        "label": "The National",
+        "url": "https://www.thenationalnews.com/climate/environment/2023/01/10/ozone-layer-will-be-fully-healed-by-2066-un-says"
+      }
+    ],
+    "prompt": "Scientists announce the hole in the sky is closing. It took a whole world agreeing to stop using one chemical. Now people are asking what else the world could agree to stop."
+  },
+  {
+    "id": "N3",
+    "sector": "Environmental",
+    "tone": "Hopeful",
+    "signal": "The largest dam removal in US history finished on the Klamath River in 2024. Salmon swam back into the upper river within weeks, after more than 100 years.",
+    "sources": [
+      {
+        "label": "Smithsonian",
+        "url": "https://www.smithsonianmag.com/smart-news/salmon-make-a-long-awaited-return-to-the-klamath-river-for-the-first-time-in-112-years-after-largest-dam-removal-in-us-180985319/"
+      },
+      {
+        "label": "High Country News",
+        "url": "https://www.hcn.org/issues/after-the-klamath-river-dams-came-down-salmon-came-back/"
+      }
+    ],
+    "prompt": "The dam came down last year. This morning, salmon are spawning in a creek your great-grandparents fished. The farms downstream that used the dam's water are drying out."
+  },
+  {
+    "id": "N4",
+    "sector": "Environmental",
+    "tone": "Hopeful",
+    "signal": "India's tigers grew to about 3,682 in 2022, roughly 75% of the world's wild tigers, up from 2,967 in 2018. (India)",
+    "sources": [
+      {
+        "label": "Millennium Post",
+        "url": "https://www.millenniumpost.in/nation/india-has-3682-tigers-home-to-75-of-global-numbers-527437"
+      },
+      {
+        "label": "India Environment Portal",
+        "url": "https://indiaenvironmentportal.org.in/reports-and-documents/status-of-tigers-co-predators-and-prey-in-india-2022"
+      }
+    ],
+    "prompt": "Tigers are back in the forest near your village, for the first time in your grandparents' memory. Not everyone is happy about it."
+  },
+  {
+    "id": "N5",
+    "sector": "Environmental",
+    "tone": "Hard",
+    "signal": "2024 was the hottest year on record and the first full year above 1.5°C of warming (Copernicus).",
+    "sources": [
+      {
+        "label": "Copernicus",
+        "url": "https://climate.copernicus.eu/global-climate-highlights-2024"
+      }
+    ],
+    "prompt": "The news says we have crossed the line everyone promised not to cross. Outside, it is a normal Tuesday."
+  },
+  {
+    "id": "N6",
+    "sector": "Environmental",
+    "tone": "Hard",
+    "signal": "NOAA confirmed the fourth global coral bleaching event in 2024. About 84% of the world's reefs faced bleaching-level heat.",
+    "sources": [
+      {
+        "label": "NOAA",
+        "url": "https://www.nesdis.noaa.gov/news/noaa-confirms-fourth-global-coral-bleaching-event"
+      }
+    ],
+    "prompt": "The reef your town depends on for fish and tourists turned white this summer. A company offers to grow new coral, if the town gives it the fishing rights."
+  },
+  {
+    "id": "N7",
+    "sector": "Environmental",
+    "tone": "Hard",
+    "signal": "In October 2023, the Rio Negro at Manaus fell to its lowest level since records began in 1902.",
+    "sources": [
+      {
+        "label": "NASA Earth Observatory",
+        "url": "https://earthobservatory.nasa.gov/images/151961/drought-on-the-rio-negro"
+      }
+    ],
+    "prompt": "The river that is your only road has dried to sand. The boat that brings food and medicine cannot reach you. The government is offering to build a road through the forest."
+  },
+  {
+    "id": "P1",
+    "sector": "Political",
+    "tone": "Hopeful",
+    "signal": "In 2023, Ecuadorians voted about 59% to 41% to keep oil in the ground under Yasuní National Park.",
+    "sources": [
+      {
+        "label": "Mongabay",
+        "url": "https://news.mongabay.com/2023/08/ecuador-referendum-halts-oil-extraction-in-yasuni-national-park/"
+      },
+      {
+        "label": "Human Rights Watch",
+        "url": "https://www.hrw.org/news/2023/08/23/ecuadorians-vote-keep-oil-soil-amazon"
+      }
+    ],
+    "prompt": "The country voted: the oil under the forest stays there. Now someone has to turn off the wells."
+  },
+  {
+    "id": "P2",
+    "sector": "Political",
+    "tone": "Hopeful",
+    "signal": "Taiwan's vTaiwan used an online tool to find what thousands of citizens agreed on about ride-sharing rules. The government agreed to adopt the consensus points. (Taiwan)",
+    "sources": [
+      {
+        "label": "Computational Democracy Project",
+        "url": "https://compdemocracy.org/case-studies/2014-vtaiwan/"
+      }
+    ],
+    "prompt": "Before the new law is written, 3,000 people argue it out online. The tool does not show who shouts loudest. It shows where they agree. The people who shout loudest say the tool is rigged."
+  },
+  {
+    "id": "P3",
+    "sector": "Political",
+    "tone": "Hopeful",
+    "signal": "In 2017, New Zealand recognized the Whanganui River as a legal person, after a 170-year struggle by Whanganui Iwi.",
+    "sources": [
+      {
+        "label": "Ecojurisprudence Monitor",
+        "url": "https://ecojurisprudence.org/initiatives/te-awa-tupua-act-2017/"
+      }
+    ],
+    "prompt": "The river has its own rights now, and two guardians who speak for it. A factory upstream just got a letter from the river's lawyer."
+  },
+  {
+    "id": "P4",
+    "sector": "Political",
+    "tone": "Hopeful",
+    "signal": "In June 2024, Gen Z protesters in Kenya, organizing online, pushed President Ruto to withdraw a finance bill that raised taxes. Dozens were killed in the crackdown. (Kenya)",
+    "sources": [
+      {
+        "label": "Mail & Guardian",
+        "url": "https://mg.co.za/africa/2024-06-29-kenyas-ruto-pulls-finance-bill-after-protest-deaths"
+      },
+      {
+        "label": "IPS",
+        "url": "https://www.ipsnews.net/2024/07/kenyas-protests-question-tax/"
+      }
+    ],
+    "prompt": "Your little sister and her friends read the tax bill line by line on TikTok. Two weeks later, the president withdraws it. Now her group chat is reading the next bill, and they want to know what you think."
+  },
+  {
+    "id": "P5",
+    "sector": "Political",
+    "tone": "Hopeful",
+    "signal": "Brazil's Amazon deforestation fell about 30% in the year to July 2024, the lowest in nine years (INPE).",
+    "sources": [
+      {
+        "label": "Mongabay",
+        "url": "https://news.mongabay.com/2024/11/amazon-deforestation-in-brazil-plunges-31-to-lowest-level-in-9-years/amp"
+      }
+    ],
+    "prompt": "The satellites show the forest stopped shrinking. The people who guard it want to know: what now?"
+  },
+  {
+    "id": "P6",
+    "sector": "Political",
+    "tone": "Hopeful",
+    "signal": "After the 2024 election, women hold about 64% of seats in Rwanda's parliament, the highest share in the world. (Rwanda)",
+    "sources": [
+      {
+        "label": "IPU",
+        "url": "https://www.ipu.org/news/press-releases/2024-09/super-election-year-sees-few-gains-women-mps-so-far"
+      },
+      {
+        "label": "AllAfrica",
+        "url": "https://allafrica.com/stories/202501080011.html"
+      }
+    ],
+    "prompt": "Most of the people who make the laws in your country are women. The budget debate this year is about childcare and water. The army's budget is next."
+  },
+  {
+    "id": "P7",
+    "sector": "Political",
+    "tone": "Hard",
+    "signal": "Bogotá rationed water from April 2024 to April 2025: neighborhoods took turns with 24-hour shutoffs during a drought.",
+    "sources": [
+      {
+        "label": "AP via KSAT",
+        "url": "https://www.ksat.com/tech/2025/04/11/colombias-capital-ends-drought-related-water-rationing-its-case-is-a-warning-to-other-cities/"
+      },
+      {
+        "label": "World Bank",
+        "url": "https://blogs.worldbank.org/en/latinamerica/mantenerse-unidos-tiempos-crisis-lecciones-gestion-sequias-bogota"
+      }
+    ],
+    "prompt": "Water is rationed by household now. A neighbor knocks and asks to share your quota this week."
+  },
+  {
+    "id": "P8",
+    "sector": "Political",
+    "tone": "Hard",
+    "signal": "2024 was the worst year on record for internet shutdowns: at least 296 shutdowns in 54 countries (Access Now).",
+    "sources": [
+      {
+        "label": "Access Now",
+        "url": "https://www.accessnow.org/press-release/keepiton-internet-shutdowns-2024-en/"
+      }
+    ],
+    "prompt": "The internet went dark the night before the protest. Nobody can reach anybody. Someone on your street still has a radio."
+  },
+  {
+    "id": "MS1",
+    "sector": "Social",
+    "tone": "Hopeful",
+    "signal": "Zimbabwe's Friendship Bench trains grandmothers to give talk therapy on park benches. The idea is now spreading to the United States and elsewhere. (Zimbabwe)",
+    "sources": [
+      {
+        "label": "AP via KION",
+        "url": "https://kion546.com/news/2024/07/04/a-bench-and-a-grandmothers-ear-zimbabwes-novel-mental-health-therapy-spreads-overseas"
+      }
+    ],
+    "prompt": "There is no therapist in your town, but there is a bench outside the clinic, and a grandmother who listens. You told her things you've never told your family. The doctors in the capital say she isn't qualified."
+  },
+  {
+    "id": "MS2",
+    "sector": "Social",
+    "tone": "Hopeful",
+    "signal": "Japan's kodomo shokudō (children's cafeterias) give kids free or cheap meals and company. They reached a record 12,601 sites in 2025. (Japan)",
+    "sources": [
+      {
+        "label": "Adnkronos / Jiji",
+        "url": "https://english.adnkronos.com/2025/12/12/kodomo-shokudo-kids-cafeterias-hit-record-12601-sites/"
+      }
+    ],
+    "prompt": "Every evening the neighborhood café feeds any child who walks in, no questions asked. Your son eats there three nights a week now. Your mother says needing it is shameful."
+  },
+  {
+    "id": "MS3",
+    "sector": "Social",
+    "tone": "Hopeful",
+    "signal": "In April 2021 a bamboo cart of free groceries appeared on Maginhawa Street in Manila: \"give what you can, take what you need.\" About 350 copies sprang up within a week, even as police and a government task force \"red-tagged\" organizers as communists. (Philippines)",
+    "sources": [
+      {
+        "label": "Inquirer",
+        "url": "https://newsinfo.inquirer.net/1422156/despite-red-tagging-community-pantries-rise-to-350-says-advocate"
+      }
+    ],
+    "prompt": "Someone left a cart of rice and vegetables on your corner with a sign: take what you need. By Friday there are carts on every street. Today the police came to photograph the volunteers."
+  },
+  {
+    "id": "MS4",
+    "sector": "Social",
+    "tone": "Hopeful",
+    "signal": "In flood-prone Bangladesh, solar-powered \"floating schools\" on boats pick children up from cut-off villages so class goes on during the monsoon. (Bangladesh)",
+    "sources": [
+      {
+        "label": "Reuters via The Star",
+        "url": "https://www.thestar.com.my/news/world/2025/10/07/in-bangladeshs-flooded-plains-schools-in-boats-keep-learning-afloat"
+      }
+    ],
+    "prompt": "The roads are underwater again, so the school comes to you: a boat with solar panels and a library. Your daughter hasn't missed a lesson all season. The government says that since the boats work, it won't rebuild the school on land."
+  },
+  {
+    "id": "MS5",
+    "sector": "Social",
+    "tone": "Hopeful",
+    "signal": "In Los Angeles, pharmacists worked inside Black-owned barbershops to treat high blood pressure. After a year, the men's top blood pressure number fell by 28.6 points on average. (US, diaspora)",
+    "sources": [
+      {
+        "label": "NHLBI",
+        "url": "https://www.nhlbi.nih.gov/news/2018/one-year-later-barbershop-intervention-continues-lower-blood-pressure-black-men"
+      }
+    ],
+    "prompt": "You came for a fade and left with your blood pressure under control. The barbershop is the only place your uncle trusts with his health. The study's funding ends next month."
+  },
+  {
+    "id": "MS6",
+    "sector": "Social",
+    "tone": "Hopeful",
+    "signal": "Ghana's 2019 \"Year of Return\" invited the African diaspora home, 400 years after enslaved Africans were first brought to Virginia. Ghana had about 1.1 million international visitors that year and granted citizenship to at least 126 diaspora residents. (Ghana, diaspora)",
+    "sources": [
+      {
+        "label": "Migration Policy Institute",
+        "url": "https://www.migrationpolicy.org/journal/feature/west-africa-diaspora-citizenship"
+      },
+      {
+        "label": "OkayAfrica",
+        "url": "https://www.okayafrica.com/ghana-has-granted-citizenship-to-members-of-the-diaspora-living-in-the-country/182278"
+      },
+      {
+        "label": "Oxford Business Group",
+        "url": "https://oxfordbusinessgroup.com/reports/ghana/2020-report/economy/homeward-bound-year-of-return-campaign-encourages-members-of-the-african-diaspora-to-engage-with-ghanas-history-and-culture"
+      }
+    ],
+    "prompt": "Your cousin from Atlanta just got her Ghanaian passport. She's opening a guesthouse on the beach road. Your neighbors' rent went up the same month."
+  },
+  {
+    "id": "MS7",
+    "sector": "Social",
+    "tone": "Hard",
+    "signal": "A 2025 WHO commission found about 1 in 6 people worldwide are lonely. It linked loneliness to about 871,000 deaths a year.",
+    "sources": [
+      {
+        "label": "WHO",
+        "url": "https://www.who.int/news/item/30-06-2025-social-connection-linked-to-improved-heath-and-reduced-risk-of-early-death"
+      }
+    ],
+    "prompt": "Your city just appointed a Minister for Loneliness. Her first idea is a phone line for people who have no one to talk to. You haven't spoken to your neighbor in six years."
+  },
+  {
+    "id": "MS8",
+    "sector": "Social",
+    "tone": "Hard",
+    "signal": "Japan's police counted 76,020 people who died alone at home in 2024. About three in four were 65 or older. (Japan)",
+    "sources": [
+      {
+        "label": "Morung Express / IANS",
+        "url": "https://morungexpress.com/over-76000-people-died-alone-in-japan-in-2024"
+      }
+    ],
+    "prompt": "The man upstairs died a month ago and nobody noticed. The building manager wants to put sensors in every apartment that alert him if you stop moving. Some neighbors call it care. Some call it spying."
+  },
+  {
+    "id": "MS9",
+    "sector": "Social",
+    "tone": "Hard",
+    "signal": "UNICEF says about 18.3 million children in Nigeria are out of school, the most of any country. (Nigeria)",
+    "sources": [
+      {
+        "label": "The Eagle Online / UNICEF",
+        "url": "https://theeagleonline.com.ng/unicef-laments-increasing-number-of-nigerias-out-of-school-children-says-its-now-18-3m/"
+      }
+    ],
+    "prompt": "Half the children on your street sell water at the junction instead of going to school. A teacher offers free lessons under the mango tree after dark. The parents say they need the money the children make by day."
+  },
+  {
+    "id": "MS10",
+    "sector": "Social",
+    "tone": "Hard",
+    "signal": "In 2023 the US maternal death rate for Black women was 50.3 per 100,000 births, against 14.5 for white women (CDC data). (US, diaspora)",
+    "sources": [
+      {
+        "label": "PBS NewsHour / AP",
+        "url": "https://www.pbs.org/newshour/health/racial-gap-widens-in-maternal-mortality-around-time-of-childbirth"
+      },
+      {
+        "label": "Fortune",
+        "url": "https://fortune.com/well/2025/02/06/black-women-in-the-u-s-were-3-5-times-more-likely-to-die-during-childbirth-than-white-women-in-2023/"
+      }
+    ],
+    "prompt": "Your sister is due in March. She has hired a Black doula to come to every appointment and speak up for her. Her insurance won't pay for it."
+  },
+  {
+    "id": "MT1",
+    "sector": "Technological",
+    "tone": "Hopeful",
+    "signal": "Since October 2016, Zipline drones have flown blood and medicine to rural clinics in Rwanda, later in Ghana and beyond. A 2022 study found it cut blood delivery times and wasted blood. (Rwanda)",
+    "sources": [
+      {
+        "label": "Wikipedia: Zipline",
+        "url": "https://en.wikipedia.org/wiki/Zipline_(drone_delivery_company)"
+      }
+    ],
+    "prompt": "A drone drops a box of blood by parachute at your clinic, twenty minutes after the nurse asked for it. Your mother lived through her surgery because of it. The road to your village is still not paved."
+  },
+  {
+    "id": "MT2",
+    "sector": "Technological",
+    "tone": "Hopeful",
+    "signal": "Masakhane (\"we build together\" in isiZulu) is a grassroots network of more than 1,000 people from 30 African countries building AI tools for African languages. (Africa)",
+    "sources": [
+      {
+        "label": "Masakhane",
+        "url": "https://sites.google.com/view/masakhane/home"
+      }
+    ],
+    "prompt": "For the first time, your phone understands your grandmother's language. Volunteers built it, not a big company. Now a big company wants to buy the recordings of her voice."
+  },
+  {
+    "id": "MT3",
+    "sector": "Technological",
+    "tone": "Hopeful",
+    "signal": "Casgevy, the first CRISPR gene-editing cure, was approved for sickle cell disease in 2023. Its list price is $2.2 million. Most people with sickle cell live in sub-Saharan Africa, where it is not available. (Global, diaspora)",
+    "sources": [
+      {
+        "label": "AAFP",
+        "url": "https://www.aafp.org/pubs/afp/afp-community-blog/entry/will-the-high-price-of-gene-therapy-for-sickle-cell-disease-put-this-cure-out-of-reach.html"
+      },
+      {
+        "label": "Bulletin of the Atomic Scientists",
+        "url": "https://thebulletin.org/2024/10/crispr-therapies-can-treat-disease-but-cost-millions-an-equity-based-approach-could-bring-them-to-more-people/"
+      }
+    ],
+    "prompt": "There is a cure now for the disease that runs in your family. It costs more than your whole street will earn in a lifetime. Your cousin in London got it last week."
+  },
+  {
+    "id": "MT4",
+    "sector": "Technological",
+    "tone": "Hopeful",
+    "signal": "In 2022 DeepMind's AlphaFold predicted the shape of over 200 million proteins, nearly all known to science, and put them online free for anyone. (Global)",
+    "sources": [
+      {
+        "label": "Google DeepMind",
+        "url": "https://deepmind.google/blog/alphafold-reveals-the-structure-of-the-protein-universe/"
+      }
+    ],
+    "prompt": "A student in a small lab looks up in seconds what used to take a scientist years. She thinks she has found a cheaper drug for a disease rich countries ignore. Now she has to find someone to pay for the trial."
+  },
+  {
+    "id": "MT5",
+    "sector": "Technological",
+    "tone": "Hopeful",
+    "signal": "WHO set up an mRNA vaccine hub at Afrigen in Cape Town to share the know-how with makers in poorer countries, so the next pandemic doesn't mean waiting at the back of the line. (South Africa)",
+    "sources": [
+      {
+        "label": "UN News",
+        "url": "https://news.un.org/en/story/2023/04/1135907"
+      }
+    ],
+    "prompt": "The next vaccine will be made in your own country, not shipped in last. The factory is ready. The big drug companies say some of the recipe still belongs to them."
+  },
+  {
+    "id": "MT6",
+    "sector": "Technological",
+    "tone": "Hopeful",
+    "signal": "Electric cars were almost half of all new car sales in China in 2024, and over 11 million were sold there (IEA). (China)",
+    "sources": [
+      {
+        "label": "IEA",
+        "url": "https://www.iea.org/reports/global-ev-outlook-2025/executive-summary"
+      }
+    ],
+    "prompt": "Your street is quiet now. Every taxi is electric, and the air smells different. The mechanic who fixed engines for thirty years has no customers left."
+  },
+  {
+    "id": "MT7",
+    "sector": "Technological",
+    "tone": "Hopeful",
+    "signal": "In Estonia, 99% of government services are online: taxes, medical records, even voting, all with one digital ID card. (Estonia)",
+    "sources": [
+      {
+        "label": "PBS NewsHour",
+        "url": "https://www.pbs.org/newshour/show/how-estonia-built-a-digital-first-society"
+      }
+    ],
+    "prompt": "You file your taxes in three minutes and vote from your kitchen. Your grandfather has no smartphone. Last week, the office where he used to go in person closed."
+  },
+  {
+    "id": "MT8",
+    "sector": "Technological",
+    "tone": "Hard",
+    "signal": "TIME found that workers in Kenya, paid less than $2 an hour, read violent and abusive text so ChatGPT could learn to filter it out. Several said the work left them traumatized. (Kenya)",
+    "sources": [
+      {
+        "label": "TIME",
+        "url": "https://time.com/6247678/openai-chatgpt-kenya-workers/"
+      }
+    ],
+    "prompt": "Your brother's job is reading the worst things people write, all day, so a chatbot overseas stays polite. It pays more than anything else in town. He has stopped sleeping."
+  },
+  {
+    "id": "MT9",
+    "sector": "Technological",
+    "tone": "Hard",
+    "signal": "Amnesty International traced cobalt in phone and electric car batteries to DR Congo mines where children work. DR Congo produced about 75% of the world's cobalt in 2024 (USGS). (DR Congo)",
+    "sources": [
+      {
+        "label": "Amnesty International UK",
+        "url": "https://www.amnesty.org.uk/press-releases/exposed-child-labour-behind-smart-phone-and-electric-car-batteries"
+      },
+      {
+        "label": "USGS",
+        "url": "https://www.usgs.gov/centers/national-minerals-information-center/congo-kinshasa"
+      }
+    ],
+    "prompt": "The battery in your new electric bike came from a mine where a child your age dug the rock. The bike is the greenest thing you own. You can't find a battery that didn't."
+  },
+  {
+    "id": "MT10",
+    "sector": "Technological",
+    "tone": "Hard",
+    "signal": "The UN says at least 120,000 people in Myanmar may be held in scam compounds and forced to run online fraud, many lured by fake job ads. (Myanmar, Southeast Asia)",
+    "sources": [
+      {
+        "label": "UN News",
+        "url": "https://news.un.org/en/story/2023/08/1140187"
+      }
+    ],
+    "prompt": "Your cousin took a well-paid tech job across the border. Now he sends strange messages asking you to invest in crypto. You think someone is making him write them."
+  },
+  {
+    "id": "ME1",
+    "sector": "Economic",
+    "tone": "Hopeful",
+    "signal": "Migrants sent about $656 billion home to low- and middle-income countries in 2023 (World Bank). That is more than foreign investment, and more than aid. (Global, diaspora)",
+    "sources": [
+      {
+        "label": "World Bank",
+        "url": "https://www.worldbank.org/en/news/press-release/2024/06/26/remittances-slowed-in-2023-expected-to-grow-faster-in-2024"
+      },
+      {
+        "label": "World Bank blog",
+        "url": "https://blogs.worldbank.org/en/peoplemove/remittances-slowed-in-2023---we-need-to-take-note"
+      }
+    ],
+    "prompt": "Your father works in Dubai and sends money every month. It built your house, the school roof, and the village well. He has missed eleven of your birthdays."
+  },
+  {
+    "id": "ME2",
+    "sector": "Economic",
+    "tone": "Hopeful",
+    "signal": "The number of Mexicans in poverty fell by 8.9 million from 2020 to 2022 (CONEVAL). Officials pointed to the minimum wage, which more than doubled after inflation since 2018, and to social programs. (Mexico)",
+    "sources": [
+      {
+        "label": "Mexico News Daily",
+        "url": "https://mexiconewsdaily.com/news/number-of-mexicans-in-poverty-declined-by-8-9m-from-2020-2022"
+      },
+      {
+        "label": "Boston University GDP Center",
+        "url": "https://www.bu.edu/gdp/files/2026/01/GEGI-WP-072-FIN.pdf"
+      }
+    ],
+    "prompt": "Your paycheck is twice what it was five years ago. For the first time you're saving. Your boss says he can't afford it and wants to pay you off the books."
+  },
+  {
+    "id": "ME3",
+    "sector": "Economic",
+    "tone": "Hopeful",
+    "signal": "Mondragon, a federation of worker-owned cooperatives in Spain's Basque Country, employs about 71,000 people. Workers vote on how their company is run. (Spain)",
+    "sources": [
+      {
+        "label": "Wikipedia: Mondragon",
+        "url": "https://en.wikipedia.org/wiki/Mondragon_Corporation"
+      }
+    ],
+    "prompt": "You own a share of the factory you work in, and you vote on the boss's pay. A buyer offers a fortune for the company. Your vote decides it, and the new hires don't get a vote yet."
+  },
+  {
+    "id": "ME4",
+    "sector": "Economic",
+    "tone": "Hopeful",
+    "signal": "Kenya's M-KOPA sells phones and solar kits on small daily payments to people banks won't lend to. It ended 2023 with 4 million customers. (Kenya)",
+    "sources": [
+      {
+        "label": "TechCrunch",
+        "url": "https://techcrunch.com/2024/11/28/financial-inclusion-drives-m-kopa-to-400m-in-arr"
+      }
+    ],
+    "prompt": "You're paying off your first smartphone at fifty shillings a day. It's your shop, your bank, and your map. Miss a payment and it locks itself."
+  },
+  {
+    "id": "ME5",
+    "sector": "Economic",
+    "tone": "Hopeful",
+    "signal": "Japan has a record 9 million empty homes (akiya), 13.8% of all housing. Some towns give them away cheap to newcomers. (Japan)",
+    "sources": [
+      {
+        "label": "Nippon.com",
+        "url": "https://www.nippon.com/en/japan-data/h01987/"
+      }
+    ],
+    "prompt": "The village is giving you a farmhouse for the price of a bicycle, if you promise to stay ten years. The last young family left in 2009. The old women at the shrine are watching to see if you'll last."
+  },
+  {
+    "id": "ME6",
+    "sector": "Economic",
+    "tone": "Hopeful",
+    "signal": "South Africa's stokvels (rotating savings clubs) have about 11 million members in 800,000 groups, saving about R50 billion a year, mostly outside the banks. (South Africa)",
+    "sources": [
+      {
+        "label": "Ipsos South Africa",
+        "url": "https://www.ipsos.com/en-za/stokvels-remain-untapped-human-banks-south-africa"
+      }
+    ],
+    "prompt": "Twelve women, one notebook, and this month the whole pot is yours. You've never needed a bank. The bank on the corner now wants to \"partner\" with your club."
+  },
+  {
+    "id": "ME7",
+    "sector": "Economic",
+    "tone": "Hopeful",
+    "signal": "In June 2024, hours before Hurricane Beryl, Barbados became the first country to sign the World Bank's climate-resilient debt clause: loan repayments pause for up to two years after a disaster. (Barbados, Caribbean)",
+    "sources": [
+      {
+        "label": "World Bank",
+        "url": "https://www.worldbank.org/en/news/feature/2024/09/23/in-the-eye-of-the-storm"
+      },
+      {
+        "label": "World Bank 2025",
+        "url": "https://www.worldbank.org/en/news/feature/2025/04/28/how-the-world-bank-s-crisis-toolkit-is-empowering-caribbean-small-states"
+      }
+    ],
+    "prompt": "The storm took your roof, but the country doesn't have to pay its loans this year. The money goes to rebuilding instead. Next door, a bigger island never signed the clause."
+  },
+  {
+    "id": "ME8",
+    "sector": "Economic",
+    "tone": "Hard",
+    "signal": "UNCTAD's \"A World of Debt 2024\" found 3.3 billion people live in countries that spend more on interest payments than on health or education. (Global)",
+    "sources": [
+      {
+        "label": "Drishti IAS on UNCTAD",
+        "url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/un-report-on-global-debt-crisis"
+      },
+      {
+        "label": "UNCTAD",
+        "url": "https://unctad.org/publication/world-of-debt"
+      }
+    ],
+    "prompt": "Your country pays more to foreign lenders than it spends on your hospital. The nurses have been on strike since March. The loans were taken out before you were born."
+  },
+  {
+    "id": "ME9",
+    "sector": "Economic",
+    "tone": "Hard",
+    "signal": "In South Africa, unemployment among 15 to 24 year olds was 58.5% in the third quarter of 2025 (Stats SA). (South Africa)",
+    "sources": [
+      {
+        "label": "EWN",
+        "url": "https://ewn.co.za/2025/11/12/youth-unemployment-remains-high-despite-drop-in-national-average"
+      },
+      {
+        "label": "Stats SA",
+        "url": "https://www.statssa.gov.za/publications/P0211/P02113rdQuarter2025.pdf"
+      }
+    ],
+    "prompt": "You finished your diploma two years ago. You and your friends sit outside the mall every day with your CVs. Your little brother says school is pointless."
+  },
+  {
+    "id": "ME10",
+    "sector": "Economic",
+    "tone": "Hard",
+    "signal": "China's youth unemployment hit a record 21.3% in June 2023. The next month, the government stopped publishing the number. (China)",
+    "sources": [
+      {
+        "label": "NBC News",
+        "url": "https://www.nbcnews.com/news/world/china-suspends-data-youth-unemployment-rcna99929"
+      }
+    ],
+    "prompt": "You have a master's degree and no job, like half your class. You've started \"lying flat\": doing as little as possible. The news says unemployment is no longer a problem."
+  },
+  {
+    "id": "MN1",
+    "sector": "Environmental",
+    "tone": "Hopeful",
+    "signal": "Farmers in Niger regrew trees on about 5 million hectares of bare cropland, not by planting but by protecting stumps and roots already in the soil (farmer-managed natural regeneration). (Niger)",
+    "sources": [
+      {
+        "label": "Mongabay",
+        "url": "https://news.mongabay.com/2018/06/farmer-managed-natural-regeneration-the-fastest-way-to-restore-trees-to-degraded-landscapes/"
+      }
+    ],
+    "prompt": "The field your grandfather cleared is full of young trees again. Nobody planted them: you just stopped cutting the shoots. The tree company that planted saplings that all died wants to put its logo on your field."
+  },
+  {
+    "id": "MN2",
+    "sector": "Environmental",
+    "tone": "Hopeful",
+    "signal": "In 2017 Kenya banned plastic bags with one of the world's toughest penalties: a fine of about $40,000 or up to four years in jail. (Kenya)",
+    "sources": [
+      {
+        "label": "Anadolu Agency",
+        "url": "https://aa.com.tr/en/africa/kenyan-plastic-bag-ban-brings-40k-fine-jail-time/895840"
+      }
+    ],
+    "prompt": "The plastic bags are gone from the trees and the cows' stomachs. A woman at the market was arrested for wrapping tomatoes in one. Bags are still smuggled across the border at night."
+  },
+  {
+    "id": "MN3",
+    "sector": "Environmental",
+    "tone": "Hopeful",
+    "signal": "Seoul tore down an elevated highway and uncovered the Cheonggyecheon stream beneath it. Along the stream it is now 3.3 to 5.9°C cooler than on a parallel road. (South Korea)",
+    "sources": [
+      {
+        "label": "Landscape Architecture Foundation",
+        "url": "https://landscapeperformance.org/case-study-briefs/cheonggyecheon-stream-restoration"
+      }
+    ],
+    "prompt": "The highway over your neighborhood is gone. There is a stream where it was, with herons and children's feet in the water. The street vendors who worked under the overpass were moved out to make room."
+  },
+  {
+    "id": "MN4",
+    "sector": "Environmental",
+    "tone": "Hopeful",
+    "signal": "The High Seas Treaty, the first global deal to protect ocean life outside any country's waters, reached the 60 ratifications it needed in September 2025, and entered into force on 17 January 2026. (Global)",
+    "sources": [
+      {
+        "label": "IUCN",
+        "url": "https://iucn.org/press-release/202509/high-seas-treaty-achieves-milestone-60-ratifications-paving-way-ocean"
+      },
+      {
+        "label": "We Are Aquaculture",
+        "url": "https://weareaquaculture.com/news/sustainability/historic-high-seas-treaty-officially-enters-into-force"
+      }
+    ],
+    "prompt": "The open ocean, two-thirds of the sea, finally has rules. Your fishing boat now needs a permit to go out past the line. The big factory ships haven't signed."
+  },
+  {
+    "id": "MN5",
+    "sector": "Environmental",
+    "tone": "Hopeful",
+    "signal": "Nepal handed forests to more than 20,000 community forest user groups. Forest cover rose from about 26% to 45% in roughly 25 years. (Nepal)",
+    "sources": [
+      {
+        "label": "Mongabay",
+        "url": "https://news.mongabay.com/2023/02/nepals-community-forest-program-misses-the-biodiversity-for-the-trees/"
+      },
+      {
+        "label": "World Bank blog",
+        "url": "https://blogs.worldbank.org/en/endpovertyinsouthasia/new-and-more-sustainable-era-nepals-forests-0"
+      }
+    ],
+    "prompt": "Your village runs the forest now: who cuts, who grazes, who sells the timber. The hills are green again. The families who never got a seat on the committee still walk two hours for firewood."
+  },
+  {
+    "id": "MN6",
+    "sector": "Environmental",
+    "tone": "Hopeful",
+    "signal": "Costa Rica pays landowners to keep and grow forest. Forest cover went from just over 20% in the 1980s to over 50% of the country. (Costa Rica)",
+    "sources": [
+      {
+        "label": "IIED",
+        "url": "https://www.iied.org/payments-for-ecosystem-services-costa-rica-s-recipe"
+      }
+    ],
+    "prompt": "The government pays you each year to leave your hillside wild. The monkeys are back. Your son wants to clear it for avocados, which would pay three times more."
+  },
+  {
+    "id": "MN7",
+    "sector": "Environmental",
+    "tone": "Hard",
+    "signal": "Lake Chad has shrunk by 90% in 60 years, from overuse, drought and climate change. About 30 million people in Chad, Cameroon, Niger and Nigeria depend on it. (Lake Chad basin)",
+    "sources": [
+      {
+        "label": "UNEP",
+        "url": "https://www.unep.org/news-and-stories/story/tale-disappearing-lake"
+      },
+      {
+        "label": "WorldAtlas",
+        "url": "https://www.worldatlas.com/lakes/lake-chad.html"
+      }
+    ],
+    "prompt": "Your father fished from a boat here. You herd goats across the same ground. A plan to pipe water in from the Congo River would cost billions, and no one agrees who would pay."
+  },
+  {
+    "id": "MN8",
+    "sector": "Environmental",
+    "tone": "Hard",
+    "signal": "A 2025 study in Nature Medicine found microplastics in human brain samples, about a spoon's worth on average, and about 50% more in 2024 than in 2016. (Global)",
+    "sources": [
+      {
+        "label": "ABC7 / ABC News",
+        "url": "https://abc7.com/post/brain-tissue-may-have-higher-amounts-microplastics-other-organs-study-finds/15864892/"
+      },
+      {
+        "label": "Washington Post via The Nightly",
+        "url": "https://thenightly.com.au/society/health/the-washington-post-our-brains-are-filling-with-more-and-more-microplastics-study-shows-c-17612968"
+      }
+    ],
+    "prompt": "The doctor says there's plastic in your brain, about a spoonful. In everyone's. She doesn't know yet what it does."
+  },
+  {
+    "id": "MN9",
+    "sector": "Environmental",
+    "tone": "Hard",
+    "signal": "Parts of Jakarta are sinking, mostly from pumping out groundwater, and much of North Jakarta is below sea level. Indonesia is building a new capital, Nusantara, on Borneo. (Indonesia)",
+    "sources": [
+      {
+        "label": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2022/11/9/hldwhyindonesia-is-abandoning-its-capital-jakarta-to-save-ithld"
+      }
+    ],
+    "prompt": "The government is moving to a new capital in the forest, far away. Your neighborhood by the sea wall stays where it is. Every year the high tide comes in a little further."
+  },
+  {
+    "id": "MN10",
+    "sector": "Environmental",
+    "tone": "Hard",
+    "signal": "In October 2025 Hurricane Melissa hit Jamaica at Category 5, the strongest storm on record to strike the island directly. (Jamaica, Caribbean)",
+    "sources": [
+      {
+        "label": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2025/10/30/jamaica-haiti-and-cuba-take-stock-after-hurricane-melissa-destruction"
+      }
+    ],
+    "prompt": "The storm took the church roof and your school. The relatives in Brooklyn and Toronto have raised more money in a week than the government has. Now they want a say in what gets rebuilt."
+  },
+  {
+    "id": "MP1",
+    "sector": "Political",
+    "tone": "Hopeful",
+    "signal": "In March 2024, Bassirou Diomaye Faye left prison in Senegal and won the presidency 10 days later, with about 54% of the vote. At 44 he became Senegal's youngest president. (Senegal)",
+    "sources": [
+      {
+        "label": "The Conversation",
+        "url": "https://theconversation.com/bassirou-diomaye-faye-from-prison-runner-up-to-president-of-senegal-226757"
+      },
+      {
+        "label": "AP via Click2Houston",
+        "url": "https://www.click2houston.com/news/world/2024/03/27/opposition-figure-who-became-senegals-president-elect-won-over-54-of-the-vote-results-show/"
+      }
+    ],
+    "prompt": "Two weeks ago he was in a prison cell. Tonight the man your whole generation voted for is president. By morning everyone wants a job, a road, and a promise kept."
+  },
+  {
+    "id": "MP2",
+    "sector": "Political",
+    "tone": "Hopeful",
+    "signal": "In September 2025, young protesters in Nepal brought down the government. Then thousands of them voted on Discord, a chat app, for an interim prime minister: Sushila Karki, Nepal's first woman to hold the job. 74 people died in the protests, by the official count. (Nepal)",
+    "sources": [
+      {
+        "label": "Carnegie Endowment",
+        "url": "https://carnegieendowment.org/research/2025/09/nepal-gen-z-topple-government?lang=en"
+      },
+      {
+        "label": "CBC News",
+        "url": "https://www.cbc.ca/lite/story/1.7642523"
+      }
+    ],
+    "prompt": "The new leader was chosen in a chat app your little brother uses for games. Your grandfather says that isn't how a country works. The young people in the chat say the old way is what got people killed."
+  },
+  {
+    "id": "MP3",
+    "sector": "Political",
+    "tone": "Hopeful",
+    "signal": "Since 2017, Mongolia's law says some constitutional changes must first go to a deliberative poll: a random sample of citizens who learn, debate, and then vote. (Mongolia)",
+    "sources": [
+      {
+        "label": "Stanford Deliberative Democracy Lab",
+        "url": "https://deliberation.stanford.edu/news/mongolias-first-national-deliberative-poll-constitutional-amendments"
+      }
+    ],
+    "prompt": "A letter came: you've been picked at random to help rewrite the constitution. Three days of reading, arguing, and voting with strangers. Your boss won't give you the time off."
+  },
+  {
+    "id": "MP4",
+    "sector": "Political",
+    "tone": "Hopeful",
+    "signal": "In December 2022, Germany returned 20 Benin Bronzes looted by British soldiers in 1897, part of more than 1,100 promised to Nigeria. Nigeria's president then named the Oba (king) of Benin as their owner, not the state's museums. (Nigeria)",
+    "sources": [
+      {
+        "label": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2022/12/21/germany-returns-nigerian-bronzes-notes-its-dark-past"
+      },
+      {
+        "label": "The Art Newspaper",
+        "url": "https://www.theartnewspaper.com/2023/05/12/german-ruling-parties-defend-return-of-benin-bronzes-in-parliament"
+      },
+      {
+        "label": "Prussian Cultural Heritage Foundation",
+        "url": "https://www.preussischer-kulturbesitz.de/en/news-detail/article/2022/07/01/erste-deutsche-rueckgabe-von-benin-bronzen.html"
+      }
+    ],
+    "prompt": "After 125 years, the bronzes are coming home. The new museum was built to show them to everyone. Now the palace says they belong behind its walls."
+  },
+  {
+    "id": "MP5",
+    "sector": "Political",
+    "tone": "Hopeful",
+    "signal": "Pacific island students began a campaign that Vanuatu took to the UN's top court. In July 2025 the International Court of Justice ruled unanimously that countries have legal duties to act on climate change. (Vanuatu, Pacific)",
+    "sources": [
+      {
+        "label": "Carbon Brief",
+        "url": "https://www.carbonbrief.org/icj-what-the-world-courts-landmark-opinion-means-for-climate-change/"
+      }
+    ],
+    "prompt": "A group of students from your island took the biggest polluters to the world's highest court, and won. The judges say harm can bring reparations. Nobody has said yet who pays first."
+  },
+  {
+    "id": "MP6",
+    "sector": "Political",
+    "tone": "Hopeful",
+    "signal": "The African Union made 2025 its year of \"Justice for Africans and People of African Descent Through Reparations,\" and met with Caribbean leaders in Addis Ababa to press former colonial powers together. (Africa, Caribbean)",
+    "sources": [
+      {
+        "label": "ENA",
+        "url": "https://www.ena.et/web/eng/w/eng_7283560"
+      },
+      {
+        "label": "AU concept note",
+        "url": "https://au.int/sites/default/files/newsevents/conceptnotes/44462-CN-CN_2025_Theme_of_the_Year.pdf"
+      }
+    ],
+    "prompt": "Leaders from Africa and the Caribbean sit at one table, asking the old empires to pay. Your family in Kingston and your family in Accra are both watching. They don't agree on what repair should look like."
+  },
+  {
+    "id": "MP7",
+    "sector": "Political",
+    "tone": "Hopeful",
+    "signal": "In June 2024, Mexico elected Claudia Sheinbaum, its first woman president, with between 58.3% and 60.7% of the vote (early official count). (Mexico)",
+    "sources": [
+      {
+        "label": "CBS News",
+        "url": "https://www.cbsnews.com/news/mexico-first-female-president-claudia-sheinbaum"
+      }
+    ],
+    "prompt": "Your daughter has only ever seen a woman as president. The women who marched for the disappeared want to know if anything will change. The president says, give it time."
+  },
+  {
+    "id": "MP8",
+    "sector": "Political",
+    "tone": "Hard",
+    "signal": "Sudan's civil war has made it the world's largest displacement crisis: 12 million people displaced as of July 2025. (Sudan)",
+    "sources": [
+      {
+        "label": "Migration Policy Institute",
+        "url": "https://www.migrationpolicy.org/journal/feature/forgotten-and-neglected-war-torn-sudan-has-become-worlds-leading-displacement"
+      }
+    ],
+    "prompt": "Your family has moved four times in two years. A stranger's house in the next town has taken you in, with nine other people. The world's news is about somewhere else."
+  },
+  {
+    "id": "MP9",
+    "sector": "Political",
+    "tone": "Hard",
+    "signal": "UNESCO says at least 1.4 million girls in Afghanistan have been banned from secondary school since 2021. It is the only country that bans girls from secondary and higher education. (Afghanistan)",
+    "sources": [
+      {
+        "label": "PBS NewsHour / AP",
+        "url": "https://www.pbs.org/newshour/world/taliban-deliberately-deprived-1-4-million-afghan-girls-of-schooling-united-nations-agency-says"
+      }
+    ],
+    "prompt": "The girls on your street meet in a basement to study by phone, in secret. Their teacher is a girl two years older. If they are found, her family pays."
+  },
+  {
+    "id": "MP10",
+    "sector": "Political",
+    "tone": "Hard",
+    "signal": "V-Dem's 2025 report found that about 72% of the world's people now live under autocracy, and autocracies outnumber democracies for the first time in over 20 years. (Global)",
+    "sources": [
+      {
+        "label": "Democracy Without Borders",
+        "url": "https://www.democracywithoutborders.org/36317/autocracies-outnumber-democracies-for-the-first-time-in-20-years-v-dem/"
+      },
+      {
+        "label": "Ara",
+        "url": "https://en.ara.cat/politics/democracy-in-decline-72-of-the-world-s-population-lives-in-autocracies_1_5352060.html"
+      }
+    ],
+    "prompt": "There is still an election, but the result is known before anyone votes. Your neighbors still go, out of habit. This year you're deciding whether to go at all."
+  }
+]

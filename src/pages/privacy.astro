@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const violaImage = '/images/viola/viola-ion.webp';
+---
+
+<Layout
+  title="Privacy · Quest Labs"
+  description="How Quest Labs cares for your information. Plain words, real rights."
+  noindex={true}
+>
+<main class="pv">
+
+  <p class="pv-eyebrow">Privacy · Draft for legal review · November 2026</p>
+  <h1 class="pv-title">How we hold<br><em>what you share.</em></h1>
+
+  <div class="pv-intro">
+    {violaImage && <img class="pv-viola" src={violaImage} alt="Viola Ion, a lavender figure with long flowing hair, smiling with eyes closed and one hand open in welcome" />}
+    <div class="pv-voice">
+      <p>Hello, traveler. Viola Ion here.</p>
+      <p>I carry a notebook with no lock.<br>Your information is not like that.<br>Your information requires a lock, a key, and a promise.</p>
+      <p>Plain words first.<br>Legal words are here too.</p>
+    </div>
+  </div>
+
+  <section class="pv-section">
+    <h2>The short version</h2>
+    <p class="pv-haiku">We hold what you share.<br>A lock, a promise, a key.<br>Your data is yours.</p>
+    <ul>
+      <li>We collect as little as we can.</li>
+      <li>We never sell your information.</li>
+      <li>No ad trackers. No cookies for tracking.</li>
+      <li>Your stories are yours. Session notes are kept private, with names removed. Nothing goes public without your yes.</li>
+      <li>You can see, change or delete what we hold about you. Just ask.</li>
+    </ul>
+  </section>
+
+  <section class="pv-section">
+    <h2>Who holds your information</h2>
+    <p>Quest Labs, run by Makēda, is responsible for your information. In legal words, we are the "data controller".</p>
+    <p>Reach us any time: <a href="mailto:questlabs.world@proton.me">questlabs.world@proton.me</a> or <a href="/contact">questlabs.world/contact</a>.<br>Based in Germany, in the European Union.</p>
+  </section>
+
+  <section class="pv-section">
+    <h2>What we collect, and why</h2>
+    <table class="pv-table">
+      <thead><tr><th>When you…</th><th>We collect</th><th>Why</th><th>Legal reason</th></tr></thead>
+      <tbody>
+        <tr><td>Get the zine</td><td>Your email</td><td>To send the zine and share new things with you</td><td>Your consent</td></tr>
+        <tr><td>Sign up for Crew 02 or the Community Crew</td><td>Name, email, and the dream you choose to share</td><td>To prepare the crew together and stay in touch</td><td>Your consent, and steps you asked for before joining</td></tr>
+        <tr><td>Pay for a seat</td><td>Payment details, handled by Stripe. We never see your full card number.</td><td>To take payment and keep records</td><td>Our agreement with you, and tax law</td></tr>
+        <tr><td>Visit the site</td><td>Page counts and download counts only, through GoatCounter. No cookies. No IP addresses stored.</td><td>To know if the zine is traveling</td><td>Legitimate interest, with almost nothing personal involved</td></tr>
+        <tr><td>Join a Sandbox Session</td><td>What you share in the room, and what Luma asks when you register</td><td>To hold the session and, only with your yes, add to the living library</td><td>Your consent</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="pv-section">
+    <h2>Where it lives</h2>
+    <p>We use a few trusted helpers. Each one has its own privacy rules.</p>
+    <ul>
+      <li><strong>Netlify</strong> hosts this site and stores form sign-ups. It is based in the United States, so your form details may be stored there under EU-approved safeguards.</li>
+      <li><strong>Stripe</strong> handles payments.</li>
+      <li><strong>Proton</strong> carries our email, with strong encryption.</li>
+      <li><strong>GoatCounter</strong> counts visits without cookies.</li>
+      <li><strong>Luma</strong> handles Sandbox Session sign-ups.</li>
+    </ul>
+  </section>
+
+  <section class="pv-section">
+    <h2>How long we keep it</h2>
+    <ul>
+      <li>Sign-up details: until you ask us to delete them, or 2 years after we last heard from you. Then we let them go.</li>
+      <li>Payment records: as long as tax law requires.</li>
+      <li>Stories in the living library: only with your yes, only with a made-up name, and removed whenever you ask.</li>
+    </ul>
+  </section>
+
+  <section class="pv-section">
+    <h2>Your rights</h2>
+    <p class="pv-haiku">Ask, and we will show.<br>Take it, change it, let it go.<br>Your yes and your no.</p>
+    <p>Under the GDPR, the EU's data protection law, you can:</p>
+    <ul>
+      <li>Ask what we hold about you, and get a copy</li>
+      <li>Fix anything that's wrong</li>
+      <li>Ask us to delete it</li>
+      <li>Change your mind about consent at any time. Every email has a way out.</li>
+      <li>Ask us to stop or limit how we use it</li>
+      <li>Complain to your country's data protection authority. We'd love the chance to make it right first.</li>
+    </ul>
+    <p>We answer within one month.</p>
+  </section>
+
+  <section class="pv-section">
+    <h2>What we will never do</h2>
+    <p class="pv-haiku">Names fall like old leaves.<br>The story stays in the room.<br>All the learning leaves.</p>
+    <ul>
+      <li>Sell or rent your information</li>
+      <li>Share your name, face, voice or story publicly without your yes</li>
+      <li>Put your words into AI tools or AI training with your name, voice or face attached</li>
+      <li>Add you to lists you didn't choose</li>
+    </ul>
+    <p>When we learn from our sessions, sometimes with the help of AI tools, we remove names and details first. Those notes stay private. They are not posted online.</p>
+    <p>Already on one of our lists from before, like a Sandbox list on Luma?<br>We're resetting how we care for data as we grow here in Europe.<br>If you'd rather not be there, tell us.<br>No harm, no foul.</p>
+  </section>
+
+  <section class="pv-section">
+    <h2>Young travelers</h2>
+    <p>If you are under 16, please ask a parent or guardian to sign up with you.</p>
+  </section>
+
+  <section class="pv-section">
+    <h2>A note on care</h2>
+    <p>FLIP and the Sandbox Sessions are art-inspired and healing-centered.<br>They are not therapy, medical care or crisis support.<br>If you are in crisis, please reach out to local emergency services or a crisis line where you are.</p>
+    <p>You're not alone.<br>We're never alone.</p>
+  </section>
+
+  <p class="pv-footnote">If your information is ever exposed by accident, the law asks us to report it within 72 hours to the data protection authority, the official privacy watchdog in Germany. If it could affect you, we will tell you too, plainly.</p>
+
+</main>
+
+<style>
+  .pv { max-width: 820px; margin: 0 auto; padding: 8rem 1.5rem 6rem; color: rgba(240, 236, 248, 0.88); font-size: 1.15rem; line-height: 1.75; position: relative; z-index: 1; }
+  .pv-eyebrow { font-family: 'Space Mono', monospace; font-size: 0.9rem; letter-spacing: 0.15em; text-transform: uppercase; color: #8E8E9A; }
+  .pv-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.15; color: #fff; margin: 0.75rem 0 2.5rem; }
+  .pv-title em { color: #8B74AB; }
+  .pv-voice { border-left: 3px solid #8B74AB; padding: 0.25rem 0 0.25rem 1.5rem; margin: 2.5rem 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.45rem; color: #f0ecf8; }
+  .pv-voice p + p { margin-top: 1rem; }
+  .pv-section { margin-top: 3rem; }
+  .pv-section h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #fff; margin-bottom: 0.75rem; }
+  .pv-section p + p { margin-top: 0.75rem; }
+  .pv-section ul { padding-left: 1.25rem; list-style: disc; }
+  .pv-section li { margin-bottom: 0.4rem; }
+  .pv a { color: #b0a3c8; text-decoration: underline; text-underline-offset: 3px; }
+  .pv-intro { display: flex; align-items: center; gap: 2rem; margin: 2.5rem 0; }
+  .pv-intro .pv-voice { margin: 0; }
+  .pv-viola { width: 220px; flex-shrink: 0; height: auto; border-radius: 6px; }
+  @media (max-width: 640px) { .pv-intro { flex-direction: column; align-items: flex-start; } .pv-viola { width: 180px; } }
+  .pv-footnote { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid rgba(139, 116, 171, 0.3); font-size: 0.95rem; color: rgba(240, 236, 248, 0.7); }
+  .pv-haiku { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.45rem; line-height: 1.6; color: #d9c8f5; margin: 0.25rem 0 1.25rem; }
+  .pv-todo { background: rgba(255, 210, 120, 0.15); color: #ffd88a; padding: 0 0.3rem; border-radius: 3px; }
+  .pv-table { width: 100%; border-collapse: collapse; font-size: 1rem; display: block; overflow-x: auto; }
+  .pv-table th, .pv-table td { text-align: left; vertical-align: top; padding: 0.6rem 0.75rem; border-bottom: 1px solid rgba(139, 116, 171, 0.3); }
+  .pv-table th { font-family: 'Space Mono', monospace; font-size: 0.85rem; color: #b0a3c8; }
+</style>
+<style is:global>
+  @media print {
+    .site-nav { position: absolute !important; }
+    .pv-section li, .pv-table tr, .pv-haiku, .pv-intro { break-inside: avoid; }
+    .pv-section h2 { break-after: avoid; }
+  }
+</style>
+</Layout>

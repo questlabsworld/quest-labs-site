@@ -1,10 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const seats = [
+  { tier: 'Community', price: '€333', monthly: '€111 a month', link: '' },
+  { tier: 'Standard', price: '€666', monthly: '€222 a month', link: '' },
+  { tier: 'Sustaining', price: '€888', monthly: '€296 a month', link: '' },
+];
+const paySeats = seats.filter((s) => s.link);
 ---
 
 <Layout
   title="FLIP Program · Quest Labs"
-  description="FLIP is a 12-week embodied, healing-centered futures development program. Join a cohort, develop futures capacities, and practice radical foresight. Cohort 02 forming now."
+  description="FLIP is a 12-week embodied, healing-centered futures development program. Join a crew, develop futures capacities, and practice radical foresight. Crew 02 forming now."
 >
 
 <div class="prog-page">
@@ -12,10 +19,10 @@ import Layout from '../layouts/Layout.astro';
 <!-- ── HERO ── -->
 <div class="prog-hero">
   <div class="prog-hero-bg"></div>
-  <p class="prog-hero-eyebrow">🛝 Futures Literacies Invitational Playground</p>
+  <p class="prog-hero-eyebrow"><span class="prog-hero-emoji" aria-hidden="true"><img class="emoji-img" src="/images/emoji/slide.svg" alt="" /></span><span class="prog-hero-eyebrow-text">Futures Literacies<br>Invitational Playground</span></p>
   <h1 class="prog-hero-title">FLIP</h1>
   <p class="prog-hero-subtitle">The Questor's Invitational</p>
-  <p class="prog-hero-sub">A 12-week creative &amp; futures journey.<br>You're invited to meet your future Self.</p>
+  <p class="prog-hero-sub">A 12-week adventure toward the future you haven't dreamed of yet.<br>Come meet your future Self.</p>
 </div>
 
 <div class="prog-divider"></div>
@@ -31,14 +38,153 @@ import Layout from '../layouts/Layout.astro';
       A whisper of wisdom from beyond?<br><br>
       Remember, someone built this world.<br><br>
       We're here to build a new one.<br><br>
-      Over 12 weeks, a cohort of 6 brave travelers move through 12 worlds. Each week the world changes: same crew, different questions. We keep what serves our future Self and collective. We discover what we're building toward.<br><br>
-      By the final session, each traveler holds either a <strong class="text-bright">Futures Affirmation</strong> or <strong class="text-bright">2032 Job Description</strong> assembled piece by piece across 12 weeks of Artist's Way practices and Sandbox Sessions.<br><br>
-      Not a resume. A living document. Equal parts manifesto, methodology, and spell.
+      Each season, 6 brave travelers move through 12 worlds together.<br><br>
+      Each week the world changes: same crew, different questions.<br><br>
+      We gather what serves our future Selves.<br><br>
+      We unearth unknowns. <span role="img" aria-label="hole"><img class="emoji-img emoji-img--lg" src="/images/emoji/hole.svg" alt="" /></span>
     </p>
+  </div>
+</section>
+
+<div class="prog-divider"></div>
+
+<!-- ── CREW 01 ── -->
+<div class="prog-earthday-section prog-reveal">
+  <div class="prog-earthday-stars" aria-hidden="true"></div>
+  <div class="prog-earthday-inner">
+    <div class="prog-earthday-globe" aria-hidden="true"><img class="emoji-img" src="/images/emoji/earth.svg" alt="" /></div>
+    <div class="prog-earthday-text">
+      <p class="prog-earthday-eyebrow">Crew 01 · Founding</p>
+      <h2 class="prog-earthday-heading">Launched<br><em>Earth Day 2026.</em></h2>
+      <p class="prog-earthday-sub">The program is over<br>and still we quest.</p>
+      <p class="prog-earthday-sub">The founding crew continues to quest.</p>
+    </div>
+  </div>
+</div>
+
+<div class="prog-divider"></div>
+
+<!-- ── WAITLIST ── -->
+<div class="prog-waitlist-section" id="waitlist">
+  <div class="prog-waitlist-inner prog-reveal">
+
+    <p class="prog-waitlist-eyebrow">Crew 02 · Join us</p>
+    <h2 class="prog-waitlist-heading"><img class="emoji-img prog-rocket" src="/images/emoji/rocket.svg" alt="" /> Crew 02, let's go.<br><em class="prog-slow">Slow. <img class="emoji-img prog-rocket" src="/images/emoji/snail.svg" alt="" /></em></h2>
+    <p class="prog-waitlist-body">We're looking for the next 6 travelers to start the year together.</p>
+    <p class="prog-waitlist-body">Sign up and we'll get ready to map what's coming.</p>
+    <p class="prog-waitlist-body">Until then, <a href="#zineForm" class="prog-doors-link">explore the zine</a> or <a href="https://lu.ma/questlabs" class="prog-doors-link" target="_blank" rel="noopener noreferrer">come to a Sandbox Session</a>.<br>That's where it begins.<br>Come play.</p>
+
+    <div class="prog-seat-box">
+      <p class="prog-waitlist-body prog-price">A seat is €333 community · €666 standard · €888 sustaining.</p>
+      <p class="prog-waitlist-body">You choose your tier.<br>It's flexible.<br>Let's build together.</p>
+      <p class="prog-waitlist-body">FLIP is a community of practice.<br>Once a crew gets going, it keeps going.</p>
+      <p class="prog-waitlist-body">A Community seat is less than €1 a day over a year.<br>Pay in full or in 3 monthly payments.<br>Or take the year, or take the season.<br>Move at your own pace.</p>
+      <p class="prog-waitlist-body">Can't pay?<br>Come play.<br>Pop in when you can.</p>
+      <p class="prog-waitlist-body"><strong class="prog-price"><img class="emoji-img" src="/images/emoji/snowman.svg" alt="" /><img class="emoji-img" src="/images/emoji/sun.svg" alt="" /> Holiday snowball plan:</strong><br>It's the holidays, we know. <img class="emoji-img" src="/images/emoji/melting.svg" alt="" /><br>Start paying in the new year, or spread your seat over 6 to 12 months.<br>We round down.<br><a href="/contact" class="prog-doors-link">Write to us and we'll work it out →</a></p>
+      <p class="prog-waitlist-body prog-small">Prices are in euros. Your bank converts them for you.</p>
+    </div>
+
+    {paySeats.length > 0 && (
+      <div class="prog-pay">
+        <p class="prog-waitlist-body">Ready now? Pay and join:</p>
+        <div class="prog-pay-row">
+          {paySeats.map((s) => (
+            <a href={s.link} class="prog-btn prog-btn-primary" target="_blank" rel="noopener noreferrer"><img class="emoji-img" src="/images/emoji/rocket.svg" alt="" /> {s.tier} {s.price}, let's go →</a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <p class="prog-waitlist-body">Not in the cards right now?<br>Join the Community Crew for free.<br>Follow along on <a href="https://www.instagram.com/questlabsworld" class="prog-doors-link" target="_blank" rel="noopener noreferrer">Instagram</a> and <a href="https://www.linkedin.com/company/quest-labs-education/" class="prog-doors-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>, and witness futures grow.<br>Your presence is the present. <img class="emoji-img" src="/images/emoji/gift.svg" alt="" /></p>
+    <p class="prog-waitlist-body">Want to hear when Crew 02 opens?<br>Sign up below, and <a href="https://lu.ma/questlabs" class="prog-doors-link" target="_blank" rel="noopener noreferrer">come join a Sandbox →</a></p>
+
+    <form class="prog-waitlist-form" id="waitlistForm" name="cohort-02-waitlist" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="cohort-02-waitlist" />
+      <label class="prog-form-label" for="wlName">Your name</label>
+      <input class="prog-waitlist-input" id="wlName" type="text" name="name" required />
+      <label class="prog-form-label" for="wlEmail">Your email</label>
+      <input class="prog-waitlist-input" id="wlEmail" type="email" name="email" required />
+      <label class="prog-form-label" for="wlDream">Are you ready to activate your dream capacity this season?<br>Which dream is knocking?</label>
+      <textarea class="prog-waitlist-input prog-waitlist-textarea" id="wlDream" name="navigating" rows="3"></textarea>
+      <button class="prog-btn prog-btn-primary prog-waitlist-submit" type="submit">Sign me up. Let's go →</button>
+      <p class="prog-zine-form-note">By signing up, you agree to how we hold your data.<br>Unsubscribe whenever you want.<br><a href="/privacy" class="prog-doors-link">Privacy</a> <span class="prog-pending">in review</span></p>
+    </form>
+
+    <div class="prog-waitlist-confirm" id="waitlistConfirm" style="display:none;">
+      <p class="prog-waitlist-confirm-msg">You're on the list. We'll be in touch to prepare for the start of the year. In the meantime, the Sandbox Sessions are open. Come play.</p>
+      <a href="https://lu.ma/questlabs" class="prog-btn prog-btn-ghost" target="_blank" rel="noopener noreferrer">Find a Sandbox Session →</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="prog-divider"></div>
+
+<!-- ── THREE WAYS IN ── -->
+<section id="ways" class="prog-what-section">
+  <div class="prog-reveal">
+    <div class="prog-zine">
+      <div class="prog-zine-stack">
+        <img src="/images/zine/futures-alphabet-cover.webp" alt="The Futures Alphabet zine, folded, front cover" width="600" height="853" loading="lazy" />
+      </div>
+      <svg class="prog-zine-arrow" viewBox="0 0 170 80" aria-hidden="true">
+        <path d="M10 58 C 34 18, 92 8, 150 40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+        <path d="M126 24 L152 41 L124 54" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <div class="prog-zine-caption">
+        <p class="prog-zine-kicker">A living document.</p>
+        <p class="prog-zine-equation">Manifesto<br>+ Methodology<br>+ Spell</p>
+      </div>
+    </div>
+
+    <div class="prog-doors">
+      <p class="prog-section-label">Three ways in</p>
+      <ol class="prog-doors-list">
+        <li>
+          <span class="prog-doors-num">1</span>
+          <div>
+            <p class="prog-doors-title">Print the zine <span class="prog-doors-aside">(play today)</span></p>
+            <p class="prog-doors-body">The Futures Alphabet is free for your email. One sheet of paper, a few folds, one snip, seven ways to play with the future.</p>
+            <form class="prog-zine-form" id="zineForm" name="zine-download" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="zine-download" />
+              <label class="prog-zine-form-label" for="zineEmail">Your email</label>
+              <div class="prog-zine-form-row">
+                <input class="prog-waitlist-input" id="zineEmail" type="email" name="email" placeholder="you@example.com" required />
+                <button class="prog-btn prog-btn-primary" type="submit">Send me the zine →</button>
+              </div>
+              <p class="prog-zine-form-note">We keep the channel open to share new things with you.<br>Unsubscribe whenever you want.<br>How we hold your data: <a href="/privacy" class="prog-doors-link">Privacy</a> <span class="prog-pending">in review</span></p>
+            </form>
+            <div id="zineConfirm" style="display:none;">
+              <p class="prog-doors-body">Thank you. Your zine is ready.</p>
+              <a href="/downloads/futures-alphabet-zine.pdf" class="prog-doors-link" target="_blank" rel="noopener" data-goatcounter-click="zine-download" data-goatcounter-title="Futures Alphabet zine PDF">Download the zine (PDF) →</a>
+              <p class="prog-doors-body" style="margin-top:0.75rem;">Made something?<br>Post it and tag us so we can share it: <a href="https://www.instagram.com/questlabsworld" class="prog-doors-link" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.linkedin.com/company/quest-labs-world" class="prog-doors-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="prog-doors-num">2</span>
+          <div>
+            <p class="prog-doors-title">Bring it to a Sandbox Session.</p>
+            <p class="prog-doors-body">Open door, donation based. Share what you made and play with others.</p>
+            <a href="https://lu.ma/questlabs" class="prog-doors-link" target="_blank" rel="noopener noreferrer">Find a Sandbox Session →</a>
+          </div>
+        </li>
+        <li>
+          <span class="prog-doors-num">3</span>
+          <div>
+            <p class="prog-doors-title">Or join the next crew.</p>
+            <p class="prog-doors-body">12 weeks, 6 travelers. Your zine grows into a living document.</p>
+            <p class="prog-doors-body prog-price">You choose your tier: €333, €666 or €888.</p>
+            <p class="prog-doors-body">Pay in full, monthly, or over a season.<br>Can't pay? Come play.</p>
+            <a href="#waitlist" class="prog-doors-link">Sign up for Crew 02 →</a>
+          </div>
+        </li>
+      </ol>
+    </div>
 
     <div class="prog-educator-bridge" style="margin-top: 3rem;">
-      <p class="prog-educator-bridge__label">Teaching? Leading a school?</p>
-      <a href="/educators" class="prog-educator-bridge__link">Futures Literacies in Praxis is built specifically for educators and school leaders →</a>
+      <p class="prog-educator-bridge__label">Leading a school or a classroom?</p>
+      <a href="/partner" class="prog-educator-bridge__link">Partner with us →</a>
     </div>
 
     <div class="prog-educator-bridge" style="margin-top: 1rem;">
@@ -46,78 +192,7 @@ import Layout from '../layouts/Layout.astro';
       <a href="/foundations" class="prog-educator-bridge__link">The methodology, lineage, and framework behind every program →</a>
     </div>
   </div>
-
-  <div class="prog-premise-cta" style="margin-top: 3rem;">
-    <a href="#waitlist" class="prog-btn prog-btn-primary">Join a Cohort →</a>
-    <a href="#journey" class="prog-btn prog-btn-ghost">Explore the Arc</a>
-    <a href="#tiers" class="cta-ghost">Choose Your Path</a>
-  </div>
-
 </section>
-
-<div class="prog-divider"></div>
-
-<!-- ── TIERS ── -->
-<div class="prog-tiers-section" id="tiers">
-  <div class="prog-tiers-inner">
-    <div class="prog-reveal">
-      <p class="prog-section-label">How deep do you want to dive?</p>
-      <h2 class="prog-section-title">You'll meet the future<br><em>regardless</em>.</h2>
-      <p class="prog-section-body">All three tiers get to peek into the future.</p>
-    </div>
-
-    <div class="prog-tiers-grid prog-reveal" style="transition-delay:0.2s">
-
-      <div class="prog-tier-card prog-tier-witness">
-        <div class="prog-tier-name">Witness</div>
-        <div class="prog-tier-tagline">Good — I'm interested</div>
-        <div class="prog-tier-sessions">4</div>
-        <div class="prog-tier-session-label">milestone sessions</div>
-        <div class="prog-tier-time">Weeks 1 · 4 · 8 · 12 &nbsp;·&nbsp; ~1–2 hrs/week</div>
-        <div class="prog-tier-divider"></div>
-        <ul class="prog-tier-gets">
-          <li>Final ceremony &amp; Job Description reveal</li>
-          <li>Access to foundational analog tools</li>
-        </ul>
-      </div>
-
-      <div class="prog-tier-card prog-tier-traveler">
-        <div class="prog-tier-name">Traveler</div>
-        <div class="prog-tier-tagline">Better — I want the arc</div>
-        <div class="prog-tier-sessions">8</div>
-        <div class="prog-tier-session-label">sessions, every other week</div>
-        <div class="prog-tier-time">Alternating weeks &nbsp;·&nbsp; ~3–4 hrs/week</div>
-        <div class="prog-tier-divider"></div>
-        <ul class="prog-tier-gets">
-          <li>Full arc in compressed form</li>
-          <li>Affirmations + session summaries</li>
-          <li>Milestone moments of the journey</li>
-          <li>Black Menagerie archetype practice</li>
-          <li>Limited access to program tools</li>
-        </ul>
-      </div>
-
-      <div class="prog-tier-card prog-tier-questor">
-        <div class="prog-tier-name">Questor</div>
-        <div class="prog-tier-tagline">Best — I'm all in</div>
-        <div class="prog-tier-sessions">12</div>
-        <div class="prog-tier-session-label">sessions, full arc</div>
-        <div class="prog-tier-time">Every week &nbsp;·&nbsp; ~5–7 hrs/week</div>
-        <div class="prog-tier-divider"></div>
-        <ul class="prog-tier-gets">
-          <li>Assigned dyad partner</li>
-          <li>Expanded 2032 Job Description</li>
-          <li>Testimonial &amp; credit attributed</li>
-          <li>Foundational Artist's Way practices</li>
-          <li>Full Black Menagerie archetype rotation</li>
-          <li>Full access to program tools</li>
-        </ul>
-        <a href="/contact?tier=questor" class="prog-btn prog-btn-primary prog-tier-btn">Build new worlds from within →</a>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 <div class="prog-divider"></div>
 
@@ -127,137 +202,178 @@ import Layout from '../layouts/Layout.astro';
     <div class="prog-reveal">
       <p class="prog-section-label">The Full Arc</p>
       <h2 class="prog-section-title">Every stage.<br><em>A question waiting.</em></h2>
-      <p class="prog-section-body">12 weeks. 12 worlds. An arc that must be lived before it can be mapped.</p>
+      <p class="prog-section-body">12 weeks. 12 worlds. Each week, a companion walks with you.</p>
+      <p class="prog-arc-aside">An arc that must be lived before it can be mapped.</p>
     </div>
 
     <div class="prog-journey-flow prog-reveal" style="transition-delay:0.15s; margin-top:3rem;">
 
-      <div class="prog-journey-phase prog-phase-descent">
-        <div class="prog-journey-phase-header">
-          <div>
-            <div class="prog-phase-label">Phase I</div>
-            <div class="prog-phase-name">Descent</div>
+      <details class="prog-journey-phase prog-phase-descent">
+        <summary>
+          <div class="prog-journey-phase-header">
+            <div>
+              <div class="prog-phase-label">Phase I</div>
+              <div class="prog-phase-name">Descent</div>
+            </div>
+            <div class="prog-phase-weeks">Weeks 1–4</div>
           </div>
-          <div class="prog-phase-weeks">Weeks 1–4</div>
-        </div>
+          <ul class="prog-phase-chips">
+            <li><span aria-hidden="true"><img class="emoji-img" src="/images/emoji/elephant.svg" alt="" /></span> Safety</li>
+            <li><span aria-hidden="true"><img class="emoji-img" src="/images/emoji/sheep.svg" alt="" /></span> Identity</li>
+            <li><span aria-hidden="true"><img class="emoji-img" src="/images/emoji/swan.svg" alt="" /></span> Power</li>
+            <li><span aria-hidden="true"><img class="emoji-img" src="/images/emoji/turtle.svg" alt="" /></span> Integrity</li>
+          </ul>
+          <span class="prog-phase-toggle">Open the questions</span>
+        </summary>
         <ul class="prog-journey-stages">
           <li class="prog-journey-stage">
-            <div class="prog-stage-num">01</div>
+            <div class="prog-stage-num" role="img" aria-label="Black Elephant" title="Black Elephant"><img class="emoji-img" src="/images/emoji/elephant.svg" alt="" /></div>
             <div class="prog-stage-content">
-              <div class="prog-stage-name">Status Quo</div>
-              <div class="prog-stage-prompt">We meet you in your ordinary world. What does accepting the ordinary cost you?</div>
+              <div class="prog-stage-name">Week 1 · Safety</div>
+              <div class="prog-stage-companion">with the Black Elephant</div>
+              <div class="prog-stage-prompt">What would you begin today if you already knew you were allowed to?</div>
             </div>
           </li>
           <li class="prog-journey-stage">
-            <div class="prog-stage-num">02</div>
+            <div class="prog-stage-num" role="img" aria-label="Black Sheep" title="Black Sheep"><img class="emoji-img" src="/images/emoji/sheep.svg" alt="" /></div>
             <div class="prog-stage-content">
-              <div class="prog-stage-name">Your Call to Adventure</div>
-              <div class="prog-stage-prompt">Something stirs. A pull you've been ignoring. What have you been pretending not to hear?</div>
+              <div class="prog-stage-name">Week 2 · Identity</div>
+              <div class="prog-stage-companion">with the Black Sheep</div>
+              <div class="prog-stage-prompt">Which version of yourself have you been performing, and which one have you been protecting?</div>
             </div>
           </li>
           <li class="prog-journey-stage">
-            <div class="prog-stage-num">03</div>
+            <div class="prog-stage-num" role="img" aria-label="Black Swan" title="Black Swan"><img class="emoji-img" src="/images/emoji/swan.svg" alt="" /></div>
             <div class="prog-stage-content">
-              <div class="prog-stage-name">Assistance</div>
-              <div class="prog-stage-prompt">You look around and find you are not alone. Who shows up when you actually ask?</div>
+              <div class="prog-stage-name">Week 3 · Power</div>
+              <div class="prog-stage-companion">with the Black Swan</div>
+              <div class="prog-stage-prompt">Where in the system are you a lever, and where have you been acting like a cog?</div>
             </div>
           </li>
           <li class="prog-journey-stage">
-            <div class="prog-stage-num">04</div>
+            <div class="prog-stage-num" role="img" aria-label="Black Marsh Turtle" title="Black Marsh Turtle"><img class="emoji-img" src="/images/emoji/turtle.svg" alt="" /></div>
             <div class="prog-stage-content">
-              <div class="prog-stage-name">Departure</div>
-              <div class="prog-stage-prompt">The familiar drops away. A journey toward your Future Self begins. What are you finally willing to let fall away?</div>
+              <div class="prog-stage-name">Week 4 · Integrity</div>
+              <div class="prog-stage-companion">with the Black Marsh Turtle</div>
+              <div class="prog-stage-prompt">What do you say you believe, and what does your calendar say you believe?</div>
             </div>
           </li>
         </ul>
-      </div>
+      </details>
 
-      <div class="prog-journey-phase prog-phase-crossing">
-        <div class="prog-journey-phase-header">
-          <div>
-            <div class="prog-phase-label">Phase II</div>
-            <div class="prog-phase-name">Crossing</div>
+      <details class="prog-journey-phase prog-phase-crossing">
+        <summary>
+          <div class="prog-journey-phase-header">
+            <div>
+              <div class="prog-phase-label">Phase II</div>
+              <div class="prog-phase-name">Crossing</div>
+            </div>
+            <div class="prog-phase-weeks">Weeks 5–7</div>
           </div>
-          <div class="prog-phase-weeks">Weeks 5–8</div>
-        </div>
+          <ul class="prog-phase-chips">
+            <li><span aria-hidden="true"><img class="emoji-img" src="/images/emoji/jellyfish.svg" alt="" /></span> Possibility</li>
+            <li><span aria-hidden="true"><img class="emoji-img" src="/images/emoji/sheep.svg" alt="" /></span> Abundance</li>
+            <li><span aria-hidden="true"><img class="emoji-img" src="/images/emoji/elephant.svg" alt="" /></span> Connection</li>
+          </ul>
+          <span class="prog-phase-toggle">Open the questions</span>
+        </summary>
         <ul class="prog-journey-stages">
           <li class="prog-journey-stage">
-            <div class="prog-stage-num">05</div>
+            <div class="prog-stage-num" role="img" aria-label="Black Jellyfish" title="Black Jellyfish"><img class="emoji-img" src="/images/emoji/jellyfish.svg" alt="" /></div>
             <div class="prog-stage-content">
-              <div class="prog-stage-name">Trials</div>
-              <div class="prog-stage-prompt">The road gets complicated. Old patterns show up in new costumes. What keeps finding you?</div>
+              <div class="prog-stage-name">Week 5 · Possibility</div>
+              <div class="prog-stage-companion">with the Black Jellyfish</div>
+              <div class="prog-stage-prompt">Where in your body does the future you want actually live?</div>
             </div>
           </li>
           <li class="prog-journey-stage">
-            <div class="prog-stage-num">06</div>
+            <div class="prog-stage-num" role="img" aria-label="Black Sheep" title="Black Sheep"><img class="emoji-img" src="/images/emoji/sheep.svg" alt="" /></div>
             <div class="prog-stage-content">
-              <div class="prog-stage-name">Approach</div>
-              <div class="prog-stage-prompt">You get quiet. Go inward. What do you know that you haven't said out loud yet?</div>
+              <div class="prog-stage-name">Week 6 · Abundance</div>
+              <div class="prog-stage-companion">with the Black Sheep</div>
+              <div class="prog-stage-prompt">What have you been rationing (your joy, your ideas, your rest) as if there weren't enough?</div>
             </div>
           </li>
           <li class="prog-journey-stage">
-            <div class="prog-stage-num">07</div>
+            <div class="prog-stage-num" role="img" aria-label="Black Elephant" title="Black Elephant"><img class="emoji-img" src="/images/emoji/elephant.svg" alt="" /></div>
             <div class="prog-stage-content">
-              <div class="prog-stage-name">Crisis</div>
-              <div class="prog-stage-prompt">The biggest thing. The one you've been circling. What would change if you stopped managing it?</div>
-            </div>
-          </li>
-          <li class="prog-journey-stage">
-            <div class="prog-stage-num">08</div>
-            <div class="prog-stage-content">
-              <div class="prog-stage-name">Treasure</div>
-              <div class="prog-stage-prompt">Something real surfaces. Hard-won and yours. What did you find that you weren't looking for?</div>
+              <div class="prog-stage-name">Week 7 · Connection</div>
+              <div class="prog-stage-companion">with the Black Elephant</div>
+              <div class="prog-stage-prompt">Who are the people whose futures are already braided with yours, whether you named it or not?</div>
             </div>
           </li>
         </ul>
-      </div>
+      </details>
 
-      <div class="prog-journey-phase prog-phase-emergence">
-        <div class="prog-journey-phase-header">
-          <div>
-            <div class="prog-phase-label">Phase III</div>
-            <div class="prog-phase-name">Emergence</div>
+      <details class="prog-journey-phase prog-phase-emergence">
+        <summary>
+          <div class="prog-journey-phase-header">
+            <div>
+              <div class="prog-phase-label">Phase III</div>
+              <div class="prog-phase-name">Emergence</div>
+            </div>
+            <div class="prog-phase-weeks">Weeks 8–12</div>
           </div>
-          <div class="prog-phase-weeks">Weeks 9–12</div>
-        </div>
+          <ul class="prog-phase-chips">
+            <li><span aria-hidden="true"><img class="emoji-img" src="/images/emoji/swan.svg" alt="" /></span> Strength</li>
+            <li><span aria-hidden="true"><img class="emoji-img" src="/images/emoji/turtle.svg" alt="" /></span> Compassion</li>
+            <li><span aria-hidden="true"><img class="emoji-img" src="/images/emoji/jellyfish.svg" alt="" /></span> Self-Protection</li>
+            <li><span aria-hidden="true"><img class="emoji-img" src="/images/emoji/sheep.svg" alt="" /></span> Autonomy</li>
+            <li><span aria-hidden="true"><img class="emoji-img" src="/images/emoji/elephant.svg" alt="" /></span> Faith</li>
+          </ul>
+          <span class="prog-phase-toggle">Open the questions</span>
+        </summary>
         <ul class="prog-journey-stages">
           <li class="prog-journey-stage">
-            <div class="prog-stage-num">09</div>
+            <div class="prog-stage-num" role="img" aria-label="Black Swan" title="Black Swan"><img class="emoji-img" src="/images/emoji/swan.svg" alt="" /></div>
             <div class="prog-stage-content">
-              <div class="prog-stage-name">Result</div>
-              <div class="prog-stage-prompt">The arc begins to show its shape. You look back. What looks different from here?</div>
+              <div class="prog-stage-name">Week 8 · Strength</div>
+              <div class="prog-stage-companion">with the Black Swan</div>
+              <div class="prog-stage-prompt">What would you build if you were building it from strength instead of from scarcity?</div>
             </div>
           </li>
           <li class="prog-journey-stage">
-            <div class="prog-stage-num">10</div>
+            <div class="prog-stage-num" role="img" aria-label="Black Marsh Turtle" title="Black Marsh Turtle"><img class="emoji-img" src="/images/emoji/turtle.svg" alt="" /></div>
             <div class="prog-stage-content">
-              <div class="prog-stage-name">Return</div>
-              <div class="prog-stage-prompt">The ordinary world again. Same address, different person. What can you see now that you couldn't before?</div>
+              <div class="prog-stage-name">Week 9 · Compassion</div>
+              <div class="prog-stage-companion">with the Black Marsh Turtle</div>
+              <div class="prog-stage-prompt">What would you allow yourself to be slow at, and what would open up if you did?</div>
+              <div class="prog-stage-turn">✦ The turn to we</div>
             </div>
           </li>
           <li class="prog-journey-stage">
-            <div class="prog-stage-num">11</div>
+            <div class="prog-stage-num" role="img" aria-label="Black Jellyfish" title="Black Jellyfish"><img class="emoji-img" src="/images/emoji/jellyfish.svg" alt="" /></div>
             <div class="prog-stage-content">
-              <div class="prog-stage-name">New Life</div>
-              <div class="prog-stage-prompt">A new chapter opens. Not because everything changed. Because you did. What are you ready to begin?</div>
+              <div class="prog-stage-name">Week 10 · Self-Protection</div>
+              <div class="prog-stage-companion">with the Black Jellyfish</div>
+              <div class="prog-stage-prompt">What futures are you being asked to carry that were never yours to hold?</div>
             </div>
           </li>
           <li class="prog-journey-stage">
-            <div class="prog-stage-num">12</div>
+            <div class="prog-stage-num" role="img" aria-label="Black Sheep" title="Black Sheep"><img class="emoji-img" src="/images/emoji/sheep.svg" alt="" /></div>
             <div class="prog-stage-content">
-              <div class="prog-stage-name">Resolution</div>
-              <div class="prog-stage-prompt">A triumphant homecoming. The 2032 Job Description complete. What version of yourself just walked through the door?</div>
+              <div class="prog-stage-name">Week 11 · Autonomy</div>
+              <div class="prog-stage-companion">with the Black Sheep</div>
+              <div class="prog-stage-prompt">What decision have you been waiting for someone else to make, that only you can make?</div>
+            </div>
+          </li>
+          <li class="prog-journey-stage">
+            <div class="prog-stage-num" role="img" aria-label="Black Elephant" title="Black Elephant"><img class="emoji-img" src="/images/emoji/elephant.svg" alt="" /></div>
+            <div class="prog-stage-content">
+              <div class="prog-stage-name">Week 12 · Faith</div>
+              <div class="prog-stage-companion">with the Black Elephant</div>
+              <div class="prog-stage-prompt">You are still here. That is not nothing. That is everything.</div>
             </div>
           </li>
         </ul>
-      </div>
+      </details>
 
     </div>
 
     <!-- CTA after reading the arc -->
     <div class="prog-journey-cta prog-reveal" style="transition-delay:0.25s">
       <p class="prog-journey-cta__text">Ready to begin your arc?</p>
-      <a href="#waitlist" class="prog-btn prog-btn-primary">Reserve my spot in Cohort 02 →</a>
+      <a href="#waitlist" class="prog-btn prog-btn-primary">Sign up for Crew 02 →</a>
     </div>
 
   </div>
@@ -282,58 +398,17 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </div>
 
-<div class="prog-divider"></div>
-
-<!-- ── EARTH DAY / COHORT STATUS ── -->
-<div class="prog-earthday-section prog-reveal">
-  <div class="prog-earthday-stars" aria-hidden="true"></div>
-  <div class="prog-earthday-inner">
-    <div class="prog-earthday-globe" aria-hidden="true">🌍</div>
-    <div class="prog-earthday-text">
-      <p class="prog-earthday-eyebrow">Cohort 01 · Founding</p>
-      <h2 class="prog-earthday-heading">Launched<br><em>Earth Day.</em></h2>
-      <p class="prog-earthday-sub">The founding cohort is full and in motion.</p>
-    </div>
-  </div>
-</div>
-
-<div class="prog-divider"></div>
-
-<!-- ── WAITLIST ── -->
-<div class="prog-waitlist-section" id="waitlist">
-  <div class="prog-waitlist-inner prog-reveal">
-
-    <p class="prog-waitlist-eyebrow">Cohort 02 · Now Forming</p>
-    <h2 class="prog-waitlist-heading">Your spot is waiting.</h2>
-    <p class="prog-waitlist-body">Cohort 02 opens after the founding cohort completes. Add your name now. You'll be first through the door, before it opens publicly.</p>
-
-    <form class="prog-waitlist-form" id="waitlistForm" name="cohort-02-waitlist" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="cohort-02-waitlist" />
-      <input class="prog-waitlist-input" type="text" name="name" placeholder="your name" required />
-      <input class="prog-waitlist-input" type="email" name="email" placeholder="your email" required />
-      <textarea class="prog-waitlist-input prog-waitlist-textarea" name="navigating" rows="3" placeholder="what are you navigating right now?"></textarea>
-      <button class="prog-btn prog-btn-primary prog-waitlist-submit" type="submit">Reserve my spot in Cohort 02 →</button>
-    </form>
-
-    <div class="prog-waitlist-confirm" id="waitlistConfirm" style="display:none;">
-      <p class="prog-waitlist-confirm-msg">You're on the list. We'll find you when the portal opens. In the meantime, the Sandbox Sessions are open. Come play.</p>
-      <a href="https://lu.ma/questlabs" class="prog-btn prog-btn-ghost" target="_blank" rel="noopener noreferrer">Find a Sandbox Session →</a>
-    </div>
-
-    <p class="prog-waitlist-note">No commitment. Just your name at the threshold.</p>
-  </div>
-</div>
 
 <!-- ── CLOSING ── -->
 <div class="prog-closing-section">
-  <p class="prog-closing-quote prog-reveal">"We need every dream. Especially yours. Start where you are to get where we're going."</p>
+  <p class="prog-closing-quote prog-reveal">"We need every dream. Especially yours.<br>Start where you are to get where we're going."</p>
   <p class="prog-closing-attr prog-reveal" style="transition-delay:0.15s">— Quest Labs</p>
 </div>
 
 <div class="page-bridge" style="max-width:860px; margin-left:auto; margin-right:auto; padding-left:2.5rem; padding-right:2.5rem;">
-  <p>Not ready for a full cohort?</p>
+  <p>Not ready for 12 weeks?</p>
   <a href="https://lu.ma/questlabs" class="bridge-link">Start with a Sandbox Session, open door, donations based →</a>
-  <a href="/educators" class="bridge-link" style="margin-top:0.5rem;">Leading a school or classroom? Futures Literacies in Praxis is for you →</a>
+  <a href="/partner" class="bridge-link" style="margin-top:0.5rem;">Leading a school or a classroom? Partner with us →</a>
 </div>
 
 <footer>
@@ -346,6 +421,7 @@ import Layout from '../layouts/Layout.astro';
       <li><a href="/seed">Seed our Becoming</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/contact">Contact</a></li>
+      <li><a href="/privacy">Privacy</a> <span class="prog-pending">in review</span></li>
     </ul>
   </div>
   <div class="footer-anchor">
@@ -369,6 +445,17 @@ if (waitlistForm) {
     await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
     waitlistForm.style.display = 'none';
     document.getElementById('waitlistConfirm').style.display = 'block';
+  });
+}
+
+const zineForm = document.getElementById('zineForm');
+if (zineForm) {
+  zineForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(zineForm);
+    await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() }).catch(() => {});
+    zineForm.style.display = 'none';
+    document.getElementById('zineConfirm').style.display = 'block';
   });
 }
 
@@ -965,5 +1052,197 @@ progReveals.forEach(r => progObserver.observe(r));
     .prog-tiers-grid { grid-template-columns: 1fr; }
     .prog-journey-flow { grid-template-columns: 1fr; }
     .prog-closing-section { padding: 4rem 1.5rem; }
+  }
+
+  @media (min-width: 1100px) {
+    html { font-size: 125%; }
+  }
+  .prog-page .prog-hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    font-size: clamp(1rem, 1.8vw, 1.6rem);
+    letter-spacing: 0.18em;
+    line-height: 1.35;
+  }
+  .prog-hero-emoji { font-size: 2.6em; line-height: 1; letter-spacing: 0; }
+  .prog-page .prog-hero-sub { font-size: 1.2rem; }
+  .prog-page .prog-section-label { font-size: 0.95rem; }
+  .prog-page .prog-section-body { font-size: 1.2rem; color: rgba(240, 236, 248, 0.85); }
+  .prog-page .prog-phase-name { font-size: 1.35rem; }
+  .prog-page .prog-phase-label,
+  .prog-page .prog-phase-weeks { font-size: 0.9rem; }
+  .prog-page .prog-stage-name { font-size: 1.1rem; }
+  .prog-page .prog-stage-prompt { font-size: 1rem; color: rgba(240, 236, 248, 0.85); }
+  .prog-page .prog-stage-num { font-size: 1.8rem; line-height: 1; min-width: 2.4rem; text-align: center; }
+  .prog-stage-companion { font-family: 'Space Mono', monospace; font-size: 0.8rem; color: var(--prog-lavender); margin-bottom: 0.35rem; }
+  .prog-stage-turn { margin-top: 0.5rem; font-family: 'Space Mono', monospace; font-size: 0.85rem; color: #d9c8f5; }
+  .prog-arc-aside { margin-top: 1rem; font-style: italic; font-size: 1.05rem; color: var(--prog-lavender); }
+  .prog-phase-chips li span { font-size: 1.2em; }
+  .prog-price { color: var(--prog-white); font-weight: 600; }
+  .emoji-img--lg { width: 1.6em !important; height: 1.6em !important; vertical-align: -0.45em !important; }
+  .emoji-img { display: inline-block; width: 1em; height: 1em; vertical-align: -0.12em; }
+  .prog-zine-form { margin-top: 0.75rem; }
+  .prog-zine-form-label { display: block; font-size: 0.95rem; color: var(--prog-white); margin-bottom: 0.35rem; }
+  .prog-zine-form-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .prog-zine-form-row .prog-waitlist-input { flex: 1 1 14rem; width: auto; font-size: 1rem; }
+  .prog-pending { display: inline-block; margin-left: 0.4rem; padding: 0 0.45rem; border-radius: 3px; font-family: 'Space Mono', monospace; font-size: 0.75rem; background: rgba(255, 210, 120, 0.15); color: #ffd88a; vertical-align: middle; }
+  .prog-zine-form-note { font-size: 0.9rem; color: rgba(240, 236, 248, 0.75); margin-top: 0.5rem; }
+  .prog-pay { margin-top: 1.5rem; }
+  .prog-pay-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+  .prog-rocket { width: 1.1em; height: 1.1em; vertical-align: -0.15em; margin-right: 0.15em; }
+  .prog-seat-box { border: 1px solid rgba(139, 116, 171, 0.35); border-radius: 4px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+  .prog-seat-box .prog-waitlist-body { margin-bottom: 0.75rem; }
+  .prog-small { font-size: 0.95rem; color: rgba(240, 236, 248, 0.75); }
+  .prog-form-label { display: block; font-size: 1rem; color: var(--prog-white); margin: 0.5rem 0 -0.25rem; text-align: left; }
+  .prog-page .prog-hero { min-height: 0; padding-top: 8rem; padding-bottom: 2rem; }
+  .prog-page #what { padding-top: 2.5rem; }
+  .prog-slow { font-size: 0.75em; color: var(--prog-lavender); }
+  #zineForm { scroll-margin-top: 8rem; }
+  .prog-doors-aside { font-style: italic; color: var(--prog-lavender); }
+
+  .prog-page .prog-journey-flow { position: relative; align-items: start; }
+  .prog-page .prog-journey-flow::before {
+    content: "";
+    position: absolute;
+    left: 2%;
+    right: 2%;
+    top: 2.6rem;
+    height: 2px;
+    background: linear-gradient(to right, rgba(139, 116, 171, 0.5), rgba(180, 143, 224, 0.9));
+  }
+  .prog-page .prog-journey-phase { position: relative; background: #0b0612; overflow: visible; }
+  .prog-page .prog-journey-phase + .prog-journey-phase::before {
+    content: "→";
+    position: absolute;
+    left: -1.55rem;
+    top: 1.75rem;
+    color: var(--prog-lavender);
+    font-size: 1.4rem;
+  }
+  .prog-page .prog-journey-phase-header { flex-direction: column; align-items: flex-start; gap: 0.35rem; }
+  .prog-journey-phase summary { list-style: none; cursor: pointer; }
+  .prog-journey-phase summary::-webkit-details-marker { display: none; }
+  .prog-journey-phase summary:focus-visible { outline: 2px solid var(--prog-lavender); outline-offset: 2px; }
+  .prog-phase-chips {
+    list-style: none;
+    margin: 0;
+    padding: 1rem 1.5rem 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .prog-phase-chips li {
+    border: 1px solid rgba(139, 116, 171, 0.45);
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.95rem;
+    color: var(--prog-white);
+  }
+  .prog-phase-toggle {
+    display: block;
+    padding: 0.5rem 1.5rem 1.25rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--prog-lavender);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .prog-phase-toggle::after { content: " +"; }
+  .prog-journey-phase[open] .prog-phase-chips { display: none; }
+  .prog-journey-phase[open] .prog-phase-toggle { padding-top: 1rem; font-size: 0; }
+  .prog-journey-phase[open] .prog-phase-toggle::before { content: "Close"; font-size: 0.85rem; }
+  .prog-journey-phase[open] .prog-phase-toggle::after { content: " −"; font-size: 0.85rem; }
+
+  @media (max-width: 900px) {
+    .prog-page .prog-journey-flow::before { left: 1.5rem; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
+    .prog-page .prog-journey-phase + .prog-journey-phase::before { content: "↓"; left: 1.1rem; top: -1.9rem; }
+  }
+
+  .prog-zine {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 3rem 0 1rem;
+  }
+  .prog-zine-stack {
+    position: relative;
+    width: 190px;
+    flex-shrink: 0;
+    transform: rotate(-4deg);
+  }
+  .prog-zine-stack::before,
+  .prog-zine-stack::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #f4f4f4;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  }
+  .prog-zine-stack::before { transform: translate(10px, 8px) rotate(3deg); background: #e2e2e2; }
+  .prog-zine-stack::after { transform: translate(5px, 4px) rotate(1.5deg); background: #ececec; }
+  .prog-zine-stack img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: -4px 0 0 #d6d6d6 inset, 0 12px 30px rgba(0, 0, 0, 0.55);
+  }
+  .prog-zine-arrow {
+    width: 110px;
+    flex-shrink: 0;
+    color: var(--prog-lavender);
+  }
+  .prog-zine-kicker {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--prog-lavender);
+    margin-bottom: 0.6rem;
+  }
+  .prog-zine-equation {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    line-height: 1.25;
+    color: var(--prog-white);
+  }
+
+  .prog-doors { margin-top: 3.5rem; max-width: 680px; }
+  .prog-doors-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+  .prog-doors-list li { display: flex; gap: 1rem; align-items: flex-start; }
+  .prog-doors-num {
+    flex-shrink: 0;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    border: 1px solid var(--prog-lavender);
+    color: var(--prog-lavender);
+    display: grid;
+    place-items: center;
+    font-family: 'Space Mono', monospace;
+  }
+  .prog-doors-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--prog-white);
+    margin-bottom: 0.25rem;
+  }
+  .prog-doors-body { color: rgba(240, 236, 248, 0.7); line-height: 1.6; margin-bottom: 0.4rem; }
+  .prog-doors-link { color: var(--prog-lavender); text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .prog-zine { flex-direction: column; align-items: flex-start; }
+    .prog-zine-arrow { transform: rotate(90deg); width: 80px; margin-left: 2rem; }
+    .prog-zine-equation { font-size: 1.6rem; }
   }
 </style>
