@@ -702,6 +702,14 @@ const navLinks = [
   </nav>
 
   <slot />
+  <div class="follow-strip">
+    Follow the conversation: <a href="https://www.instagram.com/questlabs.world" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.linkedin.com/company/quest-labs-education/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+  <style>
+    .follow-strip { position: relative; z-index: 1; text-align: center; padding: 1rem 1rem 1.5rem; font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 0.08em; color: var(--text-faint, rgba(240,236,248,0.5)); }
+    .follow-strip a { color: var(--violet-light, #C4A8E8); text-decoration: none; }
+    .follow-strip a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  </style>
 
   <script is:inline>
     // Burger menu
