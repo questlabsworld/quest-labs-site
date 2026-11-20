@@ -3,15 +3,18 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  noindex?: boolean;
 }
 
 const {
   title,
   description = 'Quest Labs · Healing-Centered Futures. Sandbox sessions, futures research, and practitioner-led programs for educators and organizations ready to think, feel, and act differently.',
   ogImage = '/images/og/quest-labs-preview.png',
+  noindex = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, 'https://questlabs.world');
+const goatcounterCode = '';
 
 const pathname = Astro.url.pathname;
 
@@ -30,7 +33,6 @@ const isActive = (href: string, dropdown?: { href: string }[]): boolean => {
 // Human-readable label for the current page (shown near logo as breadcrumb)
 const pageLabels: Record<string, string> = {
   '/program':        'FLIP',
-  '/educators':           'Futures Literacies in Praxis',
   '/foundations':    'Foundations',
   '/about':          'About',
   '/partner':        'Partner',
@@ -44,7 +46,6 @@ const navLinks = [
   { label: 'The Program', href: '/program', dropdown: [
       { label: 'Black Menagerie', href: '/black-menagerie' },
       { label: 'Foundations',     href: '/foundations' },
-      { label: 'Educators',       href: '/educators' },
   ]},
   { label: 'Partner',            href: '/partner' },
   { label: 'About',              href: '/about' },
@@ -59,6 +60,7 @@ const navLinks = [
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
   <link rel="canonical" href={canonicalURL} />
 
   <!-- Favicon -->
@@ -655,6 +657,7 @@ const navLinks = [
     }
     .t-dot.active { background: #C4A8E8; }
   </style>
+  {goatcounterCode && <script is:inline data-goatcounter={`https://${goatcounterCode}.goatcounter.com/count`} async src="https://gc.zgo.at/count.js"></script>}
 </head>
 <body>
   <canvas id="starfield"></canvas>
