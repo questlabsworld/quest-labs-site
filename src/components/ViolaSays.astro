@@ -1,0 +1,30 @@
+---
+interface Props {
+  align?: 'left' | 'center';
+  sign?: boolean;
+}
+const { align = 'left', sign = false } = Astro.props;
+---
+<div class={`viola-says viola-says--${align}`}>
+  <img src="/images/viola/viola-ion.webp" alt="Viola Ion, a lilac figure with long hair and flowing robes, waving" class="viola-says__img" width="600" height="659" loading="lazy" />
+  <div class="viola-says__bubble">
+    <slot />
+    {sign && <span class="viola-says__sign">Viola Ion · your guide</span>}
+  </div>
+</div>
+
+<style is:global>
+  .viola-says { position: relative; z-index: 1; display: flex; gap: 1rem; align-items: flex-end; max-width: 640px; margin: 2rem auto; text-align: left; }
+  .viola-says__img { width: 96px; height: auto; flex: none; border-radius: 12px; background: #fff; }
+  .viola-says__bubble { position: relative; background: #1a1526; border: 1px solid #B48FE0; border-radius: 16px; padding: 1rem 1.15rem; font-family: 'Special Elite', 'Courier New', monospace; font-size: 1.05rem; line-height: 1.5; color: #f0ecf8; }
+  .viola-says__bubble::before { content: ''; position: absolute; left: -9px; bottom: 22px; width: 16px; height: 16px; background: #1a1526; border-left: 1px solid #B48FE0; border-bottom: 1px solid #B48FE0; transform: rotate(45deg); }
+  .viola-says__bubble p { margin: 0 0 0.4rem; font: inherit; color: inherit; }
+  .viola-says__bubble p:last-child { margin-bottom: 0; }
+  .viola-says__bubble a { color: #E8D9FF; text-decoration: underline; text-underline-offset: 3px; }
+  .viola-says__sign { display: block; margin-top: 0.5rem; font: 0.7rem 'Space Mono', monospace; letter-spacing: 0.15em; text-transform: uppercase; color: #B48FE0; }
+  @media (max-width: 600px) {
+    .viola-says { flex-direction: column; align-items: flex-start; }
+    .viola-says__img { width: 80px; }
+    .viola-says__bubble::before { display: none; }
+  }
+</style>

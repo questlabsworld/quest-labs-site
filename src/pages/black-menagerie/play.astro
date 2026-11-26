@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ViolaSays from '../../components/ViolaSays.astro';
 import signals from './_signals.json';
 
 const picks = [
@@ -12,14 +13,14 @@ const picks = [
 
 const data = picks.map((p) => {
   const s = signals.find((x) => x.id === p.id)!;
-  return { ...p, sector: s.sector, prompt: s.prompt, signal: s.signal, sources: s.sources };
+  return { ...p, sector: s.sector, tagline: s.tagline, prompt: s.prompt, signal: s.signal, sources: s.sources };
 });
 
 const worlds = [
-  { name: 'Growth', q: 'What if it just keeps growing?' },
-  { name: 'Collapse', q: "What's falling apart?" },
-  { name: 'Discipline', q: 'How do we choose to live within limits?' },
-  { name: 'Transformation', q: 'What new thing is being born here? 🌱' },
+  { name: 'Growth', q: 'What if it just keeps growing?', d: 'More of what we have now. Bigger, faster, more.' },
+  { name: 'Collapse', q: "What's falling apart?", d: 'Something we rely on breaks down. From the Latin collapsus: to fall together.' },
+  { name: 'Discipline', q: 'How do we choose to live within limits?', d: 'We practice living within chosen limits, together.' },
+  { name: 'Transformation', q: 'What new thing is being born here? 🌱', d: "Something new is born that we can't fully picture yet." },
 ];
 ---
 
@@ -44,6 +45,22 @@ const worlds = [
       <li><b>Lean.</b></li>
       <li>Then see what's really happening.</li>
     </ol>
+
+    <div class="pl-intro">
+      <ViolaSays>
+        <p>Read the signal. Then notice where your gut goes first.</p>
+        <p>We're not here to predict... but to tune into the wisdom within.</p>
+        <p>The body crosses future thresholds before the mind can make sense.</p>
+      </ViolaSays>
+      <h2 class="pl-what-title">Four worlds</h2>
+      <p class="pl-intro-sub">Every moment could tip toward one of four futures.<br>None is good or bad. Each one has gifts and risks.</p>
+      <div class="pl-intro-worlds">
+        {worlds.map((w) => <div class="pl-intro-world"><span class="pl-world-name">{w.name}</span>{w.d}</div>)}
+      </div>
+      <h2 class="pl-what-title pl-lean-title">What does "lean" mean?</h2>
+      <p class="pl-intro-sub">After you read a signal, notice which world it feels closest to.<br>That's your lean.<br>Not a prediction. Not a choice. No right answer.<br>Just where your gut goes first.</p>
+      <p class="pl-credit">The four worlds come from futurist Jim Dator's four generic futures.</p>
+    </div>
   </section>
 
   <section class="pl-stage" aria-live="polite">
@@ -56,7 +73,7 @@ const worlds = [
         <span class="pl-sector" id="pl-sector"></span>
         <span class="pl-count" id="pl-count"></span>
       </div>
-      <p class="pl-here">You are here.</p>
+      <p class="pl-here" id="pl-here">You are here.</p>
       <p class="pl-text" id="pl-text" aria-hidden="true"></p>
       <p class="pl-sr" id="pl-sr"></p>
       <div class="pl-beat" id="pl-beat" aria-hidden="true"><span class="pl-beat-emoji"></span><span class="pl-beat-label"></span></div>
@@ -67,7 +84,7 @@ const worlds = [
 
     <div class="pl-lean" id="pl-lean" hidden>
       <p class="pl-step"><b>Lean.</b></p>
-      <p class="pl-step-sub">Which world are you leaning toward?<br>Tap one.</p>
+      <p class="pl-step-sub">Which world does this feel closest to?<br>Go with your gut. Tap one.</p>
       <div class="pl-worlds">
         {worlds.map((w) => <button type="button" class="pl-world"><span class="pl-world-name">{w.name}</span>{w.q}</button>)}
       </div>
@@ -79,7 +96,10 @@ const worlds = [
       <p class="pl-real-label">The signal</p>
       <p class="pl-signal" id="pl-signal"></p>
       <div class="pl-sources" id="pl-sources"></div>
-      <button type="button" class="cta-primary pl-next" id="pl-next">Next signal →</button>
+      <div class="pl-next-row">
+        <button type="button" class="cta-primary pl-next" id="pl-next">Next signal →</button>
+        <button type="button" class="pl-enough" id="pl-enough">That's enough for now</button>
+      </div>
     </div>
 
     <div class="pl-end" id="pl-end" hidden>
@@ -143,6 +163,7 @@ const worlds = [
     reset();
     const d = data[i];
     $('pl-sector').textContent = d.sector;
+    $('pl-here').textContent = d.tagline || 'You are here.';
     $('pl-count').textContent = `${i + 1} of ${data.length}`;
     dots.forEach((el, j) => el.classList.toggle('on', j <= i));
     sr.textContent = d.prompt;
@@ -206,18 +227,23 @@ const worlds = [
       box.appendChild(a);
     });
     $('pl-next').textContent = idx === data.length - 1 ? 'Finish →' : 'Next signal →';
+    $('pl-enough').hidden = idx === data.length - 1;
     real.hidden = false;
     real.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'nearest' });
   });
 
+  function finish() {
+    run++;
+    card.hidden = true; lean.hidden = true; real.hidden = true; skip.hidden = true;
+    end.hidden = false;
+    stage.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'start' });
+  }
+
+  $('pl-enough').addEventListener('click', finish);
+
   $('pl-next').addEventListener('click', () => {
     idx++;
-    if (idx >= data.length) {
-      run++;
-      card.hidden = true; lean.hidden = true; real.hidden = true; skip.hidden = true;
-      end.hidden = false;
-      return;
-    }
+    if (idx >= data.length) { finish(); return; }
     play(idx);
     stage.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'start' });
   });
@@ -247,6 +273,15 @@ const worlds = [
   .pl-what-title { font-family:'Special Elite','Courier New',monospace; font-weight:400; font-size:1.5rem; color:var(--text); margin-bottom:0.5rem; }
   .pl-how { list-style:none; padding:0; margin:1.75rem 0 0; display:flex; flex-direction:column; gap:0.35rem; font-size:1.1rem; color:var(--text); }
   .pl-how b { font-family:'Special Elite','Courier New',monospace; font-weight:400; font-size:1.35rem; color:var(--pl-lavender); }
+  .pl-intro { margin:2.75rem auto 0; max-width:620px; }
+  .pl-intro-sub { color:var(--text-dim); font-size:1.02rem; line-height:1.65; margin:0 0 1.1rem; }
+  .pl-intro-worlds { display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; text-align:left; }
+  .pl-intro-world { background:rgba(255,255,255,0.03); border:0.5px solid rgba(180,143,224,0.35); border-radius:10px; padding:0.85rem 1rem; color:var(--text); font-size:0.95rem; line-height:1.45; }
+  .pl-lean-title { margin-top:2.25rem; }
+  .pl-credit { font:0.72rem 'Space Mono',monospace; color:var(--text-dim); letter-spacing:0.04em; margin-top:0.5rem; }
+  .pl-next-row { display:flex; flex-direction:column; align-items:center; gap:0.6rem; }
+  .pl-enough { background:none; border:none; color:var(--pl-lavender); font:0.8rem 'Space Mono',monospace; letter-spacing:0.06em; text-decoration:underline; text-underline-offset:4px; cursor:pointer; padding:0.35rem; }
+  .pl-enough[hidden] { display:none; }
   .pl-step-sub { color:var(--text-dim); font-size:1rem; line-height:1.6; margin:-0.5rem 0 1rem; }
   .pl-card, .pl-lean, .pl-real { text-align:center; }
   .pl-card-top { text-align:left; }
@@ -319,7 +354,7 @@ const worlds = [
     .pl-stage { padding:1rem 1rem 4rem; }
     .pl-card { padding:1.4rem 1.25rem 1.6rem; }
     .pl-text { font-size:1.1rem; }
-    .pl-worlds { grid-template-columns:1fr; }
+    .pl-worlds, .pl-intro-worlds { grid-template-columns:1fr; }
   }
 
   @media (prefers-reduced-motion: reduce) {

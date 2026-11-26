@@ -2,6 +2,7 @@
   {
     "id": "S1",
     "sector": "Social",
+    "tagline": "Cars out, plaza in.",
     "tone": "Hopeful",
     "signal": "Barcelona's \"superblocks\" close inner streets to through traffic. A 2019 ISGlobal model estimated the full plan could prevent about 667 early deaths a year.",
     "sources": [
@@ -15,6 +16,7 @@
   {
     "id": "S2",
     "sector": "Social",
+    "tagline": "Care, with a queue.",
     "tone": "Hopeful",
     "signal": "Bogotá's Care Blocks (Manzanas del Cuidado) give unpaid caregivers, mostly women, free classes, rest, and childcare near home. 23 blocks were running by June 2024.",
     "sources": [
@@ -32,6 +34,7 @@
   {
     "id": "S3",
     "sector": "Social",
+    "tagline": "Her seat, her say.",
     "tone": "Hopeful",
     "signal": "Kudumbashree, Kerala's women's self-help network, has about 4.5 million members in neighborhood groups that run savings, businesses, and local planning. (India)",
     "sources": [
@@ -45,6 +48,7 @@
   {
     "id": "S4",
     "sector": "Social",
+    "tagline": "All hands but one.",
     "tone": "Hopeful",
     "signal": "On the last Saturday of every month, Rwanda holds Umuganda: three hours of nationwide community work, then a neighborhood meeting. (Rwanda)",
     "sources": [
@@ -62,6 +66,7 @@
   {
     "id": "S5",
     "sector": "Social",
+    "tagline": "Prescription: dirt.",
     "tone": "Hopeful",
     "signal": "In England, GPs referred about 1.3 million people to \"social prescribing\" in 2023: gardening groups, choirs, walking clubs, instead of or alongside medicine.",
     "sources": [
@@ -75,6 +80,7 @@
   {
     "id": "S6",
     "sector": "Social",
+    "tagline": "Twelve kids left.",
     "tone": "Hard",
     "signal": "South Korea's fertility rate fell to 0.72 in 2023, the lowest in the world. Seoul's was 0.55. (South Korea)",
     "sources": [
@@ -88,6 +94,7 @@
   {
     "id": "S7",
     "sector": "Social",
+    "tagline": "Whose shade?",
     "tone": "Hard",
     "signal": "India's 2024 heat wave pushed 37 cities above 45°C. Independent trackers counted over 700 heat deaths and 40,000 heatstroke cases. (India)",
     "sources": [
@@ -101,6 +108,7 @@
   {
     "id": "T1",
     "sector": "Technological",
+    "tagline": "Enough for half.",
     "tone": "Hopeful",
     "signal": "A twice-yearly injection, lenacapavir, prevented HIV in 100% of young women in the PURPOSE 1 trial. Science named it the 2024 Breakthrough of the Year.",
     "sources": [
@@ -114,6 +122,7 @@
   {
     "id": "T2",
     "sector": "Technological",
+    "tagline": "Who goes first?",
     "tone": "Hopeful",
     "signal": "The R21 malaria vaccine began routine rollout in Africa in 2024. Malaria vaccines reached children in 17 countries that year.",
     "sources": [
@@ -127,6 +136,7 @@
   {
     "id": "T3",
     "sector": "Technological",
+    "tagline": "Panels up, bills up.",
     "tone": "Hopeful",
     "signal": "Pakistan imported about 17 GW of solar panels in 2024, double 2023, mostly for rooftops, as families escaped blackouts and high bills. (Pakistan)",
     "sources": [
@@ -144,6 +154,7 @@
   {
     "id": "T4",
     "sector": "Technological",
+    "tagline": "No signal, no sale.",
     "tone": "Hopeful",
     "signal": "India's UPI, a free public payment system, handled a record 24.5 billion payments in August 2026. Street vendors take payments by QR code. (India)",
     "sources": [
@@ -157,6 +168,7 @@
   {
     "id": "T5",
     "sector": "Technological",
+    "tagline": "Power vs. paychecks.",
     "tone": "Hard",
     "signal": "Data center electricity use is projected to more than double by 2030, to about 945 TWh (IEA).",
     "sources": [
@@ -170,6 +182,7 @@
   {
     "id": "T6",
     "sector": "Technological",
+    "tagline": "Sounds like her.",
     "tone": "Hard",
     "signal": "Two days before Slovakia's 2023 election, a fake AI audio clip of a party leader \"discussing vote rigging\" spread on Facebook.",
     "sources": [
@@ -183,6 +196,7 @@
   {
     "id": "T7",
     "sector": "Technological",
+    "tagline": "Right to repair?",
     "tone": "Hard",
     "signal": "The world made a record 62 million tonnes of e-waste in 2022. Only 22.3% was documented as properly recycled (UN Global E-waste Monitor 2024).",
     "sources": [
@@ -196,6 +210,7 @@
   {
     "id": "E1",
     "sector": "Economic",
+    "tagline": "Fridays for some.",
     "tone": "Hopeful",
     "signal": "In the UK four-day week pilot (61 companies, 2022), 54 were still on it a year later and 31 made it permanent.",
     "sources": [
@@ -213,6 +228,7 @@
   {
     "id": "E2",
     "sector": "Economic",
+    "tagline": "Free money, for now.",
     "tone": "Hopeful",
     "signal": "Stockton's guaranteed income pilot gave 125 people $500 a month, no strings. Full-time work among recipients rose from 28% to 40% in a year.",
     "sources": [
@@ -226,6 +242,7 @@
   {
     "id": "E3",
     "sector": "Economic",
+    "tagline": "Trade cuts both ways.",
     "tone": "Hopeful",
     "signal": "The African Continental Free Trade Area started trading in 2021, aiming for one market of about 1.3 billion people. (Africa)",
     "sources": [
@@ -243,6 +260,7 @@
   {
     "id": "E4",
     "sector": "Economic",
+    "tagline": "School or water?",
     "tone": "Hopeful",
     "signal": "In Kenya, GiveDirectly's long-term basic income study found people did not work less, and those promised 12 years of income saved far more together.",
     "sources": [
@@ -260,6 +278,7 @@
   {
     "id": "E5",
     "sector": "Economic",
+    "tagline": "Mud, and an offer.",
     "tone": "Hard",
     "signal": "Pakistan's 2022 floods put about a third of the country underwater, affected 33 million people, and caused over $30 billion in damage and losses. (Pakistan)",
     "sources": [
@@ -273,6 +292,7 @@
   {
     "id": "E6",
     "sector": "Economic",
+    "tagline": "Grown, not tasted.",
     "tone": "Hard",
     "signal": "Cocoa prices hit record highs in 2024 after extreme weather in West Africa. Chocolate prices followed.",
     "sources": [
@@ -286,6 +306,7 @@
   {
     "id": "E7",
     "sector": "Economic",
+    "tagline": "Too hot to earn.",
     "tone": "Hard",
     "signal": "The ILO projects heat will cost the equivalent of 80 million full-time jobs by 2030, mostly in farming and construction.",
     "sources": [
@@ -299,6 +320,7 @@
   {
     "id": "N1",
     "sector": "Environmental",
+    "tagline": "Still standing.",
     "tone": "Hopeful",
     "signal": "In the first half of 2025, renewables made more of the world's electricity than coal, for the first time on record (Ember).",
     "sources": [
@@ -312,6 +334,7 @@
   {
     "id": "N2",
     "sector": "Environmental",
+    "tagline": "The sky can heal.",
     "tone": "Hopeful",
     "signal": "The ozone layer is healing. A 2023 UN-backed assessment says it should recover by about 2040 for most of the world, and 2066 over Antarctica.",
     "sources": [
@@ -325,6 +348,7 @@
   {
     "id": "N3",
     "sector": "Environmental",
+    "tagline": "Salmon up, farms dry.",
     "tone": "Hopeful",
     "signal": "The largest dam removal in US history finished on the Klamath River in 2024. Salmon swam back into the upper river within weeks, after more than 100 years.",
     "sources": [
@@ -342,6 +366,7 @@
   {
     "id": "N4",
     "sector": "Environmental",
+    "tagline": "The tigers are back.",
     "tone": "Hopeful",
     "signal": "India's tigers grew to about 3,682 in 2022, roughly 75% of the world's wild tigers, up from 2,967 in 2018. (India)",
     "sources": [
@@ -359,6 +384,7 @@
   {
     "id": "N5",
     "sector": "Environmental",
+    "tagline": "A normal Tuesday.",
     "tone": "Hard",
     "signal": "2024 was the hottest year on record and the first full year above 1.5°C of warming (Copernicus).",
     "sources": [
@@ -372,6 +398,7 @@
   {
     "id": "N6",
     "sector": "Environmental",
+    "tagline": "Coral, for a price.",
     "tone": "Hard",
     "signal": "NOAA confirmed the fourth global coral bleaching event in 2024. About 84% of the world's reefs faced bleaching-level heat.",
     "sources": [
@@ -385,6 +412,7 @@
   {
     "id": "N7",
     "sector": "Environmental",
+    "tagline": "Road of sand.",
     "tone": "Hard",
     "signal": "In October 2023, the Rio Negro at Manaus fell to its lowest level since records began in 1902.",
     "sources": [
@@ -398,6 +426,7 @@
   {
     "id": "P1",
     "sector": "Political",
+    "tagline": "Keep it buried.",
     "tone": "Hopeful",
     "signal": "In 2023, Ecuadorians voted about 59% to 41% to keep oil in the ground under Yasuní National Park.",
     "sources": [
@@ -415,6 +444,7 @@
   {
     "id": "P2",
     "sector": "Political",
+    "tagline": "Quiet consensus.",
     "tone": "Hopeful",
     "signal": "Taiwan's vTaiwan used an online tool to find what thousands of citizens agreed on about ride-sharing rules. The government agreed to adopt the consensus points. (Taiwan)",
     "sources": [
@@ -428,6 +458,7 @@
   {
     "id": "P3",
     "sector": "Political",
+    "tagline": "The river sues.",
     "tone": "Hopeful",
     "signal": "In 2017, New Zealand recognized the Whanganui River as a legal person, after a 170-year struggle by Whanganui Iwi.",
     "sources": [
@@ -441,6 +472,7 @@
   {
     "id": "P4",
     "sector": "Political",
+    "tagline": "Read it. Repeal it.",
     "tone": "Hopeful",
     "signal": "In June 2024, Gen Z protesters in Kenya, organizing online, pushed President Ruto to withdraw a finance bill that raised taxes. Dozens were killed in the crackdown. (Kenya)",
     "sources": [
@@ -458,6 +490,7 @@
   {
     "id": "P5",
     "sector": "Political",
+    "tagline": "Now what?",
     "tone": "Hopeful",
     "signal": "Brazil's Amazon deforestation fell about 30% in the year to July 2024, the lowest in nine years (INPE).",
     "sources": [
@@ -471,6 +504,7 @@
   {
     "id": "P6",
     "sector": "Political",
+    "tagline": "Her budget.",
     "tone": "Hopeful",
     "signal": "After the 2024 election, women hold about 64% of seats in Rwanda's parliament, the highest share in the world. (Rwanda)",
     "sources": [
@@ -488,6 +522,7 @@
   {
     "id": "P7",
     "sector": "Political",
+    "tagline": "Share the quota?",
     "tone": "Hard",
     "signal": "Bogotá rationed water from April 2024 to April 2025: neighborhoods took turns with 24-hour shutoffs during a drought.",
     "sources": [
@@ -505,6 +540,7 @@
   {
     "id": "P8",
     "sector": "Political",
+    "tagline": "Off-line, on air.",
     "tone": "Hard",
     "signal": "2024 was the worst year on record for internet shutdowns: at least 296 shutdowns in 54 countries (Access Now).",
     "sources": [
@@ -518,6 +554,7 @@
   {
     "id": "MS1",
     "sector": "Social",
+    "tagline": "The bench listens.",
     "tone": "Hopeful",
     "signal": "Zimbabwe's Friendship Bench trains grandmothers to give talk therapy on park benches. The idea is now spreading to the United States and elsewhere. (Zimbabwe)",
     "sources": [
@@ -531,6 +568,7 @@
   {
     "id": "MS2",
     "sector": "Social",
+    "tagline": "Fed, not shamed.",
     "tone": "Hopeful",
     "signal": "Japan's kodomo shokudō (children's cafeterias) give kids free or cheap meals and company. They reached a record 12,601 sites in 2025. (Japan)",
     "sources": [
@@ -544,6 +582,7 @@
   {
     "id": "MS3",
     "sector": "Social",
+    "tagline": "Take what you need.",
     "tone": "Hopeful",
     "signal": "In April 2021 a bamboo cart of free groceries appeared on Maginhawa Street in Manila: \"give what you can, take what you need.\" About 350 copies sprang up within a week, even as police and a government task force \"red-tagged\" organizers as communists. (Philippines)",
     "sources": [
@@ -557,6 +596,7 @@
   {
     "id": "MS4",
     "sector": "Social",
+    "tagline": "School floats.",
     "tone": "Hopeful",
     "signal": "In flood-prone Bangladesh, solar-powered \"floating schools\" on boats pick children up from cut-off villages so class goes on during the monsoon. (Bangladesh)",
     "sources": [
@@ -570,6 +610,7 @@
   {
     "id": "MS5",
     "sector": "Social",
+    "tagline": "A fade, a pulse.",
     "tone": "Hopeful",
     "signal": "In Los Angeles, pharmacists worked inside Black-owned barbershops to treat high blood pressure. After a year, the men's top blood pressure number fell by 28.6 points on average. (US, diaspora)",
     "sources": [
@@ -583,6 +624,7 @@
   {
     "id": "MS6",
     "sector": "Social",
+    "tagline": "Return and rent.",
     "tone": "Hopeful",
     "signal": "Ghana's 2019 \"Year of Return\" invited the African diaspora home, 400 years after enslaved Africans were first brought to Virginia. Ghana had about 1.1 million international visitors that year and granted citizenship to at least 126 diaspora residents. (Ghana, diaspora)",
     "sources": [
@@ -604,6 +646,7 @@
   {
     "id": "MS7",
     "sector": "Social",
+    "tagline": "Hello, neighbor?",
     "tone": "Hard",
     "signal": "A 2025 WHO commission found about 1 in 6 people worldwide are lonely. It linked loneliness to about 871,000 deaths a year.",
     "sources": [
@@ -617,6 +660,7 @@
   {
     "id": "MS8",
     "sector": "Social",
+    "tagline": "Care or camera?",
     "tone": "Hard",
     "signal": "Japan's police counted 76,020 people who died alone at home in 2024. About three in four were 65 or older. (Japan)",
     "sources": [
@@ -630,6 +674,7 @@
   {
     "id": "MS9",
     "sector": "Social",
+    "tagline": "Lessons after dark.",
     "tone": "Hard",
     "signal": "UNICEF says about 18.3 million children in Nigeria are out of school, the most of any country. (Nigeria)",
     "sources": [
@@ -643,6 +688,7 @@
   {
     "id": "MS10",
     "sector": "Social",
+    "tagline": "In her corner.",
     "tone": "Hard",
     "signal": "In 2023 the US maternal death rate for Black women was 50.3 per 100,000 births, against 14.5 for white women (CDC data). (US, diaspora)",
     "sources": [
@@ -660,6 +706,7 @@
   {
     "id": "MT1",
     "sector": "Technological",
+    "tagline": "Sky road, dirt road.",
     "tone": "Hopeful",
     "signal": "Since October 2016, Zipline drones have flown blood and medicine to rural clinics in Rwanda, later in Ghana and beyond. A 2022 study found it cut blood delivery times and wasted blood. (Rwanda)",
     "sources": [
@@ -673,6 +720,7 @@
   {
     "id": "MT2",
     "sector": "Technological",
+    "tagline": "Her voice, for sale?",
     "tone": "Hopeful",
     "signal": "Masakhane (\"we build together\" in isiZulu) is a grassroots network of more than 1,000 people from 30 African countries building AI tools for African languages. (Africa)",
     "sources": [
@@ -686,6 +734,7 @@
   {
     "id": "MT3",
     "sector": "Technological",
+    "tagline": "Cured in London.",
     "tone": "Hopeful",
     "signal": "Casgevy, the first CRISPR gene-editing cure, was approved for sickle cell disease in 2023. Its list price is $2.2 million. Most people with sickle cell live in sub-Saharan Africa, where it is not available. (Global, diaspora)",
     "sources": [
@@ -703,6 +752,7 @@
   {
     "id": "MT4",
     "sector": "Technological",
+    "tagline": "Found it. Fund it?",
     "tone": "Hopeful",
     "signal": "In 2022 DeepMind's AlphaFold predicted the shape of over 200 million proteins, nearly all known to science, and put them online free for anyone. (Global)",
     "sources": [
@@ -716,6 +766,7 @@
   {
     "id": "MT5",
     "sector": "Technological",
+    "tagline": "Whose recipe?",
     "tone": "Hopeful",
     "signal": "WHO set up an mRNA vaccine hub at Afrigen in Cape Town to share the know-how with makers in poorer countries, so the next pandemic doesn't mean waiting at the back of the line. (South Africa)",
     "sources": [
@@ -729,6 +780,7 @@
   {
     "id": "MT6",
     "sector": "Technological",
+    "tagline": "Silent engines.",
     "tone": "Hopeful",
     "signal": "Electric cars were almost half of all new car sales in China in 2024, and over 11 million were sold there (IEA). (China)",
     "sources": [
@@ -742,6 +794,7 @@
   {
     "id": "MT7",
     "sector": "Technological",
+    "tagline": "Logged in, left out.",
     "tone": "Hopeful",
     "signal": "In Estonia, 99% of government services are online: taxes, medical records, even voting, all with one digital ID card. (Estonia)",
     "sources": [
@@ -755,6 +808,7 @@
   {
     "id": "MT8",
     "sector": "Technological",
+    "tagline": "Polite, at a price.",
     "tone": "Hard",
     "signal": "TIME found that workers in Kenya, paid less than $2 an hour, read violent and abusive text so ChatGPT could learn to filter it out. Several said the work left them traumatized. (Kenya)",
     "sources": [
@@ -768,6 +822,7 @@
   {
     "id": "MT9",
     "sector": "Technological",
+    "tagline": "Green, not clean.",
     "tone": "Hard",
     "signal": "Amnesty International traced cobalt in phone and electric car batteries to DR Congo mines where children work. DR Congo produced about 75% of the world's cobalt in 2024 (USGS). (DR Congo)",
     "sources": [
@@ -785,6 +840,7 @@
   {
     "id": "MT10",
     "sector": "Technological",
+    "tagline": "Not his words.",
     "tone": "Hard",
     "signal": "The UN says at least 120,000 people in Myanmar may be held in scam compounds and forced to run online fraud, many lured by fake job ads. (Myanmar, Southeast Asia)",
     "sources": [
@@ -798,6 +854,7 @@
   {
     "id": "ME1",
     "sector": "Economic",
+    "tagline": "Love, wired monthly.",
     "tone": "Hopeful",
     "signal": "Migrants sent about $656 billion home to low- and middle-income countries in 2023 (World Bank). That is more than foreign investment, and more than aid. (Global, diaspora)",
     "sources": [
@@ -815,6 +872,7 @@
   {
     "id": "ME2",
     "sector": "Economic",
+    "tagline": "Off the books?",
     "tone": "Hopeful",
     "signal": "The number of Mexicans in poverty fell by 8.9 million from 2020 to 2022 (CONEVAL). Officials pointed to the minimum wage, which more than doubled after inflation since 2018, and to social programs. (Mexico)",
     "sources": [
@@ -832,6 +890,7 @@
   {
     "id": "ME3",
     "sector": "Economic",
+    "tagline": "One share, one vote.",
     "tone": "Hopeful",
     "signal": "Mondragon, a federation of worker-owned cooperatives in Spain's Basque Country, employs about 71,000 people. Workers vote on how their company is run. (Spain)",
     "sources": [
@@ -845,6 +904,7 @@
   {
     "id": "ME4",
     "sector": "Economic",
+    "tagline": "Pay or lock.",
     "tone": "Hopeful",
     "signal": "Kenya's M-KOPA sells phones and solar kits on small daily payments to people banks won't lend to. It ended 2023 with 4 million customers. (Kenya)",
     "sources": [
@@ -858,6 +918,7 @@
   {
     "id": "ME5",
     "sector": "Economic",
+    "tagline": "Ten years to stay.",
     "tone": "Hopeful",
     "signal": "Japan has a record 9 million empty homes (akiya), 13.8% of all housing. Some towns give them away cheap to newcomers. (Japan)",
     "sources": [
@@ -871,6 +932,7 @@
   {
     "id": "ME6",
     "sector": "Economic",
+    "tagline": "Our pot, our rules.",
     "tone": "Hopeful",
     "signal": "South Africa's stokvels (rotating savings clubs) have about 11 million members in 800,000 groups, saving about R50 billion a year, mostly outside the banks. (South Africa)",
     "sources": [
@@ -884,6 +946,7 @@
   {
     "id": "ME7",
     "sector": "Economic",
+    "tagline": "Roof before loans.",
     "tone": "Hopeful",
     "signal": "In June 2024, hours before Hurricane Beryl, Barbados became the first country to sign the World Bank's climate-resilient debt clause: loan repayments pause for up to two years after a disaster. (Barbados, Caribbean)",
     "sources": [
@@ -901,6 +964,7 @@
   {
     "id": "ME8",
     "sector": "Economic",
+    "tagline": "Owed before birth.",
     "tone": "Hard",
     "signal": "UNCTAD's \"A World of Debt 2024\" found 3.3 billion people live in countries that spend more on interest payments than on health or education. (Global)",
     "sources": [
@@ -918,6 +982,7 @@
   {
     "id": "ME9",
     "sector": "Economic",
+    "tagline": "CVs at the mall.",
     "tone": "Hard",
     "signal": "In South Africa, unemployment among 15 to 24 year olds was 58.5% in the third quarter of 2025 (Stats SA). (South Africa)",
     "sources": [
@@ -935,6 +1000,7 @@
   {
     "id": "ME10",
     "sector": "Economic",
+    "tagline": "Lying flat.",
     "tone": "Hard",
     "signal": "China's youth unemployment hit a record 21.3% in June 2023. The next month, the government stopped publishing the number. (China)",
     "sources": [
@@ -948,6 +1014,7 @@
   {
     "id": "MN1",
     "sector": "Environmental",
+    "tagline": "Let it grow.",
     "tone": "Hopeful",
     "signal": "Farmers in Niger regrew trees on about 5 million hectares of bare cropland, not by planting but by protecting stumps and roots already in the soil (farmer-managed natural regeneration). (Niger)",
     "sources": [
@@ -961,6 +1028,7 @@
   {
     "id": "MN2",
     "sector": "Environmental",
+    "tagline": "Bagged and banned.",
     "tone": "Hopeful",
     "signal": "In 2017 Kenya banned plastic bags with one of the world's toughest penalties: a fine of about $40,000 or up to four years in jail. (Kenya)",
     "sources": [
@@ -974,6 +1042,7 @@
   {
     "id": "MN3",
     "sector": "Environmental",
+    "tagline": "Herons in, stalls out.",
     "tone": "Hopeful",
     "signal": "Seoul tore down an elevated highway and uncovered the Cheonggyecheon stream beneath it. Along the stream it is now 3.3 to 5.9°C cooler than on a parallel road. (South Korea)",
     "sources": [
@@ -987,6 +1056,7 @@
   {
     "id": "MN4",
     "sector": "Environmental",
+    "tagline": "The sea gets rules.",
     "tone": "Hopeful",
     "signal": "The High Seas Treaty, the first global deal to protect ocean life outside any country's waters, reached the 60 ratifications it needed in September 2025, and entered into force on 17 January 2026. (Global)",
     "sources": [
@@ -1004,6 +1074,7 @@
   {
     "id": "MN5",
     "sector": "Environmental",
+    "tagline": "Green hills, no seat.",
     "tone": "Hopeful",
     "signal": "Nepal handed forests to more than 20,000 community forest user groups. Forest cover rose from about 26% to 45% in roughly 25 years. (Nepal)",
     "sources": [
@@ -1021,6 +1092,7 @@
   {
     "id": "MN6",
     "sector": "Environmental",
+    "tagline": "Monkeys or avocados?",
     "tone": "Hopeful",
     "signal": "Costa Rica pays landowners to keep and grow forest. Forest cover went from just over 20% in the 1980s to over 50% of the country. (Costa Rica)",
     "sources": [
@@ -1034,6 +1106,7 @@
   {
     "id": "MN7",
     "sector": "Environmental",
+    "tagline": "Boats to goats.",
     "tone": "Hard",
     "signal": "Lake Chad has shrunk by 90% in 60 years, from overuse, drought and climate change. About 30 million people in Chad, Cameroon, Niger and Nigeria depend on it. (Lake Chad basin)",
     "sources": [
@@ -1051,6 +1124,7 @@
   {
     "id": "MN8",
     "sector": "Environmental",
+    "tagline": "A spoonful inside.",
     "tone": "Hard",
     "signal": "A 2025 study in Nature Medicine found microplastics in human brain samples, about a spoon's worth on average, and about 50% more in 2024 than in 2016. (Global)",
     "sources": [
@@ -1068,6 +1142,7 @@
   {
     "id": "MN9",
     "sector": "Environmental",
+    "tagline": "The capital leaves.",
     "tone": "Hard",
     "signal": "Parts of Jakarta are sinking, mostly from pumping out groundwater, and much of North Jakarta is below sea level. Indonesia is building a new capital, Nusantara, on Borneo. (Indonesia)",
     "sources": [
@@ -1081,6 +1156,7 @@
   {
     "id": "MN10",
     "sector": "Environmental",
+    "tagline": "Money from afar.",
     "tone": "Hard",
     "signal": "In October 2025 Hurricane Melissa hit Jamaica at Category 5, the strongest storm on record to strike the island directly. (Jamaica, Caribbean)",
     "sources": [
@@ -1094,6 +1170,7 @@
   {
     "id": "MP1",
     "sector": "Political",
+    "tagline": "Cell to State House.",
     "tone": "Hopeful",
     "signal": "In March 2024, Bassirou Diomaye Faye left prison in Senegal and won the presidency 10 days later, with about 54% of the vote. At 44 he became Senegal's youngest president. (Senegal)",
     "sources": [
@@ -1111,6 +1188,7 @@
   {
     "id": "MP2",
     "sector": "Political",
+    "tagline": "Elected in the chat.",
     "tone": "Hopeful",
     "signal": "In September 2025, young protesters in Nepal brought down the government. Then thousands of them voted on Discord, a chat app, for an interim prime minister: Sushila Karki, Nepal's first woman to hold the job. 74 people died in the protests, by the official count. (Nepal)",
     "sources": [
@@ -1128,6 +1206,7 @@
   {
     "id": "MP3",
     "sector": "Political",
+    "tagline": "Picked at random.",
     "tone": "Hopeful",
     "signal": "Since 2017, Mongolia's law says some constitutional changes must first go to a deliberative poll: a random sample of citizens who learn, debate, and then vote. (Mongolia)",
     "sources": [
@@ -1141,6 +1220,7 @@
   {
     "id": "MP4",
     "sector": "Political",
+    "tagline": "Home, behind walls.",
     "tone": "Hopeful",
     "signal": "In December 2022, Germany returned 20 Benin Bronzes looted by British soldiers in 1897, part of more than 1,100 promised to Nigeria. Nigeria's president then named the Oba (king) of Benin as their owner, not the state's museums. (Nigeria)",
     "sources": [
@@ -1162,6 +1242,7 @@
   {
     "id": "MP5",
     "sector": "Political",
+    "tagline": "Who pays first?",
     "tone": "Hopeful",
     "signal": "Pacific island students began a campaign that Vanuatu took to the UN's top court. In July 2025 the International Court of Justice ruled unanimously that countries have legal duties to act on climate change. (Vanuatu, Pacific)",
     "sources": [
@@ -1175,6 +1256,7 @@
   {
     "id": "MP6",
     "sector": "Political",
+    "tagline": "Repair, two ways.",
     "tone": "Hopeful",
     "signal": "The African Union made 2025 its year of \"Justice for Africans and People of African Descent Through Reparations,\" and met with Caribbean leaders in Addis Ababa to press former colonial powers together. (Africa, Caribbean)",
     "sources": [
@@ -1192,6 +1274,7 @@
   {
     "id": "MP7",
     "sector": "Political",
+    "tagline": "Give it time?",
     "tone": "Hopeful",
     "signal": "In June 2024, Mexico elected Claudia Sheinbaum, its first woman president, with between 58.3% and 60.7% of the vote (early official count). (Mexico)",
     "sources": [
@@ -1205,6 +1288,7 @@
   {
     "id": "MP8",
     "sector": "Political",
+    "tagline": "News is elsewhere.",
     "tone": "Hard",
     "signal": "Sudan's civil war has made it the world's largest displacement crisis: 12 million people displaced as of July 2025. (Sudan)",
     "sources": [
@@ -1218,6 +1302,7 @@
   {
     "id": "MP9",
     "sector": "Political",
+    "tagline": "Basement school.",
     "tone": "Hard",
     "signal": "UNESCO says at least 1.4 million girls in Afghanistan have been banned from secondary school since 2021. It is the only country that bans girls from secondary and higher education. (Afghanistan)",
     "sources": [
@@ -1231,6 +1316,7 @@
   {
     "id": "MP10",
     "sector": "Political",
+    "tagline": "Vote, or not?",
     "tone": "Hard",
     "signal": "V-Dem's 2025 report found that about 72% of the world's people now live under autocracy, and autocracies outnumber democracies for the first time in over 20 years. (Global)",
     "sources": [

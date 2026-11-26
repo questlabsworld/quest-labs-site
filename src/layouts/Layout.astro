@@ -704,7 +704,61 @@ const navLinks = [
     </ul>
   </nav>
 
+  <a href="/black-menagerie#presale" class="presale-banner"><span aria-hidden="true">🪼</span> Take the Black Menagerie home. <b>Pre-sale is open →</b></a>
+  <style>
+    .presale-banner { position: relative; z-index: 2; display: block; text-align: center; padding: 0.6rem 1rem; background: linear-gradient(90deg, rgba(107,63,160,0.35), rgba(122,82,199,0.5), rgba(107,63,160,0.35)); border-bottom: 0.5px solid rgba(196,168,232,0.35); color: #f0ecf8; font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.06em; text-decoration: none; margin-bottom: 2.5rem; }
+    .presale-banner b { color: #E8D9FF; font-weight: 700; }
+    .presale-banner:hover b { text-decoration: underline; text-underline-offset: 3px; }
+  </style>
   <slot />
+  <div class="whisper-strip">
+    <button type="button" class="whisper-env" id="whisperEnv">✉ Open a whisper from Viola</button>
+    <p class="whisper-text" id="whisperText" hidden></p>
+    <a class="whisper-src" id="whisperSrc" hidden href="https://schaltzeit.com/black-menagerie-interview-makeda-gershenson/" target="_blank" rel="noopener noreferrer">from Makēda's interview with Schaltzeit ↗</a>
+  </div>
+  <div class="viola-door" id="violaDoor">
+    <div class="viola-door__menu" id="violaMenu" hidden>
+      <p class="viola-door__hi">Need a door?</p>
+      <a href="/black-menagerie/play">Try a signal</a>
+      <a href="https://lu.ma/questlabs" target="_blank" rel="noopener noreferrer">Find a Sandbox Session</a>
+      <a href="/black-menagerie#presale">Take the Menagerie home</a>
+    </div>
+    <button type="button" class="viola-door__btn" id="violaBtn" aria-expanded="false" aria-controls="violaMenu" aria-label="Viola Ion: need a door?">
+      <img src="/images/viola/viola-ion.webp" alt="" width="600" height="659" />
+    </button>
+  </div>
+  <style>
+    .whisper-strip { position: relative; z-index: 1; text-align: center; padding: 1.5rem 1rem 0; }
+    .whisper-env { background: #1a1526; border: 1px dashed #F0B47A; color: #F0B47A; border-radius: 10px; padding: 0.6rem 1.1rem; font-family: 'Special Elite', 'Courier New', monospace; font-size: 1rem; cursor: pointer; }
+    .whisper-env:hover { background: #231c33; }
+    .whisper-text { font-family: 'Special Elite', 'Courier New', monospace; font-size: 1.15rem; color: #f0ecf8; max-width: 560px; margin: 0.9rem auto 0.3rem; line-height: 1.5; }
+    .whisper-text[hidden], .whisper-src[hidden] { display: none; }
+    .whisper-src { display: inline-block; font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #B48FE0; text-decoration: none; }
+    .whisper-src:hover { text-decoration: underline; }
+    .viola-door { position: fixed; right: 18px; bottom: 18px; z-index: 8000; display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem; }
+    .viola-door__btn { width: 60px; height: 60px; border-radius: 50%; padding: 0; overflow: hidden; background: #fff; border: 2px solid #B48FE0; box-shadow: 0 0 0 6px rgba(180,143,224,0.15), 0 8px 24px rgba(0,0,0,0.4); cursor: pointer; }
+    .viola-door__btn img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; transform: scale(1.5); transform-origin: center 20%; }
+    .viola-door__menu { background: #1a1526; border: 1px solid #B48FE0; border-radius: 14px; padding: 0.9rem 1rem; display: flex; flex-direction: column; gap: 0.45rem; min-width: 220px; box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
+    .viola-door__menu[hidden] { display: none; }
+    .viola-door__hi { font-family: 'Special Elite', 'Courier New', monospace; font-size: 1.05rem; color: #f0ecf8; margin: 0 0 0.2rem; }
+    .viola-door__menu a { font-family: 'Space Mono', monospace; font-size: 0.8rem; color: #E8D9FF; text-decoration: none; }
+    .viola-door__menu a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    @media (max-width: 600px) { .viola-door__btn { width: 52px; height: 52px; } }
+  </style>
+  <script is:inline>
+    (() => {
+      const btn = document.getElementById('violaBtn'), menu = document.getElementById('violaMenu');
+      btn.addEventListener('click', () => { menu.hidden = !menu.hidden; btn.setAttribute('aria-expanded', String(!menu.hidden)); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { menu.hidden = true; btn.setAttribute('aria-expanded', 'false'); } });
+      const whispers = ["Both seeds and stars begin in the dark.","I see joy as a technology, an anticipatory technology.","The least-picked future is the one we need to practice imagining.","In a world that wants me to hustle and grind, I want to dance and I want to sleep.","Joy is justice.","The quest is to always question.","I want to be nimble enough to dance with whatever comes next.","My felt sense is a signal, a form of futures intelligence we've barely begun to value.","The body is a vessel, both a prototype and an archive of possibilities.","I'd rather plant or tend to the future than use it.","We are earth seed. We are star seed.","Our conditions are serious. That's precisely why we need to play.","Everything needed for change is already here.","What a society forgets shapes which futures it can imagine.","What if dark doesn't mean negative or bad?","The Black Menagerie are companions. A zoo collects and cages. This menagerie travels with you."];
+      const env = document.getElementById('whisperEnv'), txt = document.getElementById('whisperText'), src = document.getElementById('whisperSrc');
+      let last = -1;
+      env.addEventListener('click', () => {
+        let i; do { i = Math.floor(Math.random() * whispers.length); } while (i === last);
+        last = i; txt.textContent = '"' + whispers[i] + '"'; txt.hidden = false; src.hidden = false; env.textContent = '✉ Another whisper';
+      });
+    })();
+  </script>
   <div class="follow-strip">
     Follow the conversation: <a href="https://www.instagram.com/questlabs.world" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.linkedin.com/company/quest-labs-education/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </div>
