@@ -21,11 +21,37 @@ import ViolaSays from '../components/ViolaSays.astro';
   <p class="hero-descriptor">Quest Labs builds the tools, programs, and community for people learning to navigate uncertainty with creativity, courage, and care.</p>
   <p class="hero-sub">A living lab for the art of navigating the unknown.</p>
   <p class="hero-sub hero-sub--2">Built for people who refuse to keep preparing for a world that no longer exists.</p>
-  <ViolaSays sign>
-    <p>I'm Viola Ion. I carry things. Tools, questions, whispers of wisdom and some ancestral intelligence.</p>
-    <p>I'm a gentle nudge that reminds you that you already know something our future needs.</p>
-  </ViolaSays>
+  <details class="ql-fold home-viola">
+    <summary><span class="ql-fold__title">Meet Viola</span></summary>
+    <ViolaSays sign>
+      <p>I'm Viola Ion. I carry things. Tools, questions, whispers of wisdom and some ancestral intelligence.</p>
+      <p>I'm a gentle nudge that reminds you that you already know something our future needs.</p>
+    </ViolaSays>
+  </details>
   <p class="hero-scroll-hint">↓</p>
+</section>
+
+<!-- ===== WHO I AM ===== -->
+<section class="home-who">
+  <img src="/images/about/makeda.webp" alt="Makēda Gershenson" class="home-who__photo" width="801" height="1200" loading="lazy" />
+  <div class="home-who__text">
+    <p class="home-who__line">In classrooms since 2000.</p>
+    <p class="home-who__line">Building playgrounds for the future since 2008.</p>
+    <a href="/about" class="home-who__link">Meet Makēda →</a>
+  </div>
+</section>
+
+<!-- ===== BLACK MENAGERIE TEASER ===== -->
+<section id="black-menagerie-teaser">
+  <div class="bm-teaser-inner">
+    <p class="section-eyebrow">The Black Menagerie · Pre-sale is open</p>
+    <h2 class="bm-teaser-headline">Five creatures.<br>Draw one. See what shifts.</h2>
+    <p class="bm-teaser-body">Scenario thinking. Perspective-taking. A card-based futures literacy practice for anyone trying to navigate what is coming and who they need to become to meet it.</p>
+    <div class="home-bm-ctas">
+      <a href="/black-menagerie/play" class="btn-primary">Draw a card</a>
+      <a href="/black-menagerie" class="btn-secondary">See the pre-sale</a>
+    </div>
+  </div>
 </section>
 
 <!-- ===== WHERE DO YOU BELONG ===== -->
@@ -35,7 +61,7 @@ import ViolaSays from '../components/ViolaSays.astro';
 
   <h2 class="eco-heading">Where do you belong in this ecosystem?</h2>
 
-  <div class="ecosystem-cards">
+  <div class="ecosystem-cards home-eco-solo">
 
     <div class="eco-card">
       <div class="eco-emoji">🌱</div>
@@ -45,12 +71,18 @@ import ViolaSays from '../components/ViolaSays.astro';
       <a href="https://lu.ma/questlabs" class="eco-cta" target="_blank" rel="noopener noreferrer">Find a session →</a>
     </div>
 
+  </div>
+
+  <details class="ql-fold home-more">
+    <summary><span class="ql-fold__title">More ways in</span></summary>
+    <div class="ecosystem-cards">
+
     <div class="eco-card eco-card--primary">
-      <div class="eco-card-badge">Cohort 02 Forming</div>
+      <div class="eco-card-badge">Crew 02 Forming</div>
       <div class="eco-emoji">🔥</div>
       <div class="eco-intent">I want the full arc</div>
-      <h3 class="eco-label">FLIP Cohorts</h3>
-      <p class="eco-desc">12 weeks, embodied.<br>The founding cohort is full and already in motion.<br>Cohort 02 is now forming.</p>
+      <h3 class="eco-label">FLIP Crews</h3>
+      <p class="eco-desc">12 weeks, embodied.<br>The founding crew is full and already in motion.<br>Crew 02 is now forming.</p>
       <a href="/program#waitlist" class="eco-cta eco-cta--primary">Join the waitlist →</a>
     </div>
 
@@ -71,16 +103,25 @@ import ViolaSays from '../components/ViolaSays.astro';
       <a href="/contact" class="eco-cta">Let's talk →</a>
     </div>
 
-  </div>
-</section>
+    </div>
 
-<!-- ===== FUTURES ALPHABET ===== -->
-<section id="lore">
-  <div class="portal-abc-inner">
-    <p class="section-eyebrow">Futures Alphabet</p>
-    <h2 class="section-title">Seven Literacies for a World in Transition</h2>
-    <p class="portal-abc-sub">Most futures literacy frameworks center cognitive sense-making. The <strong>Futures Alphabet</strong> framework works across a fuller set of dimensions. Embodied futures asks something different of people. That pause is the point.</p>
-    <div class="portal-abc-circle">
+    <div id="cohort-bridge">
+      <div class="cohort-bridge-inner">
+    <p class="cohort-bridge-eyebrow">Crew 02 · Join us</p>
+    <h2 class="cohort-bridge-heading">Ready to go deeper?</h2>
+    <p class="cohort-bridge-body">FLIP, the Futures Literacies Invitational Playground, is a 12-week embodied journey toward your 2032 self. The founding crew continues to quest. Crew 02 is forming now.</p>
+    <div class="cohort-bridge-ctas">
+      <a href="/program#waitlist" class="btn-primary">Crew 02, let's go →</a>
+    </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="ql-fold home-abc">
+    <summary><span class="ql-fold__title">The Futures Alphabet: Seven Literacies for a World in Transition</span></summary>
+    <div class="portal-abc-inner">
+      <p class="portal-abc-sub">Most futures literacy frameworks center cognitive sense-making. The <strong>Futures Alphabet</strong> framework works across a fuller set of dimensions. Embodied futures asks something different of people. That pause is the point.</p>
+      <div class="portal-abc-circle">
       <svg
         class="abcdefg-svg"
         viewBox="0 0 700 700"
@@ -122,31 +163,10 @@ import ViolaSays from '../components/ViolaSays.astro';
         <text x="194" y="220" text-anchor="middle" dominant-baseline="central" font-size="46" font-family="Cormorant Garamond, serif" font-weight="500" fill="#f59e0b">G</text>
         <text x="194" y="257" text-anchor="middle" font-size="13" font-family="Inter, sans-serif" font-weight="400" fill="rgba(255,255,255,0.7)" letter-spacing="0.1em">GENERATIVE</text>
       </svg>
+      </div>
+      <a href="/foundations" class="abc-foundations-link">Explore the theoretical foundations →</a>
     </div>
-    <a href="/foundations" class="abc-foundations-link">Explore the theoretical foundations →</a>
-  </div>
-</section>
-
-<!-- ===== BLACK MENAGERIE TEASER ===== -->
-<section id="black-menagerie-teaser">
-  <div class="bm-teaser-inner">
-    <p class="section-eyebrow">The Black Menagerie · Coming Black Friday 2026</p>
-    <h2 class="bm-teaser-headline">Five creatures.<br>Draw one. See what shifts.</h2>
-    <p class="bm-teaser-body">Scenario thinking. Perspective-taking. A card-based futures literacy practice for anyone trying to navigate what is coming and who they need to become to meet it.</p>
-    <a href="/black-menagerie" class="bm-teaser-link">Meet the five archetypes →</a>
-  </div>
-</section>
-
-<!-- ===== COHORT 02 BRIDGE ===== -->
-<section id="cohort-bridge">
-  <div class="cohort-bridge-inner">
-    <p class="cohort-bridge-eyebrow">Crew 02 · Join us</p>
-    <h2 class="cohort-bridge-heading">Ready to go deeper?</h2>
-    <p class="cohort-bridge-body">FLIP, the Futures Literacies Invitational Playground, is a 12-week embodied journey toward your 2032 self. The founding crew continues to quest. Crew 02 is forming now.</p>
-    <div class="cohort-bridge-ctas">
-      <a href="/program#waitlist" class="btn-primary">Crew 02, let's go →</a>
-    </div>
-  </div>
+  </details>
 </section>
 
 <div class="page-bridge" style="max-width:860px; margin-left:auto; margin-right:auto; padding-left:2.5rem; padding-right:2.5rem;">
@@ -162,7 +182,7 @@ import ViolaSays from '../components/ViolaSays.astro';
       <div class="footer-tagline">A Living Lab for Futures Literacies</div>
     </div>
     <ul class="footer-links">
-      <li><a href="/seed">Seed our Becoming</a></li>
+      <li><a href="/seed">Seed our becoming</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>

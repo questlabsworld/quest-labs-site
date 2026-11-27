@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SeedEnd from '../components/SeedEnd.astro';
 
 const seats = [
   { tier: 'Community', price: '€333', monthly: '€111 a month', link: '' },
@@ -26,13 +27,91 @@ const paySeats = seats.filter((s) => s.link);
   <p class="prog-hero-sub">A 12-week adventure toward the future you haven't dreamed of yet.<br>Come meet your future Self.</p>
 </div>
 
+<!-- ── THREE WAYS IN ── -->
+<section id="ways" class="prog-what-section prog-ways-top">
+  <div class="prog-reveal">
+    <div class="prog-doors">
+      <p class="prog-section-label">Three ways in</p>
+      <ol class="prog-doors-list prog-ways-cards">
+        <li>
+          <details class="ql-fold ql-fold--row prog-way">
+          <summary><span class="prog-doors-num">1</span><span class="ql-fold__title prog-doors-title">Print the zine <span class="prog-doors-aside">(play today)</span></span></summary>
+          <div>
+            <p class="prog-doors-body">The Futures Alphabet is free for your email. One sheet of paper, a few folds, one snip, seven ways to play with the future.</p>
+            <form class="prog-zine-form" id="zineForm" name="zine-download" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="zine-download" />
+              <label class="prog-zine-form-label" for="zineEmail">Your email</label>
+              <div class="prog-zine-form-row">
+                <input class="prog-waitlist-input" id="zineEmail" type="email" name="email" placeholder="you@example.com" required />
+                <button class="prog-btn prog-btn-primary" type="submit">Send me the zine →</button>
+              </div>
+              <p class="prog-zine-form-note">We keep the channel open to share new things with you.<br>Unsubscribe whenever you want.<br>How we hold your data: <a href="/privacy" class="prog-doors-link">Privacy</a> <span class="prog-pending">in review</span></p>
+            </form>
+            <div id="zineConfirm" style="display:none;">
+              <p class="prog-doors-body">Thank you. Your zine is ready.</p>
+              <a href="/downloads/futures-alphabet-zine.pdf" class="prog-doors-link" target="_blank" rel="noopener" data-goatcounter-click="zine-download" data-goatcounter-title="Futures Alphabet zine PDF">Download the zine (PDF) →</a>
+              <p class="prog-doors-body" style="margin-top:0.75rem;">Made something?<br>Post it and tag us so we can share it: <a href="https://www.instagram.com/questlabs.world" class="prog-doors-link" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.linkedin.com/company/quest-labs-education/" class="prog-doors-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+            </div>
+          </div>
+          </details>
+        </li>
+        <li>
+          <details class="ql-fold ql-fold--row prog-way">
+          <summary><span class="prog-doors-num">2</span><span class="ql-fold__title prog-doors-title">Bring it to a Sandbox Session.</span></summary>
+          <div>
+            <p class="prog-doors-body">Open door, donation based. Share what you made and play with others.</p>
+            <a href="https://lu.ma/questlabs" class="prog-doors-link" target="_blank" rel="noopener noreferrer">Find a Sandbox Session →</a>
+          </div>
+          </details>
+        </li>
+        <li>
+          <details class="ql-fold ql-fold--row prog-way">
+          <summary><span class="prog-doors-num">3</span><span class="ql-fold__title prog-doors-title">Or join the next crew.</span></summary>
+          <div>
+            <p class="prog-doors-body">12 weeks, 6 travelers. Your zine grows into a living document.</p>
+            <p class="prog-doors-body prog-price">You choose your tier: €333, €666 or €888.</p>
+            <p class="prog-doors-body">Pay in full, monthly, or over a season.<br>Can't pay? Come play.</p>
+            <a href="#waitlist" class="prog-doors-link">Sign up for Crew 02 →</a>
+          </div>
+          </details>
+        </li>
+      </ol>
+    </div>
+
+    <div class="prog-zine">
+      <div class="prog-zine-stack">
+        <img src="/images/zine/futures-alphabet-cover.webp" alt="The Futures Alphabet zine, folded, front cover" width="600" height="853" loading="lazy" />
+      </div>
+      <svg class="prog-zine-arrow" viewBox="0 0 170 80" aria-hidden="true">
+        <path d="M10 58 C 34 18, 92 8, 150 40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+        <path d="M126 24 L152 41 L124 54" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <div class="prog-zine-caption">
+        <p class="prog-zine-kicker">A living document.</p>
+        <p class="prog-zine-equation">Manifesto<br>+ Methodology<br>+ Spell</p>
+      </div>
+    </div>
+
+    <div class="prog-educator-bridge" style="margin-top: 3rem;">
+      <p class="prog-educator-bridge__label">Leading a school or a classroom?</p>
+      <a href="/partner" class="prog-educator-bridge__link">Partner with us →</a>
+    </div>
+
+    <div class="prog-educator-bridge" style="margin-top: 1rem;">
+      <p class="prog-educator-bridge__label">Researcher? In the field of futures?</p>
+      <a href="/foundations" class="prog-educator-bridge__link">The methodology, lineage, and framework behind every program →</a>
+    </div>
+  </div>
+</section>
+
 <div class="prog-divider"></div>
 
 <!-- ── THE PREMISE ── -->
 <section id="what" class="prog-what-section">
   <div class="prog-reveal">
     <p class="prog-section-label">The Premise</p>
-    <h2 class="prog-section-title">Somewhere between 2026 and 2032,<br>there is a <em>portal</em>.</h2>
+    <details class="ql-fold prog-fold">
+    <summary><h2 class="ql-fold__title prog-fold__title">Somewhere between 2026 and 2032,<br>there is a <em>portal</em>.</h2></summary>
     <p class="prog-section-body">
       We're crossing a threshold into the unknown...<br><br>
       ...but don't lose hope.<br><br>
@@ -44,6 +123,7 @@ const paySeats = seats.filter((s) => s.link);
       We gather what serves our future Selves.<br><br>
       We unearth unknowns. <span role="img" aria-label="hole"><img class="emoji-img emoji-img--lg" src="/images/emoji/hole.svg" alt="" /></span>
     </p>
+    </details>
   </div>
 </section>
 
@@ -77,12 +157,15 @@ const paySeats = seats.filter((s) => s.link);
 
     <div class="prog-seat-box">
       <p class="prog-waitlist-body prog-price">A seat is €333 community · €666 standard · €888 sustaining.</p>
+      <p class="prog-waitlist-body prog-small">Prices are in euros. Your bank converts them for you.</p>
+      <details class="ql-fold prog-seat-fold">
+        <summary><span class="ql-fold__title">How seats work</span></summary>
       <p class="prog-waitlist-body">You choose your tier.<br>It's flexible.<br>Let's build together.</p>
       <p class="prog-waitlist-body">FLIP is a community of practice.<br>Once a crew gets going, it keeps going.</p>
       <p class="prog-waitlist-body">A Community seat is less than €1 a day over a year.<br>Pay in full or in 3 monthly payments.<br>Or take the year, or take the season.<br>Move at your own pace.</p>
       <p class="prog-waitlist-body">Can't pay?<br>Come play.<br>Pop in when you can.</p>
       <p class="prog-waitlist-body"><strong class="prog-price"><img class="emoji-img" src="/images/emoji/snowman.svg" alt="" /><img class="emoji-img" src="/images/emoji/sun.svg" alt="" /> Holiday snowball plan:</strong><br>It's the holidays, we know. <img class="emoji-img" src="/images/emoji/melting.svg" alt="" /><br>Start paying in the new year, or spread your seat over 6 to 12 months.<br>We round down.<br><a href="/contact" class="prog-doors-link">Write to us and we'll work it out →</a></p>
-      <p class="prog-waitlist-body prog-small">Prices are in euros. Your bank converts them for you.</p>
+      </details>
     </div>
 
     {paySeats.length > 0 && (
@@ -96,7 +179,10 @@ const paySeats = seats.filter((s) => s.link);
       </div>
     )}
 
-    <p class="prog-waitlist-body">Not in the cards right now?<br>Join the Community Crew for free.<br>Follow along on <a href="https://www.instagram.com/questlabs.world" class="prog-doors-link" target="_blank" rel="noopener noreferrer">Instagram</a> and <a href="https://www.linkedin.com/company/quest-labs-education/" class="prog-doors-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>, and witness futures grow.<br>Your presence is the present. <img class="emoji-img" src="/images/emoji/gift.svg" alt="" /></p>
+    <details class="ql-fold prog-seat-fold">
+      <summary><span class="ql-fold__title">Not in the cards right now?</span></summary>
+    <p class="prog-waitlist-body">Join the Community Crew for free.<br>Follow along on <a href="https://www.instagram.com/questlabs.world" class="prog-doors-link" target="_blank" rel="noopener noreferrer">Instagram</a> and <a href="https://www.linkedin.com/company/quest-labs-education/" class="prog-doors-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>, and witness futures grow.<br>Your presence is the present. <img class="emoji-img" src="/images/emoji/gift.svg" alt="" /></p>
+    </details>
     <p class="prog-waitlist-body">Want to hear when Crew 02 opens?<br>Sign up below, and <a href="https://lu.ma/questlabs" class="prog-doors-link" target="_blank" rel="noopener noreferrer">come join a Sandbox →</a></p>
 
     <form class="prog-waitlist-form" id="waitlistForm" name="cohort-02-waitlist" method="POST" data-netlify="true">
@@ -118,82 +204,6 @@ const paySeats = seats.filter((s) => s.link);
 
   </div>
 </div>
-
-<div class="prog-divider"></div>
-
-<!-- ── THREE WAYS IN ── -->
-<section id="ways" class="prog-what-section">
-  <div class="prog-reveal">
-    <div class="prog-zine">
-      <div class="prog-zine-stack">
-        <img src="/images/zine/futures-alphabet-cover.webp" alt="The Futures Alphabet zine, folded, front cover" width="600" height="853" loading="lazy" />
-      </div>
-      <svg class="prog-zine-arrow" viewBox="0 0 170 80" aria-hidden="true">
-        <path d="M10 58 C 34 18, 92 8, 150 40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
-        <path d="M126 24 L152 41 L124 54" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-      <div class="prog-zine-caption">
-        <p class="prog-zine-kicker">A living document.</p>
-        <p class="prog-zine-equation">Manifesto<br>+ Methodology<br>+ Spell</p>
-      </div>
-    </div>
-
-    <div class="prog-doors">
-      <p class="prog-section-label">Three ways in</p>
-      <ol class="prog-doors-list">
-        <li>
-          <span class="prog-doors-num">1</span>
-          <div>
-            <p class="prog-doors-title">Print the zine <span class="prog-doors-aside">(play today)</span></p>
-            <p class="prog-doors-body">The Futures Alphabet is free for your email. One sheet of paper, a few folds, one snip, seven ways to play with the future.</p>
-            <form class="prog-zine-form" id="zineForm" name="zine-download" method="POST" data-netlify="true">
-              <input type="hidden" name="form-name" value="zine-download" />
-              <label class="prog-zine-form-label" for="zineEmail">Your email</label>
-              <div class="prog-zine-form-row">
-                <input class="prog-waitlist-input" id="zineEmail" type="email" name="email" placeholder="you@example.com" required />
-                <button class="prog-btn prog-btn-primary" type="submit">Send me the zine →</button>
-              </div>
-              <p class="prog-zine-form-note">We keep the channel open to share new things with you.<br>Unsubscribe whenever you want.<br>How we hold your data: <a href="/privacy" class="prog-doors-link">Privacy</a> <span class="prog-pending">in review</span></p>
-            </form>
-            <div id="zineConfirm" style="display:none;">
-              <p class="prog-doors-body">Thank you. Your zine is ready.</p>
-              <a href="/downloads/futures-alphabet-zine.pdf" class="prog-doors-link" target="_blank" rel="noopener" data-goatcounter-click="zine-download" data-goatcounter-title="Futures Alphabet zine PDF">Download the zine (PDF) →</a>
-              <p class="prog-doors-body" style="margin-top:0.75rem;">Made something?<br>Post it and tag us so we can share it: <a href="https://www.instagram.com/questlabs.world" class="prog-doors-link" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.linkedin.com/company/quest-labs-education/" class="prog-doors-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <span class="prog-doors-num">2</span>
-          <div>
-            <p class="prog-doors-title">Bring it to a Sandbox Session.</p>
-            <p class="prog-doors-body">Open door, donation based. Share what you made and play with others.</p>
-            <a href="https://lu.ma/questlabs" class="prog-doors-link" target="_blank" rel="noopener noreferrer">Find a Sandbox Session →</a>
-          </div>
-        </li>
-        <li>
-          <span class="prog-doors-num">3</span>
-          <div>
-            <p class="prog-doors-title">Or join the next crew.</p>
-            <p class="prog-doors-body">12 weeks, 6 travelers. Your zine grows into a living document.</p>
-            <p class="prog-doors-body prog-price">You choose your tier: €333, €666 or €888.</p>
-            <p class="prog-doors-body">Pay in full, monthly, or over a season.<br>Can't pay? Come play.</p>
-            <a href="#waitlist" class="prog-doors-link">Sign up for Crew 02 →</a>
-          </div>
-        </li>
-      </ol>
-    </div>
-
-    <div class="prog-educator-bridge" style="margin-top: 3rem;">
-      <p class="prog-educator-bridge__label">Leading a school or a classroom?</p>
-      <a href="/partner" class="prog-educator-bridge__link">Partner with us →</a>
-    </div>
-
-    <div class="prog-educator-bridge" style="margin-top: 1rem;">
-      <p class="prog-educator-bridge__label">Researcher? In the field of futures?</p>
-      <a href="/foundations" class="prog-educator-bridge__link">The methodology, lineage, and framework behind every program →</a>
-    </div>
-  </div>
-</section>
 
 <div class="prog-divider"></div>
 
@@ -384,6 +394,8 @@ const paySeats = seats.filter((s) => s.link);
 
 <!-- ── TESTIMONIALS ── -->
 <div class="prog-testimonials-section">
+  <details class="ql-fold prog-fold">
+  <summary><span class="ql-fold__title">What travelers say</span></summary>
   <div class="prog-testimonials-inner">
 
     <blockquote class="prog-testimonial prog-reveal">
@@ -397,13 +409,14 @@ const paySeats = seats.filter((s) => s.link);
     </blockquote>
 
   </div>
+  </details>
 </div>
 
 
 <!-- ── CLOSING ── -->
 <div class="prog-closing-section">
   <p class="prog-closing-quote prog-reveal">"We need every dream. Especially yours.<br>Start where you are to get where we're going."</p>
-  <p class="prog-closing-attr prog-reveal" style="transition-delay:0.15s">— Quest Labs</p>
+  <p class="prog-closing-attr prog-reveal" style="transition-delay:0.15s">Quest Labs</p>
 </div>
 
 <div class="page-bridge" style="max-width:860px; margin-left:auto; margin-right:auto; padding-left:2.5rem; padding-right:2.5rem;">
@@ -412,6 +425,8 @@ const paySeats = seats.filter((s) => s.link);
   <a href="/partner" class="bridge-link" style="margin-top:0.5rem;">Leading a school or a classroom? Partner with us →</a>
 </div>
 
+<SeedEnd />
+
 <footer>
   <div class="footer-inner">
     <div>
@@ -419,7 +434,7 @@ const paySeats = seats.filter((s) => s.link);
       <div class="footer-tagline">A Living Lab for Futures Literacies</div>
     </div>
     <ul class="footer-links">
-      <li><a href="/seed">Seed our Becoming</a></li>
+      <li><a href="/seed">Seed our becoming</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/contact">Contact</a></li>
       <li><a href="/privacy">Privacy</a> <span class="prog-pending">in review</span></li>
@@ -466,6 +481,14 @@ const progObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 progReveals.forEach(r => progObserver.observe(r));
+
+function openFoldFor(hash) {
+  const target = hash && document.querySelector(hash);
+  const fold = target && target.closest('details');
+  if (fold) { fold.open = true; target.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+}
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', () => openFoldFor(a.getAttribute('href'))));
+openFoldFor(location.hash);
 </script>
 
 <style is:global>
@@ -545,9 +568,7 @@ progReveals.forEach(r => progObserver.observe(r));
 
   /* ── REVEAL ANIMATION ── */
   .prog-reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    opacity: 1;
   }
   .prog-reveal.visible {
     opacity: 1;
@@ -577,8 +598,6 @@ progReveals.forEach(r => progObserver.observe(r));
     text-transform: uppercase;
     color: var(--teal);
     margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: progFadeUp 0.8s ease 0.2s forwards;
   }
   .prog-hero-title {
     font-family: 'Cinzel', serif;
@@ -588,8 +607,6 @@ progReveals.forEach(r => progObserver.observe(r));
     line-height: 0.9;
     color: var(--gold-pale);
     margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: progFadeUp 0.8s ease 0.35s forwards;
   }
   .prog-hero-subtitle {
     font-family: 'Cormorant Garamond', serif;
@@ -597,24 +614,18 @@ progReveals.forEach(r => progObserver.observe(r));
     font-weight: 400;
     color: var(--text-dim);
     margin-bottom: 0.5rem;
-    opacity: 0;
-    animation: progFadeUp 0.8s ease 0.5s forwards;
   }
   .prog-hero-sub {
     font-size: 1rem;
     color: var(--text-dim);
     line-height: 1.7;
     margin-bottom: 2.5rem;
-    opacity: 0;
-    animation: progFadeUp 0.8s ease 0.65s forwards;
   }
   .prog-hero-cta {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
     align-items: center;
-    opacity: 0;
-    animation: progFadeUp 0.8s ease 0.8s forwards;
   }
   .prog-scroll-hint {
     margin-top: 4rem;
@@ -626,8 +637,6 @@ progReveals.forEach(r => progObserver.observe(r));
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: rgba(240, 236, 248, 0.25);
-    opacity: 0;
-    animation: progFadeUp 0.8s ease 1s forwards;
   }
   .prog-scroll-line {
     width: 40px;

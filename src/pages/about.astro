@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ViolaSays from '../components/ViolaSays.astro';
+import SeedEnd from '../components/SeedEnd.astro';
 ---
 
 <Layout
@@ -18,7 +19,7 @@ import ViolaSays from '../components/ViolaSays.astro';
 <!-- ── BIO GRID ── -->
 <div class="about-grid">
   <div class="about-image-block">
-    <img src="/images/about/makeda.webp" alt="Makēda Gershenson" class="about-photo" loading="lazy" width="801" height="1200" />
+    <img src="/images/about/makeda.webp" alt="Makēda Gershenson" class="about-photo" width="801" height="1200" />
     <div class="about-image-stats">
       <div class="about-stat">
         <span class="about-stat__num">20+</span>
@@ -47,36 +48,36 @@ import ViolaSays from '../components/ViolaSays.astro';
       <div class="about-bio-label">A little bit about me</div>
       <div class="bio-cards">
 
-        <div class="bio-card">
-          <div class="bio-card__tag">Founding</div>
+        <details class="ql-fold ql-fold--row bio-card">
+          <summary><span class="ql-fold__title bio-card__tag">Founding</span></summary>
           <p class="bio-card__text">Founder of Mosaics in the Making (2012) and Quest Labs (2022), A Living Lab for Futures Literacies.</p>
-        </div>
+        </details>
 
-        <div class="bio-card">
-          <div class="bio-card__tag">Practice</div>
+        <details class="ql-fold ql-fold--row bio-card">
+          <summary><span class="ql-fold__title bio-card__tag">Practice</span></summary>
           <p class="bio-card__text">Nearly twenty years building spaces where people think, feel, and act differently.</p>
-        </div>
+        </details>
 
-        <div class="bio-card">
-          <div class="bio-card__tag">Reach</div>
+        <details class="ql-fold ql-fold--row bio-card">
+          <summary><span class="ql-fold__title bio-card__tag">Reach</span></summary>
           <p class="bio-card__text">Classrooms in Palo Alto, the South Bronx, and international schools across the globe: staff development, restorative practices, and futures facilitation.</p>
-        </div>
+        </details>
 
-        <div class="bio-card">
-          <div class="bio-card__tag">Education</div>
+        <details class="ql-fold ql-fold--row bio-card">
+          <summary><span class="ql-fold__title bio-card__tag">Education</span></summary>
           <p class="bio-card__text">Dual BAs and an MEd from Stanford. Executive MBA from Quantic. MA candidate in Futures Research at FU Berlin Institut Futur.</p>
-        </div>
+        </details>
 
-        <div class="bio-card">
-          <div class="bio-card__tag">Roots</div>
+        <details class="ql-fold ql-fold--row bio-card">
+          <summary><span class="ql-fold__title bio-card__tag">Roots</span></summary>
           <!-- TODO: update coauthored paper title — ask Makēda for new title -->
           <p class="bio-card__text">Trained with Riel Miller (UNESCO), Sohail Inayatullah (CLA), Ivana Milojević, and Jake Dunagan (IFTF). Co-authored <a href="https://jfsdigital.org/2026/05/07/25501/" target="_blank" rel="noopener" style="color:var(--violet-light,#B48FE0);text-decoration:underline;text-underline-offset:3px"><em>Metaphors for Reimagined Futures</em></a>.</p>
-        </div>
+        </details>
 
-        <div class="bio-card">
-          <div class="bio-card__tag">Frameworks</div>
+        <details class="ql-fold ql-fold--row bio-card">
+          <summary><span class="ql-fold__title bio-card__tag">Frameworks</span></summary>
           <p class="bio-card__text">Developer of <a href="/black-menagerie" class="text-bright" style="text-decoration:underline;text-underline-offset:3px">The Black Menagerie</a> and <a href="/foundations" class="text-bright" style="text-decoration:underline;text-underline-offset:3px">The Futures Alphabet</a>. A living methodology.</p>
-        </div>
+        </details>
 
       </div>
     </div>
@@ -105,26 +106,22 @@ import ViolaSays from '../components/ViolaSays.astro';
     <h2 class="work-title">Four ways to bring<br>this work to your world</h2>
 
     <div class="work-cards">
-      <div class="work-card">
-        <div class="work-card__num">01</div>
-        <div class="work-card__heading">For your school or district</div>
+      <details class="ql-fold ql-fold--row work-card">
+        <summary><span class="ql-fold__sum"><span class="work-card__num">01</span><span class="ql-fold__title work-card__heading">For your school or district</span></span></summary>
         <p class="work-card__body">Custom Sandbox Sessions, Sarkar Sandbox facilitation, STEEPLES Bingo for staff development, futures literacy workshops. Built around what your educators actually need.</p>
-      </div>
-      <div class="work-card">
-        <div class="work-card__num">02</div>
-        <div class="work-card__heading">For your organization</div>
+      </details>
+      <details class="ql-fold ql-fold--row work-card">
+        <summary><span class="ql-fold__sum"><span class="work-card__num">02</span><span class="ql-fold__title work-card__heading">For your organization</span></span></summary>
         <p class="work-card__body">Organizational futures research, STEEPLES Bingo for leadership teams, participatory foresight facilitation, custom futures literacy experiences via Mosaics in the Making.</p>
-      </div>
-      <div class="work-card">
-        <div class="work-card__num">03</div>
-        <div class="work-card__heading">As an individual</div>
+      </details>
+      <details class="ql-fold ql-fold--row work-card">
+        <summary><span class="ql-fold__sum"><span class="work-card__num">03</span><span class="ql-fold__title work-card__heading">As an individual</span></span></summary>
         <p class="work-card__body">Join FLIP. Twelve weeks, six travelers. Crew 02 is forming now.</p>
-      </div>
-      <div class="work-card">
-        <div class="work-card__num">04</div>
-        <div class="work-card__heading">Sponsor a seat</div>
+      </details>
+      <details class="ql-fold ql-fold--row work-card">
+        <summary><span class="ql-fold__sum"><span class="work-card__num">04</span><span class="ql-fold__title work-card__heading">Sponsor a seat</span></span></summary>
         <p class="work-card__body">20 sponsored seats. Fund an educator's place in the room. Pay it forward and materially disrupt systems of oppression and harm.</p>
-      </div>
+      </details>
     </div>
 
     <div class="cta-group">
@@ -135,6 +132,8 @@ import ViolaSays from '../components/ViolaSays.astro';
   </div>
 </section>
 
+<SeedEnd />
+
 <footer>
   <div class="footer-inner">
     <div>
@@ -142,7 +141,7 @@ import ViolaSays from '../components/ViolaSays.astro';
       <div class="footer-tagline">A Living Lab for Futures Literacies</div>
     </div>
     <ul class="footer-links">
-      <li><a href="/seed">Seed our Becoming</a></li>
+      <li><a href="/seed">Seed our becoming</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
@@ -169,8 +168,6 @@ import ViolaSays from '../components/ViolaSays.astro';
     text-transform: uppercase;
     color: var(--teal);
     margin-bottom: 1.25rem;
-    opacity: 0;
-    animation: progFadeUp 0.8s ease 0.2s forwards;
   }
   .about-title {
     font-family: 'Cinzel', serif;
@@ -181,8 +178,6 @@ import ViolaSays from '../components/ViolaSays.astro';
     color: var(--gold-pale);
     margin-bottom: 0.75rem;
     line-height: 1.1;
-    opacity: 0;
-    animation: progFadeUp 0.8s ease 0.4s forwards;
   }
   .about-sub {
     font-style: italic;
@@ -191,8 +186,6 @@ import ViolaSays from '../components/ViolaSays.astro';
     max-width: 520px;
     margin: 0 auto;
     line-height: 1.75;
-    opacity: 0;
-    animation: progFadeUp 0.8s ease 0.6s forwards;
   }
 
   /* ── BIO GRID ── */
@@ -295,29 +288,13 @@ import ViolaSays from '../components/ViolaSays.astro';
   }
 
   /* ── BIO CARDS (2×3 grid) ── */
-  .bio-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: rgba(107, 63, 160, 0.15);
-    border: 0.5px solid rgba(107, 63, 160, 0.2);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  .bio-card {
-    background: var(--bg);
-    padding: 1.1rem 1.1rem 1.2rem;
-    transition: background 0.2s;
-  }
-  .bio-card:hover { background: rgba(107, 63, 160, 0.06); }
+  .bio-cards { display: block; }
   .bio-card__tag {
     font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.8rem !important;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--violet-light, #B48FE0);
-    margin-bottom: 0.45rem;
-    opacity: 0.75;
   }
   .bio-card__text {
     color: var(--text-dim);
@@ -327,9 +304,6 @@ import ViolaSays from '../components/ViolaSays.astro';
   }
   .bio-card__text em { color: var(--text); font-style: italic; }
 
-  @media (max-width: 580px) {
-    .bio-cards { grid-template-columns: 1fr; }
-  }
 
   /* ── CLOSING ── */
   .about-closing { margin-top: 2rem; }
@@ -407,32 +381,22 @@ import ViolaSays from '../components/ViolaSays.astro';
   /* Cards: 4-up with hairline dividers between them */
   .work-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: rgba(107, 63, 160, 0.18);
-    border: 0.5px solid rgba(107, 63, 160, 0.22);
-    border-radius: 4px;
-    overflow: hidden;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 1rem;
+    align-items: start;
     margin-bottom: 2rem;
   }
-  .work-card {
-    background: var(--bg);
-    padding: 1.75rem 1.5rem;
-    transition: background 0.2s;
-  }
-  .work-card:hover { background: rgba(107, 63, 160, 0.07); }
   .work-card__num {
     font-family: 'Space Mono', monospace;
     font-size: 0.75rem;
     letter-spacing: 0.15em;
     color: rgba(180, 143, 224, 0.45);
-    margin-bottom: 0.75rem;
   }
   .work-card__heading {
-    font-size: 1.05rem;
+    font-family: 'Mulish', sans-serif !important;
+    font-size: 1.05rem !important;
     font-weight: 600;
     color: #FDFCFA;
-    margin-bottom: 0.6rem;
     line-height: 1.4;
   }
   .work-card__body {
@@ -443,17 +407,20 @@ import ViolaSays from '../components/ViolaSays.astro';
   }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 960px) {
-    .work-cards { grid-template-columns: repeat(2, 1fr); }
-  }
   @media (max-width: 768px) {
     .about-grid {
       grid-template-columns: 1fr;
       gap: 2.5rem;
       padding: 0 1.5rem;
     }
-    .about-image-block { position: static; }
-    .about-image-stats { grid-template-columns: repeat(3, 1fr); }
+    .about-image-block { position: static; display: flex; align-items: stretch; gap: 0.75rem; max-width: 360px; margin: 0 auto; }
+    .about-photo { width: 120px; height: 160px; object-fit: cover; object-position: center 15%; flex: none; }
+    .about-image-stats { grid-template-columns: 1fr !important; flex: 1; border-top: 0.5px solid rgba(107, 63, 160, 0.2); border-radius: 3px; }
+    .about-stat { flex-direction: row; align-items: baseline; gap: 0.6rem; padding: 0.5rem 0.75rem; }
+    .about-stat__label { font-size: 0.7rem; }
+    .about-hero { padding: 2rem 1.5rem 0.5rem; }
+    .about-grid { margin-top: 1.25rem; gap: 1.5rem; }
+    .about-text-block { padding-top: 1.25rem !important; }
     .about-text-block {
       border-left: none;
       border-top: 0.5px solid var(--border-dim);
