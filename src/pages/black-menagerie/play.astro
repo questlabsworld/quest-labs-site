@@ -52,14 +52,18 @@ const worlds = [
         <p>We're not here to predict... but to tune into the wisdom within.</p>
         <p>The body crosses future thresholds before the mind can make sense.</p>
       </ViolaSays>
-      <h2 class="pl-what-title">Four worlds</h2>
-      <p class="pl-intro-sub">Every moment could tip toward one of four futures.<br>None is good or bad. Each one has gifts and risks.</p>
-      <div class="pl-intro-worlds">
-        {worlds.map((w) => <div class="pl-intro-world"><span class="pl-world-name">{w.name}</span>{w.d}</div>)}
-      </div>
-      <h2 class="pl-what-title pl-lean-title">What does "lean" mean?</h2>
-      <p class="pl-intro-sub">After you read a signal, notice which world it feels closest to.<br>That's your lean.<br>Not a prediction. Not a choice. No right answer.<br>Just where your gut goes first.</p>
-      <p class="pl-credit">The four worlds come from futurist Jim Dator's four generic futures.</p>
+      <details class="pl-fold">
+        <summary><h2 class="pl-what-title">Four worlds</h2></summary>
+        <p class="pl-intro-sub">Every moment could tip toward one of four futures.<br>None is good or bad. Each one has gifts and risks.</p>
+        <div class="pl-intro-worlds">
+          {worlds.map((w) => <div class="pl-intro-world"><span class="pl-world-name">{w.name}</span>{w.d}</div>)}
+        </div>
+        <p class="pl-credit">The four worlds come from futurist Jim Dator's four generic futures.</p>
+      </details>
+      <details class="pl-fold">
+        <summary><h2 class="pl-what-title">What does "lean" mean?</h2></summary>
+        <p class="pl-intro-sub">After you read a signal, notice which world it feels closest to.<br>That's your lean.<br>Not a prediction. Not a choice. No right answer.<br>Just where your gut goes first.</p>
+      </details>
     </div>
   </section>
 
@@ -84,9 +88,9 @@ const worlds = [
 
     <div class="pl-lean" id="pl-lean" hidden>
       <p class="pl-step"><b>Lean.</b></p>
-      <p class="pl-step-sub">Which world does this feel closest to?<br>Go with your gut. Tap one.</p>
+      <p class="pl-step-sub">Which world does this feel closest to?<br>Go with your gut.<br>Tap one.</p>
       <div class="pl-worlds">
-        {worlds.map((w) => <button type="button" class="pl-world"><span class="pl-world-name">{w.name}</span>{w.q}</button>)}
+        {worlds.map((w) => <button type="button" class="pl-world"><span class="pl-world-name">{w.name}</span><span class="pl-world-d">{w.d}</span><span class="pl-world-q">{w.q}</span></button>)}
       </div>
       <p class="pl-after" id="pl-after" hidden></p>
       <button type="button" class="pl-star" id="pl-star" hidden><span aria-hidden="true">✦</span> This is real</button>
@@ -277,7 +281,14 @@ const worlds = [
   .pl-intro-sub { color:var(--text-dim); font-size:1.02rem; line-height:1.65; margin:0 0 1.1rem; }
   .pl-intro-worlds { display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; text-align:left; }
   .pl-intro-world { background:rgba(255,255,255,0.03); border:0.5px solid rgba(180,143,224,0.35); border-radius:10px; padding:0.85rem 1rem; color:var(--text); font-size:0.95rem; line-height:1.45; }
-  .pl-lean-title { margin-top:2.25rem; }
+  .pl-fold { margin-top:1rem; border:0.5px solid rgba(180,143,224,0.35); border-radius:12px; padding:0.2rem 1.1rem; }
+  .pl-fold[open] { padding-bottom:1.1rem; }
+  .pl-fold summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:0.6rem; padding:0.7rem 0; }
+  .pl-fold summary::-webkit-details-marker { display:none; }
+  .pl-fold summary .pl-what-title { margin:0; }
+  .pl-fold summary::after { content:'+'; font:1.3rem 'Space Mono',monospace; color:var(--pl-amber); transition:transform 0.25s; }
+  .pl-fold[open] summary::after { transform:rotate(45deg); }
+  .pl-fold[open] > :not(summary) { animation:pl-in 0.4s ease-out; }
   .pl-credit { font:0.72rem 'Space Mono',monospace; color:var(--text-dim); letter-spacing:0.04em; margin-top:0.5rem; }
   .pl-next-row { display:flex; flex-direction:column; align-items:center; gap:0.6rem; }
   .pl-enough { background:none; border:none; color:var(--pl-lavender); font:0.8rem 'Space Mono',monospace; letter-spacing:0.06em; text-decoration:underline; text-underline-offset:4px; cursor:pointer; padding:0.35rem; }
@@ -329,6 +340,9 @@ const worlds = [
   .pl-world:hover:not(:disabled) { background:rgba(180,143,224,0.12); transform:translateY(-2px); }
   .pl-world:disabled { cursor:default; opacity:0.45; }
   .pl-world.picked { opacity:1; border-color:var(--pl-amber); background:rgba(240,180,122,0.12); }
+  .pl-world-d { display:block; font-family:inherit; font-size:0.92rem; color:var(--text-dim); }
+  .pl-world-q { display:none; margin-top:0.6rem; color:var(--pl-amber); font-size:1rem; animation:pl-in 0.45s ease-out; }
+  .pl-world.picked .pl-world-q { display:block; }
   .pl-after { margin-top:1rem; color:var(--text-dim); font-size:0.98rem; line-height:1.6; }
   .pl-star { margin-top:1.1rem; background:none; border:1px solid var(--pl-amber); color:var(--pl-amber); border-radius:999px; padding:0.65rem 1.3rem; font:700 0.85rem 'Space Mono',monospace; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; animation:pl-pulse 1.8s ease-in-out infinite; }
   .pl-star:hover { background:rgba(240,180,122,0.12); }

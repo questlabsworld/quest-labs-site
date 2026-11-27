@@ -731,7 +731,7 @@ const navLinks = [
     .whisper-strip { position: relative; z-index: 1; text-align: center; padding: 1.5rem 1rem 0; }
     .whisper-env { background: #1a1526; border: 1px dashed #F0B47A; color: #F0B47A; border-radius: 10px; padding: 0.6rem 1.1rem; font-family: 'Special Elite', 'Courier New', monospace; font-size: 1rem; cursor: pointer; }
     .whisper-env:hover { background: #231c33; }
-    .whisper-text { font-family: 'Special Elite', 'Courier New', monospace; font-size: 1.15rem; color: #f0ecf8; max-width: 560px; margin: 0.9rem auto 0.3rem; line-height: 1.5; }
+    .whisper-text { font-family: 'Special Elite', 'Courier New', monospace; font-size: 1.15rem; color: #f0ecf8; max-width: 560px; margin: 0.9rem auto 0.3rem; line-height: 1.5; white-space: pre-line; }
     .whisper-text[hidden], .whisper-src[hidden] { display: none; }
     .whisper-src { display: inline-block; font-family: 'Space Mono', monospace; font-size: 0.7rem; color: #B48FE0; text-decoration: none; }
     .whisper-src:hover { text-decoration: underline; }
@@ -755,7 +755,7 @@ const navLinks = [
       let last = -1;
       env.addEventListener('click', () => {
         let i; do { i = Math.floor(Math.random() * whispers.length); } while (i === last);
-        last = i; txt.textContent = '"' + whispers[i] + '"'; txt.hidden = false; src.hidden = false; env.textContent = '✉ Another whisper';
+        last = i; txt.textContent = '"' + whispers[i].replace(/([.?!]) /g, '$1\n') + '"'; txt.hidden = false; src.hidden = false; env.textContent = '✉ Another whisper';
       });
     })();
   </script>
